@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Venuse</title>
+		<meta name="description" content="Venuse is a ... website">
+		
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico">
+
+		<!-- Web Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+
+		<!-- Bootstrap core CSS -->
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+		<!-- Font Awesome CSS -->
+		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+		<!-- Plugins -->
+		<link href="css/animations.css" rel="stylesheet">
+
+		<!-- Venuse core CSS file -->
+		<link href="css/style.css" rel="stylesheet">
+        
+        <!-- Login CSS -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+ 	 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  		<link rel="stylesheet" href="css/login.css">
+        
+	</head>
+
+	<body class="no-trans">
+		<!-- scrollToTop -->
+		<!-- ================ -->
+		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+
+		<!-- header start -->
+		<!-- ================ --> 
+		<header class="header fixed clearfix navbar navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+
+						<!-- header-left start -->
+						<!-- ================ -->
+						<div class="header-left clearfix">
+
+							<!-- logo -->
+							<div class="logo smooth-scroll">
+								<a href="#banner"><img id="logo" src="images/logo.png.svg" alt="Venuse" width="50%"></a>
+							</div>
+
+							<!-- name-and-slogan 
+							<div class="site-name-and-slogan smooth-scroll">
+								<div class="site-name"><a href="#banner">Venuse</a></div>
+								<div class="site-slogan">slogan</a></div>
+							</div>-->
+
+						</div>
+						<!-- header-left end -->
+
+					</div>
+					<div class="col-md-8">
+
+						<!-- header-right start -->
+						<!-- ================ -->
+						<div class="header-right clearfix">
+
+							<!-- main-navigation start -->
+							<!-- ================ -->
+							<div class="main-navigation animated">
+
+								<!-- navbar start -->
+								<!-- ================ -->
+								<nav class="navbar navbar-default" role="navigation">
+									<div class="container-fluid">
+
+										<!-- Toggle get grouped for better mobile display -->
+										<div class="navbar-header">
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+												<span class="sr-only">Toggle navigation</span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+											</button>
+										</div>
+
+										<!-- Collect the nav links, forms, and other content for toggling -->
+										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
+											<ul class="nav navbar-nav navbar-right">
+												<li><a href="#"><span class="bttn">List Your Space</span></a></li>
+												<li><a href="#">For Corporate</a></li>
+												<li><a data-toggle="modal" data-target="#login">Login</a></li>
+											</ul>
+                                            <!-- Modal -->
+											<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+                                        	<div class="form modal-header">
+                                            	<div class="row"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
+                                                <div class="row">
+      
+      											<ul class="tab-group">
+        											<li class="tab active"><a href="#login">Log In</a></li>
+        											<li class="tab"><a href="#signup">Sign Up</a></li>
+      											</ul>
+                                                </div>
+      
+     											<div class="tab-content">
+        											<div id="login">   
+          												<h1>Welcome Back!</h1>
+          
+          												<form action="/" method="post">
+                                                        	<div class="field-wrap">
+															 <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+ <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+                                                            </div>
+          
+            												<div class="field-wrap">
+            													<label>
+              														Email Address<span class="req">*</span>
+            													</label>
+            													<input type="email"required autocomplete="off"/>
+          													</div>
+                                                            <div class="field-wrap">
+            													<label>
+              														Password<span class="req">*</span>
+            													</label>
+            													<input type="password"required autocomplete="off"/>
+          													</div>
+                                                            <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+          													<button class="button button-block"/>Log In</button>
+          
+          												</form>
+                                                     </div>
+        											<div id="signup">   
+          												<h1>Sign Up for Free</h1>
+          
+          												<form action="/" method="post">
+          
+          												  <div class="top-row">
+            												<div class="field-wrap">
+              													<label>
+               													 First Name<span class="req">*</span>
+              													</label>
+              													<input type="text" required autocomplete="off" />
+            												</div>
+        
+            												<div class="field-wrap">
+              													<label>
+                													Mobile No.<span class="req">*</span>
+              													</label>
+              													<input type="tel"required autocomplete="off"/>
+            												</div>
+          												  </div>
+
+          													<div class="field-wrap">
+                                								<label>
+              														Email <span class="req">*</span>
+            													</label>
+            													<input type="email"required autocomplete="off"/>
+         													 </div>
+          
+          													<div class="field-wrap">
+            													<label>
+              														Password<span class="req">*</span>
+            													</label>
+            													<input type="password"required autocomplete="off"/>
+          													</div>
+                                                            <p class="forgot"><input type="checkbox" required><a data-toggle="modal" data-target="#T&C">I accept all Terms & Conditions</a></p>
+          														<div class="modal fade" id="T&C" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+												<h4 class="modal-title" id="project-1-label">Terms And Conditions</h4>
+											</div>
+											<div class="modal-body">
+												<h3></h3>
+												<div class="row">
+													<div class="col-md-12">
+														<ol class="">
+                                                        	<li >nhd</li>
+                                                            <li >nhd</li>
+                                                            <li >nhd</li>
+                                                            <li >nhd</li>
+                                                            <li >nhd</li>
+                                                        </ol>
+													</div>
+													
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+          														<button type="submit" class="button button-block"/>Sign Up</button>
+          
+          												</form>
+
+        											</div>
+      											</div>
+      											
+                                                <!-- tab-content -->
+      
+											</div>
+                                           </div>
+									</div>
+								</div>
+											<!-- Modal end -->
+										</div>
+
+									</div>
+								</nav>
+								<!-- navbar end -->
+
+							</div>
+							<!-- main-navigation end -->
+
+						</div>
+						<!-- header-right end -->
+
+					</div>
+				</div>
+             </div>
+            
+		</header>
+		<!-- header end -->
+
+		<!-- banner start -->
+		<!-- ================ -->
+		<div id="banner" class="banner">
+			<div class="banner-image"></div>
+			<div class="banner-caption">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
+							<h1 class="text-center">Welcome! to <span>Venuse</span></h1>
+							<p class="lead text-center">some para/text</p>
+						</div>
+					</div>
+                    <div class="space"></div>
+                    
+                    <div class="search-panel search-panel-location active">
+                     <div class=" col-md-4 search-select placeholder bttn pad-10-10 pull-left">Location</div>
+                      <ul class="search-category">
+                        	<li class="parent-li-active" 
+                            	data-name="option1" 
+                                data-query-string="&amp;location1=option1" 
+                                data-select-value="option1" 
+                                data-value="option1">
+                                	Option1
+                            	<ul class="search-Details">
+                            		<li class="sub-li sp-bold" 
+                                    data-name="Sub-option1" 
+                                    data-query-string="&amp;location=option1&amp;Sub-option2=true" 
+                                    data-select-value="option1+Sub-option1" 
+                                    data-value="Sub-optiion1">
+                                    	Sub-option1
+                                    </li>
+                                    <li class="sub-li" data-name="na" data-query-string="&amp;location=option1&amp;Sub-option2=true" data-select-value="option1, Sub-option2" data-value="Sub-option2">Sub-option2
+                                    </li>
+                                 </ul>
+                             </li>
+                             
+                           </ul>  
+                     
+                    </div>
+                    
+                    
+                   <!--  <form action="/action_page.php">
+                    	<div class="col-md-8 col-md-offset-2" data-animation-effect="fadeIn">
+                        	
+                             <div class="col-md-4 bttn transbg">
+                             	<label data-target="#location">Location<i class="fa fa-angle-double-down pull-right"></i></label>
+                            	<select class="" id="location" name="location" hidden="1">
+      								<option value="option 1">option1</option>
+      								<option value="option 2">option2</option>
+                                    <option value="option 3">option3</option>
+                                    <option value="option 4">option4</option>
+    							</select>
+                            </div>
+                            <div class="col-md-4 bttn transbg"> 
+                            	<label data-target="#location">Events<i class="fa fa-angle-double-down pull-right"></i></label>
+                            	<select class=" " id="event" name="Events" hidden="1">
+      								<option value="option 1">option1</option>
+      								<option value="option 2">option2</option>
+                                    <option value="option 3">option3</option>
+                                    <option value="option 4">option4</option>
+    							</select>
+                            </div>
+                            <div class="col-md-3 col-md-offset-1 bttn">
+                            	<i class="fa fa-search pull-left marg-l0-10"></i>
+                                <button class="transbg" type="submit" value="">Find Now</button>
+                            </div>
+                            
+                        </div></form> -->
+                    </div>
+				</div>
+			</div>
+            <div class="btn-floating btn-block" ><a data-toggle="modal" data-target="#chat" ><i class="fa fa-comments"></i></a></div>
+            <!-- Modal -->
+			<div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+												<h4 class="modal-title" id="project-1-label">Send a Message</h4>
+											</div>
+											<div class="modal-body">
+												<h3></h3>
+												<div class="row">
+													<div class="col-md-12" style="color:white">
+														
+													</div>
+													
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+			<!-- Modal end -->
+		</div>
+		<!-- banner end -->
+
+		<!-- section1 start -->
+		<!-- ================ -->
+		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 id="about" class="title text-center">Heading about <span>Venuse</span></h1>
+						<p class="lead text-center">Some text/ para or discription.</p>
+											
+					</div>
+				</div>
+                <div class="space"></div>
+                <div class="row object-non-visible pad-10-10" data-animation-effect="fadeIn">
+					<div class="col-sm-6 col-md-4">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/image-1.jpg" alt="">
+										<a class="overlay">
+											<span class="bttn bttn-width">Some text</span>
+										</a>
+									</div>
+									
+								</div>
+								
+					</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/image-1.jpg" alt="">
+										<a class="overlay">
+											<span class="bttn bttn-width">Some text</span>
+										</a>
+									</div>
+									
+								</div>
+								
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/image-1.jpg" alt="">
+										<a class="overlay">
+											<span class="bttn bttn-width">Some text</span>
+										</a>
+									</div>
+									
+								</div>
+								
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/image-1.jpg" alt="">
+										<a class="overlay">
+											<span class="bttn bttn-width">Some text</span>
+										</a>
+									</div>
+									
+								</div>
+								
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/image-1.jpg" alt="">
+										<a class="overlay">
+											<span class="bttn bttn-width">Some text</span>
+										</a>
+									</div>
+									
+								</div>
+								
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/image-1.jpg" alt="">
+										<a class="overlay">
+											<span class="bttn bttn-width">Some text</span>
+										</a>
+									</div>
+									
+								</div>
+								
+							</div>
+                    
+                    
+                 </div>
+			</div>
+		</div>
+		<!-- section1 end -->
+
+		
+		<!-- section2 start -->
+		<!-- ================ -->
+		<div class="default-bg space">
+			<div class="container">
+				
+                <div class="space"></div>
+                <div class="row">
+							<div class="col-md-6">
+								<img src="images/section-image-1.png" alt="">
+								<div class="space"></div>
+							</div>
+							<div class="col-md-6">
+								<h3>Some Big Text Here</h3>
+								<p>para  2.1. Profile photo - User can upload custom high resolution image (Resolution and Size to be decided)- User can upload custom high resolution image (Resolution and Size to be decided)- User can upload custom high resolution image (Resolution and Size to be decided)</p>
+								<ul class="list-unstyled">
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i> Profile photo</li>
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i>  Basic Information</li>
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i>  Basic Information</li>
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i> Basic Information</li>
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i>  Basic Information</li>
+								</ul>
+							</div>
+						</div>
+                <div class="space"></div>
+                <div class="row">
+                 <div class="col-md-12  pad-10-10 text-center">
+                	<div class="col-md-2 border pad-10-10">
+                    	<img src="images/client-1.png">
+                    </div>
+                    <div class="col-md-2 border pad-10-10">
+                    	<img src="images/client-1.png">
+                    </div>
+                    <div class="col-md-2 border pad-10-10">
+                    	<img src="images/client-1.png">
+                    </div>
+                    <div class="col-md-2 border pad-10-10">
+                    	<img src="images/client-1.png">
+                    </div>
+                    <div class="col-md-2 border pad-10-10">
+                    	<img src="images/client-1.png">
+                    </div>
+                    <div class="col-md-2 border pad-10-10">
+                    	<img src="images/client-1.png">
+                    </div>
+                  </div>  
+                </div>
+                 
+			</div>
+		</div>
+		<!-- section2 end -->
+
+		<!-- section3 start -->
+		<!-- ================ -->
+		<div class="section">
+			<div class="container">
+				<h1 class="text-center title" id="portfolio">Heading 2</h1>
+				<div class="separator"></div>
+				<p class="lead text-center">paragraphs/Discription</p>
+				<br>			
+				<div class="row object-non-visible pad-10-10" data-animation-effect="fadeIn">
+					<div class="col-sm-6 col-md-4">
+								<div class="image-box outer-box">
+									<div class="overlay-container slices border">
+										<img src="images/portfolio-2.jpg" alt="">
+										
+									</div>
+									<a class="btn btn-block">Some discription of page</a>
+                                    <p class="lead marg-l-10 discription"><span>something</span></p>
+								</div>
+								
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box outer-box">
+									<div class="overlay-container slices border">
+										<img src="images/portfolio-2.jpg" alt="">
+										
+									</div>
+									<a class="btn btn-block">Some discription of page</a>
+                                    <p class="lead marg-l-10 discription"><span>something</span></p>
+								</div>
+								<!-- Modal -->
+								 
+								<!-- Modal end -->
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box outer-box">
+									<div class="overlay-container slices border">
+										<img src="images/portfolio-2.jpg" alt="">
+										
+									</div>
+									<a class="btn btn-block">Some discription of page</a>
+                                    <p class="lead marg-l-10 discription"><span>something</span></p>
+								</div>
+								<!-- Modal -->
+								 
+								<!-- Modal end -->
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box outer-box">
+									<div class="overlay-container slices border">
+										<img src="images/portfolio-2.jpg" alt="">
+										
+									</div>
+									<a class="btn btn-block">Some discription of page</a>
+                                    <p class="lead marg-l-10 discription"><span>something</span></p>
+								</div>
+								<!-- Modal -->
+								 
+								<!-- Modal end -->
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box outer-box">
+									<div class="overlay-container slices border">
+										<img src="images/portfolio-2.jpg" alt="">
+										
+									</div>
+									<a class="btn btn-block">Some discription of page</a>
+                                    <p class="lead marg-l-10 discription"><span>something</span></p>
+								</div>
+								<!-- Modal -->
+								 
+								<!-- Modal end -->
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box outer-box">
+									<div class="overlay-container slices border">
+										<img src="images/portfolio-2.jpg" alt="">
+										
+									</div>
+									<a class="btn btn-block">Some discription of page</a>
+                                    <p class="lead marg-l-10 discription"><span>something</span></p>
+								</div>
+								<!-- Modal -->
+								 
+								<!-- Modal end -->
+							</div>
+                  </div>
+				</div>
+			</div>
+		
+		<!-- section3 end -->
+
+		<!-- section4 slider start -->
+		<!-- ================ -->
+		<div class="section translucent-bg">
+			<div class="container">
+							
+				<div class="row object-non-visible pad-10-10" data-animation-effect="fadeIn">
+                	<div class="left icon-prev"><a data-target="#prev"><i class="fa fa-arrow-circle-left"></i></a></div>
+					<div class="col-sm-6 col-md-4">
+								<div class="image-box outer-box">
+									<div class="overlay-container border">
+										<img src="images/portfolio-2.jpg" alt="">
+										
+									</div>
+									
+								</div>
+								<!-- Modal -->
+								 
+								<!-- Modal end -->
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box outer-box">
+									<div class="overlay-container border">
+										<img src="images/portfolio-2.jpg" alt="">
+										
+									</div>
+									
+								</div>
+								<!-- Modal -->
+								 
+								<!-- Modal end -->
+							</div>
+                    <div class="col-sm-6 col-md-4">
+								<div class="image-box outer-box">
+									<div class="overlay-container border">
+										<img src="images/portfolio-2.jpg" alt="">
+										
+									</div>
+									
+								</div>
+								<!-- Modal -->
+								 
+								<!-- Modal end -->
+							</div>
+                    <div class="left icon-next"><a data-target="#next" ><i class="fa  fa-arrow-circle-right"></i></a></div>
+                  </div>
+			</div>
+		</div>
+		
+		<!-- section4 end -->
+
+
+		<!-- footer start -->
+		<!-- ================ -->
+			<div class="subfooter">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+                        	<div class=" col-md-6 pull-right">
+                            	
+                        		<ul class="social-links  col-md-6">
+                                	<li ><p class="f14">Follow us On</p></li>
+									<li class="facebook"><a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+									<li class="twitter"><a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+									<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+									<li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+									<li class="youtube"><a target="_blank" href="http://www.youtube.com"><i class="fa fa-youtube"></i></a></li>
+									
+								</ul>
+                             </div>
+                             <div class=" col-md-6">
+                             	<p class=" text-left">Copyright © 2017 <a target="_blank" href="http://Venuse.in" style="color:#000;"><u>Venuse</u></a>. All Rights are Reserved</p>
+                             </div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- footer end -->
+
+		
+        
+		
+
+		<!-- JavaScript files placed at the end of the document so the pages load faster
+		================================================== -->
+		<!-- Jquery and Bootstap core js files -->
+		<script type="text/javascript" src="plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Modernizr javascript -->
+		<script type="text/javascript" src="plugins/modernizr.js"></script>
+
+		<!-- Isotope javascript -->
+		<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
+		
+		<!-- Backstretch javascript -->
+		<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
+
+		<!-- Appear javascript -->
+		<script type="text/javascript" src="plugins/jquery.appear.js"></script>
+
+		<!-- Initialization of Plugins -->
+		<script type="text/javascript" src="js/template.js"></script>
+		
+        <!-- Login JS -->
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script src="js/login.js"></script>
+
+	</body>
+</html>
