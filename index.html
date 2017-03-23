@@ -98,37 +98,36 @@
 											<ul class="nav navbar-nav navbar-right">
 												<li><a href="#"><span class="bttn">List Your Space</span></a></li>
 												<li><a href="#">For Corporate</a></li>
-												<li><a data-toggle="modal" data-target="#login">Login</a></li>
+												<li><a data-toggle="modal" data-target="#login1">Login</a></li>
 											</ul>
                                             <!-- Modal -->
-											<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
+								<div class="modal fade" id="login1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+									<div class="modal-dialog ">
 										<div class="modal-content">
                                         	<div class="form modal-header">
                                             	<div class="row"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
                                                 <div class="row">
-      
-      											<ul class="tab-group">
+                                                  <ul class="tab-group">
         											<li class="tab active"><a href="#login">Log In</a></li>
         											<li class="tab"><a href="#signup">Sign Up</a></li>
-      											</ul>
+      											  </ul>
                                                 </div>
+                                                
       
      											<div class="tab-content">
         											<div id="login">   
           												<h1>Welcome Back!</h1>
-          
-          												<form action="/" method="post">
+                                                        <form action="/" method="post">
                                                         	<div class="field-wrap">
-															 <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
- <div id="fb-root"></div>
+															 <div class="fb-login-button" data-max-rows="2" data-size="large" 																																										data-show-faces="false" data-auto-logout-link="true"></div>
+ 															 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));</script> 													
                                                             </div>
           
             												<div class="field-wrap">
@@ -222,7 +221,7 @@
                                                 <!-- tab-content -->
       
 											</div>
-                                           </div>
+                                         </div>
 									</div>
 								</div>
 											<!-- Modal end -->
@@ -258,10 +257,52 @@
 						</div>
 					</div>
                     <div class="space"></div>
-                    
-                    <div class="search-panel search-panel-location active">
-                     <div class=" col-md-4 search-select placeholder bttn pad-10-10 pull-left">Location</div>
-                      <ul class="search-category">
+                    <div class="col-md-8 col-md-offset-2 pad-10-10 search">
+                    	<div class="col-md-5  search-panel search-panel-location">
+                     	  <div class="search-select placeholder location ">Location<i class="f fa-angle-down pull-right"></i></div>
+                      	  	<ul class="search-category">
+                        	 <li class="parent-li-active" 
+                            	data-name="option1" 
+                                data-query-string="&amp;location1=option1" 
+                                data-select-value="option1" 
+                                data-value="option1">
+                                Option1
+                            	 <ul class="search-Details">
+                            		<li class="sub-li sp-bold" 
+                                    data-name="Sub-option1" 
+                                    data-query-string="&amp;location=option1&amp;Sub-option2=true" 
+                                    data-select-value="option1+Sub-option1" 
+                                    data-value="Sub-optiion1">
+                                    	Sub-option1
+                                    </li>
+                                    <li class="sub-li" data-name="Sub-option2" data-query-string="&amp;location=option1&amp;Sub-option2=true" data-select-value="option1, Sub-option2" data-value="Sub-option2">Sub-option2
+                                    </li>
+                                 </ul>
+                             </li>
+                             <li class="parent-li-active" 
+                            	data-name="option1" 
+                                data-query-string="&amp;location1=option1" 
+                                data-select-value="option1" 
+                                data-value="option1">
+                                Option1
+                            	 <ul class="search-Details">
+                            		<li class="sub-li sp-bold" 
+                                    data-name="Sub-option1" 
+                                    data-query-string="&amp;location=option1&amp;Sub-option2=true" 
+                                    data-select-value="option1+Sub-option1" 
+                                    data-value="Sub-optiion1">
+                                    	Sub-option1
+                                    </li>
+                                    <li class="sub-li" data-name="Sub-option2" data-query-string="&amp;location=option1&amp;Sub-option2=true" data-select-value="option1, Sub-option2" data-value="Sub-option2">Sub-option2
+                                    </li>
+                                 </ul>
+                             </li>
+                           </ul>   
+                    	</div>
+                        <div class=" col-md-5 search-panel search-panel-event  ">
+                     	  <div class="search-select placeholder event">Events<i class="f fa-angle-down pull-right"></i></div>
+                      	  
+                          	<ul class="search-category">
                         	<li class="parent-li-active" 
                             	data-name="option1" 
                                 data-query-string="&amp;location1=option1" 
@@ -281,10 +322,14 @@
                                  </ul>
                              </li>
                              
-                           </ul>  
-                     
+                           </ul>
+                           
+                    	</div>
+                        <div class="col-md-2 search-panel search-panel-location  ">
+                     	  <div class="search-find placeholder"><i class="fa fa-search"></i> Find Now</div>
+                      	    
+                    	</div>
                     </div>
-                    
                     
                    <!--  <form action="/action_page.php">
                     	<div class="col-md-8 col-md-offset-2" data-animation-effect="fadeIn">
@@ -317,7 +362,7 @@
 				</div>
 			</div>
             <div class="btn-floating btn-block" ><a data-toggle="modal" data-target="#chat" ><i class="fa fa-comments"></i></a></div>
-            <!-- Modal -->
+            <!-- Modal 
 			<div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
 									<div class="modal-dialog modal-lg">
 										<div class="modal-content">
@@ -462,26 +507,24 @@
 						</div>
                 <div class="space"></div>
                 <div class="row">
-                 <div class="col-md-12  pad-10-10 text-center">
-                	<div class="col-md-2 border pad-10-10">
-                    	<img src="images/client-1.png">
+                 
+                	<div class="col-md-2 box-150x100">
+                    	image1
                     </div>
-                    <div class="col-md-2 border pad-10-10">
-                    	<img src="images/client-1.png">
+                    <div class="col-md-2 box-150x100">
+                    	image
                     </div>
-                    <div class="col-md-2 border pad-10-10">
-                    	<img src="images/client-1.png">
+                    <div class="col-md-2 box-150x100">
+                    	image
                     </div>
-                    <div class="col-md-2 border pad-10-10">
-                    	<img src="images/client-1.png">
+                    <div class="col-md-2 box-150x100">
+                    	image
                     </div>
-                    <div class="col-md-2 border pad-10-10">
-                    	<img src="images/client-1.png">
+                    <div class="col-md-2 box-150x100">
+                    	image
                     </div>
-                    <div class="col-md-2 border pad-10-10">
-                    	<img src="images/client-1.png">
-                    </div>
-                  </div>  
+                    
+                  
                 </div>
                  
 			</div>
@@ -588,7 +631,7 @@
                 	<div class="left icon-prev"><a data-target="#prev"><i class="fa fa-arrow-circle-left"></i></a></div>
 					<div class="col-sm-6 col-md-4">
 								<div class="image-box outer-box">
-									<div class="overlay-container border">
+									<div class="overlay-container">
 										<img src="images/portfolio-2.jpg" alt="">
 										
 									</div>
@@ -600,7 +643,7 @@
 							</div>
                     <div class="col-sm-6 col-md-4">
 								<div class="image-box outer-box">
-									<div class="overlay-container border">
+									<div class="overlay-container">
 										<img src="images/portfolio-2.jpg" alt="">
 										
 									</div>
@@ -612,7 +655,7 @@
 							</div>
                     <div class="col-sm-6 col-md-4">
 								<div class="image-box outer-box">
-									<div class="overlay-container border">
+									<div class="overlay-container">
 										<img src="images/portfolio-2.jpg" alt="">
 										
 									</div>

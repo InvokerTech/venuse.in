@@ -5496,6 +5496,8 @@ button.close {
   cursor: pointer;
   background: transparent;
   border: 0;
+  margin-top:-20px !important;
+  margin-bottom:20px;
 }
 .modal-open {
   overflow: hidden;
@@ -5555,7 +5557,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: #fff;
 }
 .modal-backdrop.fade {
   filter: alpha(opacity=0);

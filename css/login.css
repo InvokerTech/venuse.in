@@ -50,18 +50,18 @@ a:hover {
 }
 .tab-group li a:hover {
   background: #69dee5;
-  color: #ffffff;
+  color: #000;
 }
 .tab-group .active a {
   background: #8df9ff;
-  color: #ffffff;
+  color: #000;
 }
 
 .tab-content > div:last-child {
   display: none;
 }
 
-h1 {
+.tab-content> div> h1 {
   text-align: center;
   color: #ffffff;
   font-weight: 300;
@@ -80,6 +80,9 @@ label {
   pointer-events: none;
   font-size: 16px;
   line-height:16px;
+}
+.label:visited {
+	color:rgba(255, 255, 255, 0.8);
 }
 label .req {
   margin: 2px;
@@ -154,7 +157,7 @@ textarea {
   text-transform: uppercase;
   letter-spacing: .1em;
   background: #8df9ff;
-  color: #ffffff;
+  color: #565958;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-appearance: none;
