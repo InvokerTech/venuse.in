@@ -52,18 +52,10 @@
 						<!-- header-left start -->
 						<!-- ================ -->
 						<div class="header-left clearfix">
-
 							<!-- logo -->
 							<div class="logo smooth-scroll">
 								<a href="#banner"><img id="logo" src="images/logo.png.svg" alt="Venuse" width="50%"></a>
-							</div>
-
-							<!-- name-and-slogan 
-							<div class="site-name-and-slogan smooth-scroll">
-								<div class="site-name"><a href="#banner">Venuse</a></div>
-								<div class="site-slogan">slogan</a></div>
-							</div>-->
-
+							</div>							
 						</div>
 						<!-- header-left end -->
 
@@ -98,7 +90,7 @@
 											<ul class="nav navbar-nav navbar-right">
 												<li><a href="#"><span class="bttn">List Your Space</span></a></li>
 												<li><a href="#">For Corporate</a></li>
-												<li><a data-toggle="modal" data-target="#login1">Login</a></li>
+												<li class="defalt-cursor"><a data-toggle="modal" data-target="#login1">Login</a></li>
 											</ul>
                                             <!-- Modal -->
 								<div class="modal fade" id="login1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
@@ -120,14 +112,15 @@
                                                         <form action="/" method="post">
                                                         	<div class="field-wrap">
 															 <div class="fb-login-button" data-max-rows="2" data-size="large" 																																										data-show-faces="false" data-auto-logout-link="true"></div>
- 															 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+ 															 <div id="fb-root" class="col-sm-6"></div>
+														<!-- fb script --><script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script> 													
+}(document, 'script', 'facebook-jssdk'));</script> 	<!-- fb script ends -->
+															 
                                                             </div>
           
             												<div class="field-wrap">
@@ -247,7 +240,12 @@
 		<!-- banner start -->
 		<!-- ================ -->
 		<div id="banner" class="banner">
-			<div class="banner-image"></div>
+			<div class="banner-video">
+            	<video poster="images/banner.jpg" id="bgvid" playsinline autoplay muted loop>
+                <source src="images/blue.webm" type="video/webm">
+				<source src="images/blue.mp4" type="video/mp4">
+				</video>
+    		</div>
 			<div class="banner-caption">
 				<div class="container">
 					<div class="row">
@@ -360,32 +358,46 @@
                         </div></form> -->
                     </div>
 				</div>
-			</div>
-            <div class="btn-floating btn-block" ><a data-toggle="modal" data-target="#chat" ><i class="fa fa-comments"></i></a></div>
-            <!-- Modal 
-			<div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-1-label">Send a Message</h4>
-											</div>
-											<div class="modal-body">
-												<h3></h3>
-												<div class="row">
-													<div class="col-md-12" style="color:white">
-														
-													</div>
-													
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-			<!-- Modal end -->
+			
+            <a  class="chat-btn" href="#chat"  >
+            <div class="btn-floating btn-block" ><i class="fa fa-comments"></i></div>
+            </a>
+            
+            <div id="chat">
+            	<div class="chat-header">
+                	<h5>Conversations</h5>
+                </div>
+                <div class="chat-content">
+                	<div class="chat-item">
+                    	<img class="pull-left" src="images/testimonial-1.png">
+                    	<h6>Meeta</h6>
+                        <p class="message">
+                        some message from meeta.
+                        </p>
+                    </div>
+                    <div class="chat-item">
+                    	<img class="pull-left" src="images/testimonial-1.png">
+                    	<h6>Meeta</h6>
+                        <p class="message">
+                        some message from meeta.
+                        </p>
+                    </div>
+                    <div class="chat-item">
+                    	<img class="pull-left" src="images/testimonial-1.png">
+                    	<h6>Meeta</h6>
+                        <p class="message">
+                        some message from meeta.
+                        </p>
+                    </div>
+                    <div class="chat-item">
+                    	<img class="pull-left" src="images/testimonial-1.png">
+                    	<h6>Meeta</h6>
+                        <p class="message">
+                        some message from meeta.
+                        </p>
+                    </div>
+                </div>
+            </div>
 		</div>
 		<!-- banner end -->
 
@@ -624,11 +636,12 @@
 
 		<!-- section4 slider start -->
 		<!-- ================ -->
-		<div class="section translucent-bg">
+		<div id="slider" class="section translucent-bg">
 			<div class="container">
 							
 				<div class="row object-non-visible pad-10-10" data-animation-effect="fadeIn">
-                	<div class="left icon-prev"><a data-target="#prev"><i class="fa fa-arrow-circle-left"></i></a></div>
+                   <div  class="" >
+                    <ul class="">
 					<div class="col-sm-6 col-md-4">
 								<div class="image-box outer-box">
 									<div class="overlay-container">
@@ -665,7 +678,17 @@
 								 
 								<!-- Modal end -->
 							</div>
+                    </ul>
+                   </div>
+                     
+                    <div class="left icon-prev"><a data-target="#prev"><i class="fa fa-arrow-circle-left"></i></a></div>
                     <div class="left icon-next"><a data-target="#next" ><i class="fa  fa-arrow-circle-right"></i></a></div>
+                    <div class="owl-dots" data-target="object1"></div><span></span>
+                    <div class="owl-dots" data-target="object2"></div><span></span>
+                    <div class="owl-dots" data-target="object3"></div><span></span>
+                    <div class="owl-dots" data-target="object4"></div><span></span>
+                    <div class="owl-dots" data-target="object5"></div><span></span>
+                    <div class="owl-dots" data-target="object6"></div><span></span>
                   </div>
 			</div>
 		</div>
