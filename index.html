@@ -1,757 +1,644 @@
 <!DOCTYPE html>
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
 <html lang="en">
-<!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<title>Venuse</title>
-		<meta name="description" content="Venuse is a ... website">
-		
-		<!-- Mobile Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Venuse</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/favicon.ico">
+ 
+  </head>
+  <body>
 
-		<!-- Web Fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
-
-		<!-- Bootstrap core CSS -->
-		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-
-		<!-- Font Awesome CSS -->
-		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-		<!-- Plugins -->
-		<link href="css/animations.css" rel="stylesheet">
-
-		<!-- Venuse core CSS file -->
-		<link href="css/style.css" rel="stylesheet">
-        
-        <!-- Login CSS -->
-        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
- 	 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  		<link rel="stylesheet" href="css/login.css">
-        
-	</head>
-
-	<body class="no-trans">
-		<!-- scrollToTop -->
-		<!-- ================ -->
-		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
-
-		<!-- header start -->
-		<!-- ================ --> 
-		<header class="header fixed clearfix navbar navbar-fixed-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-
-						<!-- header-left start -->
-						<!-- ================ -->
-						<div class="header-left clearfix">
-							<!-- logo -->
-							<div class="logo smooth-scroll">
-								<a href="#banner"><img id="logo" src="images/logo.png.svg" alt="Venuse" width="50%"></a>
-							</div>							
-						</div>
-						<!-- header-left end -->
-
-					</div>
-					<div class="col-md-8">
-
-						<!-- header-right start -->
-						<!-- ================ -->
-						<div class="header-right clearfix">
-
-							<!-- main-navigation start -->
-							<!-- ================ -->
-							<div class="main-navigation animated">
-
-								<!-- navbar start -->
-								<!-- ================ -->
-								<nav class="navbar navbar-default" role="navigation">
-									<div class="container-fluid">
-
-										<!-- Toggle get grouped for better mobile display -->
-										<div class="navbar-header">
-											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-												<span class="sr-only">Toggle navigation</span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-											</button>
-										</div>
-
-										<!-- Collect the nav links, forms, and other content for toggling -->
-										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
-											<ul class="nav navbar-nav navbar-right">
-												<li><a href="#"><span class="bttn">List Your Space</span></a></li>
-												<li><a href="#">For Corporate</a></li>
-												<li class="defalt-cursor"><a data-toggle="modal" data-target="#login1">Login</a></li>
-											</ul>
-                                            <!-- Modal -->
-								<div class="modal fade" id="login1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
-									<div class="modal-dialog ">
-										<div class="modal-content">
-                                        	<div class="form modal-header">
-                                            	<div class="row"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>
-                                                <div class="row">
-                                                  <ul class="tab-group">
-        											<li class="tab active"><a href="#login">Log In</a></li>
-        											<li class="tab"><a href="#signup">Sign Up</a></li>
-      											  </ul>
-                                                </div>
-                                                
-      
-     											<div class="tab-content">
-        											<div id="login">   
-          												<h1>Welcome Back!</h1>
-                                                        <form action="/" method="post">
-                                                        	<div class="field-wrap">
-															 <div class="fb-login-button" data-max-rows="2" data-size="large" 																																										data-show-faces="false" data-auto-logout-link="true"></div>
- 															 <div id="fb-root" class="col-sm-6"></div>
-														<!-- fb script --><script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script> 	<!-- fb script ends -->
-															 
-                                                            </div>
-          
-            												<div class="field-wrap">
-            													<label>
-              														Email Address<span class="req">*</span>
-            													</label>
-            													<input type="email"required autocomplete="off"/>
-          													</div>
-                                                            <div class="field-wrap">
-            													<label>
-              														Password<span class="req">*</span>
-            													</label>
-            													<input type="password"required autocomplete="off"/>
-          													</div>
-                                                            <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          													<button class="button button-block"/>Log In</button>
-          
-          												</form>
-                                                     </div>
-        											<div id="signup">   
-          												<h1>Sign Up for Free</h1>
-          
-          												<form action="/" method="post">
-          
-          												  <div class="top-row">
-            												<div class="field-wrap">
-              													<label>
-               													 First Name<span class="req">*</span>
-              													</label>
-              													<input type="text" required autocomplete="off" />
-            												</div>
-        
-            												<div class="field-wrap">
-              													<label>
-                													Mobile No.<span class="req">*</span>
-              													</label>
-              													<input type="tel"required autocomplete="off"/>
-            												</div>
-          												  </div>
-
-          													<div class="field-wrap">
-                                								<label>
-              														Email <span class="req">*</span>
-            													</label>
-            													<input type="email"required autocomplete="off"/>
-         													 </div>
-          
-          													<div class="field-wrap">
-            													<label>
-              														Password<span class="req">*</span>
-            													</label>
-            													<input type="password"required autocomplete="off"/>
-          													</div>
-                                                            <p class="forgot"><input type="checkbox" required><a data-toggle="modal" data-target="#T&C">I accept all Terms & Conditions</a></p>
-          														<div class="modal fade" id="T&C" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
-									<div class="modal-dialog modal-lg">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="project-1-label">Terms And Conditions</h4>
-											</div>
-											<div class="modal-body">
-												<h3></h3>
-												<div class="row">
-													<div class="col-md-12">
-														<ol class="">
-                                                        	<li >nhd</li>
-                                                            <li >nhd</li>
-                                                            <li >nhd</li>
-                                                            <li >nhd</li>
-                                                            <li >nhd</li>
-                                                        </ol>
-													</div>
-													
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-          														<button type="submit" class="button button-block"/>Sign Up</button>
-          
-          												</form>
-
-        											</div>
-      											</div>
-      											
-                                                <!-- tab-content -->
-      
-											</div>
-                                         </div>
-									</div>
-								</div>
-											<!-- Modal end -->
-										</div>
-
-									</div>
-								</nav>
-								<!-- navbar end -->
-
-							</div>
-							<!-- main-navigation end -->
-
-						</div>
-						<!-- header-right end -->
-
-					</div>
-				</div>
-             </div>
-            
-		</header>
-		<!-- header end -->
-
-		<!-- banner start -->
-		<!-- ================ -->
-		<div id="banner" class="banner">
-			<div class="banner-video">
-            	<video poster="images/banner.jpg" id="bgvid" playsinline autoplay muted loop>
-                <source src="images/blue.webm" type="video/webm">
-				<source src="images/blue.mp4" type="video/mp4">
-				</video>
-    		</div>
-			<div class="banner-caption">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
-							<h1 class="text-center">Welcome! to <span>Venuse</span></h1>
-							<p class="lead text-center">some para/text</p>
-						</div>
-					</div>
-                    <div class="space"></div>
-                    <div class="col-md-8 col-md-offset-2 pad-10-10 search">
-                    	<div class="col-md-5  search-panel search-panel-location">
-                     	  <div class="search-select placeholder location ">Location<i class="f fa-angle-down pull-right"></i></div>
-                      	  	<ul class="search-category">
-                        	 <li class="parent-li-active" 
-                            	data-name="option1" 
-                                data-query-string="&amp;location1=option1" 
-                                data-select-value="option1" 
-                                data-value="option1">
-                                Option1
-                            	 <ul class="search-Details">
-                            		<li class="sub-li sp-bold" 
-                                    data-name="Sub-option1" 
-                                    data-query-string="&amp;location=option1&amp;Sub-option2=true" 
-                                    data-select-value="option1+Sub-option1" 
-                                    data-value="Sub-optiion1">
-                                    	Sub-option1
-                                    </li>
-                                    <li class="sub-li" data-name="Sub-option2" data-query-string="&amp;location=option1&amp;Sub-option2=true" data-select-value="option1, Sub-option2" data-value="Sub-option2">Sub-option2
-                                    </li>
-                                 </ul>
-                             </li>
-                             <li class="parent-li-active" 
-                            	data-name="option1" 
-                                data-query-string="&amp;location1=option1" 
-                                data-select-value="option1" 
-                                data-value="option1">
-                                Option1
-                            	 <ul class="search-Details">
-                            		<li class="sub-li sp-bold" 
-                                    data-name="Sub-option1" 
-                                    data-query-string="&amp;location=option1&amp;Sub-option2=true" 
-                                    data-select-value="option1+Sub-option1" 
-                                    data-value="Sub-optiion1">
-                                    	Sub-option1
-                                    </li>
-                                    <li class="sub-li" data-name="Sub-option2" data-query-string="&amp;location=option1&amp;Sub-option2=true" data-select-value="option1, Sub-option2" data-value="Sub-option2">Sub-option2
-                                    </li>
-                                 </ul>
-                             </li>
-                           </ul>   
-                    	</div>
-                        <div class=" col-md-5 search-panel search-panel-event  ">
-                     	  <div class="search-select placeholder event">Events<i class="f fa-angle-down pull-right"></i></div>
-                      	  
-                          	<ul class="search-category">
-                        	<li class="parent-li-active" 
-                            	data-name="option1" 
-                                data-query-string="&amp;location1=option1" 
-                                data-select-value="option1" 
-                                data-value="option1">
-                                	Option1
-                            	<ul class="search-Details">
-                            		<li class="sub-li sp-bold" 
-                                    data-name="Sub-option1" 
-                                    data-query-string="&amp;location=option1&amp;Sub-option2=true" 
-                                    data-select-value="option1+Sub-option1" 
-                                    data-value="Sub-optiion1">
-                                    	Sub-option1
-                                    </li>
-                                    <li class="sub-li" data-name="na" data-query-string="&amp;location=option1&amp;Sub-option2=true" data-select-value="option1, Sub-option2" data-value="Sub-option2">Sub-option2
-                                    </li>
-                                 </ul>
-                             </li>
-                             
-                           </ul>
-                           
-                    	</div>
-                        <div class="col-md-2 search-panel search-panel-location  ">
-                     	  <div class="search-find placeholder"><i class="fa fa-search"></i> Find Now</div>
-                      	    
-                    	</div>
-                    </div>
-                    
-                   <!--  <form action="/action_page.php">
-                    	<div class="col-md-8 col-md-offset-2" data-animation-effect="fadeIn">
-                        	
-                             <div class="col-md-4 bttn transbg">
-                             	<label data-target="#location">Location<i class="fa fa-angle-double-down pull-right"></i></label>
-                            	<select class="" id="location" name="location" hidden="1">
-      								<option value="option 1">option1</option>
-      								<option value="option 2">option2</option>
-                                    <option value="option 3">option3</option>
-                                    <option value="option 4">option4</option>
-    							</select>
-                            </div>
-                            <div class="col-md-4 bttn transbg"> 
-                            	<label data-target="#location">Events<i class="fa fa-angle-double-down pull-right"></i></label>
-                            	<select class=" " id="event" name="Events" hidden="1">
-      								<option value="option 1">option1</option>
-      								<option value="option 2">option2</option>
-                                    <option value="option 3">option3</option>
-                                    <option value="option 4">option4</option>
-    							</select>
-                            </div>
-                            <div class="col-md-3 col-md-offset-1 bttn">
-                            	<i class="fa fa-search pull-left marg-l0-10"></i>
-                                <button class="transbg" type="submit" value="">Find Now</button>
-                            </div>
-                            
-                        </div></form> -->
-                    </div>
-				</div>
-			
-            <a  class="chat-btn" href="#chat"  >
-            <div class="btn-floating btn-block" ><i class="fa fa-comments"></i></div>
-            </a>
-            
-            <div id="chat">
-            	<div class="chat-header">
-                	<h5>Conversations</h5>
-                </div>
-                <div class="chat-content">
-                	<div class="chat-item">
-                    	<img class="pull-left" src="images/testimonial-1.png">
-                    	<h6>Meeta</h6>
-                        <p class="message">
-                        some message from meeta.
-                        </p>
-                    </div>
-                    <div class="chat-item">
-                    	<img class="pull-left" src="images/testimonial-1.png">
-                    	<h6>Meeta</h6>
-                        <p class="message">
-                        some message from meeta.
-                        </p>
-                    </div>
-                    <div class="chat-item">
-                    	<img class="pull-left" src="images/testimonial-1.png">
-                    	<h6>Meeta</h6>
-                        <p class="message">
-                        some message from meeta.
-                        </p>
-                    </div>
-                    <div class="chat-item">
-                    	<img class="pull-left" src="images/testimonial-1.png">
-                    	<h6>Meeta</h6>
-                        <p class="message">
-                        some message from meeta.
-                        </p>
-                    </div>
-                </div>
+    
+   
+      <div class="bg-color">
+        <header id="main-header" class="main-header">
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header" style="margin-right:0px">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html"><img src="img/Venuse-HighRes.png" height="100" width="120" style="margin-top: -38px"  alt=""></a>
+             
+             
             </div>
-		</div>
-		<!-- banner end -->
+            <div class="col-md-4">
+              <form action="" style="margin-top:9px; margin-left:35px; z-index: 1000; cursor: pointer; ">
+        <div class="form-group">
+        <label class="glyphicon glyphicon-search" style="font-size:22px; color:#fff; cursor: pointer; " for="top-search"></label>
+        <span class="search-text-color" style="font-size:16px; color:#fff">Search</span>
+        </div>
+        </form>
+</div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#main-header"><button type="button" class="text-color list-your-space">list your space</button></a></li>
+                <li class=""><a class="nav-ul-a" href="#feature">SIGN UP</a></li>
+                <li class=""><a  class="nav-ul-a" href="#service">LOG IN</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-		<!-- section1 start -->
-		<!-- ================ -->
-		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1 id="about" class="title text-center">Heading about <span>Venuse</span></h1>
-						<p class="lead text-center">Some text/ para or discription.</p>
-											
-					</div>
-				</div>
-                <div class="space"></div>
-                <div class="row object-non-visible pad-10-10" data-animation-effect="fadeIn">
-					<div class="col-sm-6 col-md-4">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/image-1.jpg" alt="">
-										<a class="overlay">
-											<span class="bttn bttn-width">Some text</span>
-										</a>
-									</div>
-									
-								</div>
-								
-					</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/image-1.jpg" alt="">
-										<a class="overlay">
-											<span class="bttn bttn-width">Some text</span>
-										</a>
-									</div>
-									
-								</div>
-								
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/image-1.jpg" alt="">
-										<a class="overlay">
-											<span class="bttn bttn-width">Some text</span>
-										</a>
-									</div>
-									
-								</div>
-								
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/image-1.jpg" alt="">
-										<a class="overlay">
-											<span class="bttn bttn-width">Some text</span>
-										</a>
-									</div>
-									
-								</div>
-								
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/image-1.jpg" alt="">
-										<a class="overlay">
-											<span class="bttn bttn-width">Some text</span>
-										</a>
-									</div>
-									
-								</div>
-								
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box">
-									<div class="overlay-container">
-										<img src="images/image-1.jpg" alt="">
-										<a class="overlay">
-											<span class="bttn bttn-width">Some text</span>
-										</a>
-									</div>
-									
-								</div>
-								
-							</div>
-                    
-                    
-                 </div>
-			</div>
-		</div>
-		<!-- section1 end -->
-
-		
-		<!-- section2 start -->
-		<!-- ================ -->
-		<div class="default-bg space">
-			<div class="container">
-				
-                <div class="space"></div>
-                <div class="row">
-							<div class="col-md-6">
-								<img src="images/section-image-1.png" alt="">
-								<div class="space"></div>
-							</div>
-							<div class="col-md-6">
-								<h3>Some Big Text Here</h3>
-								<p>para  2.1. Profile photo - User can upload custom high resolution image (Resolution and Size to be decided)- User can upload custom high resolution image (Resolution and Size to be decided)- User can upload custom high resolution image (Resolution and Size to be decided)</p>
-								<ul class="list-unstyled">
-									<li><i class="fa fa-caret-right pr-10 text-colored"></i> Profile photo</li>
-									<li><i class="fa fa-caret-right pr-10 text-colored"></i>  Basic Information</li>
-									<li><i class="fa fa-caret-right pr-10 text-colored"></i>  Basic Information</li>
-									<li><i class="fa fa-caret-right pr-10 text-colored"></i> Basic Information</li>
-									<li><i class="fa fa-caret-right pr-10 text-colored"></i>  Basic Information</li>
-								</ul>
-							</div>
-						</div>
-                <div class="space"></div>
-                <div class="row">
-                 
-                	<div class="col-md-2 box-150x100">
-                    	image1
-                    </div>
-                    <div class="col-md-2 box-150x100">
-                    	image
-                    </div>
-                    <div class="col-md-2 box-150x100">
-                    	image
-                    </div>
-                    <div class="col-md-2 box-150x100">
-                    	image
-                    </div>
-                    <div class="col-md-2 box-150x100">
-                    	image
-                    </div>
-                    
-                  
-                </div>
-                 
-			</div>
-		</div>
-		<!-- section2 end -->
-
-		<!-- section3 start -->
-		<!-- ================ -->
-		<div class="section">
-			<div class="container">
-				<h1 class="text-center title" id="portfolio">Heading 2</h1>
-				<div class="separator"></div>
-				<p class="lead text-center">paragraphs/Discription</p>
-				<br>			
-				<div class="row object-non-visible pad-10-10" data-animation-effect="fadeIn">
-					<div class="col-sm-6 col-md-4">
-								<div class="image-box outer-box">
-									<div class="overlay-container slices border">
-										<img src="images/portfolio-2.jpg" alt="">
-										
-									</div>
-									<a class="btn btn-block">Some discription of page</a>
-                                    <p class="lead marg-l-10 discription"><span>something</span></p>
-								</div>
-								
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box outer-box">
-									<div class="overlay-container slices border">
-										<img src="images/portfolio-2.jpg" alt="">
-										
-									</div>
-									<a class="btn btn-block">Some discription of page</a>
-                                    <p class="lead marg-l-10 discription"><span>something</span></p>
-								</div>
-								<!-- Modal -->
-								 
-								<!-- Modal end -->
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box outer-box">
-									<div class="overlay-container slices border">
-										<img src="images/portfolio-2.jpg" alt="">
-										
-									</div>
-									<a class="btn btn-block">Some discription of page</a>
-                                    <p class="lead marg-l-10 discription"><span>something</span></p>
-								</div>
-								<!-- Modal -->
-								 
-								<!-- Modal end -->
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box outer-box">
-									<div class="overlay-container slices border">
-										<img src="images/portfolio-2.jpg" alt="">
-										
-									</div>
-									<a class="btn btn-block">Some discription of page</a>
-                                    <p class="lead marg-l-10 discription"><span>something</span></p>
-								</div>
-								<!-- Modal -->
-								 
-								<!-- Modal end -->
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box outer-box">
-									<div class="overlay-container slices border">
-										<img src="images/portfolio-2.jpg" alt="">
-										
-									</div>
-									<a class="btn btn-block">Some discription of page</a>
-                                    <p class="lead marg-l-10 discription"><span>something</span></p>
-								</div>
-								<!-- Modal -->
-								 
-								<!-- Modal end -->
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box outer-box">
-									<div class="overlay-container slices border">
-										<img src="images/portfolio-2.jpg" alt="">
-										
-									</div>
-									<a class="btn btn-block">Some discription of page</a>
-                                    <p class="lead marg-l-10 discription"><span>something</span></p>
-								</div>
-								<!-- Modal -->
-								 
-								<!-- Modal end -->
-							</div>
-                  </div>
-				</div>
-			</div>
-		
-		<!-- section3 end -->
-
-		<!-- section4 slider start -->
-		<!-- ================ -->
-		<div id="slider" class="section translucent-bg">
-			<div class="container">
-							
-				<div class="row object-non-visible pad-10-10" data-animation-effect="fadeIn">
-                   <div  class="" >
-                    <ul class="">
-					<div class="col-sm-6 col-md-4">
-								<div class="image-box outer-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-2.jpg" alt="">
-										
-									</div>
-									
-								</div>
-								<!-- Modal -->
-								 
-								<!-- Modal end -->
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box outer-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-2.jpg" alt="">
-										
-									</div>
-									
-								</div>
-								<!-- Modal -->
-								 
-								<!-- Modal end -->
-							</div>
-                    <div class="col-sm-6 col-md-4">
-								<div class="image-box outer-box">
-									<div class="overlay-container">
-										<img src="images/portfolio-2.jpg" alt="">
-										
-									</div>
-									
-								</div>
-								<!-- Modal -->
-								 
-								<!-- Modal end -->
-							</div>
-                    </ul>
-                   </div>
-                     
-                    <div class="left icon-prev"><a data-target="#prev"><i class="fa fa-arrow-circle-left"></i></a></div>
-                    <div class="left icon-next"><a data-target="#next" ><i class="fa  fa-arrow-circle-right"></i></a></div>
-                    <div class="owl-dots" data-target="object1"></div><span></span>
-                    <div class="owl-dots" data-target="object2"></div><span></span>
-                    <div class="owl-dots" data-target="object3"></div><span></span>
-                    <div class="owl-dots" data-target="object4"></div><span></span>
-                    <div class="owl-dots" data-target="object5"></div><span></span>
-                    <div class="owl-dots" data-target="object6"></div><span></span>
-                  </div>
-			</div>
-		</div>
-		
-		<!-- section4 end -->
+               </header>
 
 
-		<!-- footer start -->
-		<!-- ================ -->
-			<div class="subfooter">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-                        	<div class=" col-md-6 pull-right">
-                            	
-                        		<ul class="social-links  col-md-6">
-                                	<li ><p class="f14">Follow us On</p></li>
-									<li class="facebook"><a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-									<li class="twitter"><a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-									<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-									<li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
-									<li class="youtube"><a target="_blank" href="http://www.youtube.com"><i class="fa fa-youtube"></i></a></li>
-									
-								</ul>
-                             </div>
-                             <div class=" col-md-6">
-                             	<p class=" text-left">Copyright © 2017 <a target="_blank" href="http://Venuse.in" style="color:#000;"><u>Venuse</u></a>. All Rights are Reserved</p>
-                             </div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		<!-- footer end -->
+         <div id="myCarousel" class="carousel slide myCarousel">
+    <!-- Indicators -->
+   
+    <!-- Wrapper for slides -->
+    <div class="" role="listbox">
 
-		
-        
-		
+      <div class="item active">
+        <video autoplay="autoplay" class="img img-responsive" height="700" id="background" loop="loop" muted="muted" width="1920"><source src="https://res.cloudinary.com/splacer/video/upload/c_fill,h_700,w_1920,x_0,y_225/v1/Production/Movies/Splacer_Dancer_VIDEO_1960x1080_short.webm" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/c_fill,h_700,w_1920,x_0,y_225/v1/Production/Movies/Splacer_Dancer_VIDEO_1960x1080_short.mp4" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/c_fill,h_700,w_1920,x_0,y_225/v1/Production/Movies/Splacer_Dancer_VIDEO_1960x1080_short.ogv" type="video/ogg">Your browser does not support HTML5 video tags</video>
+         <div class="carousel-caption" data-wow-delay="300ms">
+         <h1 class="hidden-xs">Find Your Space</h1>
+         <h2 class="hidden-xs">Discover &amp; Book Unique Spaces for Your Upcoming Activity</h2>
+         <div class="col-md-12 hidden-xs">
+         <div class="col-xs-5" style="padding-right:0px">
+         <div class="form-group input-group-lg">
+         <input class="form-control" type="search" style="height: 50px;" value="" id="search" placeholder="Location">
+         </div>
+         </div>
+         <div class="col-xs-6 text-center" style="padding-left:0px; padding-right:0px">
+          <div class="input-group input-group-lg">
+          <div class="dropdown1">
+            <button class="form-control btn btn1"  type="button" id="dropdownMenu1" style="height:50px; font-size:16px; color:#6d6e71" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span style=" font-size:20px;   right: 16px;
+    top: 22px;
+    position: absolute;" class="caret"></span></button>
+        <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
+        <li><a date-value="Event" href="#" style="font-size: 16px; padding: 10px 9px 10px 18px;">Event</a>
+        <span style="font-size: 13px; color: #6d6e71; display: block; padding:0px 14px">Private events, Business events, Parties,<br> Dinners, Wedding…</span></li>
+        <li><a date-value="Meeting" href="#" style="font-size: 16px; padding: 10px 9px 10px 18px;">Meeting </a>
+        <span style="font-size: 13px; color: #6d6e71; display: block; padding:0px 10px">Presentation, Offsite, Class/workshop,<br> Conference…</span></li>
+        <li><a date-value="Production" href="#" style="font-size: 16px; padding: 10px 9px 10px 18px;">Production </a>
+        <span style="font-size: 13px; color: #6d6e71; display: block; padding:0px 10px">Film/video shoot, Photo shoot, Fashion Show,<br> Product launch…</span></li>
+        <li><a date-value="Pop-up" href="#" style="font-size: 16px; padding: 10px 9px 10px 18px;">Pop-up </a>
+        <span style="font-size: 13px; color: #6d6e71; display: block; padding:0px 10px">Retail Pop Up, Pop Up Dinner, Art exhibit,<br> Other</span></li></ul>
+        </div>
+           <span class="input-group-addon" id="basic-addon2" style="font-size:16px; border: solid 1px #ffd64b;
+    background-color: #ffd64b; color: #262629; text-transform: uppercase;">Search</span>
+        </div>
+       </div>
+      </div>
+     
+      <div class="hidden-lg hidden-md">
+         <div class="col-xs-8 col-xs-offset-2" style="padding-right:0px; padding-left:0px;">
+         <div class="form-group input-group-xs">
+         <input class="form-control" type="search" value="" id="search" placeholder="Location">
+         </div>
+         </div>
+         <div class="col-xs-8 col-xs-offset-2" style="padding-left:0px; padding-right:0px">
+          <div class="input-group-xs">
+          <div class="dropdown1">
+            <button class="form-control btn btn1"  type="search" id="dropdownMenu1" style="height:25px; font-size:10px; color:#6d6e71" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span class="caret"></span></button>
+        <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
+        <li><a date-value="Event" href="#">Event</a>
+        <small style="padding:5px 15px; margin-bottom:10px">Private events, Business events, Parties, Dinners, Wedding…</small></li>
+        <li><a date-value="Meeting" href="#">Meeting </a>
+        <small>Presentation, Offsite, Class/workshop, Conference…</small></li>
+        <li><a date-value="Production" href="#">Production </a>
+        <small>Film/video shoot, Photo shoot, Fashion Show, Product launch…</small></li>
+        <li><a date-value="Pop-up" href="#">Pop-up </a>
+        <small>Retail Pop Up, Pop Up Dinner, Art exhibit, Other</small></li></ul>
+        </div>
 
-		<!-- JavaScript files placed at the end of the document so the pages load faster
-		================================================== -->
-		<!-- Jquery and Bootstap core js files -->
-		<script type="text/javascript" src="plugins/jquery.min.js"></script>
-		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        </div>
 
-		<!-- Modernizr javascript -->
-		<script type="text/javascript" src="plugins/modernizr.js"></script>
+       </div>
+ <div class="col-xs-4 col-xs-offset-4 text-center" style="padding:10px 0">
+           <span class="input-group-addon" id="basic-addon2" style="font-size:16px; border: solid 1px #ffd64b;
+    background-color: #ffd64b; color: #262629; text-transform: uppercase;">Search</span>
+    </div>
+      </div>
+      </div>
+    </div>
+ </div>
+  </div>       
+    </div>  
+     
+   
+   
+    <section class="section-padding wow fadeIn delay-05s">
+      <div class="home-page">
+   <div class="container">
+     <div class="col-md-12">
+       <img src="img/used_by.png" class="img-responsive" alt="">
+     </div>
+  
 
-		<!-- Isotope javascript -->
-		<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
-		
-		<!-- Backstretch javascript -->
-		<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
+   
+  
+     
+  <section class="section-padding wow fadeInUp delay-05s animated">
+    <div class="container">
+    <div class="text-center">
+    <h2 class="sp-home-head-2">Where are you planning an event?</h2>
+    <h3 class="sp-home-head-3">Let Us Help You Find Something Unexpected</h3>
+    </div>
+     <div class="row" style="padding:20px 0">
+      <div class="col-md-6 text-center" style="margin-top:20px">
+        <a href="popularity.html"><img src="img/ny-retina_3x.jpg" alt="" class="img-responsive">
+        <label class="lable-text">New York</label></a>
+      </div>
+      <div class="col-md-6 text-center" style="margin-top:20px">
+         <a href="popularity.html"><img src="img/s-f-retina_3x.jpg" alt="" class="img-responsive">
+        <label class="lable-text">San Francisco</label>  </a>
+     </div>
+  </div> 
+   <div class="row">
+      <div class="col-md-4 text-center" style="margin-top:20px">
+         <a href="popularity.html"><img src="img/l-a-retina_3x.jpg" alt="" class="img-responsive">
+        <label class="lable-text">Los Angeles</label></a>
+      </div>
+      <div class="col-md-4 text-center" style="margin-top:20px">
+        <img src="img/miami-retina_3x.jpg" alt="" class="img-responsive">
+         <a href="popularity.html"><label class="lable-text">Miami</label></a>
+      </div>
+      <div class="col-md-4 text-center" style="margin-top:20px">
+         <a href="popularity.html"><img src="img/chicago-retina_3x.jpg" alt="" class="img-responsive">
+        <label class="lable-text">Chicago</label></a>
+      </div>
+    </div>
+  </div>
+    </section>
+<section class="section-padding wow fadeInUp delay-05s animated" style="visibility: visible; animation-name: fadeInUp;">
+    <div class="text-center" style="padding:35px 0"><h2 class="sp-home-head-2">Book a space that suits you.</h2><h3 class="sp-home-head-3">Be inspired to meet, create, and innovate.</h3></div>
+   <div class="container">
+     <div class="row">
+       <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="spaces.html" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
 
-		<!-- Appear javascript -->
-		<script type="text/javascript" src="plugins/jquery.appear.js"></script>
+           <h2>Top Production & Photoshoot Locations</h2>
+           <span>New York</span></a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="spaces.html" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+         <h2>Beautiful venues for wedding celebrations in New York</h2>
+         <span>New York</span></a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="spaces.html" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <h2>Best meeting and offsite spaces in NY</h2>
+         <span>New York</span></a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="spaces.html" style="background-image: url('img/onp5xovrgzokzr09eqmg.jpg')">
+         <h2>Affordable event spaces</h2>
+         <span>New York</span></a>
+       </div>
+              <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="spaces.html" style="background-image: url('img/6.jpg')">
+         <h2>Best spaces for pop ups</h2>
+         <span>New York</span></a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="" style="background-image: url('img/iqa4g6o9pv70lxjauad1.jpg')">
+         <h2>Unique birthday party locations in NY</h2>
+         <span>New York</span></a>
+       </div>
+     </div>
+   </div>
+ </section>
+ </div>
+ </div>
+  
+    </section> 
+  <section style="background-color: #ffce4b; padding:100px 0;">
+      <div class="container">
+          <div class="row">
+           <div class="col-md-8">
+             <img class="img-responsive" src="img/webimages.png">
+            </div>
+           <div class="col-md-4">
+          <h2 class="h2-part5" style="margin-top: 27%; font-family: Georgia; font-size: 32px; line-height: 1.19; color:262629;">Become a Splacer host</h2>
+             <p class="p-text">Make the most of your space with SpacePro managment tools. Stay organized, manage leads, and track your earnings - all in one place.</p>
+              <a class="text-link" href="">Learn more</a>
+           </div>
+          </div>
+    </div>
+  </section>
 
-		<!-- Initialization of Plugins -->
-		<script type="text/javascript" src="js/template.js"></script>
-		
-        <!-- Login JS -->
-		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-		<script src="js/login.js"></script>
+  </style>
+<div class="container" style="padding-bottom: 25px">
+  <div class="text-center"><h2 class="sp-home-head-2">What's popular</h2><h3 class="sp-home-head-3">Explore a selection of creative venues</h3></div>
+  <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel1" data-slide-to="1"></li>
+      <li data-target="#myCarousel1" data-slide-to="2"></li>
+      <li data-target="#myCarousel1" data-slide-to="3"></li>
+    </ol>
 
-	</body>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+       <div class="row">
+       <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Historic Architectural Loft in NoHo</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Light Filled Loft</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Best meeting and offsite spaces in NY</h2>
+         <span>New York</span>
+  <div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+       </div>
+      </div>
+
+      <div class="item">
+       <div class="row">
+       <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Top Production & Photoshoot Locations</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Beautiful venues for wedding celebrations in New York</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Best meeting and offsite spaces in NY</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+       </div>
+      </div>
+    
+      <div class="item">
+       <div class="row">
+       <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Top Production & Photoshoot Locations</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Beautiful venues for wedding celebrations in New York</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Best meeting and offsite spaces in NY</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+       </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+       <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Top Production & Photoshoot Locations</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Beautiful venues for wedding celebrations in New York</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Best meeting and offsite spaces in NY</h2>
+         <span>New York</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+       </div>
+      </div>
+  
+    </div>
+
+ 
+  </div>
+</div>
+
+<div class="p-invaders-video" data-toggle="modal" data-target="#myModal">
+<img alt="Splacer stories" class="img-responsive" height="400" src="img/splacer_stories.jpg" width="1920">
+<section class="fa fa-play-circle-o fa-4x" style="color:#fff"><h2>Splacer Stories</h2><h3>See Experiences Others Have Created</h3></section>
+</div>
+
+
+  <div class="container">
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="autoplay" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="autoplay" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="autoplay" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="autoplay" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="autoplay" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal5" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="autoplay" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal6" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="autoplay" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<section style="padding:25px 0; margin-bottom: :20p">
+<div class="container main-row" style="padding:25px 0">
+
+  <div class="text-center"><h2 class="sp-home-head-2">Meet our community</h2><h3 class="sp-home-head-3">See what people are saying about Splacer</h3></div>
+</div>
+
+<div class="container">
+
+  <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel2" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal1" style="background-image:url('img/Recommendation_Alex_small.png');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From NY first gothic club to artist haven</div></footer></div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal2" style="background-image:url('img/Phillip_M-.png');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From NY first gothic club to artist haven</div></footer></div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal3" style="background-image:url('img/andrew.png');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From NY first gothic club to artist haven</div></footer></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal4" style="background-image:url('img/EVENT_PARTICIPANTS.jpg');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From NY first gothic club to artist haven</div></footer></div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal5" style="background-image:url('img/Joey_G-.png');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From NY first gothic club to artist haven</div></footer></div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal6" style="background-image:url('img/Paige_S-.png');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From NY first gothic club to artist haven</div></footer></div>
+        </div>
+      </div>
+    
+ 
+  
+    </div>
+
+  
+  </div>
+</div>
+</section>
+<section style="padding:25px 0; margin-top:80px; background-color:#eaebec">
+  
+
+<div class="container">
+   
+     <div class="col-md-2 text-center">
+       <div class="as-seen">As seen on:</div>
+     </div>
+     <div class="col-md-10 sp-relative">
+     <div class="seen-on-icons-1">
+       <div class="container">
+         <div class="col-md-2">
+            <a href="http://thenextweb.com/insider/2015/11/06/splacer-lets-you-find-unique-spaces-for-your-next-event-so-dont-abuse-it/#gref" rel="nofollow" target="_blank"><img alt="Tnw 2" height="18" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/as_seen_on_icons/tnw_2.png">
+            </a>
+          </div>
+          <div class="col-md-2">
+            <a href="http://www.wired.com/2015/11/new-startup-splacer-is-like-an-airbnb-for-event-spaces/" rel="nofollow" target="_blank"><img alt="Wired 2" height="18" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/as_seen_on_icons/wired_2.png">
+            </a>
+          </div>
+           <div class="col-md-2">
+             <a href="http://techcrunch.com/2015/09/07/real-estate-is-accessible-and-easy-to-navigate-thanks-to-these-startups/" rel="nofollow" target="_blank"><img alt="Tc 2" height="18" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/as_seen_on_icons/tc_2.png">
+             </a>
+           </div>
+            <div class="col-md-2">
+              <a href="http://www.entrepreneur.com/article/253984" rel="nofollow" target="_blank"><img alt="Entre 2" height="18" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/as_seen_on_icons/entre_2.png">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="http://www.architectmagazine.com/technology/architects-launch-airbnb-for-event-spaces_o" rel="nofollow" target="_blank"><img alt="Arch 2" height="18" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/as_seen_on_icons/arch_2.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+</section>
+<section>
+  <footer class="main-footer">
+    <section>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="footer-links">
+            <div class="row">
+              <div class="footer-links-part col-sm-5">
+                <h3>company</h3>
+                  <ul>
+                  <li><a href="/content/about">About</a></li>
+                  <li><a href="/content/press_and_media">Press</a></li>
+                  <li><a class="js-popup-tos" href="/content/terms_of_service">Terms</a></li>
+                  <li><a href="/content/privacy_policy">Privacy</a></li>
+                  <li><a href="/content/cancellation_policy">Cancellation</a></li>
+                  <li><a href="/content/liability_coverage">Space Liability Insurance</a></li>
+                  <li><a href="/site_map">Site map</a></li>
+                  <li><a href="/content/contact">Contact us</a></li>
+                  </ul>
+              </div>
+              <div class="footer-links-part col-sm-4">
+                <h3>discover</h3>
+                  <ul>
+                  <li><a href="http://blog.splacer.co" target="_blank">Blog</a></li>
+                  <li><a href="/content/how_it_works">How it works</a></li>
+                  <li><a href="https://splacer.zendesk.com">Help Center&nbsp;</a></li>
+                  <li><a href="/users/list_your_space">Add a space</a></li>
+                  <li><a href="" target="_blank">Host Referral Program</a></li>
+                  <li><a href="http://toolkits.splacer.co/?uid=568" target="_blank">Splacer360 Guidebook</a></li>
+                  </ul>
+              </div>
+              <div class="footer-links-part col-sm-3">
+                <h3>Cities</h3>
+                  <ul>
+                  <li><a href="" target="_blank">New York</a></li>
+                  <li><a href="" target="_blank">San Francisco</a></li
+                  ><li><a href="" target="_blank">Los Angeles</a></li>
+                  <li><a href="" target="_blank">Miami</a></li>
+                  <li><a href="" target="_blank">Chicago</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="msg hidden-xs">
+          <span></span>This product includes GeoLite data created by MaxMind, available from &nbsp;<a href="http://www.maxmind.com" target="blank">http://www.maxmind.com</a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+        <div class="footer-share-links">
+        <a href="" rel="nofollow" target="blank"></a>
+        <a href="" rel="nofollow" target="blank"></a>
+        <a href="" rel="nofollow" target="blank"></a>
+        <a href="" rel="nofollow" target="blank"></a>
+        <a href="" rel="nofollow" target="blank"></a>
+        <a href="" rel="nofollow" target="blank"></a>
+        <a href="" rel="nofollow" target="blank"></a>
+        <a href="" rel="nofollow" target="blank"></a>
+        <div class="copyright">Copyright © 2014-2016 Splacer Inc.<br> All rights reserved.</div>
+        <img alt="Small logo" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/header_footer/small_logo.png">
+        </div>
+    </div>
+  </div>
+  </section>
+  </footer>
+</section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="contactform/contactform.js"></script>
+    <script type="text/javascript" >
+   $(".dropdown-menu li a").click(function(){
+  $(this).parents(".dropdown1").find('.btn1').html($(this).text());
+  $(this).parents(".dropdown1").find('.btn1').val($(this).data('value'));
+});    </script>
+<script>
+var video = document.getElementById("video_background");
+video.addEventListener("canplay", function() {
+  setTimeout(function() {
+    video.play();
+  }, 5000);
+});
+</script>
+  </body>
 </html>
