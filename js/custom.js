@@ -65,9 +65,12 @@
             $("form span").css("color","#fff");
             $(".navbar-toggle i").css("color","#fff");
             $(".navbar-brand a img").css("background-img","url('img/Venuse-HighRes2.png')");
+			 
         }
     });
   
    
     
 })(jQuery);
+
+
