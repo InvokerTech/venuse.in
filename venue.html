@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link type="text/css" href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
      <link href="css/lightgallery.css" rel="stylesheet">
@@ -119,9 +121,10 @@
                </header>
             <nav class="splace-nav">
             	<section>
-            		<a id="splace-nav-splace"  class="active">the space</a>
-            		<a id="splace-nav-pricing">pricing</a>
-					<a id="splace-nav-amenities">amenities</a><a id="splace-nav-transportation">location</a>
+            		<a id="splace-nav-splace" href="#space"  class="active">the space</a>
+            		<a id="splace-nav-pricing" href="#pricing">pricing</a>
+					<a id="splace-nav-amenities" href="#amenities">amenities</a>
+                    <a id="splace-nav-transportation" href="#location">location</a>
 				</section>
 				</nav>
 <div id="myNav" class="overlay">
@@ -240,7 +243,7 @@
  	   </div>
  	   </div>
  	   <div class="revisited" style="margin-bottom: 40px"></div>
- 	   <div class="availability">
+ 	   <div class="availability" id="space">
  	   <section><h2>Availability</h2><div class="data"><span>Open 24 / 7</span>
  	   </div></section></div>
  	   <div style="margin-top:20px"></div>
@@ -265,7 +268,7 @@ ADDITIONAL FEES: Cleaning fee mandatory, on-site supervision fee and septic serv
            </section>
           </div>
           <div style="margin-top:30px"></div>
-          <div class="pricing">
+          <div class="pricing" id="pricing">
           	<section>
           		<h2>Pricing</h2>
           		  <div class="data">
@@ -333,7 +336,7 @@ ADDITIONAL FEES: Cleaning fee mandatory, on-site supervision fee and septic serv
             <div class="row">
              <div class="col-md-6 text-left" style="padding-right: 5px">
             <div class="text-left sp-fs-12px" style="color: #606060;">Start</div> 
-          <div class="input-append date form_datetime" id="reserve-form-datetime-check-in"><input name="check_in_at" placeholder="Start time" readonly="readonly" size="16" type="text" value="">
+          <div class="input-append date form_datetime" id="reserve-form-datetime-check-in"><input name="check_in_at" placeholder="Start time" readonly size="16" type="text" value="">
           <span class="add-on"><i class="icon-remove"></i></span>
           <span class="add-on"><i class="icon-th"></i></span>
                 	</div>
@@ -377,11 +380,208 @@ ADDITIONAL FEES: Cleaning fee mandatory, on-site supervision fee and septic serv
      	    <div class="sp-margin-top-10px"></div>
      	    </div>
    </section>
+ <style>
+   #owl-demo .item{
+ display: block;
+    padding: 18px 0px;
+    margin: 0px;
+    color: #000;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+ 
+ 
+ .owl-theme .owl-controls .owl-buttons div {
+      padding: 5px 9px;
+    }
 
+    .owl-theme .owl-buttons i{
+      margin-top: 2px;
+    font-size: 32px;
+    }
 
+    /*To move navigation buttons outside use these settings:*/
 
+    .owl-theme .owl-controls .owl-buttons div {
+      position: absolute;
+    }
+
+    .owl-theme .owl-controls .owl-buttons .owl-prev{
+      left: -34px;
+    top: 43px;
+    }
+
+    .owl-theme .owl-controls .owl-buttons .owl-next{
+       right: -34px;
+    top: 43px;
+    }
+    .splace-small-gallery-image {
+    height: 109px;
+    width: 193px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+    </style>
+    <div style="margin-top:40px"></div>
 <section>
-  <footer class="main-footer" style="z-index:0">
+	<div class="container">
+		<div class="col-sm-8 col-sm-offset">
+		<div id="owl-demo" class="owl-carousel owl-theme">
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574701/production/Splaces/001985/ulo3uotykeqlj6o32ajx.jpg);">
+		  	
+		   </div>
+		</div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image"  style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574556/production/Splaces/001985/lnkdeg7yerleipsncttp.jpg);">
+		  	
+		   </div>
+		 </div>
+		  <div class="item"><div class="splace-small-gallery-image"  style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574616/production/Splaces/001985/n2jtyndzvzlro8b7nz5h.jpg);">
+		  	
+		  </div>
+		 </div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574558/production/Splaces/001985/hdhqd2vubbdmfnccqxdb.jpg);">
+		    </div>
+		  </div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574662/production/Splaces/001985/xamsyxzq2k4itj4izmfe.jpg);">
+		    	
+		    </div>
+		  </div>
+		  <div class="item">
+		     <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574559/production/Splaces/001985/b8lvrhl6bo0p3nxzpfn9.jpg);">
+		     </div>
+		  </div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574552/production/Splaces/001985/kcgzjxbx1gnint3rijia.jpg);">
+		    </div>
+		  </div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574616/production/Splaces/001985/hohrpy2nuzaje7h9jg40.jpg);">
+		    </div>
+		  </div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574564/production/Splaces/001985/p3zueejb2fwtzqbu3ak0.jpg);">
+		    </div>
+		  </div>
+		 <div class="item">
+		   <div class="splace-small-gallery-image"  style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574592/production/Splaces/001985/iokhoqutqycchcvolfo3.jpg);">
+		   </div>
+		 </div>
+		</div>
+		</div>
+	</div>
+
+</section>
+<div style="margin-top:30px"></div>
+
+	<div class="splace-tags">
+	  <section id="splace-tags-section">
+	    <div class="splace-tag">Stairs<span></span><span></span></div>
+	    <div class="splace-tag">Colorful<span></span><span></span></div>
+	    <div class="splace-tag">High Ceiling<span></span><span></span></div>
+	    <div class="splace-tag">Large Windows<span></span><span></span></div>
+	    <div class="splace-tag">Dining Table<span></span><span></span></div>
+	    <div class="splace-tag">Modern Bathroom<span></span><span></span></div>
+	    <div class="splace-tag">Bathtub<span></span><span></span></div>
+	    <div class="splace-tag">Art<span></span><span></span></div>
+	    <div class="splace-tag">Garden<span></span><span></span></div>
+	    <div class="splace-tag">Plants<span></span><span></span></div>
+	    <div class="splace-tag">Furnished<span></span><span></span></div>
+	    <div class="splace-tag">Deck/Patio<span></span><span></span></div>
+	    <div class="splace-tag">Open Kitchen<span></span><span></span></div>
+	    <div class="splace-tag">Whimsical<span></span><span></span></div>
+	    </section>
+	    <div class="fade-effect"><a class="more" style="display: inline;"><i class="fa fa-angle-down"></i></a></div>
+	    </div>
+<div style="height:30px;pading"></div>
+   <div class="more-info" id="amenities">
+     <section>
+       <h2>Amenities</h2>
+         <div class="margin-top-30px">
+           </div>
+           <div class="row">
+             <div class="col-md-4">
+               <div class="splace-facility">Air Conditioning</div>
+                 <div class="splace-facility">Wifi</div>
+                 <div class="splace-facility">Kitchen</div>
+                 <div class="splace-facility">Tableware</div>
+                 <div class="splace-facility">Bathrooms</div>
+                 <div class="splace-facility">Heat</div>
+              </div>
+              <div class="col-md-4">
+              	<div class="splace-facility">Sound System</div>
+              	<div class="splace-facility">Large table</div>
+              	<div class="splace-facility">Lounge Furniture</div>
+              	<div class="splace-facility">Natural Light</div>
+              	<div class="splace-facility splace-facility-not-available">TV</div>
+              	<div class="splace-facility splace-facility-not-available">Lighting System</div>
+              </div>
+              <div class="col-md-4">
+              	<div class="splace-facility splace-facility-not-available">Stage</div>
+              	<div class="splace-facility splace-facility-not-available">Bare walls</div>
+              	<div class="splace-facility splace-facility-not-available">Projector</div>
+              	<div class="splace-facility splace-facility-not-available">Screen</div>
+              	<div class="splace-facility splace-facility-not-available">Whiteboard</div>
+              	<div class="splace-facility splace-facility-not-available">Photography Lighting</div>
+              </div>
+              <div class="col-md-4">
+                <div class="splace-facility splace-facility-not-available">Additional chairs</div>
+              </div>                
+            </div>
+               <div style="margin-top:40px"></div>
+                  <div class="row">
+                   <div class="col-md-4">
+                   <h2>Accessibility</h2>
+                   <div style="margin-top:30px"></div>
+                   <div class="splace-accessibility">Stairs</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Elevator</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Street level</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Wheelchair / handicapped accessible</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">On-site parking</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Freight elevator</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Delivery access</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Parking near by</div>
+                   <div class="splace-accessibility">on-site</div>
+                  </div>
+                  <div class="col-md-4">
+                  	<h2>Space Rules</h2>
+                  	 <div class="sp-margin-top-30px"></div>
+                  	 <div class="splace-rule">No open flame</div>
+                  	 <div class="splace-rule">No smoking</div>
+                  	 <div class="splace-rule">No alcohol (selling)</div>
+                  	 </div>
+                </div>
+            </section>
+         </div>
+         
+<section>
+<div style="margin:20px 0"></div>
+
+<section id="location">
+<div class="map">
+	<section>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.244526397339!2d77.23441831456742!3d28.562419082445473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce24c76aff925%3A0x455a11bc612344cd!2sAceFinity+Infotech+Pvt+Ltd!5e0!3m2!1sen!2sin!4v1494412800302" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+    </section>
+</div>
+</section>
+<div style="margin:20px 0"></div>
+<div class="parking"><section><h2>Parking</h2><div class="data">on-site</div></section></div>
+<div style="margin:20px 0"></div>
+
+<div class="cancellation">
+  <section>
+    <h2>Cancellation &amp; Security Deposit</h2>
+      <div class="data"><a href="">Cancellation policy:</a>&nbsp;<span class="sp-italic">Strict</span>&nbsp;<p>50% refund up to 1 week prior to arrival, except processing fees</p><div class="sp-margin-top-5px"></div>Security deposit:&nbsp;<span class="sp-italic">$2500.0</span>&nbsp;<p>(Will be collected separately by the space owner)</p></div>
+      </section>
+      </div>
+<div style="margin:20px 0"></div>
+  <footer class="main-footer" style="z-index:10080">
     <section>
       <div class="row">
         <div class="col-sm-8">
@@ -446,10 +646,10 @@ ADDITIONAL FEES: Cleaning fee mandatory, on-site supervision fee and septic serv
   </footer>
 </section>
 
-
+<script src="js/jquery-1.9.1.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
      <script src="js/bootstrap.min.js"></script>
-        
+     <script src="js/owl.carousel.js"></script>
     <script src="js/wow.js"></script>
      <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
      <script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
@@ -501,6 +701,15 @@ function closeNav() {
         event.preventDefault();
         }
     });
+    $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if(scroll >= 300) {
+        $(".right-widget").addClass("position-fixed");
+    } else {
+        $(".right-widget").removeClass("position-fixed");
+    }
+});
 </script>
 <script>
 $(document).ready(function () {
@@ -545,6 +754,39 @@ $(document).on('click', function (e) {
 
 </script>
 
+    <script>
+$(document).ready(function() {
+ 
+  //Sort random function
+  function random(owlSelector){
+    
+  }
+ 
+  $("#owl-demo").owlCarousel({
+    navigation: true,
+    items : 3,
+    navigationText: [
+      "<i class='fa fa-angle-left'></i>",
+      "<i class='fa fa-angle-right'></i>"
+      ],
+    beforeInit : function(elem){
+      //Parameter elem pointing to $("#owl-demo")
+      random(elem);
+    }
+ 
+  });
+ 
+});
+  $(".splace-nav section a").on('click', function(event) {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 900, function(){
+            window.location.hash = hash;
+        });
+    });
+    </script>
 
   </body>
 </html>

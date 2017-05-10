@@ -54,7 +54,6 @@
             $(".navbar-toggle i").css("color","#000");
             $(".top-nav-collapse").css("background-color","#fff");
             
-            
         } else {
             $(".navbar-default").css("background-color","transparent");
             $(".navbar").css("box-shadow","none");

@@ -1508,7 +1508,7 @@ a, a:hover, a:visited, a:focus {
     background-color: #f8f8f8;
 }
 .right-widget .main-section-a .sd-1 {
-    height: 66px;
+    height: 54px;
     padding: 10px 15px 0px;
     border-bottom: 1px solid #d2d2d2;
 }
@@ -2068,6 +2068,75 @@ TESTIMONIAL
 .btn-select ul li.selected {
     color: white;
 }
+.splace-tags {
+    width: 960px;
+    margin: auto;
+    text-align: left;
+    position: relative;
+}
+.splace-tags section {
+    width: 600px;
+    height: 68px;
+    overflow: hidden;
+}
+.splace-tags section .splace-tag {
+    background-color: #eaebec;
+    height: 21px;
+    line-height: 22px;
+    text-align: center;
+    display: inline-block;
+    color: #6f6f6f;
+    font-size: 12px;
+    position: relative;
+    z-index: 1;
+    margin: 0px 15px 11px;
+    padding: 0px 5px;
+}
+.splace-tags section .splace-tag span {
+    height: 21px;
+    width: 21px;
+    background-color: #eaebec;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+.splace-tags section .splace-tag span:nth-child(1) {
+    left: -10px;
+}
+.splace-tags section .splace-tag span:nth-child(2) {
+    right: -10px;
+}
+.splace-tags .fade-effect {
+    height: 38px;
+    width: 600px;
+    display: block;
+    bottom: -22px;
+    z-index: 10;
+    position: absolute;
+    background: transparent;
+    background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 25%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.75) 75%, #fff 100%);
+    background: -webkit-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 25%, rgba(255,255,255,0.5) 25%, rgba(255,255,255,0.75) 75%, #fff 25%);
+    background: -moz-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 25%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.75) 75%, #fff 100%);
+    background: -o-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 25%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.75) 75%, #fff 100%);
+    background: -ms-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 25%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.75) 75%, #fff 100%);
+}
+.splace-tags .fade-effect a {
+    padding-left: 10px;
+    display: none;
+    line-height: 50px;
+    text-decoration: none;
+}
+.splace-tags .fade-effect a i {
+    color: #606060;
+    padding-top: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+}
+.splace-tags .fade-effect a i:after {
+    font-family: ProximaNova;
+    content: "More";
+    padding-left: 5px;
+}
 
 /* Default Start */
 .btn-select.btn-default:hover, .btn-select.btn-default:active, .btn-select.btn-default.active {
@@ -2179,6 +2248,59 @@ Blog
     -o-transition: all 0.5s linear;
     transition: all 0.5s linear;
 }
+.more-info section {
+    width: 600px;
+    border-top: solid 1px #eaebec;
+    padding-top: 30px;
+}
+.more-info {
+    width: 960px;
+    margin: auto;
+    text-align: left;
+}
+.more-info section h2 {
+    font-family: Georgia;
+    font-style: italic;
+    font-size: 16px;
+}
+.sp-margin-top-30px {
+    height: 30px;
+}
+.more-info section .splace-facility{
+    font-size: 14px;
+    line-height: 22px;
+    color: #606060;
+    padding-left: 25px;
+    background-image: url(https://res.cloudinary.com/splacer/image/upload/Production/Assets/space_page/icon_check.png);
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: left center;
+}
+.more-info section .splace-facility-not-available{
+    color: #a6a6a6;
+    background-image: none;
+}
+.more-info section .splace-rule{
+    background-image: url(https://res.cloudinary.com/splacer/image/upload/Production/Assets/space_page/icon_rule.png);
+}
+.more-info section .splace-rule{
+    font-size: 14px;
+    line-height: 22px;
+    color: #606060;
+    padding-left: 25px;
+    background-image: url(https://res.cloudinary.com/splacer/image/upload/Production/Assets/space_page/icon_check.png);
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: left center;
+}
+.position-fixed{
+    position: fixed;
+    width: 324px;
+    top: 64px !important;
+    right: calc(50vw - 490px);
+    z-index: 1090;
+}
+
 /***********************************
 ************************************
 contact
@@ -2730,7 +2852,102 @@ contact
     background-repeat: no-repeat;
 }
 
+.splace-accessibility{
+	font-size: 14px;
+    line-height: 22px;
+    color: #606060;
+    padding-left: 25px;
+    background-image: url(https://res.cloudinary.com/splacer/image/upload/Production/Assets/space_page/icon_check.png);
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: left center;
+	}
+	 .splace-accessibility-not-available{
+		 color: #a6a6a6;
+    background-image: none;
+		 }
+		 .splace-accessibility{
+			 font-size: 14px;
+    line-height: 22px;
+    color: #606060;
+    padding-left: 25px;
+    background-image: url(https://res.cloudinary.com/splacer/image/upload/Production/Assets/space_page/icon_check.png);
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: left center;
+			 }
+.map {
+    width: 960px;
+    margin: auto;
+    text-align: left;
+}
+.map section {
+    width: 600px;
+    height: 271px;
+    border: 1px solid #979797;
+}
+.map section #splace-map{
+	height: 100%;
+    width: 100%;
+	}
+	
+	.parking{
+		    width: 960px;
+    margin: auto;
+    text-align: left;
+		}
 
+.parking section{
+	    width: 600px;
+}
+.parking section h2{
+	font-family: Georgia;
+    font-style: italic;
+    font-size: 16px;
+    display: inline-block;
+    width: 130px;
+    float: left;
+	}
+	.parking section data{
+		border-left: solid 1px #eaebec;
+    padding-left: 35px;
+    width: 470px;
+    display: inline-block;
+    min-height: 10px;
+    font-size: 13px;
+    color: #606060;
+   
+		}
+		
+		.cancellation {
+    width: 960px;
+    margin: auto;
+    text-align: left;
+}
+.cancellation section {
+    width: 600px;
+}
+.cancellation section h2 {
+    font-family: Georgia;
+    font-style: italic;
+    font-size: 16px;
+    display: inline-block;
+    width: 130px;
+    float: left;
+}
+.cancellation section .data {
+    border-left: solid 1px #eaebec;
+    padding-left: 35px;
+    width: 470px;
+    display: inline-block;
+    min-height: 10px;
+    font-size: 14px;
+    color: #606060;
+    
+}
+.cancellation .data a,.cancellation .data span {
+    font-size: 14px;
+    color: #606060;
 
 #footer
 {
