@@ -11,13 +11,84 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link type="text/css" href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
      <link href="css/lightgallery.css" rel="stylesheet">
+     <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
  
   </head>
   <body>
+<style>
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index:1080 ;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
 
+.overlay-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 0px;
+    right: 0px;
+  }
+}
+
+
+.btn-default.active:hover{
+	backgroung-color:#fff !important;
+	}
+	.btn-default.active {
+		backgroung-color:#fff !important;
+		
+		}
+		.btn-default:hover {
+   
+    background-color: #fff !important;
+}
+.btn.active, .btn:active{
+	webkit-box-shadow:none !important;
+    box-shadow:none !important;
+	}
+</style>
     
    
      
@@ -46,67 +117,471 @@
           
         </nav>
 
+
                </header>
-
- 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <nav class="splace-nav">
+            	<section>
+            		<a id="splace-nav-splace" href="#space"  class="active">the space</a>
+            		<a id="splace-nav-pricing" href="#pricing">pricing</a>
+					<a id="splace-nav-amenities" href="#amenities">amenities</a>
+                    <a id="splace-nav-transportation" href="#location">location</a>
+				</section>
+				</nav>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
    
-    <div class="carousel-inner" role="listbox">
 
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
       <div class="item active">
-        <img src="img/banner3.jpg" alt="Chania">
-        
+        <img src="img/banner3.jpg" alt="img1" style="width:100%;">
       </div>
 
-  
+      <div class="item">
+        <img src="img/banner3.jpg" alt="img2" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="img/banner3.jpg" alt="img3" style="width:100%;">
+      </div>
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>     
+  </div>
+  </div>
+</div>
+<section onclick="openNav()">
+  <div class="carousel slide">
+   <div class="carousel-inner">
+   <div class="item active" data-src="img/banner3.jpg" data-sub-html="<h4>Fading Light</h4>">
+        <img src="img/banner3.jpg" alt="Chania">
+        
+      </div>
      
-    
-   
-  
-<section class="section-padding wow fadeInUp delay-05s animated" style="visibility: visible; animation-name: fadeInUp;">
-<div class="home">
-<div class="demo-gallery">
-            <ul id="lightgallery" class="list-unstyled row">
-                <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="img/1-1600.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                    <a href="">
-                        <img class="img-responsive" src="img/thumb-1.jpg">
-                    </a>
-                </li>
-                <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/2-375.jpg 375, img/2-480.jpg 480, img/2.jpg 800" data-src="img/2-1600.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
-                    <a href="">
-                        <img class="img-responsive" src="img/thumb-2.jpg">
-                    </a>
-                </li>
-                <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/13-375.jpg 375, img/13-480.jpg 480, img/13.jpg 800" data-src="img/13-1600.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
-                    <a href="">
-                        <img class="img-responsive" src="img/thumb-13.jpg">
-                    </a>
-                </li>
-                <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/4-375.jpg 375, img/4-480.jpg 480, img/4.jpg 800" data-src="img/4-1600.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
-                    <a href="">
-                        <img class="img-responsive" src="img/thumb-4.jpg">
-                    </a>
-                </li>
-            </ul>
-        </div>
-        </div>
-</section>
 
-
+	</div>
+    <!-- Left and right controls -->
+          <span class="left carousel-control" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </span>
+    <span class="right carousel-control" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </span>
+  </div>     
+    </section> 
 <section>
-  <footer class="main-footer">
+  <div class="add-this-links">
+   	<div class="addthis_sharing_toolbox" style="clear:both">
+      <div class="at-share-btn-elements">
+      	<a class="fa fa-facebook-square fa-2x"></a>
+        <a class="fa fa-twitter-square fa-2x"></a>
+        <a class="fa fa-pinterest-square fa-2x"></a>
+        <a class="fa fa-whatsapp fa-2x"></a>
+        <a class="fa fa-envelope-square fa-2x"></a>
+      </div>
+    </div> 	
+  </div>
+</section>
+<section style="padding-top:17px" >
+ <div class="path">
+   <ol itemtype="">
+    <li itemprop="itemListElement" itemtype="">
+   		<a href="/" itemprop="item" itemtype=""><span itemprop="name">Home</span></a>
+    </li>
+    <li itemprop="itemListElement" itemtype="">
+    	<a href="" itemprop="item" itemtype=""><span itemprop="name">New York</span></a>
+    </li>
+    <li itemprop="itemListElement" itemtype="">
+    	<a href="" itemprop="item" itemtype=""><span itemprop="name">Manhattan</span></a>
+    </li>
+    <li itemprop="itemListElement" itemtype="">
+    	<a href="" itemprop="item" itemtype=""><span itemprop="name">Greenwich Village</span></a>
+    </li>
+    <li itemprop="itemListElement" itemtype="">
+    	<a href="" itemprop="item" itemtype=""><span itemprop="name">Lower Manhattan</span></a>
+    </li>
+    <li itemprop="itemListElement" itemtype="">
+    	<a itemprop="item" itemtype=""><span itemprop="name">Space #1385</span></a>
+    </li>
+   </ol>
+ </div>
+ <div style="margin-top:20px"></div>
+ <div class="title"><h1>The Floating Farmhouse</h1><span>Eldred | Highland</span></div>
+ <div style="margin-top:20px"></div>
+ 	<div class="events-allowed">
+ 	  <div class="item">
+ 	    <img alt="Icon eventype event on" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/space_page/icon_eventype_Event_on.png">
+ 	    <span>Event</span>
+ 	  </div>
+ 	  <div class="item">
+ 	    <img alt="Icon eventype meeting on" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/space_page/icon_eventype_Meeting_on.png">
+ 	      <span>Meeting</span>
+ 	   </div>
+ 	   <div class="item">
+ 	     <img alt="Icon eventype production on" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/space_page/icon_eventype_Production_on.png">
+ 	     <span>Production</span>
+ 	   </div>
+ 	   <div class="item">
+ 	     <img alt="Icon eventype pop up on" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/space_page/icon_eventype_Pop-up_on.png">
+ 	     <span>Pop-up</span>
+ 	   </div>
+ 	   <div class="item">
+ 	     <img alt="Icon guests" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/space_page/icon_guests.png">
+ 	     <span>135 Max</span>
+ 	   </div>
+ 	   </div>
+ 	   <div class="revisited" style="margin-bottom: 40px"></div>
+ 	   <div class="availability" id="space">
+ 	   <section><h2>Availability</h2><div class="data"><span>Open 24 / 7</span>
+ 	   </div></section></div>
+ 	   <div style="margin-top:20px"></div>
+ 	   <div class="splace-description">
+ 	     <section>
+ 	     <h2>The Space</h2>
+ 	       <div class="data">
+ 	         <p>A mix of modern architecture and old-world charm makes the Floating Farmhouse, an 1820 Catskills manor home featured by Dwell magazine and Architectural Digest, an inspired destination. Perched at the edge of a pristine creek and ancient dam of hand-laid stone, the home's grand spaces, dramatic details, and expansive aura are as enchanting as the landscape surrounding it.
+
+A cathedral-like kitchen features polished concrete floors, a wood-fired pizza oven, and a two-story wall of skyscraper glass framing views of the brook, gazebo, sweeping lawns, apple trees, and barn. French doors lead to a grand covered porch suspended over the water's edge, and the waterfall's cascading rhythms fill the cavernous great room and master suite. Original cast-iron beds and wavy glass windows adorn all sleeping quarters, and vintage farmhouse furnishings abound throughout.
+
+OCCUPANCY BREAKDOWN: Dinner party for 12 around kitchen table, for 24 if dining al fresco around the covered porch dining tables.  35 people for interior cocktail party, more if extended to outdoor living areas (such as covered porch).  Up to 100 for weddings and receptions, lectures, and other outdoor events.
+
+ADDITIONAL FEES: Cleaning fee mandatory, on-site supervision fee and septic service fee/portable bathroom rental based on group size.</p>
+         <div style="margin-top:20px"></div>
+         <span> Street level</span><span>&nbsp; | &nbsp;</span><span>3600 sq. feet<span>&nbsp; | &nbsp;</span></span><span>House</span><span>&nbsp; | &nbsp;</span><span>5 Rooms</span><span>&nbsp; | &nbsp;</span><span>5 Bathrooms</span></div></section></div>
+         <div class="host-description">
+         <section>
+         <div style="margin-top:30px"></div>
+           <h2>The Host</h2>
+            <div class="data">The homeowner is also the home's designer; it's one of several 19th century structures that Tom has renovated in a similarly historic/modern fashion.  His projects have been featured by Dwell magazine, Architectural Digest, and other noteworthy design forums and publications.  He was also featured as part of Porsche's "Powered by Design" video series, showcasing innovative artists and designers on the leading edge of their craft.  Tom lives full-time in NYC but sneaks away to the country as often as he can.</div>
+           </section>
+          </div>
+          <div style="margin-top:30px"></div>
+          <div class="pricing" id="pricing">
+          	<section>
+          		<h2>Pricing</h2>
+          		  <div class="data">
+          		   <div class="row">
+          		    <div class="col-md-6">
+          		      <div class="row">
+          		       <div class="col-md-2">
+          		       <img alt="Icon pricing hourly" height="28" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/space_page/icon_pricing_hourly.png">
+          		       </div>
+          		       <div class="col-md-10">
+          		         <div class="span1">Hourly (starting from)</div>
+          		          <div class="span2">$435</div>
+          		     	</div>
+          		      </div>
+          		   </div>
+          		 </div>
+          		 <div style="margin-top:30px"></div>
+          		   <div class="sp-fs-12px">
+          		     <img alt="Icon plus" height="7" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/space_page/icon_plus.png">&nbsp;Minimum hours:&nbsp;&nbsp;<span class="sp-georgia sp-italic sp-fs-14px">6</span>
+          		   </div>
+          		  <div class="sp-fs-12px"></div>
+          		</div>
+          	</section>
+          </div>
+</section>
+   <section class="right-widget">
+   	 <div class="main-section-a">
+     	<div class="row sd-1">
+     	  <div class="col-xs-7 h-price">Starting From<br><span>$150</span>&nbsp;/hr (minimum 4 hr)</div>
+          <div class="col-xs-5 h-stars"><div class="sp-pointer">(2 Reviews)</div></div>
+         </div>
+         <div class="sd-3">
+         	<div class="reserve" id="reservation-section">
+              <form id="reservation-form">
+              <div class="row">
+              	<div class="col-md-6 text-left" style="padding-right: 5px">
+                  <div class="text-left sp-fs-12px" style="color: #606060;">Event Type</div> 
+                    <a class="btn btn-default btn-select btn-select-light">
+                        <input type="hidden" class="btn-select-input" id="" name="" value="" />
+                        <span class="btn-select-value">Select Item</span>
+                        <i class='btn-select-arrow fa fa-caret-down'></i>
+                        <ul>
+                            <li>Event</li>
+                            <li>Meeting</li>
+                            <li>Production</li>
+                            <li>Pop-up</li>
+                        </ul>
+                    </a>              
+            </div>
+        	<div class="col-md-6 right-select" style="padding-left: 5px">
+               <div class="text-left sp-fs-12px" style="color: #606060;">No. of guests</div>
+               <a class="btn btn-default btn-select btn-select-light">
+                        <input type="hidden" class="btn-select-input" id="" name="" value="" />
+                        <span class="btn-select-value">Select an Item</span>
+                        <i class='btn-select-arrow fa fa-caret-down'></i>
+                        <ul>
+                            <li>Option 1</li>
+                            <li>Option 2</li>
+                            <li>Option 3</li>
+                            <li>Option 4</li>
+                        </ul>
+                    </a>
+              </div>
+            </div>
+            <div class="row">
+             <div class="col-md-6 text-left" style="padding-right: 5px">
+            <div class="text-left sp-fs-12px" style="color: #606060;">Start</div> 
+          <div class="input-append date form_datetime" id="reserve-form-datetime-check-in"><input name="check_in_at" placeholder="Start time" readonly size="16" type="text" value="">
+          <span class="add-on"><i class="icon-remove"></i></span>
+          <span class="add-on"><i class="icon-th"></i></span>
+                	</div>
+                   </div>
+                  <div class="col-md-6 text-right" style="padding-left: 5px">
+                    <div class="text-left sp-fs-12px" style="color: #606060;">End</div>
+                      <div class="input-append date form_datetime" id="reserve-form-datetime-check-out">
+                         <input name="check_out_at" placeholder="End time" readonly size="16" type="text" value="">
+                           <span class="add-on"><i class="icon-remove"></i></span>
+                           <span class="add-on"><i class="icon-th"></i></span>
+                        
+                        </div>
+                      </div>
+                     </div>
+            </form>
+            		<div style="margin-top:20px"></div>
+                      <input class="contact-host-btn" onclick="openCHF('contact')" type="button" value="Contact Host">
+                      <div class="sp-margin-top-7px"></div>
+                      <input class="book-visit-btn" onclick="openCHF('visit')" type="button" value="Book a visit">
+
+          </div>
+          <div class="row sd-2">
+            <div class="col-xs-3">
+              <img alt="M6lgkas71k5jfshwsx4a" class="img-circle" height="70" src="https://res.cloudinary.com/splacer/image/upload/c_thumb,g_face,h_70,r_max,w_70/v1/production/users/m6lgkas71k5jfshwsx4a.jpg" width="70">
+            </div>
+           <div class="col-xs-8 owner-d">
+              <div class="owner-name">Tom G.&nbsp;</div>
+                 <div class="sp-margin-top-10px"></div>
+                  <div class="sp-margin-top-3px"></div>
+                  <img alt="Trusted owner" class="trusted-owner-img-sm" data-tooltip="Trusted owner" height="14" id="#trusted-owner-tooltip" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/space_page/trusted_owner.png">&nbsp;Trusted owner<br>Member since Apr '16<br>Responds within&nbsp;<span class="sp-bold">11 hours</span>
+                  </div>
+                  </div>
+        </div>
+     </div>
+     <div class="main-section-b">
+     	<div class="sp-margin-top-30px"></div>
+     	  <div class="sp-fs-14px">Need more help booking a space?</div>
+     	  <div class="sp-fs-14px">Splacer representatives are here to help.</div>
+     	  <div class="sp-fs-14px">
+     	    <a class="sp-fs-14px" href="mailto:info@splacer.co">Contact us</a>&nbsp;with any questions.</div>
+     	    <div class="sp-margin-top-10px"></div>
+     	    </div>
+   </section>
+ <style>
+   #owl-demo .item{
+ display: block;
+    padding: 18px 0px;
+    margin: 0px;
+    color: #000;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+ 
+ 
+ .owl-theme .owl-controls .owl-buttons div {
+      padding: 5px 9px;
+    }
+
+    .owl-theme .owl-buttons i{
+      margin-top: 2px;
+    font-size: 32px;
+    }
+
+    /*To move navigation buttons outside use these settings:*/
+
+    .owl-theme .owl-controls .owl-buttons div {
+      position: absolute;
+    }
+
+    .owl-theme .owl-controls .owl-buttons .owl-prev{
+      left: -34px;
+    top: 43px;
+    }
+
+    .owl-theme .owl-controls .owl-buttons .owl-next{
+       right: -34px;
+    top: 43px;
+    }
+    .splace-small-gallery-image {
+    height: 109px;
+    width: 193px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+    </style>
+    <div style="margin-top:40px"></div>
+<section>
+	<div class="container">
+		<div class="col-sm-8 col-sm-offset">
+		<div id="owl-demo" class="owl-carousel owl-theme">
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574701/production/Splaces/001985/ulo3uotykeqlj6o32ajx.jpg);">
+		  	
+		   </div>
+		</div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image"  style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574556/production/Splaces/001985/lnkdeg7yerleipsncttp.jpg);">
+		  	
+		   </div>
+		 </div>
+		  <div class="item"><div class="splace-small-gallery-image"  style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574616/production/Splaces/001985/n2jtyndzvzlro8b7nz5h.jpg);">
+		  	
+		  </div>
+		 </div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574558/production/Splaces/001985/hdhqd2vubbdmfnccqxdb.jpg);">
+		    </div>
+		  </div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574662/production/Splaces/001985/xamsyxzq2k4itj4izmfe.jpg);">
+		    	
+		    </div>
+		  </div>
+		  <div class="item">
+		     <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574559/production/Splaces/001985/b8lvrhl6bo0p3nxzpfn9.jpg);">
+		     </div>
+		  </div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574552/production/Splaces/001985/kcgzjxbx1gnint3rijia.jpg);">
+		    </div>
+		  </div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574616/production/Splaces/001985/hohrpy2nuzaje7h9jg40.jpg);">
+		    </div>
+		  </div>
+		  <div class="item">
+		    <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574564/production/Splaces/001985/p3zueejb2fwtzqbu3ak0.jpg);">
+		    </div>
+		  </div>
+		 <div class="item">
+		   <div class="splace-small-gallery-image"  style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574592/production/Splaces/001985/iokhoqutqycchcvolfo3.jpg);">
+		   </div>
+		 </div>
+		</div>
+		</div>
+	</div>
+
+</section>
+<div style="margin-top:30px"></div>
+
+	<div class="splace-tags">
+	  <section id="splace-tags-section">
+	    <div class="splace-tag">Stairs<span></span><span></span></div>
+	    <div class="splace-tag">Colorful<span></span><span></span></div>
+	    <div class="splace-tag">High Ceiling<span></span><span></span></div>
+	    <div class="splace-tag">Large Windows<span></span><span></span></div>
+	    <div class="splace-tag">Dining Table<span></span><span></span></div>
+	    <div class="splace-tag">Modern Bathroom<span></span><span></span></div>
+	    <div class="splace-tag">Bathtub<span></span><span></span></div>
+	    <div class="splace-tag">Art<span></span><span></span></div>
+	    <div class="splace-tag">Garden<span></span><span></span></div>
+	    <div class="splace-tag">Plants<span></span><span></span></div>
+	    <div class="splace-tag">Furnished<span></span><span></span></div>
+	    <div class="splace-tag">Deck/Patio<span></span><span></span></div>
+	    <div class="splace-tag">Open Kitchen<span></span><span></span></div>
+	    <div class="splace-tag">Whimsical<span></span><span></span></div>
+	    </section>
+	    <div class="fade-effect"><a class="more" style="display: inline;"><i class="fa fa-angle-down"></i></a></div>
+	    </div>
+<div style="height:30px;pading"></div>
+   <div class="more-info" id="amenities">
+     <section>
+       <h2>Amenities</h2>
+         <div class="margin-top-30px">
+           </div>
+           <div class="row">
+             <div class="col-md-4">
+               <div class="splace-facility">Air Conditioning</div>
+                 <div class="splace-facility">Wifi</div>
+                 <div class="splace-facility">Kitchen</div>
+                 <div class="splace-facility">Tableware</div>
+                 <div class="splace-facility">Bathrooms</div>
+                 <div class="splace-facility">Heat</div>
+              </div>
+              <div class="col-md-4">
+              	<div class="splace-facility">Sound System</div>
+              	<div class="splace-facility">Large table</div>
+              	<div class="splace-facility">Lounge Furniture</div>
+              	<div class="splace-facility">Natural Light</div>
+              	<div class="splace-facility splace-facility-not-available">TV</div>
+              	<div class="splace-facility splace-facility-not-available">Lighting System</div>
+              </div>
+              <div class="col-md-4">
+              	<div class="splace-facility splace-facility-not-available">Stage</div>
+              	<div class="splace-facility splace-facility-not-available">Bare walls</div>
+              	<div class="splace-facility splace-facility-not-available">Projector</div>
+              	<div class="splace-facility splace-facility-not-available">Screen</div>
+              	<div class="splace-facility splace-facility-not-available">Whiteboard</div>
+              	<div class="splace-facility splace-facility-not-available">Photography Lighting</div>
+              </div>
+              <div class="col-md-4">
+                <div class="splace-facility splace-facility-not-available">Additional chairs</div>
+              </div>                
+            </div>
+               <div style="margin-top:40px"></div>
+                  <div class="row">
+                   <div class="col-md-4">
+                   <h2>Accessibility</h2>
+                   <div style="margin-top:30px"></div>
+                   <div class="splace-accessibility">Stairs</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Elevator</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Street level</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Wheelchair / handicapped accessible</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">On-site parking</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Freight elevator</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Delivery access</div>
+                   <div class="splace-accessibility splace-accessibility-not-available">Parking near by</div>
+                   <div class="splace-accessibility">on-site</div>
+                  </div>
+                  <div class="col-md-4">
+                  	<h2>Space Rules</h2>
+                  	 <div class="sp-margin-top-30px"></div>
+                  	 <div class="splace-rule">No open flame</div>
+                  	 <div class="splace-rule">No smoking</div>
+                  	 <div class="splace-rule">No alcohol (selling)</div>
+                  	 </div>
+                </div>
+            </section>
+         </div>
+         
+<section>
+<div style="margin:20px 0"></div>
+
+<section id="location">
+<div class="map">
+	<section>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.244526397339!2d77.23441831456742!3d28.562419082445473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce24c76aff925%3A0x455a11bc612344cd!2sAceFinity+Infotech+Pvt+Ltd!5e0!3m2!1sen!2sin!4v1494412800302" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+    </section>
+</div>
+</section>
+<div style="margin:20px 0"></div>
+<div class="parking"><section><h2>Parking</h2><div class="data">on-site</div></section></div>
+<div style="margin:20px 0"></div>
+
+<div class="cancellation">
+  <section>
+    <h2>Cancellation &amp; Security Deposit</h2>
+      <div class="data"><a href="">Cancellation policy:</a>&nbsp;<span class="sp-italic">Strict</span>&nbsp;<p>50% refund up to 1 week prior to arrival, except processing fees</p><div class="sp-margin-top-5px"></div>Security deposit:&nbsp;<span class="sp-italic">$2500.0</span>&nbsp;<p>(Will be collected separately by the space owner)</p></div>
+      </section>
+      </div>
+<div style="margin:20px 0"></div>
+  <footer class="main-footer" style="z-index:10080">
     <section>
       <div class="row">
         <div class="col-sm-8">
@@ -171,148 +646,147 @@
   </footer>
 </section>
 
-<style>
-  .demo-gallery > ul {
-              margin-bottom: 0;
-            }
-            .demo-gallery > ul > li {
-                float: left;
-                margin-bottom: 15px;
-                margin-right: 20px;
-                width: 200px;
-            }
-            .demo-gallery > ul > li a {
-              border: 3px solid #FFF;
-              border-radius: 3px;
-              display: block;
-              overflow: hidden;
-              position: relative;
-              float: left;
-            }
-            .demo-gallery > ul > li a > img {
-              -webkit-transition: -webkit-transform 0.15s ease 0s;
-              -moz-transition: -moz-transform 0.15s ease 0s;
-              -o-transition: -o-transform 0.15s ease 0s;
-              transition: transform 0.15s ease 0s;
-              -webkit-transform: scale3d(1, 1, 1);
-              transform: scale3d(1, 1, 1);
-              height: 100%;
-              width: 100%;
-            }
-            .demo-gallery > ul > li a:hover > img {
-              -webkit-transform: scale3d(1.1, 1.1, 1.1);
-              transform: scale3d(1.1, 1.1, 1.1);
-            }
-            .demo-gallery > ul > li a:hover .demo-gallery-poster > img {
-              opacity: 1;
-            }
-            .demo-gallery > ul > li a .demo-gallery-poster {
-              background-color: rgba(0, 0, 0, 0.1);
-              bottom: 0;
-              left: 0;
-              position: absolute;
-              right: 0;
-              top: 0;
-              -webkit-transition: background-color 0.15s ease 0s;
-              -o-transition: background-color 0.15s ease 0s;
-              transition: background-color 0.15s ease 0s;
-            }
-            .demo-gallery > ul > li a .demo-gallery-poster > img {
-              left: 50%;
-              margin-left: -10px;
-              margin-top: -10px;
-              opacity: 0;
-              position: absolute;
-              top: 50%;
-              -webkit-transition: opacity 0.3s ease 0s;
-              -o-transition: opacity 0.3s ease 0s;
-              transition: opacity 0.3s ease 0s;
-            }
-            .demo-gallery > ul > li a:hover .demo-gallery-poster {
-              background-color: rgba(0, 0, 0, 0.5);
-            }
-            .demo-gallery .justified-gallery > a > img {
-              -webkit-transition: -webkit-transform 0.15s ease 0s;
-              -moz-transition: -moz-transform 0.15s ease 0s;
-              -o-transition: -o-transform 0.15s ease 0s;
-              transition: transform 0.15s ease 0s;
-              -webkit-transform: scale3d(1, 1, 1);
-              transform: scale3d(1, 1, 1);
-              height: 100%;
-              width: 100%;
-            }
-            .demo-gallery .justified-gallery > a:hover > img {
-              -webkit-transform: scale3d(1.1, 1.1, 1.1);
-              transform: scale3d(1.1, 1.1, 1.1);
-            }
-            .demo-gallery .justified-gallery > a:hover .demo-gallery-poster > img {
-              opacity: 1;
-            }
-            .demo-gallery .justified-gallery > a .demo-gallery-poster {
-              background-color: rgba(0, 0, 0, 0.1);
-              bottom: 0;
-              left: 0;
-              position: absolute;
-              right: 0;
-              top: 0;
-              -webkit-transition: background-color 0.15s ease 0s;
-              -o-transition: background-color 0.15s ease 0s;
-              transition: background-color 0.15s ease 0s;
-            }
-            .demo-gallery .justified-gallery > a .demo-gallery-poster > img {
-              left: 50%;
-              margin-left: -10px;
-              margin-top: -10px;
-              opacity: 0;
-              position: absolute;
-              top: 50%;
-              -webkit-transition: opacity 0.3s ease 0s;
-              -o-transition: opacity 0.3s ease 0s;
-              transition: opacity 0.3s ease 0s;
-            }
-            .demo-gallery .justified-gallery > a:hover .demo-gallery-poster {
-              background-color: rgba(0, 0, 0, 0.5);
-            }
-            .demo-gallery .video .demo-gallery-poster img {
-              height: 48px;
-              margin-left: -24px;
-              margin-top: -24px;
-              opacity: 0.8;
-              width: 48px;
-            }
-            .demo-gallery.dark > ul > li a {
-              border: 3px solid #04070a;
-            }
-            .home .demo-gallery {
-              padding-bottom: 80px;
-            }
-        
-</style>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.9.1.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/owl.carousel.js"></script>
     <script src="js/wow.js"></script>
-    <script src="js/jquery.bxslider.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
-        <script src="js/lightgallery.js"></script>
-        <script src="js/lg-fullscreen.js"></script>
-        <script src="js/lg-thumbnail.js"></script>
-        <script src="js/lg-video.js"></script>
-        <script src="js/lg-autoplay.js"></script>
-        <script src="js/lg-zoom.js"></script>
-        <script src="js/lg-hash.js"></script>
-        <script src="js/lg-pager.js"></script>
-        <script src="js/jquery.mousewheel.min.js"></script>
-   
-    <script type="text/javascript" >
+     <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+     <script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+    <script type="text/javascript">
    $(".dropdown-menu li a").click(function(){
   $(this).parents(".dropdown1").find('.btn1').html($(this).text());
   $(this).parents(".dropdown1").find('.btn1').val($(this).data('value'));
 });    </script>
- <script type="text/javascript">
-        $(document).ready(function(){
-            $('#lightgallery').lightGallery();
+ 
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: "dd MM yyyy - hh:ii",
+        autoclose: true,
+        todayBtn: true,
+        pickerPosition: "bottom-left"
+    });
+</script> 
+
+
+<script>
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
+</script>
+<script>
+ $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if(scroll >= 50) {
+        $(".splace-nav").addClass("display-nav");
+    } else {
+        $(".splace-nav").removeClass("display-nav");
+    }
+});
+   $('.splace-nav section a').bind('click', function(event) {
+        $('.splace-nav section a').removeClass('active');
+        $(this).closest('a').addClass('active');
+        var $anchor = $(this);
+        var nav = $($anchor.attr('href'));
+        if (nav.length) {
+        $('html, body').stop().animate({				
+            scrollTop: $($anchor.attr('href')).offset().top				
+        }, 1500, 'easeInOutExpo');
+        
+        event.preventDefault();
+        }
+    });
+    $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if(scroll >= 300) {
+        $(".right-widget").addClass("position-fixed");
+    } else {
+        $(".right-widget").removeClass("position-fixed");
+    }
+});
+</script>
+<script>
+$(document).ready(function () {
+    $(".btn-select").each(function (e) {
+        var value = $(this).find("ul li.selected").html();
+        if (value != undefined) {
+            $(this).find(".btn-select-input").val(value);
+            $(this).find(".btn-select-value").html(value);
+        }
+    });
+});
+
+$(document).on('click', '.btn-select', function (e) {
+    e.preventDefault();
+    var ul = $(this).find("ul");
+    if ($(this).hasClass("active")) {
+        if (ul.find("li").is(e.target)) {
+            var target = $(e.target);
+            target.addClass("selected").siblings().removeClass("selected");
+            var value = target.html();
+            $(this).find(".btn-select-input").val(value);
+            $(this).find(".btn-select-value").html(value);
+        }
+        ul.hide();
+        $(this).removeClass("active");
+    }
+    else {
+        $('.btn-select').not(this).each(function () {
+            $(this).removeClass("active").find("ul").hide();
         });
-        </script>
+        ul.slideDown(300);
+        $(this).addClass("active");
+    }
+});
+
+$(document).on('click', function (e) {
+    var target = $(e.target).closest(".btn-select");
+    if (!target.length) {
+        $(".btn-select").removeClass("active").find("ul").hide();
+    }
+});
+
+</script>
+
+    <script>
+$(document).ready(function() {
+ 
+  //Sort random function
+  function random(owlSelector){
+    
+  }
+ 
+  $("#owl-demo").owlCarousel({
+    navigation: true,
+    items : 3,
+    navigationText: [
+      "<i class='fa fa-angle-left'></i>",
+      "<i class='fa fa-angle-right'></i>"
+      ],
+    beforeInit : function(elem){
+      //Parameter elem pointing to $("#owl-demo")
+      random(elem);
+    }
+ 
+  });
+ 
+});
+  $(".splace-nav section a").on('click', function(event) {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 900, function(){
+            window.location.hash = hash;
+        });
+    });
+    </script>
+
   </body>
 </html>

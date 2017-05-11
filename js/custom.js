@@ -54,7 +54,6 @@
             $(".navbar-toggle i").css("color","#000");
             $(".top-nav-collapse").css("background-color","#fff");
             
-            
         } else {
             $(".navbar-default").css("background-color","transparent");
             $(".navbar").css("box-shadow","none");
@@ -65,9 +64,12 @@
             $("form span").css("color","#fff");
             $(".navbar-toggle i").css("color","#fff");
             $(".navbar-brand a img").css("background-img","url('img/Venuse-HighRes2.png')");
+			 
         }
     });
   
    
     
 })(jQuery);
+
+
