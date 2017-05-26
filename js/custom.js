@@ -1,7 +1,8 @@
 (function ($) {
     
     // Init Wow
-    wow = new WOW( {
+    'use strict';
+   var wow = new WOW( {
         animateClass: 'animated',
         offset:       100
     });

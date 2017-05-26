@@ -1,0 +1,615 @@
+
+<app-header></app-header>
+
+  <!--Log in Modal -->
+  <div class="modal fade" id="login-modal"  role="dialog">
+    <div class="modal-dialog" id="login-and-sign-up">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h3 class="modal-title">Log in</h3>
+        </div>
+        <div class="modal-body">
+         <form>               
+				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
+				<input type="hidden" name="utf8" value="✓">               
+				<a class="fb-btn" href="/users/auth/facebook">LOG IN WITH FACEBOOK</a>               
+				<a class="google-btn" href="/users/auth/google_oauth2">LOG IN WITH GOOGLE</a>              
+		<div style="margin-top:20px"></div>               
+		<div style="margin-top:8px"></div>               
+			<div class="form-group">                   
+				<label class="hidden"> Email </label>                   
+				<input class="form-control" type="email" name="" placeholder="Email">               
+			</div>               
+			<div class="form-group">                   
+				<label class="hidden"> Password </label>                   
+				<input class="form-control" type="password" name="" placeholder="Password">                   
+				              
+			</div>               
+				<div style="margin-top:20px"></div>               
+				<div style="margin-top:25px"></div>               
+			<div class="form-group form-btn">                   
+				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Log in">                   
+				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="img/ajax-loader.gif">               
+			</div>               
+			<div class="form-group user-forgot">                   
+				<a href="#" class="form-switch" data-toggle="modal" data-target="#forget-modal" >Forgot password?</a>               
+			</div>               
+		<div class="form-group form-footer">
+		Don't have an account yet? <a href="#" class="form-switch sp-bold" data-to-form="signup">Sign up</a>  
+		</div>  
+	
+		</form> 
+<div class="clearfix"></div>		
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+ 
+  <!-- SignUp Modal -->
+  <div class="modal fade" id="signup-modal" role="dialog">
+    <div class="modal-dialog" id="login-and-sign-up">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h3 class="modal-title">Create Your Account</h3>
+        </div>
+        <div class="modal-body">
+         <form>               
+				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
+				<input type="hidden" name="utf8" value="✓">               
+				<a class="fb-btn" href="/users/auth/facebook">LOG IN WITH FACEBOOK</a>               
+				<a class="google-btn" href="/users/auth/google_oauth2">LOG IN WITH GOOGLE</a>              
+		<div style="margin-top:20px"></div>               
+		<div style="margin-top:30px"></div>  
+			<h6>Sign up with Email</h6>	
+			<div class="form-group">                   
+				<label class="hidden"> Your Name </label>                   
+				<input class="form-control" type="text" name="" placeholder="Your Name">               
+			</div>			
+			<div class="form-group">                   
+				<label class="hidden">Your Email </label>                   
+				<input class="form-control" type="email" name="" placeholder="Your Email">               
+			</div>               
+			<div class="form-group">                   
+				<label class="hidden">Choose a Password </label>                   
+				<input class="form-control" type="password" name="" placeholder="Choose a Password">                   
+				              
+			</div>               
+				<div style="margin-top:20px"></div>               
+				<div style="margin-top:30px"></div>  
+				<div class="form-group user-agree"> 
+				By signing up I agree to Venuse's <a href="">Terms of Service</a>              
+				</div>             
+			<div class="form-group form-btn">                   
+				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Sign up">                   
+				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="img/ajax-loader.gif">               
+			</div>               
+			     
+		<div class="form-group form-footer">
+		Already have an account? <a href="#" class="form-switch sp-bold" data-to-form="login-modal">Login in</a>  
+		</div>  
+	
+		</form> 
+<div class="clearfix"></div>		
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+
+  <div id="myCarousel" class="carousel slide myCarousel">
+    <!-- Indicators -->
+   
+    <!-- Wrapper for slides -->
+    <div id="banner" role="listbox">
+        
+      <div class="item active" id="banner-background">
+          
+       <div class="carousel-caption" data-wow-delay="150ms">
+         <h1 class="">Find Your Space</h1>
+         <h2 class="">Discover &amp; Book Unique Spaces for Your Upcoming Activity</h2>
+         <div class="col-sm-12 ">
+             <div class="col-sm-5 " style="padding-right:0px ; padding-left:0px">
+                 <div class="form-group input-group-lg">
+                    <input class="form-control" type="search" style="height: 50px;" value="" id="search" placeholder="Location">
+                 </div>
+             </div>
+             <div class="col-sm-6 text-center" style="padding-left:0px; padding-right:0px">
+          <div class="input-group input-group-lg">
+          <div class="dropdown1 open">
+            <button class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:50px; font-size:16px; color:#6d6e71" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span style=" font-size:20px;   right: 16px;
+    top: 22px;
+    position: absolute;" class="caret"></span></button>
+        <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
+        <li><a date-value="Event" >Event</a>
+        <span >Private events, Business events, Parties,<br> Dinners, Wedding…</span></li>
+        <li><a date-value="Meeting" >Meeting </a>
+        <span >Presentation, Offsite, Class/workshop,<br> Conference…</span></li>
+        <li><a date-value="Production">Production </a>
+        <span>Film/video shoot, Photo shoot, Fashion Show,<br> Product launch…</span></li>
+        <li><a date-value="Pop-up" >Pop-up </a>
+        <span>Retail Pop Up, Pop Up Dinner, Art exhibit,<br> Other</span></li></ul>
+        </div>
+           <span class="input-group-addon" id="basic-addon2" style="font-size:16px; border: solid 1px #ffd64b;
+    background-color: #ffd64b; color: #262629; text-transform: uppercase;">Search</span>
+        </div>
+       </div>
+      </div>
+     
+          <div class="hidden-lg hidden-md hidden-sm hidden-xs">
+         <div class="col-xs-12" style="">
+         <div class="form-group input-group-xs">
+         <input class="form-control" type="search" value="" id="search" placeholder="Location">
+         </div>
+         </div>
+              
+         <div class="col-xs-12" style="margin:0px 7px;">
+          <div class="input-group-xs">
+          <div class="dropdown1">
+            <button class="form-control btn btn1"  type="search" id="dropdownMenu1" style="height:25px; font-size:10px; color:#444; overflow:hidden;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span class="caret pull-right" style="margin-top:3px"></span></button>
+        <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
+        <li><a date-value="Event" href="#">Event</a>
+        <small style="padding:5px 15px; margin-bottom:10px">Private events, Business events, Parties, Dinners, Wedding…</small></li>
+        <li><a date-value="Meeting" href="#">Meeting </a>
+        <small>Presentation, Offsite, Class/workshop, Conference…</small></li>
+        <li><a date-value="Production" href="#">Production </a>
+        <small>Film/video shoot, Photo shoot, Fashion Show, Product launch…</small></li>
+        <li><a date-value="Pop-up" href="#">Pop-up </a>
+        <small>Retail Pop Up, Pop Up Dinner, Art exhibit, Other</small></li></ul>
+        </div>
+
+        </div>
+
+       </div>
+ <div class="col-xs-4 col-xs-offset-4 text-center" style="padding:10px 0">
+           <span class="input-group-addon" id="basic-addon2" style="font-size:16px; border: solid 1px #ffd64b;
+    background-color: #ffd64b; color: #262629; text-transform: uppercase;">Search</span>
+    </div>
+      </div>
+      </div>
+    </div>
+ </div>
+  </div>       
+
+     
+   
+   <div class="modal fade" id="forget-modal"  role="dialog">
+    <div class="modal-dialog" id="login-and-sign-up">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h3 class="modal-title">Reset your pasword</h3>
+        </div>
+        <div class="modal-body">
+		<div style="margin-top:40px"></div>               
+		<div style="margin-top:8px"></div>   
+		<h6 style="font-size:14px; color:#808184; text-align:center;">Enter your email address, and we’ll send you reset password link.</h6>
+         <form>                           
+		<div style="margin-top:20px"></div>               
+		<div style="margin-top:8px"></div>               
+			<div class="form-group">                   
+				<label class="hidden"> Email </label>                   
+				<input class="form-control" type="email" name="" placeholder="Your Email">               
+			</div>               
+			 <div class="form-group form-btn">                   
+				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Send reset link">                   
+				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="https://res.cloudinary.com/splacer/image/upload/v1444126905/Production/Assets/ajax-loader.gif">               
+			</div> 
+		<div class="form-group form-footer">
+		<a href="#" class="form-switch sp-bold" data-to-form="signup">Back to Log-in</a>  
+		</div>  
+	
+		</form> 
+<div class="clearfix"></div>		
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+   
+    
+     
+  <section class="section-padding animated">
+    <div class="container">
+    <div class="text-center">
+    <h2 class="sp-home-head-2">Where are you planning an event?</h2>
+    <h3 class="sp-home-head-3">Let Us Help You Find Something Unexpected</h3>
+    </div>
+     <div class="row" style="padding:20px 0">
+      <div class="col-sm-6 text-center" style="margin-top:20px">
+        <a href="popularity.html"><img src="img/ny-retina_3x.jpg" alt="" class="img-responsive">
+        <label class="lable-text">Pune</label></a>
+      </div>
+      <div class="col-sm-6 text-center" style="margin-top:20px">
+         <a href="popularity.html"><img src="img/s-f-retina_3x.jpg" alt="" class="img-responsive">
+        <label class="lable-text">Mumbai</label>  </a>
+     </div>
+  </div> 
+        
+        <style>
+            .grayscale {
+                -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+                filter: grayscale(100%);
+            }
+            .comingsoon {
+                font-size: 14px;
+                color: #f2f2f2;
+                text-align: center;
+            }
+        </style>
+   <div class="row grayscale">
+      <div class="col-sm-4 text-center" style="margin-top:20px">
+         <a href="popularity.html"><img src="img/l-a-retina_3x.jpg" alt="" class="img-responsive">
+        <label class="lable-text">Delhi<br><span class="comingsoon">Coming Soon...</span></label></a>
+      </div>
+      <div class="col-sm-4 text-center" style="margin-top:20px">
+        <img src="img/miami-retina_3x.jpg" alt="" class="img-responsive">
+         <a href="popularity.html"><label class="lable-text">Bangalore<br><span class="comingsoon">Coming Soon...</span></label></a>
+      </div>
+      <div class="col-sm-4 text-center" style="margin-top:20px">
+         <a href="popularity.html"><img src="img/chicago-retina_3x.jpg" alt="" class="img-responsive">
+        <label class="lable-text">Hyderabad<br><span class="comingsoon">Coming Soon...</span></label></a>
+      </div>
+       <div class="col-sm-4 col-sm-offset-2 text-center" style="margin-top:20px">
+        <img src="img/miami-retina_3x.jpg" alt="" class="img-responsive">
+         <a href="popularity.html"><label class="lable-text">Kolkata<br><span class="comingsoon">Coming Soon...</span></label></a>
+      </div>
+      <div class="col-sm-4 text-center" style="margin-top:20px">
+         <a href="popularity.html"><img src="img/chicago-retina_3x.jpg" alt="" class="img-responsive">
+        <label class="lable-text">Chennai<br><span class="comingsoon">Coming Soon...</span></label></a>
+      </div>
+    </div>
+  </div>
+    </section>
+      
+<section class="section-padding animated" style=" padding:0px 0px 25px;visibility: visible;">
+    <div class="text-center" style="padding:35px 0"><h2 class="sp-home-head-2">Book a space that suits you.</h2><h3 class="sp-home-head-3">Be inspired to meet, create, and innovate.</h3></div>
+   <div class="container">
+     <div class="row">
+       <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="spaces.html" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
+
+           <h2>Top Production & Photoshoot Locations</h2>
+           <span>Pune</span></a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="spaces.html" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+         <h2>Beautiful venues for wedding celebrations in Pune</h2>
+         <span>Pune</span></a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="spaces.html" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <h2>Best meeting and offsite spaces in Pune</h2>
+         <span>Pune</span></a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="spaces.html" style="background-image: url('img/onp5xovrgzokzr09eqmg.jpg')">
+         <h2>Affordable event spaces</h2>
+         <span>Pune</span></a>
+       </div>
+              <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="spaces.html" style="background-image: url('img/6.jpg')">
+         <h2>Best spaces for pop ups</h2>
+         <span>Pune</span></a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="" style="background-image: url('img/iqa4g6o9pv70lxjauad1.jpg')">
+         <h2>Unique birthday party locations in Pune</h2>
+         <span>Pune</span></a>
+       </div>
+     </div>
+   </div>
+ </section>
+
+  <section style="background-color: #ffce4b; padding:25px 0;">
+      <div class="container">
+          <div class="row">
+           <div class="col-md-8">
+             <img class="img-responsive" src="img/webimages.png">
+            </div>
+           <div class="col-md-4">
+          <h2 class="h2-part5" style="margin-top: 27%; font-family: Georgia; font-size: 32px; line-height: 1.19; color:262629;">Become a Venuse host</h2>
+             <p class="p-text">Make the most of your space with Venuse business managment tools. Stay organized, manage leads, and track your earnings - all in one place.</p>
+              <a class="text-link" href="">Learn more</a>
+           </div>
+          </div>
+    </div>
+  </section>
+
+  
+<div class="container" style="padding:50px; border-bottom:1px solid #ededed;">
+  <div class="text-center"><h2 class="sp-home-head-2">What's popular</h2><h3 class="sp-home-head-3">Explore a selection of creative Venues</h3></div>
+  <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel1" data-slide-to="1"></li>
+      <li data-target="#myCarousel1" data-slide-to="2"></li>
+      <li data-target="#myCarousel1" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+       <div class="row">
+       <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Historic Architectural Loft in Pune</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Light Filled Loft</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Best meeting and offsite spaces in Pune</h2>
+         <span>Pune</span>
+  <div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+       </div>
+      </div>
+
+      <div class="item">
+       <div class="row">
+       <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Top Production & Photoshoot Locations</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Beautiful venues for wedding celebrations in Pune</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Best meeting and offsite spaces in Pune</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+       </div>
+      </div>
+    
+      <div class="item">
+       <div class="row">
+       <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Top Production & Photoshoot Locations</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Beautiful venues for wedding celebrations in Pune</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Best meeting and offsite spaces in Pune</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+       </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+       <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Top Production & Photoshoot Locations</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 20px">
+         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Beautiful venues for wedding celebrations in Pune</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+        <div class="col-md-4 landing-part" style="margin-top: 25px">
+         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
+         <h2 class="sp-title">Best meeting and offsite spaces in Pune</h2>
+         <span>Pune</span>
+<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
+         </a>
+       </div>
+       </div>
+      </div>
+  
+    </div>
+
+ 
+  </div>
+</div>
+
+<div class="container" id="mutevideo">
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="false" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true" muted><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="false" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true"muted><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="false" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true" muted><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="false" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true" muted><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="false" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true" muted><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal5" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="false" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true" muted><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="myModal6" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <video autoplay="false" id="video_background"  class="img img-responsive" height="100%" width="100%" controls="controls" preload="true" muted><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.webm?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/webm"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.mp4?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/mp4"><source src="https://res.cloudinary.com/splacer/video/upload/v1/Production/Movies/Splacer_60_sec_Teaser_v7_Final_70mb.ogv?token2=1441181223_e94615b60bc8d3734cc9a2246abe2a81&amp;aksessionid=6f5f3f057f8f957a" type="video/ogg">Your browser does not support HTML5 video tags</video>
+       
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<section style="padding-top:25px; padding-bottom:50px;">
+    
+<div class="container main-row" style="padding:25px 0">
+
+  <div class="text-center"><h2 class="sp-home-head-2">Meet our community</h2><h3 class="sp-home-head-3">See what people are saying about Venuse</h3></div>
+</div>
+
+<div class="container">
+
+  <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel2" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal1" style="background-image:url('img/Recommendation_Alex_small.png');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From Pune first gothic club to artist haven</div></footer></div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal2" style="background-image:url('img/Phillip_M-.png');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From Pune first gothic club to artist haven</div></footer></div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal3" style="background-image:url('img/andrew.png');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From Pune first gothic club to artist haven</div></footer></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal4" style="background-image:url('img/EVENT_PARTICIPANTS.jpg');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From Pune first gothic club to artist haven</div></footer></div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal5" style="background-image:url('img/Joey_G-.png');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From Pune first gothic club to artist haven</div></footer></div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-single-recommendation" data-toggle="modal" data-target="#myModal6" style="background-image:url('img/Paige_S-.png');">
+          <span class="fa fa-play-circle-o fa-4x" style="padding:110px 120px; color:#fff"></span>
+          <footer class="text-left"><span class="sp-single-splace-title">Alex S.</span><span class="sp-home-activity-spaces-num">&nbsp;&nbsp;&nbsp;Townhouse in Alphabet city</span><div class="sp-light-black-text">From Pune first gothic club to artist haven</div></footer></div>
+        </div>
+      </div>
+    
+ 
+  
+    </div>
+
+  
+  </div>
+</div>
+</section>
+      
+      <app-footer></app-footer>
+

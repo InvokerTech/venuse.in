@@ -1,0 +1,288 @@
+<app-header></app-header>
+  <!--Log in Modal -->
+  <div class="modal fade" id="login-modal"  role="dialog">
+    <div class="modal-dialog" id="login-and-sign-up">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h3 class="modal-title">Log in</h3>
+        </div>
+        <div class="modal-body">
+         <form>               
+				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
+				<input type="hidden" name="utf8" value="✓">               
+				<a class="fb-btn" href="/users/auth/facebook">LOG IN WITH FACEBOOK</a>               
+				<a class="google-btn" href="/users/auth/google_oauth2">LOG IN WITH GOOGLE</a>              
+		<div style="margin-top:20px"></div>               
+		<div style="margin-top:8px"></div>               
+			<div class="form-group">                   
+				<label class="hidden"> Email </label>                   
+				<input class="form-control" type="email" name="" placeholder="Email">               
+			</div>               
+			<div class="form-group">                   
+				<label class="hidden"> Password </label>                   
+				<input class="form-control" type="password" name="" placeholder="Password">                   
+				              
+			</div>               
+				<div style="margin-top:20px"></div>               
+				<div style="margin-top:25px"></div>               
+			<div class="form-group form-btn">                   
+				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Log in">                   
+				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="https://res.cloudinary.com/splacer/image/upload/v1444126905/Production/Assets/ajax-loader.gif">               
+			</div>               
+			<div class="form-group user-forgot">                   
+				<a href="#" class="form-switch" data-toggle="modal" data-target="#forget-modal" >Forgot password?</a>               
+			</div>               
+		<div class="form-group form-footer">
+		Don't have an account yet? <a href="#" class="form-switch sp-bold" data-to-form="signup">Sign up</a>  
+		</div>  
+	
+		</form> 
+<div class="clearfix"></div>		
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  
+  <!-- SignUp Modal -->
+  <div class="modal fade" id="signup-modal" role="dialog">
+    <div class="modal-dialog" id="login-and-sign-up">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h3 class="modal-title">Create Your Account</h3>
+        </div>
+        <div class="modal-body">
+         <form>               
+				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
+				<input type="hidden" name="utf8" value="✓">               
+				<a class="fb-btn" href="/users/auth/facebook">LOG IN WITH FACEBOOK</a>               
+				<a class="google-btn" href="/users/auth/google_oauth2">LOG IN WITH GOOGLE</a>              
+		<div style="margin-top:20px"></div>               
+		<div style="margin-top:30px"></div>  
+			<h6>Sign up with Email</h6>	
+			<div class="form-group">                   
+				<label class="hidden"> Your Name </label>                   
+				<input class="form-control" type="text" name="" placeholder="Your Name">               
+			</div>			
+			<div class="form-group">                   
+				<label class="hidden">Your Email </label>                   
+				<input class="form-control" type="email" name="" placeholder="Your Email">               
+			</div>               
+			<div class="form-group">                   
+				<label class="hidden">Choose a Password </label>                   
+				<input class="form-control" type="password" name="" placeholder="Choose a Password">                   
+				              
+			</div>               
+				<div style="margin-top:20px"></div>               
+				<div style="margin-top:30px"></div>  
+				<div class="form-group user-agree"> 
+				By signing up I agree to Venuse's <a href="">Terms of Service</a>              
+				</div>             
+			<div class="form-group form-btn">                   
+				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Sign up">                   
+				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="https://res.cloudinary.com/splacer/image/upload/v1444126905/Production/Assets/ajax-loader.gif">               
+			</div>               
+			     
+		<div class="form-group form-footer">
+		Already have an account? <a href="#" class="form-switch sp-bold" data-to-form="login-modal">Login in</a>  
+		</div>  
+	
+		</form> 
+<div class="clearfix"></div>		
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+
+<div class="static-pages-header-md">
+  <div class="static-pages-header-image">
+      <img alt="Header team" class="img-responsive" height="530" src="https://res.cloudinary.com/splacer/image/upload/c_crop,g_south,h_530,w_1920/v1/Production/Assets/static_pages/team_page/header_team.jpg" width="1920">
+  </div>
+  <div class="static-pages-nav_bar">
+     <a class="" href="/#/about">About</a>
+     <a class="" href="/#/security_deposits">Security Deposits</a>
+     <a class="" href="/#/cancellation_policy">Cancellation Policy</a>
+     <a class="active-link" href="/#/team">Team</a>
+</div>>
+</div>
+
+   <div class="modal fade" id="forget-modal"  role="dialog">
+    <div class="modal-dialog" id="login-and-sign-up">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h3 class="modal-title">Reset your pasword</h3>
+        </div>
+        <div class="modal-body">
+		<div style="margin-top:40px"></div>               
+		<div style="margin-top:8px"></div>   
+		<h6 style="font-size:14px; color:#808184; text-align:center;">Enter your email address, and we’ll send you reset password link.</h6>
+         <form>                           
+		<div style="margin-top:20px"></div>               
+		<div style="margin-top:8px"></div>               
+			<div class="form-group">                   
+				<label class="hidden"> Email </label>                   
+				<input class="form-control" type="email" name="" placeholder="Your Email">               
+			</div>               
+			 <div class="form-group form-btn">                   
+				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Send reset link">                   
+				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="https://res.cloudinary.com/splacer/image/upload/v1444126905/Production/Assets/ajax-loader.gif">               
+			</div> 
+		<div class="form-group form-footer">
+		<a href="#" class="form-switch sp-bold" data-to-form="signup">Back to Log-in</a>  
+		</div>  
+	
+		</form> 
+<div class="clearfix"></div>		
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
+   <div class="sp-margin-top-40px"></div>
+   <div class="sp-margin-top-5px"></div>
+<section>
+    <div class="container">
+   <div class="main-content">
+      <h1>Meet the team </h1>
+        <div class="sp-margin-top-50px"></div>
+        <div class="sp-margin-top-5px"></div>
+           <div class="row">
+               
+             <div class="col-md-4">
+               <div class="row">
+                 <div class="col-md-5">
+                   <img alt="Adi" class="founder-img" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/team_page/adi.png">
+                  </div>
+                  <div class="col-md-7">
+                   <div class="sp-margin-top-20px"></div>
+                   <h2>adi biran</h2>
+                   <div class="sp-margin-top-7px"></div>
+                   <div class="founder-title">Founder | CEO</div>
+                   <div class="sp-margin-top-7px"></div>
+                   <div class="s-links">
+                    <a href="" target="_blank">
+                      <i class="glyphicon glyphicon-envelope"></i>
+                    </a>
+                    <a href="" target="_blank">
+                      <img alt="Icon linkedin" src="glyphicon glyphicon-linkedin">
+                    </a>
+                   </div>
+                  </div>
+                </div>
+                <div class="sp-margin-top-20px"></div>
+                <div class="sp-margin-top-4px"></div>
+                <p>Adi is an accomplished architect, lecturer, and entrepreneur working in Israel and New York, where she owned her own architecture and consulting firm. She brings her creativity, business development and research skills to Venuse. Adi holds a B.Arch. Degree from the Pratt Institute of Architecture, and a Master's in Advanced Architecture Design from Columbia University, both with the highest honors.</p>
+            </div>
+             <div class="col-md-4">
+              <div class="row">
+               <div class="col-md-5">
+                 <img alt="Lihi" class="founder-img" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/team_page/lihi.png">
+               </div>
+               <div class="col-md-7">
+                 <div class="sp-margin-top-20px"></div>
+                  <h2>lihi gerstner</h2>
+                  <div class="sp-margin-top-7px"></div>
+                  <div class="founder-title">Founder | CMO</div>
+                  <div class="sp-margin-top-7px"></div>
+                    <div class="s-links">
+                     <a href="" target="_blank">
+                      <i class="glyphicon glyphicon-envelope"></i>
+                    </a>
+                    <a href="" target="_blank">
+                      <img alt="Icon linkedin" src="glyphicon glyphicon-linkedin">
+                    </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="sp-margin-top-20px"></div>
+                <div class="sp-margin-top-4px"></div>
+                <p>Lihi is an accomplished architect with international experience who owned and managed architecture offices in NYC, Paris, Bxl &amp; TLV. Lihi brings this international experience to Venuse, together with her sense of style and design as a creative director in the fashion, advertising and art. She holds a B.Arch. Degree from the Pratt Institute of Architecture, and a Master's in Advanced Architecture Design from Columbia University, both with the highest honors.</p>
+              </div> 
+             <div class="col-md-4 text-left">
+            <div class="row">
+              <div class="col-md-5">
+               <img alt="Lior" class="founder-img" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/team_page/lior.png">
+              </div>
+              <div class="col-md-7">
+                <div class="sp-margin-top-20px"></div>
+                  <h2>lior ash</h2>
+                    <div class="sp-margin-top-7px"></div>
+                     <div class="founder-title">Founder | CTO</div>
+                     <div class="sp-margin-top-7px"></div>
+                     <div class="s-links">
+                       <a href="" target="_blank">
+                      <i class="glyphicon glyphicon-envelope"></i>
+                    </a>
+                    <a href="" target="_blank">
+                      <img alt="Icon linkedin" src="glyphicon glyphicon-linkedin">
+                    </a>
+                      </div>
+                    </div>
+                  </div>
+                <div class="sp-margin-top-20px"></div>
+                <div class="sp-margin-top-4px"></div>
+                <p>Lior was the COO of Mysupermarket.co.uk, leading all R&amp;D, IT and Operations for mySupermaket websites and mobile apps. He holds a B.Sc (in Dean's List) in Software Engineering from the Technion Institute of Technology, Haifa, Israel.</p>
+              </div>
+            </div>
+    </div>
+    </div>
+</section>
+        <div class="sp-margin-top-50px"></div>
+       
+        <div class="row">
+              <div class="col-md-6 text-left hidden">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img alt="Maria" class="founder-img" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/team_page/maria.png">
+                   </div>
+                    <div class="col-md-7">
+                     <div class="sp-margin-top-20px"></div>
+                      <h2>maria molland</h2>
+                       <div class="sp-margin-top-7px"></div>
+                       <div class="founder-title">Founder | COO &amp; Head of Growth</div>
+                       <div class="sp-margin-top-7px"></div>
+                       <div class="s-links">
+                         <a href="" target="_blank">
+                          <i class="glyphicon glyphicon-envelope"></i>
+                        </a>
+                        <a href="" target="_blank">
+                          <img alt="Icon linkedin" src="glyphicon glyphicon-linkedin">
+                        </a>
+                        </div>
+                      </div>
+                    </div>
+                  <div class="sp-margin-top-20px"></div>
+                  <div class="sp-margin-top-4px"></div>
+                  <p>Maria has over 20 years of experience in the development and management of marketplace, e-commerce, digital media, and technology businesses. She brings broad, international experience and experience scaling companies from small teams to hundreds of people globally.</p>
+              </div>
+            </div>
+           
+            <div class="sp-margin-top-70px"></div>
+            <div class="sp-margin-top-8px"></div>
+<section>
+    <div class="center-image">
+     <img alt="Team photo" class="img-responsive" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/team_page/team_photo.png">
+    </div>      
+</section>
+<section>
+  <div class="center-text">We are longtime friends and collaborators that share a passion for architecture and community.<br> As a team, we see Splacer as not just a new marketplace, but a part of a greater<br> movement to improve the way we meet, make and create.</div>
+  
+</section>
+<app-footer></app-footer>

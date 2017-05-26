@@ -1,0 +1,240 @@
+
+<app-header></app-header>
+  <!--Log in Modal -->
+  <div class="modal fade" id="login-modal"  role="dialog">
+    <div class="modal-dialog" id="login-and-sign-up">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h3 class="modal-title">Log in</h3>
+        </div>
+        <div class="modal-body">
+         <form>               
+				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
+				<input type="hidden" name="utf8" value="✓">               
+				<a class="fb-btn" href="/users/auth/facebook">LOG IN WITH FACEBOOK</a>               
+				<a class="google-btn" href="/users/auth/google_oauth2">LOG IN WITH GOOGLE</a>              
+		<div style="margin-top:20px"></div>               
+		<div style="margin-top:8px"></div>               
+			<div class="form-group">                   
+				<label class="hidden"> Email </label>                   
+				<input class="form-control" type="email" name="" placeholder="Email">               
+			</div>               
+			<div class="form-group">                   
+				<label class="hidden"> Password </label>                   
+				<input class="form-control" type="password" name="" placeholder="Password">                   
+				              
+			</div>               
+				<div style="margin-top:20px"></div>               
+				<div style="margin-top:25px"></div>               
+			<div class="form-group form-btn">                   
+				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Log in">                   
+				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="https://res.cloudinary.com/splacer/image/upload/v1444126905/Production/Assets/ajax-loader.gif">               
+			</div>               
+			<div class="form-group user-forgot">                   
+				<a href="#" class="form-switch" data-toggle="modal" data-target="#forget-modal" >Forgot password?</a>               
+			</div>               
+		<div class="form-group form-footer">
+		Don't have an account yet? <a href="#" class="form-switch sp-bold" data-to-form="signup">Sign up</a>  
+		</div>  
+	
+		</form> 
+<div class="clearfix"></div>		
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  
+  <!-- SignUp Modal -->
+  <div class="modal fade" id="signup-modal" role="dialog">
+    <div class="modal-dialog" id="login-and-sign-up">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h3 class="modal-title">Create Your Account</h3>
+        </div>
+        <div class="modal-body">
+         <form>               
+				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
+				<input type="hidden" name="utf8" value="✓">               
+				<a class="fb-btn" href="/users/auth/facebook">LOG IN WITH FACEBOOK</a>               
+				<a class="google-btn" href="/users/auth/google_oauth2">LOG IN WITH GOOGLE</a>              
+		<div style="margin-top:20px"></div>               
+		<div style="margin-top:30px"></div>  
+			<h6>Sign up with Email</h6>	
+			<div class="form-group">                   
+				<label class="hidden"> Your Name </label>                   
+				<input class="form-control" type="text" name="" placeholder="Your Name">               
+			</div>			
+			<div class="form-group">                   
+				<label class="hidden">Your Email </label>                   
+				<input class="form-control" type="email" name="" placeholder="Your Email">               
+			</div>               
+			<div class="form-group">                   
+				<label class="hidden">Choose a Password </label>                   
+				<input class="form-control" type="password" name="" placeholder="Choose a Password">                   
+				              
+			</div>               
+				<div style="margin-top:20px"></div>               
+				<div style="margin-top:30px"></div>  
+				<div class="form-group user-agree"> 
+				By signing up I agree to Venuse's <a href="">Terms of Service</a>              
+				</div>             
+			<div class="form-group form-btn">                   
+				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Sign up">                   
+				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="https://res.cloudinary.com/splacer/image/upload/v1444126905/Production/Assets/ajax-loader.gif">               
+			</div>               
+			     
+		<div class="form-group form-footer">
+		Already have an account? <a href="#" class="form-switch sp-bold" data-to-form="login-modal">Login in</a>  
+		</div>  
+	
+		</form> 
+<div class="clearfix"></div>		
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+
+<div class="static-pages-header-md">
+  <div class="static-pages-header-image">
+      <img alt="Header about" class="img-responsive" height="530" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/about_page/header_about.png" width="1920">
+  </div>
+<div class="static-pages-nav_bar">
+     <a class="active-link" href="/#/about">About</a>
+     <a class="" href="/#/security_deposits">Security Deposits</a>
+     <a class="" href="/#/cancellation_policy">Cancellation Policy</a>
+     <a class="" href="/#/team">Team</a>
+</div>
+</div>
+
+   <div class="modal fade" id="forget-modal"  role="dialog">
+    <div class="modal-dialog" id="login-and-sign-up">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h3 class="modal-title">Reset your pasword</h3>
+        </div>
+        <div class="modal-body">
+		<div style="margin-top:40px"></div>               
+		<div style="margin-top:8px"></div>   
+		<h6 style="font-size:14px; color:#808184; text-align:center;">Enter your email address, and we’ll send you reset password link.</h6>
+         <form>                           
+		<div style="margin-top:20px"></div>               
+		<div style="margin-top:8px"></div>               
+			<div class="form-group">                   
+				<label class="hidden"> Email </label>                   
+				<input class="form-control" type="email" name="" placeholder="Your Email">               
+			</div>               
+			 <div class="form-group form-btn">                   
+				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Send reset link">                   
+				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="https://res.cloudinary.com/splacer/image/upload/v1444126905/Production/Assets/ajax-loader.gif">               
+			</div> 
+		<div class="form-group form-footer">
+		<a href="#" class="form-switch sp-bold" data-to-form="signup">Back to Log-in</a>  
+		</div>  
+	
+		</form> 
+<div class="clearfix"></div>		
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
+   <div class="sp-margin-top-40px"></div>
+   <div class="sp-margin-top-5px"></div>
+
+<section>
+<div class="container">
+    <div class="main-content ">
+     <h1>About Venuse</h1>
+        <div class="sp-margin-top-30px"></div>
+           <h2 style="text-align: center !important; font-size: 20px !important; text-transform: none !important;">Venuse is a marketplace where people can list,<br> discover and book unique spaces.</h2>
+        <div class="sp-margin-top-10px"></div>
+          <p style="text-align: center !important; font-size:16px !important;">As architects, we believe we can improve the way we use and share space in order to foster creativity, build<br>community and promote a more sustainable model of urban life. Our marketplace gives access to undiscovered and underutilized spaces, offering extraordinary arenas for events, experiences and activations of all shapes and sizes. Unlike other platforms, Venuse curates its spaces: all spaces are reviewed by our team with an eye for great design.</p>
+        </div>
+        <div class="sp-margin-top-30px"></div>
+        <div class="center-image">
+          <img alt="Our story" class="img-responsive" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/about_page/our_story.jpg">
+        </div>
+</div>
+        <div class="sp-margin-top-50px"></div>
+    
+ 
+
+<section>
+  <div class="center-text">
+    <div class="sp-margin-top-50px"></div>
+    <h2>Our Story</h2>
+    <div class="sp-margin-top-10px"></div>
+    <div class="sp-margin-top-5px"></div>As architects we understand the power of space. We envisioned a world where beautiful spaces<br>never go to waste, and can be a shared commodity.<br><br>We believed that exciting spaces could inspire creativity and generate new ideas.<br>This implies a philosophy of local sharing and the thoughtful use of resources - all of which<br> we wanted to extend to as many communities as possible.<br><br>With Splacer we could reimagine use of space, and create more sustainable and enjoyable ways of living together.
+    
+    <div class="sp-margin-top-60px"></div>
+  </div>
+  <div class="sp-margin-top-90px"></div>
+  <div class="splacer-for">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="img">
+         <img alt="Icon event org 2x" src="img/icon_event_org_2x.png">
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="sp-margin-top-5px"></div>
+        <h3>Venuse for Event Organizers</h3>
+        <div class="sp-margin-top-10px"></div>
+        <p>Event organizers can browse listings and filter spaces by size, location, event-type, or general keyword. Once they find a space they like, organizers can connect with the host to receive additional information.</p>
+      </div>
+    </div>
+    <div class="sp-margin-top-60px"></div>
+      <div class="row">
+       <div class="col-md-2"> 
+        <div class="img">
+         <img alt="Icon space owner 2x" src="img/icon_space_owner_2x.png">
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="sp-margin-top-5px"></div>
+          <h3>Venuse for Space Owners</h3>
+          <div class="sp-margin-top-10px"></div>
+          <p>Sign up your beautiful space by entering some basic information. Once approved, the Venuse Team will reach out for additional information about your space, pictures, and the types of events you would welcome. Once listed on the site, you can communicate with event organizers about availability and prices. Venuse will handle payment processing and all other backend details to guarantee a safe and secure exchange all around.</p>
+        </div>
+      </div>
+    </div>
+</section>
+<div class="sp-margin-top-80px"></div>
+<section class="map_v">
+  <div class="map">
+   <img alt="Splacer map" class="about-map" height="395" src="img/splacer_map.png">
+  </div>
+  <div class="sp-margin-top-50px"></div>
+   <div class="cities">
+    <div class="sc">
+     <h4>Pune</h4>
+      <span></span>
+    </div>
+    <div class="sc">
+     <h4>Mumbai</h4>
+     <span></span>
+    </div>
+  </div>
+  <div class="sp-margin-top-70px"></div>
+</section>
+    <app-footer></app-footer>
+    
+    
