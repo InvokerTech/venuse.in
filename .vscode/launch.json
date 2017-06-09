@@ -1,0 +1,21 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "name": "Attach",
+            "type": "chrome",
+            "request": "attach",
+            "port": 5000,
+            "url": "http://localhost",
+            "webRoot": "${workspaceRoot}/public"
+        },
+        {
+            "name": "Attach to url with files served from ./out",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "url": "http://localhost:5000",
+            "webRoot": "${workspaceRoot}/public"
+        }
+    ]
+}

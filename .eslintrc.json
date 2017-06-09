@@ -23,10 +23,7 @@
     "globals": {
         "angular": true,
         "$":true,
-        "google":true,
-        "MarkerClusterer":true,
         "_":true,
-        "NgMap":true,
         "API_URL":true
     }
 }
