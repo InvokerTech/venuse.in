@@ -1,0 +1,53 @@
+  <div class="modal fade" id="signup-modal" role="dialog">
+    <div class="modal-dialog" id="login-and-sign-up">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h3 class="modal-title">Create Your Account</h3>
+        </div>
+        <div class="modal-body">
+         <form>               
+				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
+				<input type="hidden" name="utf8" value="✓">               
+				<a class="fb-btn" href="/users/auth/facebook">LOG IN WITH FACEBOOK</a>               
+				<a class="google-btn" href="/users/auth/google_oauth2">LOG IN WITH GOOGLE</a>              
+		<div style="margin-top:20px"></div>               
+		<div style="margin-top:30px"></div>  
+			<h6>Sign up with Email</h6>	
+			<div class="form-group">                   
+				<label class="hidden"> Your Name </label>                   
+				<input class="form-control" type="text" name="" placeholder="Your Name">               
+			</div>			
+			<div class="form-group">                   
+				<label class="hidden">Your Email </label>                   
+				<input class="form-control" type="email" name="" placeholder="Your Email">               
+			</div>               
+			<div class="form-group">                   
+				<label class="hidden">Choose a Password </label>                   
+				<input class="form-control" type="password" name="" placeholder="Choose a Password">                   
+				              
+			</div>               
+				<div style="margin-top:20px"></div>               
+				<div style="margin-top:30px"></div>  
+				<div class="form-group user-agree"> 
+				By signing up I agree to Venuse's <a href="">Terms of Service</a>              
+				</div>             
+			<div class="form-group form-btn">                   
+				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Sign up">                   
+				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="img/ajax-loader.gif">               
+			</div>               
+			     
+		<div class="form-group form-footer">
+		Already have an account? <a href="#" class="form-switch sp-bold" data-to-form="login-modal">Login in</a>  
+		</div>  
+	
+		</form> 
+<div class="clearfix"></div>		
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>

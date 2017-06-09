@@ -24,6 +24,7 @@
         "angular": true,
         "$":true,
         "_":true,
-        "API_URL":true
+        "API_URL":true,
+        "gapi":true
     }
 }

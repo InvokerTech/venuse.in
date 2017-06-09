@@ -14,7 +14,7 @@ gulp.task('sass', function() {
 gulp.task('scripts', function() {
   return gulp.src('public/app/**/*.js')
     .pipe(concat('bundle.js'))
-      .pipe(gulp.dest('public/app'));
+      .pipe(gulp.dest('public/'));
 });
 
 gulp.task('default', ['sass','scripts'], function() {
