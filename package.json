@@ -1,0 +1,37 @@
+{
+  "name": "venuse-web-app",
+  "version": "0.0.1",
+  "description": "Web App",
+  "engines": {
+    "node": "8.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "push-all": "git push  origin master && git push heroku master "
+  },
+  "dependencies": {
+    "@types/angular": "^1.6.6",
+    "@types/jquery": "^2.0.40",
+    "body-parser": "^1.17.1",
+    "express": "^4.13.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/venuse/invoker-venuse-client-web.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "nodemon": "^1.11.0",
+    "sass-lint": "^1.10.2"
+  }
+}

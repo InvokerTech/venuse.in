@@ -2,6 +2,9 @@ $ git clone https://username@bitbucket.org:venuse/invoker-venuse-client-web.git
 
 $ cd invoker-venuse-client-web
 
+$npm install -g nodemon   
+Install nodemon on your system.
+
 $ npm install
 
 $ npm start
