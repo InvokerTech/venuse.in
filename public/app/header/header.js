@@ -16,7 +16,9 @@
             vm.userstatus = false;
             vm.user = {};
             vm.login = login;
-         
+            vm.showLogin = showLogin;
+            vm.showRegister = showRegister;
+
         }
         //end controller init
 
@@ -68,5 +70,14 @@
             console.log('Not signed into Google Plus.');
             console.log(authResult);
         });
+
+        function showLogin() {
+            $('#signup-modal').modal('hide');
+            $('#login-modal').modal();
+        }
+        function showRegister() {
+            $('#login-modal').modal('hide');
+             $('#signup-modal').modal();
+        }
     }
 })();

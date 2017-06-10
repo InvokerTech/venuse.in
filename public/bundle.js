@@ -256,7 +256,9 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             vm.userstatus = false;
             vm.user = {};
             vm.login = login;
-         
+            vm.showLogin = showLogin;
+            vm.showRegister = showRegister;
+
         }
         //end controller init
 
@@ -308,6 +310,15 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             console.log('Not signed into Google Plus.');
             console.log(authResult);
         });
+
+        function showLogin() {
+            $('#signup-modal').modal('hide');
+            $('#login-modal').modal();
+        }
+        function showRegister() {
+            $('#login-modal').modal('hide');
+             $('#signup-modal').modal();
+        }
     }
 })();
 (function() {

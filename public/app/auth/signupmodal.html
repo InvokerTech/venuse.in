@@ -11,7 +11,7 @@
          <form>               
 				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
 				<input type="hidden" name="utf8" value="✓">               
-				<a class="fb-btn" href="/users/auth/facebook">LOG IN WITH FACEBOOK</a>               
+				<a class="fb-btn" ng-click="vm.fbLogin();">LOG IN WITH FACEBOOK</a>               
 				 <google-plus-signin clientid="985981977666-v5mrr3cta505cvjrj0etf6925jlr9lh6" 
 					autorender="false" customtargetid="g-signin1">
 					<a class="google-btn" id="g-signin1">LOG IN WITH GOOGLE</a>
@@ -43,7 +43,7 @@
 			</div>               
 			     
 		<div class="form-group form-footer">
-		Already have an account? <a href="#" class="form-switch sp-bold" data-to-form="login-modal">Login in</a>  
+		Already have an account? <a href="#" class="form-switch sp-bold" ng-click="vm.showLogin();">Login in</a>  
 		</div>  
 	
 		</form> 
