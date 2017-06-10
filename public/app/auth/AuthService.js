@@ -10,27 +10,52 @@
   AuthService.inject = ['$http', '$q'];
   function AuthService($http, $q) {
     var api_type = 'user/login';
+    var loginstatus = false;
+    var user;
     var service = {
       googleLogin: googleLogin,
-      login: login
+      fbLogin: fbLogin,
+      login: login,
+      setLogin: setLogin,
+      isLogin: isLogin,
+      getUser: getUser,
+      logOut: logOut
     };
 
     return service;
 
     ////////////////
+    function logOut() {
+      loginstatus = false;
+      user = {};
+    }
+    function isLogin() {
+      return loginstatus;
+    }
+    function setLogin(u) {
+      user = u;
+    }
+    function getUser() {
+      return user;
+    }
     function googleLogin(u) {
       var url = API_URL + api_type + '/google';
       var params = {
-        "": u
+        "name": u.w3.ig,
+        "email": u.w3.U3,
+        "photo": u.w3.Paa,
+        "google_id": u.w3.Eea
       };
       return $http.post(url, params).
         then(function (response) {
 
           //console.log(response);
           if (response.data) {
+            loginstatus = true;
+            setLogin(response.data);
+            //    console.log(response.data); 
 
-            //    console.log(response.data.ret);         
-            return response.data;
+
 
           } else
             return $q.reject(response);
@@ -39,6 +64,33 @@
           console.log(err);
         });
 
+    }
+
+    function fbLogin(u) {
+      var url = API_URL + api_type + '/fb';
+      var params = {
+        "name": u.name,
+        "email": u.email,
+        "photo": u.picture.data.url,
+        "fb_id": u.id
+      };
+      return $http.post(url, params).
+        then(function (response) {
+
+          //console.log(response);
+          if (response.data) {
+            loginstatus = true;
+            setLogin(response.data.user);
+            //    console.log(response.data); 
+
+
+
+          } else
+            return $q.reject(response);
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
     }
 
     function login() {

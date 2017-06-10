@@ -1,0 +1,100 @@
+<div class="container" style="padding:50px; border-bottom:1px solid #ededed;">
+    <div class="text-center">
+      <h2 class="sp-home-head-2">What's popular</h2>
+      <h3 class="sp-home-head-3">Explore a selection of creative Venues</h3>
+    </div>
+    <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+        <!--<li data-target="#myCarousel1" data-slide-to="1"></li>
+        <li data-target="#myCarousel1" data-slide-to="2"></li>
+        <li data-target="#myCarousel1" data-slide-to="3"></li>-->
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <div class="row">
+            <div class="col-md-4 landing-part" style="margin-top: 20px" ng-repeat="venue in vm.venues track by $index">
+              <a class="lp-box" href="" style="background-image: url('{{venue.photos[0]}}')">
+                <div class="info-btn-wrp">
+                  <div class="view-info-btn"><i class="fa fa-info"></i></div>
+                </div>
+                <h2 class="sp-title">{{venue.name}}</h2>
+                <span>{{venue.city}}</span>
+                <div class="stars">
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+     
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<!--        <div class="item">
+          <div class="row">
+            <div class="col-md-4 landing-part" style="margin-top: 20px">
+              <a class="lp-box" href="" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
+                <div class="info-btn-wrp">
+                  <div class="view-info-btn"><i class="fa fa-info"></i></div>
+                </div>
+                <h2 class="sp-title">Top Production & Photoshoot Locations</h2>
+                <span>Pune</span>
+                <div class="stars">
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 landing-part" style="margin-top: 20px">
+              <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+                <div class="info-btn-wrp">
+                  <div class="view-info-btn"><i class="fa fa-info"></i></div>
+                </div>
+                <h2 class="sp-title">Beautiful venues for wedding celebrations in Pune</h2>
+                <span>Pune</span>
+                <div class="stars">
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 landing-part" style="margin-top: 25px">
+              <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+                <div class="info-btn-wrp">
+                  <div class="view-info-btn"><i class="fa fa-info"></i></div>
+                </div>
+                <h2 class="sp-title">Best meeting and offsite spaces in Pune</h2>
+                <span>Pune</span>
+                <div class="stars">
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>-->

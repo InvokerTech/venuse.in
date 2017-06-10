@@ -12,19 +12,41 @@
 
         vm.$onInit = function () {
             vm.fbLogin = fbLogin;
+            vm.logOut = logOut;
+            vm.userstatus = false;
+            vm.user = {};
+            vm.login = login;
+         
         }
         //end controller init
 
+        function login() {
+            vm.userstatus = true;
+            vm.user = AuthService.getUser();
+            $('#login-modal').modal('hide');
+        }
+        function logOut() {
+            AuthService.logOut();
+            vm.userstatus = false;
+            vm.user = {};
+        }
 
         function fbLogin() {
             $facebook.login().then(function () {
                 $facebook.api("/me?fields=id,name,email,picture").then(
                     function (response) {
                         console.log(response)
+                        AuthService.fbLogin(response)
+                            .then(function () {
+                                $('#signup-modal').modal('hide');
+                                vm.login();
+                            })
+                            .catch();
                     },
                     function (err) {
                         console.log(err);
-                    });
+                    })
+                    .catch();
             });
         }
 
@@ -33,6 +55,13 @@
             // User successfully authorized the G+ App!
             console.log('Signed in!');
             console.log(authResult);
+            AuthService.googleLogin(authResult)
+                .then(function () {
+                    $('#signup-modal').modal('hide');
+                    vm.login();
+
+                })
+                .catch();
         });
         $scope.$on('event:google-plus-signin-failure', function (event, authResult) {
             // User has not authorized the G+ App!

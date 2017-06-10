@@ -1,37 +1,26 @@
 (function() {
-    'use strict';
+'use strict';
 
+    var loginModal = {
+        templateUrl: `app/auth/loginmodal.html`
+    };
+        
     angular
         .module('venuse')
-        .directive('loginModal', loginModal);
+        .component('loginModal', loginModal);
 
-    loginModal.inject = [];
-    function loginModal() {
-        // Usage:
-        //
-        // Creates:
-        //
-        var directive = {
-         restrict: 'E',
-                templateUrl: 'app/auth/loginmodal.html'
-        };
-        return directive;
-    }
 })();
 
-(function() {
-    'use strict';
 
+(function() {
+'use strict';
+
+     var signupModal = {
+        templateUrl: `app/auth/signupmodal.html`
+    };
+        
     angular
         .module('venuse')
-        .directive('signupModal', signupModal);
+        .component('signupModal', signupModal);
 
-    signupModal.inject = [];
-    function signupModal() {
-        var directive = {
-         restrict: 'E',
-                templateUrl: 'app/auth/signupmodal.html'
-        };
-        return directive;
-    }
 })();
