@@ -1,56 +1,59 @@
-  <!--Log in Modal -->
-  <div class="modal fade" id="login-modal"  role="dialog">
-    <div class="modal-dialog" id="login-and-sign-up">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          
-          <h3 class="modal-title">Log in</h3>
-        </div>
-        <div class="modal-body">
-         <form>               
-				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
-				<input type="hidden" name="utf8" value="✓">               
-				<a class="fb-btn" ng-click="vm.fbLogin();" >LOG IN WITH FACEBOOK</a> 
-			            
-				 <div id="fb-root">
-        </div>
-				  <google-plus-signin clientid="985981977666-v5mrr3cta505cvjrj0etf6925jlr9lh6" 
-					autorender="false" customtargetid="g-signin2">
+<!--Log in Modal -->
+<div class="modal fade" id="login-modal" role="dialog">
+	<div class="modal-dialog" id="login-and-sign-up">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title">Log in</h3>
+			</div>
+			<div class="modal-body">
+				<form>
+				<a class="fb-btn" ng-click="vm.fbLogin();">LOG IN WITH FACEBOOK</a>
+				<div id="fb-root">
+				</div>
+				<google-plus-signin clientid="985981977666-v5mrr3cta505cvjrj0etf6925jlr9lh6" autorender="false" customtargetid="g-signin2">
 					<a class="google-btn" id="g-signin2">LOG IN WITH GOOGLE</a>
-						</google-plus-signin>             
-		<div style="margin-top:20px"></div>               
-		<div style="margin-top:8px"></div>               
-			<div class="form-group">                   
-				<label class="hidden"> Email </label>                   
-				<input class="form-control" type="email" name="" placeholder="Email">               
-			</div>               
-			<div class="form-group">                   
-				<label class="hidden"> Password </label>                   
-				<input class="form-control" type="password" name="" placeholder="Password">                   
-				              
-			</div>               
-				<div style="margin-top:20px"></div>               
-				<div style="margin-top:25px"></div>               
-			<div class="form-group form-btn">                   
-				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Log in">                   
-				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="img/ajax-loader.gif">               
-			</div>               
-			<div class="form-group user-forgot">                   
-				<a href="#" class="form-switch" data-toggle="modal" data-target="#forget-modal" >Forgot password?</a>               
-			</div>               
-		<div class="form-group form-footer">
-		Don't have an account yet? <a href="#" class="form-switch sp-bold"  ng-click="vm.showRegister();">Sign up</a>  
-		</div>  
-	
-		</form> 
-<div class="clearfix"></div>		
-        </div>
-        
-      </div>
-      
-    </div>
-  </div>
- 
-  <!-- SignUp Modal -->
+				</google-plus-signin>
+				</form>
+				<div style="margin-top:20px"></div>
+				<div style="margin-top:8px"></div>
+				<form name="loginForm" ng-submit="vm.checkLogin();" novalidate>
+					<div class="form-group">
+						<label class="hidden"> Email </label>
+						<input class="form-control" type="email" name="email" placeholder="Email" 
+						ng-model="vm.email" required>
+					</div>
+					 <p class="error" ng-if="loginForm.email.$invalid && loginForm.email.$touched">Please enter valid email.</p>
+					<div class="form-group">
+						<label class="hidden"> Password </label>
+						<input name="pass" class="form-control" type="password"  placeholder="Password"
+						 ng-model="vm.pass" required>
+					</div>
+					 <p class="error" ng-if="loginForm.pass.$invalid && loginForm.pass.$touched">Please enter password.</p>
+					<div style="margin-top:20px"></div>
+					<div style="margin-top:25px"></div>
+						
+					<div class="form-group form-btn">
+						<input ng-if="!vm.loginLoad"  class="btn btn-green" type="submit" value="Log in">
+						<img ng-if="vm.loginLoad"   alt="Ajax loader" class="login-ajax-loader"  src="img/ajax-loader.gif">
+					</div>
+					<p class="error" ng-if="vm.formError">Please enter correct details.</p>
+				</form>
+				<form>
+				<div class="form-group user-forgot">
+					<a href="#" class="form-switch" data-toggle="modal">Forgot password?</a>
+				</div>
+				<div class="form-group form-footer">
+					Don't have an account yet? <a href="#" class="form-switch sp-bold" ng-click="vm.showRegister();">Sign up</a>
+				</div>
+				</form>
+
+				<div class="clearfix"></div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+<!-- SignUp Modal -->

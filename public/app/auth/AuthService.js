@@ -19,12 +19,35 @@
       setLogin: setLogin,
       isLogin: isLogin,
       getUser: getUser,
-      logOut: logOut
+      logOut: logOut,
+      register: register
     };
 
     return service;
 
     ////////////////
+    function register(n, e, p) {
+      var url = API_URL + 'register/user';
+      var params = {
+        "name": n,
+        "email": e,
+        "pass": p
+      };
+      return $http.post(url, params).
+        then(function (response) {
+
+          //console.log(response);
+          if (response.data.status===true) {
+            loginstatus = true;
+            setLogin(response.data.user);
+            //    console.log(response.data); 
+          } else
+            return $q.reject(response);
+        })
+        .catch();
+
+    }
+
     function logOut() {
       loginstatus = false;
       user = {};
@@ -93,8 +116,26 @@
         });
     }
 
-    function login() {
+    function login(e, p) {
+      var url = API_URL + api_type;
+      var params = {
+        "email": e,
+        "password": p
+      };
+      return $http.post(url, params).
+        then(function (response) {
 
+          //console.log(response);
+          if (response.data) {
+            loginstatus = true;
+            setLogin(response.data.user);
+            //    console.log(response.data); 
+          } else
+            return $q.reject(response);
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
     }
   }
 })();

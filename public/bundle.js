@@ -121,12 +121,35 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
       setLogin: setLogin,
       isLogin: isLogin,
       getUser: getUser,
-      logOut: logOut
+      logOut: logOut,
+      register: register
     };
 
     return service;
 
     ////////////////
+    function register(n, e, p) {
+      var url = API_URL + 'register/user';
+      var params = {
+        "name": n,
+        "email": e,
+        "pass": p
+      };
+      return $http.post(url, params).
+        then(function (response) {
+
+          //console.log(response);
+          if (response.data.status===true) {
+            loginstatus = true;
+            setLogin(response.data.user);
+            //    console.log(response.data); 
+          } else
+            return $q.reject(response);
+        })
+        .catch();
+
+    }
+
     function logOut() {
       loginstatus = false;
       user = {};
@@ -195,8 +218,26 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
         });
     }
 
-    function login() {
+    function login(e, p) {
+      var url = API_URL + api_type;
+      var params = {
+        "email": e,
+        "password": p
+      };
+      return $http.post(url, params).
+        then(function (response) {
 
+          //console.log(response);
+          if (response.data) {
+            loginstatus = true;
+            setLogin(response.data.user);
+            //    console.log(response.data); 
+          } else
+            return $q.reject(response);
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
     }
   }
 })();
@@ -258,10 +299,45 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             vm.login = login;
             vm.showLogin = showLogin;
             vm.showRegister = showRegister;
-
+            vm.checkLogin = checkLogin;
+            vm.formError = false;
+            vm.regFormError = false;
+            vm.checkReg = checkReg;
         }
         //end controller init
+        function checkReg() {
+            if (vm.regEmail && vm.regPass && vm.regName) {
+                vm.regFormError = false;
+                vm.regLoad = true;
+                AuthService.register(vm.regName, vm.regEmail, vm.regPass)
+                    .then(function () {
+                        vm.regLoad = false;
+                        vm.login();
+                        $('#signup-modal').modal('hide');
+                    })
+                    .catch(function (err) {
+                        vm.regLoad = false;
+                        //  console.log(err);
+                        alert(err.data.message);
+                    });
+            }
+            else vm.regFormError = true;
+        }
 
+        function checkLogin() {
+            if (vm.email && vm.pass) {
+                vm.formError = false;
+                vm.loginLoad = true;
+                AuthService.login(vm.email, vm.pass)
+                    .then(function () {
+                        vm.loginLoad = false;
+                        vm.login();
+
+                    })
+                    .catch();
+            }
+            else vm.formError = true;
+        }
         function login() {
             vm.userstatus = true;
             vm.user = AuthService.getUser();
@@ -317,7 +393,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
         }
         function showRegister() {
             $('#login-modal').modal('hide');
-             $('#signup-modal').modal();
+            $('#signup-modal').modal();
         }
     }
 })();

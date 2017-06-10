@@ -18,10 +18,45 @@
             vm.login = login;
             vm.showLogin = showLogin;
             vm.showRegister = showRegister;
-
+            vm.checkLogin = checkLogin;
+            vm.formError = false;
+            vm.regFormError = false;
+            vm.checkReg = checkReg;
         }
         //end controller init
+        function checkReg() {
+            if (vm.regEmail && vm.regPass && vm.regName) {
+                vm.regFormError = false;
+                vm.regLoad = true;
+                AuthService.register(vm.regName, vm.regEmail, vm.regPass)
+                    .then(function () {
+                        vm.regLoad = false;
+                        vm.login();
+                        $('#signup-modal').modal('hide');
+                    })
+                    .catch(function (err) {
+                        vm.regLoad = false;
+                        //  console.log(err);
+                        alert(err.data.message);
+                    });
+            }
+            else vm.regFormError = true;
+        }
 
+        function checkLogin() {
+            if (vm.email && vm.pass) {
+                vm.formError = false;
+                vm.loginLoad = true;
+                AuthService.login(vm.email, vm.pass)
+                    .then(function () {
+                        vm.loginLoad = false;
+                        vm.login();
+
+                    })
+                    .catch();
+            }
+            else vm.formError = true;
+        }
         function login() {
             vm.userstatus = true;
             vm.user = AuthService.getUser();
@@ -77,7 +112,7 @@
         }
         function showRegister() {
             $('#login-modal').modal('hide');
-             $('#signup-modal').modal();
+            $('#signup-modal').modal();
         }
     }
 })();
