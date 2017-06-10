@@ -34,7 +34,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 
         });
 })();
-(function() {
+/*(function() {
 'use strict';
 
     var loginModal = {
@@ -59,6 +59,46 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
         .module('venuse')
         .component('signupModal', signupModal);
 
+})();
+
+*/
+
+(function() {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .directive('loginModal', loginModal);
+
+    loginModal.inject = [];
+    function loginModal() {
+        // Usage:
+        //
+        // Creates:
+        //
+        var directive = {
+         restrict: 'E',
+                templateUrl: 'app/auth/loginmodal.html'
+        };
+        return directive;
+    }
+})();
+
+(function() {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .directive('signupModal', signupModal);
+
+    signupModal.inject = [];
+    function signupModal() {
+        var directive = {
+         restrict: 'E',
+                templateUrl: 'app/auth/signupmodal.html'
+        };
+        return directive;
+    }
 })();
 
 
