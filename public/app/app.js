@@ -13,7 +13,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             $stateProvider
                 .state('home', {
                     url: '/home',
-                    templateUrl: 'app/home/home.html'
+                    component: 'home'
                 })
                 .state('security_deposits', {
                     url: '/security_deposits',

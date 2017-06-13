@@ -13,7 +13,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             $stateProvider
                 .state('home', {
                     url: '/home',
-                    templateUrl: 'app/home/home.html'
+                    component: 'home'
                 })
                 .state('security_deposits', {
                     url: '/security_deposits',
@@ -400,21 +400,14 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 (function() {
 'use strict';
 
+    var home = {
+        templateUrl: `app/home/home.html`
+    };
+        
     angular
         .module('venuse')
-        .controller('HomeController', HomeController);
+        .component('home', home);
 
-   HomeController.inject = [''];
-    function HomeController() {
-     //   var vm = this;
-        
-
-        activate();
-
-        ////////////////
-
-        function activate() { }
-    }
 })();
 (function() {
 'use strict';
@@ -493,6 +486,7 @@ vm.venues=[];
         }
     }
 })();
+
 (function() {
 'use strict';
 
