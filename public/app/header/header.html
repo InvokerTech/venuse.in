@@ -1,4 +1,4 @@
-<div class="top-header" ng-controller="HeaderController as vm">
+<div class="top-header">
   <header>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class=" container-fluid">
@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
               </button>
 
-          <a class="navbar-brand " href="index.html"><img src="img/Venuse-HighRes.png" height="100" width="120" style="margin-top: -38px"  alt=""></a>
+          <a class="navbar-brand " ui-sref="home"><img src="img/Venuse-HighRes.png" height="100" width="120" style="margin-top: -38px"  alt=""></a>
           <div class="col-sm-4 hidden-sm hidden-xs">
             <form action="" style="margin-top:9px; margin-left:20px; z-index: 1000; cursor: pointer; ">
               <div class="form-group search-box" style="display:flex">
@@ -24,9 +24,9 @@
 
         <div class=" collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/#/list_Your_Spaces"><button type="button" class="list-your-space">list your space</button></a></li>
-            <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" data-toggle="modal" data-target="#signup-modal" href="#feature">SIGN UP</a></li>
-            <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" data-toggle="modal" data-target="#login-modal" href="#service">LOG IN</a></li>
+            <li><a ><button type="button" class="list-your-space">list your space</button></a></li>
+            <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" data-toggle="modal" data-target="#signup-modal" >SIGN UP</a></li>
+            <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" data-toggle="modal" data-target="#login-modal" >LOG IN</a></li>
             <li ng-if="vm.userstatus" class=""><a class="nav-ul-a">{{vm.user.name}}</a></li>
              <li ng-if="vm.userstatus" class=""><a class="nav-ul-a" ng-click="vm.logOut();">LOG OUT</a></li>
           </ul>

@@ -2,6 +2,18 @@
 (function () {
     'use strict';
 
+
+    var appHeader = {
+        controller: HeaderController,
+        controllerAs: 'vm',
+        templateUrl: `app/header/header.html`,
+    };
+        
+    angular
+        .module('venuse')
+        .component('appHeader', appHeader);
+
+
     angular
         .module('venuse')
         .controller('HeaderController', HeaderController);

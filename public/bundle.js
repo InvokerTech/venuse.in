@@ -3,7 +3,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 (function () {
     'use strict';
     angular.module('venuse', 
-        ['ui.router','directive.g+signin','ngFacebook']);
+        ['ui.router','directive.g+signin','ngFacebook','ngMap']);
 
     angular
         .module('venuse')
@@ -15,6 +15,10 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/home',
                     component: 'home'
                 })
+                 .state('venues', {
+                    url: '/venues',
+                    component: 'venues'
+                })
                 .state('security_deposits', {
                     url: '/security_deposits',
                     templateUrl: 'app/templates/securitydeposits.html'
@@ -23,7 +27,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/team',
                     templateUrl: 'app/templates/team.html'
                 })
-                .state('list_Your_Spaces', {
+                .state('list_space', {
                     url: '/list_Your_Spaces',
                     templateUrl: 'app/templates/list_your_spaces.html'
                 })
@@ -283,6 +287,18 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 (function () {
     'use strict';
 
+
+    var appHeader = {
+        controller: HeaderController,
+        controllerAs: 'vm',
+        templateUrl: `app/header/header.html`,
+    };
+        
+    angular
+        .module('venuse')
+        .component('appHeader', appHeader);
+
+
     angular
         .module('venuse')
         .controller('HeaderController', HeaderController);
@@ -486,7 +502,77 @@ vm.venues=[];
         }
     }
 })();
+(function () {
+    'use strict';
 
+    angular
+        .module('venuse')
+        .factory('VenueService', VenueService);
+
+    VenueService.inject = ['$http', '$q'];
+    function VenueService($http, $q) {
+        var api_type = 'search/venues'
+        var service = {
+            get: get
+        };
+
+        return service;
+
+        function get() {
+
+            var url = API_URL + api_type;
+
+            return $http.post(url).
+                then(function (response) {
+
+                    //console.log(response);
+                    if (response.data) {
+
+                        //    console.log(response.data.ret);         
+                        return response.data;
+
+                    } else
+                        return $q.reject(response);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
+
+    }
+})();
+(function () {
+    'use strict';
+
+    var venues = {
+        controller: VenuesController,
+        controllerAs: 'vm',
+        templateUrl: `app/venues/popularity.html`,
+    };
+
+    angular
+        .module('venuse')
+        .component('venues', venues);
+
+
+    angular
+        .module('venuse')
+        .controller('VenuesController', VenuesController);
+
+    VenuesController.inject = ['VenueService'];
+    function VenuesController(VenueService) {
+        var vm = this;
+        vm.$onInit = function () {
+            VenueService.get()
+                .then(function (res) {
+                    vm.venues = res.venues
+                })
+                .catch();
+        }
+    }
+
+
+})();
 (function() {
 'use strict';
 

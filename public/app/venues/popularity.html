@@ -1,390 +1,336 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Venuse</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <link href="img/favicon.ico" rel="icon">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
-    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="js/thirdparty/angular.js"></script>
-    <script src="js/thirdparty/angular-route.min.js"></script>
-    <script src="app.js"></script>
-    <script src="js/directive/header.directive.js"></script>
-    <script src="js/directive/footer.directive.js"></script>
-  </head>
-  <body>
-
-    
-   
-      <div class="bg-color">
-          <app-header></app-header>
-          <div class="sp-margin-top-60px" style="background:#fff; z-index:99"></div>
-<section>
-  <div class="container-fluid search-left" style="padding-left: 0px; padding-right: 0px">
- 
-      <div class="col-md-8 hidden-xs"  style="position: fixed; z-index: 10000; padding-left: 0px; padding-right: 0px">
-         <div class="col-xs-6" style="padding-right:0px; padding-left: 0px;">
-         <div class="form-group input-group-lg" >
-         <input  class="form-control" type="search" style="height: 55px;  font-weight:400; background-color:#f2f2f2;" placeholder="Location" id="search" value="Miami, FL, USA|Fort Lauderdale, FL, USA">
-         </div>
-         </div>
-         <div class="col-xs-6 text-center" style="padding-left:0px; padding-right:0px">
+<div class="bg-color">
+  <div class="sp-margin-top-60px" style="background:#fff; z-index:99"></div>
+  <section>
+    <div class="container-fluid search-left" style="padding-left: 0px; padding-right: 0px">
+      <!-- <div class="col-md-8 hidden-xs" style="position: fixed; z-index: 10000; padding-left: 0px; padding-right: 0px">
+        <div class="col-xs-6" style="padding-right:0px; padding-left: 0px;">
+          <div class="form-group input-group-lg">
+            <input class="form-control" type="search" style="height: 55px;  font-weight:400; background-color:#f2f2f2;" placeholder="Location"
+              id="search" value="Miami, FL, USA|Fort Lauderdale, FL, USA">
+          </div>
+        </div>
+        <div class="col-xs-6 text-center" style="padding-left:0px; padding-right:0px">
           <div class="input-group col-md-12 input-group-lg">
-          <div class="dropdown1">
-            <button class="form-control btn btn1"  type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span style=" font-size:20px;   right: 16px;
+            <div class="dropdown1">
+              <button class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span style=" font-size:20px;   right: 16px;
     top: 22px;
     position: absolute;" class="caret"></span></button>
-        <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
-        <li><a date-value="Event" href="#" style="font-size: 16px; padding: 10px 9px 10px 20px;">Event</a>
-        <span style="font-size: 14px; color: #6d6e71; display: block; padding:0px 23px">Private events, Business events, Parties, Dinners, Wedding…</span></li>
-        <li><a date-value="Meeting" href="#" style="font-size: 16px; padding: 10px 9px 10px 20px;">Meeting </a>
-        <span style="font-size: 14px; color: #6d6e71; display: block; padding:0px 23px">Presentation, Offsite, Class/workshop, Conference…</span></li>
-        <li><a date-value="Production" href="#" style="font-size: 16px; padding: 10px 9px 10px 20px;">Production </a>
-        <span style="font-size: 14px; color: #6d6e71; display: block; padding:0px 23px">Film/video shoot, Photo shoot, Fashion Show, Product launch…</span></li>
-        <li><a date-value="Pop-up" href="#" style="font-size: 16px; padding: 10px 9px 10px 20px;">Pop-up </a>
-        <span style="font-size: 14px; color: #6d6e71; display: block; padding:0px 23px">Retail Pop Up, Pop Up Dinner, Art exhibit, Other</span></li></ul>
+              <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
+                <li><a date-value="Event" href="#" style="font-size: 16px; padding: 10px 9px 10px 20px;">Event</a>
+                  <span style="font-size: 14px; color: #6d6e71; display: block; padding:0px 23px">Private events, Business events, Parties, Dinners, Wedding…</span></li>
+                <li><a date-value="Meeting" href="#" style="font-size: 16px; padding: 10px 9px 10px 20px;">Meeting </a>
+                  <span style="font-size: 14px; color: #6d6e71; display: block; padding:0px 23px">Presentation, Offsite, Class/workshop, Conference…</span></li>
+                <li><a date-value="Production" href="#" style="font-size: 16px; padding: 10px 9px 10px 20px;">Production </a>
+                  <span style="font-size: 14px; color: #6d6e71; display: block; padding:0px 23px">Film/video shoot, Photo shoot, Fashion Show, Product launch…</span></li>
+                <li><a date-value="Pop-up" href="#" style="font-size: 16px; padding: 10px 9px 10px 20px;">Pop-up </a>
+                  <span style="font-size: 14px; color: #6d6e71; display: block; padding:0px 23px">Retail Pop Up, Pop Up Dinner, Art exhibit, Other</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
-           
-        </div>
-       
-   
-   
-  </div>
+      </div>-->
 
-
-  </div>
-
-  <section>
-    
-  <div class="search-filters-main" id="search-filters">
-   <div class="col-md-12">
-     
-       <div class="half" style="z-index:1000">
-     <div class="form-toggle options-2" id="toggle0">
-     <div data-toggle="pill" data-target="#home" class="form-toggle-item selected" value="guests">Guests</div>
-     <div data-toggle="pill" data-target="#menu1" class="form-toggle-item" value="size">Size</div></div>
- <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <input type="text" id="amount" readonly style="border:0; color:#9d9d9d; font-weight: bold; position: absolute; margin-top: 9px; left: 30%; z-index: 900;">
-   <label for="amount" style="color:#9d9d9d">Guests</label>
- 
-<div id="slider-range" style="z-index:1000"></div>
- 
-    </div>
-    <div id="menu1" class="tab-pane fade">
-      <input type="text" id="amount2" readonly style="border:0; color:#9d9d9d; font-weight: bold; position: absolute; margin-top: 9px; left: 30%; z-index: 900;">
-   <label for="amount2" style="color:#9d9d9d">sqft</label>
- 
-<div id="slider-range2" style="z-index:1000"></div>
-    </div>
-    
- </div>
- 
-       </div>
-      
-       
-         <div class="half2" style="z-index:1010">
-      <div class="form-toggle options-2" id="toggle0">
-     <div data-toggle="pill" data-target="#menu2" class="form-toggle-item selected" value="guests">Guests</div>
-     <div data-toggle="pill" data-target="#menu3" class="form-toggle-item" value="size">Size</div></div>
- <div class="tab-content">
-    <div id="menu2" class="tab-pane fade in active">
-     <input type="text" id="amount1" readonly style="border:0; color:#9d9d9d; font-weight:bold; position: absolute; margin-top: 9px; left: 42%; z-index: 900;">
- 
-<div id="slider-range1" style="z-index:1010"></div>
- 
-    </div>
-    <div id="menu3" class="tab-pane fade">
-       <input type="text" id="amount3" readonly style="border:0; color:#9d9d9d; font-weight:bold; position: absolute; margin-top: 9px; left: 42%; z-index: 900;">
- 
-<div id="slider-range3" style="z-index:1010"></div>
-    </div>
-    
- </div>
-
-
-  
-  
- 
-       </div>
-      
-     </div>
-    <div class="action-button"><button type="button"  data-toggle="collapse" data-target="#demo" class="sp-btn  sp-btn-transparent sp-semibold sp-capitalize" style="max-width: 100%;"><!-- react-text: 122 --><!-- /react-text --><span>Show more filters</span><!-- react-text: 124 --><!-- /react-text --></button></div>
-  </div>
-<div class="search-more-filters open collapse" id="demo">
-  <a href="" class="clear-bt link">Clear all</a>
-  <div class="col-md-12">
-        <div class="form-group" style="margin-top: -40px;">
-                <div class="icon-addon addon-lg">
-                    <input type="text" placeholder="Enter keywords, e.g. ''Brick wall'' or ''Skylight''" style="font-size:20px" class="form-control" id="email">
-                    <label for="email" class="glyphicon glyphicon-search" style="font-size:20px" rel="tooltip" title="email"></label>
+      <!--  <section>
+        <div class="search-filters-main" id="search-filters">
+          <div class="col-md-12">
+            <div class="half" style="z-index:1000">
+              <div class="form-toggle options-2" id="toggle0">
+                <div data-toggle="pill" data-target="#home" class="form-toggle-item selected" value="guests">Guests</div>
+                <div data-toggle="pill" data-target="#menu1" class="form-toggle-item" value="size">Size</div>
+              </div>
+              <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                  <input type="text" id="amount" readonly style="border:0; color:#9d9d9d; font-weight: bold; position: absolute; margin-top: 9px; left: 30%; z-index: 900;">
+                  <label for="amount" style="color:#9d9d9d">Guests</label>
+                  <div id="slider-range" style="z-index:1000"></div>
                 </div>
+                <div id="menu1" class="tab-pane fade">
+                  <input type="text" id="amount2" readonly style="border:0; color:#9d9d9d; font-weight: bold; position: absolute; margin-top: 9px; left: 30%; z-index: 900;">
+                  <label for="amount2" style="color:#9d9d9d">sqft</label>
+                  <div id="slider-range2" style="z-index:1000"></div>
+                </div>
+              </div>
+            </div>
+            <div class="half2" style="z-index:1010">
+              <div class="form-toggle options-2" id="toggle0">
+                <div data-toggle="pill" data-target="#menu2" class="form-toggle-item selected" value="guests">Guests</div>
+                <div data-toggle="pill" data-target="#menu3" class="form-toggle-item" value="size">Size</div>
+              </div>
+              <div class="tab-content">
+                <div id="menu2" class="tab-pane fade in active">
+                  <input type="text" id="amount1" readonly style="border:0; color:#9d9d9d; font-weight:bold; position: absolute; margin-top: 9px; left: 42%; z-index: 900;">
+
+                  <div id="slider-range1" style="z-index:1010"></div>
+
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                  <input type="text" id="amount3" readonly style="border:0; color:#9d9d9d; font-weight:bold; position: absolute; margin-top: 9px; left: 42%; z-index: 900;">
+
+                  <div id="slider-range3" style="z-index:1010"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="action-button"><button type="button" data-toggle="collapse" data-target="#demo" class="sp-btn  sp-btn-transparent sp-semibold sp-capitalize"
+              style="max-width: 100%;"><span>Show more filters</span></button></div>
+        </div>
+        <div class="search-more-filters open collapse" id="demo">
+          <a href="" class="clear-bt link">Clear all</a>
+          <div class="col-md-12">
+            <div class="form-group" style="margin-top: -40px;">
+              <div class="icon-addon addon-lg">
+                <input type="text" placeholder="Enter keywords, e.g. ''Brick wall'' or ''Skylight''" style="font-size:20px" class="form-control"
+                  id="email">
+                <label for="email" class="glyphicon glyphicon-search" style="font-size:20px" rel="tooltip" title="email"></label>
+              </div>
             </div>
             <div class="filters-groups">
-               <div class="filters-group">
-                  <div><div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div><h3>Neighborhoods</h3></div>
+              <div class="filters-group">
+                <div>
+                  <div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div>
+                  <h3>Neighborhoods</h3>
+                </div>
+
+                <div class="filters-group-content">
+                  <div class="filters-group-items">
+                    <div class="filters-group-item">
+                      <label class="sp-checkbox invert "><input type="checkbox" name="Alphabet City" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Alphabet City</span></label>
+                    </div>
+                    <div class="filters-group-item">
+                      <label class="sp-checkbox invert "><input type="checkbox" name="Arverne" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Arverne</span></label>
+                    </div>
+                    <div class="filters-group-item">
+                      <label class="sp-checkbox invert "><input type="checkbox" name="Bay Ridge" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bay Ridge</span></label>
+                    </div>
+                    <div class="filters-group-item">
+                      <label class="sp-checkbox invert "><input type="checkbox" name="Bedford-Stuyvesant" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bedford-Stuyvesant</span></label>
+                    </div>
+                    <div class="filters-group-item">
+                      <label class="sp-checkbox invert "><input type="checkbox" name="Boerum Hill" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Boerum Hill</span></label>
+                    </div>
+                    <div class="filters-group-item">
+                      <label class="sp-checkbox invert "><input type="checkbox" name="Bowery" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bowery</span></label>
+                    </div>
+                  </div>
+                  <div class="link">
+                   See all
+                            
+                            neighborhoods
+                  </div>
+                </div>
+              </div>
+
+              <div class="filters-groups">
+                <div class="filters-group">
+                  <div>
+                    <div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div>
+                    <h3>Neighborhoods</h3>
+                  </div>
 
                   <div class="filters-group-content">
                     <div class="filters-group-items">
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Alphabet City" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Alphabet City</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Arverne" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Arverne</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bay Ridge" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bay Ridge</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bedford-Stuyvesant" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bedford-Stuyvesant</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Boerum Hill" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Boerum Hill</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bowery" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bowery</span></label>
-                       </div>
+                      <div class="filters-group-item">
+                        <label class="sp-checkbox invert "><input type="checkbox" name="Alphabet City" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Alphabet City</span></label>
+                      </div>
+                      <div class="filters-group-item">
+                        <label class="sp-checkbox invert "><input type="checkbox" name="Arverne" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Arverne</span></label>
+                      </div>
+                      <div class="filters-group-item">
+                        <label class="sp-checkbox invert "><input type="checkbox" name="Bay Ridge" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bay Ridge</span></label>
+                      </div>
+                      <div class="filters-group-item">
+                        <label class="sp-checkbox invert "><input type="checkbox" name="Bedford-Stuyvesant" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bedford-Stuyvesant</span></label>
+                      </div>
+                      <div class="filters-group-item">
+                        <label class="sp-checkbox invert "><input type="checkbox" name="Boerum Hill" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Boerum Hill</span></label>
+                      </div>
+                      <div class="filters-group-item">
+                        <label class="sp-checkbox invert "><input type="checkbox" name="Bowery" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bowery</span></label>
+                      </div>
                     </div>
-                    <div class="link"><!-- react-text: 639 -->See all <!-- /react-text --><!-- react-text: 640 -->neighborhoods<!-- /react-text --></div>
-                  </div>
-              </div>
-
-               <div class="filters-groups">
-               <div class="filters-group">
-                  <div><div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div><h3>Neighborhoods</h3></div>
-
-                  <div class="filters-group-content">
-                    <div class="filters-group-items">
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Alphabet City" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Alphabet City</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Arverne" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Arverne</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bay Ridge" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bay Ridge</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bedford-Stuyvesant" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bedford-Stuyvesant</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Boerum Hill" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Boerum Hill</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bowery" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bowery</span></label>
-                       </div>
+                    <div class="link">
+                    See all
+                            
+                            neighborhoods
                     </div>
-                    <div class="link"><!-- react-text: 639 -->See all <!-- /react-text --><!-- react-text: 640 -->neighborhoods<!-- /react-text --></div>
                   </div>
-              </div>
-               <div class="filters-groups">
-               <div class="filters-group">
-                  <div><div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div><h3>Neighborhoods</h3></div>
-
-                  <div class="filters-group-content">
-                    <div class="filters-group-items">
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Alphabet City" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Alphabet City</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Arverne" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Arverne</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bay Ridge" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bay Ridge</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bedford-Stuyvesant" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bedford-Stuyvesant</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Boerum Hill" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Boerum Hill</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bowery" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bowery</span></label>
-                       </div>
+                </div>
+                <div class="filters-groups">
+                  <div class="filters-group">
+                    <div>
+                      <div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div>
+                      <h3>Neighborhoods</h3>
                     </div>
-                    <div class="link"><!-- react-text: 639 -->See all <!-- /react-text --><!-- react-text: 640 -->neighborhoods<!-- /react-text --></div>
-                  </div>
-              </div>
-               <div class="filters-groups">
-               <div class="filters-group">
-                  <div><div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div><h3>Neighborhoods</h3></div>
 
-                  <div class="filters-group-content">
-                    <div class="filters-group-items">
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Alphabet City" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Alphabet City</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Arverne" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Arverne</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bay Ridge" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bay Ridge</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bedford-Stuyvesant" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bedford-Stuyvesant</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Boerum Hill" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Boerum Hill</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bowery" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bowery</span></label>
-                       </div>
+                    <div class="filters-group-content">
+                      <div class="filters-group-items">
+                        <div class="filters-group-item">
+                          <label class="sp-checkbox invert "><input type="checkbox" name="Alphabet City" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Alphabet City</span></label>
+                        </div>
+                        <div class="filters-group-item">
+                          <label class="sp-checkbox invert "><input type="checkbox" name="Arverne" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Arverne</span></label>
+                        </div>
+                        <div class="filters-group-item">
+                          <label class="sp-checkbox invert "><input type="checkbox" name="Bay Ridge" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bay Ridge</span></label>
+                        </div>
+                        <div class="filters-group-item">
+                          <label class="sp-checkbox invert "><input type="checkbox" name="Bedford-Stuyvesant" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bedford-Stuyvesant</span></label>
+                        </div>
+                        <div class="filters-group-item">
+                          <label class="sp-checkbox invert "><input type="checkbox" name="Boerum Hill" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Boerum Hill</span></label>
+                        </div>
+                        <div class="filters-group-item">
+                          <label class="sp-checkbox invert "><input type="checkbox" name="Bowery" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bowery</span></label>
+                        </div>
+                      </div>
+                      <div class="link">
+                     See all
+                            
+                            neighborhoods
+                      </div>
                     </div>
-                    <div class="link"><!-- react-text: 639 -->See all <!-- /react-text --><!-- react-text: 640 -->neighborhoods<!-- /react-text --></div>
                   </div>
-              </div>
-               <div class="filters-groups">
-               <div class="filters-group">
-                  <div><div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div><h3>Neighborhoods</h3></div>
+                  <div class="filters-groups">
+                    <div class="filters-group">
+                      <div>
+                        <div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div>
+                        <h3>Neighborhoods</h3>
+                      </div>
 
-                  <div class="filters-group-content">
-                    <div class="filters-group-items">
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Alphabet City" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Alphabet City</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Arverne" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Arverne</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bay Ridge" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bay Ridge</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bedford-Stuyvesant" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bedford-Stuyvesant</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Boerum Hill" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Boerum Hill</span></label>
-                       </div>
-                       <div class="filters-group-item">
-                       <label class="sp-checkbox invert "><input type="checkbox" name="Bowery" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bowery</span></label>
-                       </div>
+                      <div class="filters-group-content">
+                        <div class="filters-group-items">
+                          <div class="filters-group-item">
+                            <label class="sp-checkbox invert "><input type="checkbox" name="Alphabet City" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Alphabet City</span></label>
+                          </div>
+                          <div class="filters-group-item">
+                            <label class="sp-checkbox invert "><input type="checkbox" name="Arverne" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Arverne</span></label>
+                          </div>
+                          <div class="filters-group-item">
+                            <label class="sp-checkbox invert "><input type="checkbox" name="Bay Ridge" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bay Ridge</span></label>
+                          </div>
+                          <div class="filters-group-item">
+                            <label class="sp-checkbox invert "><input type="checkbox" name="Bedford-Stuyvesant" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bedford-Stuyvesant</span></label>
+                          </div>
+                          <div class="filters-group-item">
+                            <label class="sp-checkbox invert "><input type="checkbox" name="Boerum Hill" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Boerum Hill</span></label>
+                          </div>
+                          <div class="filters-group-item">
+                            <label class="sp-checkbox invert "><input type="checkbox" name="Bowery" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bowery</span></label>
+                          </div>
+                        </div>
+                        <div class="link">
+                        See all
+                            
+                            neighborhoods
+                        </div>
+                      </div>
                     </div>
-                    <div class="link"><!-- react-text: 639 -->See all <!-- /react-text --><!-- react-text: 640 -->neighborhoods<!-- /react-text --></div>
+                    <div class="filters-groups">
+                      <div class="filters-group">
+                        <div>
+                          <div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div>
+                          <h3>Neighborhoods</h3>
+                        </div>
+
+                        <div class="filters-group-content">
+                          <div class="filters-group-items">
+                            <div class="filters-group-item">
+                              <label class="sp-checkbox invert "><input type="checkbox" name="Alphabet City" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Alphabet City</span></label>
+                            </div>
+                            <div class="filters-group-item">
+                              <label class="sp-checkbox invert "><input type="checkbox" name="Arverne" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Arverne</span></label>
+                            </div>
+                            <div class="filters-group-item">
+                              <label class="sp-checkbox invert "><input type="checkbox" name="Bay Ridge" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bay Ridge</span></label>
+                            </div>
+                            <div class="filters-group-item">
+                              <label class="sp-checkbox invert "><input type="checkbox" name="Bedford-Stuyvesant" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bedford-Stuyvesant</span></label>
+                            </div>
+                            <div class="filters-group-item">
+                              <label class="sp-checkbox invert "><input type="checkbox" name="Boerum Hill" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Boerum Hill</span></label>
+                            </div>
+                            <div class="filters-group-item">
+                              <label class="sp-checkbox invert "><input type="checkbox" name="Bowery" tabindex="false" value="on"><div class="square" style="background-color: transparent;"></div><span>Bowery</span></label>
+                            </div>
+                          </div>
+                          <div class="link">
+                           See all
+                            
+                            neighborhoods
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-              </div>
+
+      </section>-->
+      <section id="landing-filters">
+        <div class="col-md-12" style="padding:120px 0">
+          <div class="search-results-header">
+            <div class="results-count">1 -8 of {{vm.venues.length}} Spaces</div>
+            <!--<div class="sp-form">
+              <span class="sp-field-container  By popularity">
+                 <select id="sorting" class="sp-select sp-select-arrow no-border no-background">
+                      <option value="By popularity">By popularity</option>
+                      <option value="By price">By price</option>
+                </select>
+              </span>
+            </div>-->
           </div>
-  </div>
+          <div class="col-md-6 landing-part" style="margin-top: 20px" ng-repeat="venue in vm.venues track by $index">
+
+            <div class="lp-box-custom">
+              <div class="image" style="background-image: url('{{venue.photos[0]}}')">
+                <div class="info-btn-wrp">
+                  <div class="view-info-btn"><i class="fa fa-info"></i></div>
+                </div>
+              </div>
+              <div class="info">
+                <h2 class="sp-title">{{venue.name}}</h2>
+                <span>{{venue.city}}</span>
+                <div class="stars">
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                  <div class="fa fa-star"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--  <div class="col-md-12">
+            <div class="search-results-header">
+              <div class="results-count">1 -8  of {{vm.venues.length}} Spaces</div>
+            </div>
+            <div class="pagination-wrp">
+              <ul class="pagination">
+                <li class="disabled">
+                  <a role="button" href="#" style="pointer-events: none;" tabindex="-1"><span aria-label="Previous">‹</span></a></li>
+                <li class="active"><a role="button" href="#">1</a></li>
+                <li class=""><a role="button" href="#">2</a></li>
+                <li class=""><a role="button" href="#">3</a></li>
+                <li class=""><a role="button" href="#">4</a></li>
+                <li class=""><a role="button" href="#">5</a></li>
+                <li class="disabled"><a role="button" href="#" tabindex="-1" style="pointer-events: none;"><span aria-label="More">…</span></a></li>
+                <li class=""><a role="button" href="#">17</a></li>
+                <li class=""><a role="button" href="#"><span aria-label="Next">›</span></a></li>
+              </ul>
+            </div>
+          </div>-->
+        </div>
+      </section>
+      <!--  <div id="google-map" class="text-right">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.244526397339!2d77.23441831456739!3d28.562419082445476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce24c76aff925%3A0x455a11bc612344cd!2sAceFinity+Infotech+Pvt+Ltd!5e0!3m2!1sen!2sin!4v1492085339087"
+          width="100%" style="filter: grayscale(100%);" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>-->
+      <div map-lazy-load="https://maps.google.com/maps/api/js">
+        <ng-map zoom="6" center="18.5204, 73.8567" id="google-map" class="text-right">
+          <marker position="{{v.location[0]}},{{v.location[1]}}" title="{{v.name}}" ng-repeat="v in vm.venues track by $index">
+          </marker>
+        </ng-map>
+      </div>
 
   </section>
-<section id="landing-filters">
- <div class="col-md-12" style="padding:120px 0">
-  <div class="search-results-header">
-  <div class="results-count">1 - 42 of 202 Spaces</div>
-    <div class="sp-form">
-     <span class="sp-field-container  By popularity">
-      <select id="sorting" class="sp-select sp-select-arrow no-border no-background">
-        <option value="By popularity">By popularity</option>
-        <option value="By price">By price</option>
-      </select>
-      <!-- react-text: 933 --><!-- /react-text -->
-     </span>
-    </div>
-  </div>
-       <div class="col-md-6 landing-part" style="margin-top: 20px">
-         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
-         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
-         <h2 class="sp-title">Historic Architectural Loft in NoHo</h2>
-         <span>New York</span>
-<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
-         </a>
-       </div>
-        <div class="col-md-6 landing-part" style="margin-top: 20px">
-         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
-         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
-         <h2 class="sp-title">Light Filled Loft</h2>
-         <span>New York</span>
-<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
-         </a>
-       </div>
-        <div class="col-md-6 landing-part" style="margin-top: 20px">
-         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
-         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
-         <h2 class="sp-title">Historic Architectural Loft in NoHo</h2>
-         <span>New York</span>
-<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
-         </a>
-       </div>
-        <div class="col-md-6 landing-part" style="margin-top: 20px">
-         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
-         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
-         <h2 class="sp-title">Light Filled Loft</h2>
-         <span>New York</span>
-<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
-         </a>
-       </div>
-        <div class="col-md-6 landing-part" style="margin-top: 20px">
-         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
-         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
-         <h2 class="sp-title">Historic Architectural Loft in NoHo</h2>
-         <span>New York</span>
-<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
-         </a>
-       </div>
-        <div class="col-md-6 landing-part" style="margin-top: 20px">
-         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
-         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
-         <h2 class="sp-title">Light Filled Loft</h2>
-         <span>New York</span>
-<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
-         </a>
-       </div>
-        <div class="col-md-6 landing-part" style="margin-top: 20px">
-         <a class="lp-box" href="" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
-         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
-         <h2 class="sp-title">Historic Architectural Loft in NoHo</h2>
-         <span>New York</span>
-<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
-         </a>
-       </div>
-        <div class="col-md-6 landing-part" style="margin-top: 20px">
-         <a class="lp-box" href="" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
-         <div class="info-btn-wrp"><div class="view-info-btn"><i class="fa fa-info"></i></div></div>
-         <h2 class="sp-title">Light Filled Loft</h2>
-         <span>New York</span>
-<div class="stars"><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div><div class="fa fa-star"></div></div>
-         </a>
-       </div>
-       <div class="col-md-12">
-       <div class="search-results-header">
-        <div class="results-count">1 - 42 of 202 Spaces</div>
-      </div>
-         <div class="pagination-wrp">
-          <ul class="pagination">
-              <li class="disabled">
-              <a role="button" href="#" style="pointer-events: none;" tabindex="-1"><span aria-label="Previous">‹</span></a></li>
-              <li class="active"><a role="button" href="#">1</a></li>
-              <li class=""><a role="button" href="#">2</a></li>
-              <li class=""><a role="button" href="#">3</a></li>
-              <li class=""><a role="button" href="#">4</a></li>
-              <li class=""><a role="button" href="#">5</a></li>
-              <li class="disabled"><a role="button" href="#" tabindex="-1" style="pointer-events: none;"><span aria-label="More">…</span></a></li>
-              <li class=""><a role="button" href="#">17</a></li>
-              <li class=""><a role="button" href="#"><span aria-label="Next">›</span></a></li>
-          </ul>
-         </div>
-        </div>
-      </div>
-      </section>
-   <div id="google-map" class="text-right">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.244526397339!2d77.23441831456739!3d28.562419082445476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce24c76aff925%3A0x455a11bc612344cd!2sAceFinity+Infotech+Pvt+Ltd!5e0!3m2!1sen!2sin!4v1492085339087" width="100%" style="filter: grayscale(100%);" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-  </div>
-   
-</section>
-         
-
-    <script src="js/jquery.min.js"></script>
-      <script src="js/script.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/rangeslider.min.js"></script>
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="js/jquery-ui.js"></script> 
-  
-  </body>
-</html>
