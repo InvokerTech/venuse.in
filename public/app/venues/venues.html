@@ -270,23 +270,24 @@
         <div class="col-md-12" style="padding:120px 0">
           <div class="search-results-header">
             <div class="results-count">1 -8 of {{vm.venues.length}} Spaces</div>
-            <!--<div class="sp-form">
+            <div class="sp-form">
               <span class="sp-field-container  By popularity">
-                 <select id="sorting" class="sp-select sp-select-arrow no-border no-background">
-                      <option value="By popularity">By popularity</option>
-                      <option value="By price">By price</option>
+                 <select  class="sp-select sp-select-arrow no-border no-background"
+                         ng-change="vm.sortBy(vm.sortFilter)" ng-model="vm.sortFilter"
+                         data-ng-options="x as x.name for x in vm.sortfilters">
+                     
                 </select>
               </span>
-            </div>-->
+            </div>
           </div>
           <div class="col-md-6 landing-part" style="margin-top: 20px" ng-repeat="venue in vm.venues track by $index">
 
             <div class="lp-box-custom">
               <div class="image" style="background-image: url('{{venue.photos[0]}}')">
-                <div class="info-btn-wrp">
-                  <div class="view-info-btn"><i class="fa fa-info"></i></div>
-                </div>
               </div>
+              <!--<div class="info-btn-wrp">
+                  <div class="view-info-btn"><i class="fa fa-info"></i></div>
+                </div>-->
               <div class="info">
                 <h2 class="sp-title">{{venue.name}}</h2>
                 <span>{{venue.city}}</span>

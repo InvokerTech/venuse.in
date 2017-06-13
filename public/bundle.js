@@ -547,7 +547,7 @@ vm.venues=[];
     var venues = {
         controller: VenuesController,
         controllerAs: 'vm',
-        templateUrl: `app/venues/popularity.html`,
+        templateUrl: `app/venues/venues.html`,
     };
 
     angular
@@ -563,6 +563,19 @@ vm.venues=[];
     function VenuesController(VenueService) {
         var vm = this;
         vm.$onInit = function () {
+            getVenues();
+            vm.sortBy = sortBy;
+            vm.sortfilters = [{ value: 'popular', name: "By Popularity" },
+            { value: 'hourly_rate', name: "By Price" }];
+            vm.sortFilter = vm.sortfilters[0];
+        }
+
+        function sortBy(s) {
+            vm.venues = _.sortBy(vm.venues, s.value);
+           // console.log(vm.venues);
+        }
+
+        function getVenues() {
             VenueService.get()
                 .then(function (res) {
                     vm.venues = res.venues
