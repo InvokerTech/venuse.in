@@ -4899,3 +4899,6 @@ Responsive media queries
 .error {
     color: red;
 }
+.pac-container{
+    z-index: 6000;
+}
