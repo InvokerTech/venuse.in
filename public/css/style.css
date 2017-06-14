@@ -271,7 +271,7 @@ HEADER
     top: 54px;
     padding: 34px 0;
     height: 125px;
-    z-index: 1;
+    z-index: 5342;
     background-color: #ffffff;
     border-bottom: solid 1px #d6d6d6;
 }
@@ -758,10 +758,10 @@ a.download-presskit {
 }
 
 .search-more-filters {
-    position: absolute;
+    position: relative;
     left: 0px;
     width: 100%;
-    top: 295px;
+    top: 190px;
     height: calc(100vh - 264px);
     text-align: center;
     background-color: #ffffff;
@@ -3629,10 +3629,7 @@ a.sp-link-btn {
     padding-bottom: 50px;
 }
 
-.sp-form {
-    display: block;
-    position: relative;
-}
+
 
 .sp-form section {
     display: block;
@@ -4128,7 +4125,6 @@ contact
         left: 0px;
         height: 125px;
         width: 66%;
-        z-index: 1008;
         border-right: solid 1px #d6d6d6;
     }
     .link:hover,
@@ -4204,7 +4200,6 @@ contact
         position: relative;
         overflow: hidden;
         margin-top: 25px;
-        max-height: 80px;
         -webkit-transition: max-height 300ms linear;
         -moz-transition: max-height 300ms linear;
         -ms-transition: max-height 300ms linear;
@@ -4258,7 +4253,7 @@ contact
         background-color: #ccc;
     }
     .filters-group-item label.sp-checkbox span {
-        display: inline-block;
+        display: inline;
         vertical-align: middle;
         width: calc(100% - 30px);
         font-size: 16px;

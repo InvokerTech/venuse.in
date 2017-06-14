@@ -25,6 +25,7 @@
         "$":true,
         "_":true,
         "API_URL":true,
-        "gapi":true
+        "gapi":true,
+        "google":true
     }
 }

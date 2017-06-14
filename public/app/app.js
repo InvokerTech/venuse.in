@@ -3,7 +3,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 (function () {
     'use strict';
     angular.module('venuse', 
-        ['ui.router','directive.g+signin','ngFacebook','ngMap']);
+        ['ui.router','directive.g+signin','ngFacebook','ngMap','rzModule']);
 
     angular
         .module('venuse')
