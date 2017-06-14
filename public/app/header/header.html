@@ -24,7 +24,7 @@
 
         <div class=" collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li><a ><button type="button" class="list-your-space">list your space</button></a></li>
+            <li><a ui-sref="list-space" ><button type="button" class="list-your-space">list your space</button></a></li>
             <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" data-toggle="modal" data-target="#signup-modal" >SIGN UP</a></li>
             <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" data-toggle="modal" data-target="#login-modal" >LOG IN</a></li>
             <li ng-if="vm.userstatus" class=""><a class="nav-ul-a">{{vm.user.name}}</a></li>
