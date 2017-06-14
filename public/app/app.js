@@ -33,7 +33,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 })
                  .state('add', {
                     url: '/add',
-                    templateUrl: 'app/add/list_space.html'
+                     component: 'addSpace'
                 })
                 .state('cancellation_policy', {
                     url: '/cancellation_policy',

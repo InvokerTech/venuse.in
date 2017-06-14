@@ -33,7 +33,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 })
                  .state('add', {
                     url: '/add',
-                    templateUrl: 'app/add/list_space.html'
+                     component: 'addSpace'
                 })
                 .state('cancellation_policy', {
                     url: '/cancellation_policy',
@@ -41,6 +41,37 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 })
 
         });
+})();
+(function() {
+'use strict';
+
+    var addSpace = {
+        controller: AddController,
+        controllerAs: 'vm',
+        templateUrl: `app/add/list_space.html`
+    };
+        
+    angular
+        .module('venuse')
+        .component('addSpace', addSpace);
+        
+            angular
+                .module('venuse')
+                .controller('AddController', AddController);
+        
+            AddController.inject = [''];
+            function AddController() {
+                var vm = this;
+                
+        
+                 vm.$onInit = function() {
+        
+                ////////////////
+        
+                }
+            }
+       
+
 })();
 /*(function() {
 'use strict';
