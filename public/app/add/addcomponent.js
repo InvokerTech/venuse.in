@@ -1,31 +1,40 @@
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     var addSpace = {
         controller: AddController,
         controllerAs: 'vm',
-        templateUrl: `app/add/list_space.html`
+        templateUrl: `app/add/list_space.html`,
+        bindings: {
+            authError: '='
+        }
     };
-        
+
     angular
         .module('venuse')
         .component('addSpace', addSpace);
+
+    angular
+        .module('venuse')
+        .controller('AddController', AddController);
+
+    AddController.inject = ['$state'];
+    function AddController($state) {
+        var vm = this;
         
-            angular
-                .module('venuse')
-                .controller('AddController', AddController);
-        
-            AddController.inject = [''];
-            function AddController() {
-                var vm = this;
-                
-        
-                 vm.$onInit = function() {
-        
-                ////////////////
-        
-                }
+     //   redirect();
+        vm.$onInit = function () {
+
+
+        }
+
+        function redirect() {
+            if (!vm.authError) {
+                alert('error');
+                $state.go('list-space');
             }
-       
+        }
+    }
+
 
 })();

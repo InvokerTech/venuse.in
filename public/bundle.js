@@ -2,8 +2,8 @@
 var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-line
 (function () {
     'use strict';
-    angular.module('venuse', 
-        ['ui.router','directive.g+signin','ngFacebook','ngMap','rzModule']);
+    angular.module('venuse',
+        ['ui.router', 'directive.g+signin', 'ngFacebook', 'ngMap', 'rzModule']);
 
     angular
         .module('venuse')
@@ -15,7 +15,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/home',
                     component: 'home'
                 })
-                 .state('venues', {
+                .state('venues', {
                     url: '/venues',
                     component: 'venues'
                 })
@@ -31,9 +31,14 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/list-space',
                     templateUrl: 'app/add/list_your_spaces.html'
                 })
-                 .state('add', {
+                .state('add', {
                     url: '/add',
-                     component: 'addSpace'
+                    resolve: {
+                        authError: function (AuthService) {
+                            return AuthService.isLogin();
+                        }
+                    },
+                    component: 'addSpace'
                 })
                 .state('cancellation_policy', {
                     url: '/cancellation_policy',
@@ -42,35 +47,44 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 
         });
 })();
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     var addSpace = {
         controller: AddController,
         controllerAs: 'vm',
-        templateUrl: `app/add/list_space.html`
+        templateUrl: `app/add/list_space.html`,
+        bindings: {
+            authError: '='
+        }
     };
-        
+
     angular
         .module('venuse')
         .component('addSpace', addSpace);
+
+    angular
+        .module('venuse')
+        .controller('AddController', AddController);
+
+    AddController.inject = ['$state'];
+    function AddController($state) {
+        var vm = this;
         
-            angular
-                .module('venuse')
-                .controller('AddController', AddController);
-        
-            AddController.inject = [''];
-            function AddController() {
-                var vm = this;
-                
-        
-                 vm.$onInit = function() {
-        
-                ////////////////
-        
-                }
+     //   redirect();
+        vm.$onInit = function () {
+
+
+        }
+
+        function redirect() {
+            if (!vm.authError) {
+                alert('error');
+                $state.go('list-space');
             }
-       
+        }
+    }
+
 
 })();
 /*(function() {

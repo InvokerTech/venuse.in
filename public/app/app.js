@@ -2,8 +2,8 @@
 var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-line
 (function () {
     'use strict';
-    angular.module('venuse', 
-        ['ui.router','directive.g+signin','ngFacebook','ngMap','rzModule']);
+    angular.module('venuse',
+        ['ui.router', 'directive.g+signin', 'ngFacebook', 'ngMap', 'rzModule']);
 
     angular
         .module('venuse')
@@ -15,7 +15,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/home',
                     component: 'home'
                 })
-                 .state('venues', {
+                .state('venues', {
                     url: '/venues',
                     component: 'venues'
                 })
@@ -31,9 +31,14 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/list-space',
                     templateUrl: 'app/add/list_your_spaces.html'
                 })
-                 .state('add', {
+                .state('add', {
                     url: '/add',
-                     component: 'addSpace'
+                    resolve: {
+                        authError: function (AuthService) {
+                            return AuthService.isLogin();
+                        }
+                    },
+                    component: 'addSpace'
                 })
                 .state('cancellation_policy', {
                     url: '/cancellation_policy',

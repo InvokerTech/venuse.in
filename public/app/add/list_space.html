@@ -2197,43 +2197,43 @@
 	</section>
 </div>
 
-<script>
-	$.noConflict();
-	jQuery(document).ready(function ($) {
+
+<script type="text/javascript">
+
+	$(document).ready(function ($) {
 		//alert("adsf");
-		var currentTab = 0;
-			$("#tabs").tabs({
-				select: function (e, i) {
-					currentTab = i.index;
-				}
-			});
-	
-		$(function () {
-			$("#btnNext").live("click", function () {
-				var tabs = $('#tabs').tabs();
-				var c = $('#tabs').tabs("length");
-				currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
-				tabs.tabs('select', currentTab);
-				$("#btnPrevious").show();
-				if (currentTab == (c - 1)) {
-					$("#btnNext").hide();
-				} else {
-					$("#btnNext").show();
-				}
-			});
-			$("#btnPrevious").live("click", function () {
-				var tabs = $('#tabs').tabs();
-				var c = $('#tabs').tabs("length");
-				currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
-				tabs.tabs('select', currentTab);
-				if (currentTab == 0) {
-					$("#btnNext").show();
-					$("#btnPrevious").hide();
-				}
-				if (currentTab < (c - 1)) {
-					$("#btnNext").show();
-				}
-			});
-		});
+	  var currentTab = 0;
+    $(function () {
+        $("#tabs").tabs({
+            select: function (e, i) {
+                currentTab = i.index;
+            }
+        });
+    });
+    $('.list-form').on("click",'#btnNext', function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+        tabs.tabs('select', currentTab);
+        $("#btnPrevious").show();
+        if (currentTab == (c - 1)) {
+            $("#btnNext").hide();
+        } else {
+            $("#btnNext").show();
+        }
+    });
+    $('.list-form').on("click","#btnPrevious", function () {
+        var tabs = $('#tabs').tabs();
+        var c = $('#tabs').tabs("length");
+        currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+        tabs.tabs('select', currentTab);
+        if (currentTab == 0) {
+            $("#btnNext").show();
+            $("#btnPrevious").hide();
+        }
+        if (currentTab < (c - 1)) {
+            $("#btnNext").show();
+        }
+    });
 	});
 </script>
