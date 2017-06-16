@@ -34,8 +34,14 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 .state('add', {
                     url: '/add',
                     resolve: {
-                        authError: function (AuthService) {
-                            return AuthService.isLogin();
+                        authError: function (AuthService, $state) {
+                            if (!AuthService.isLogin()) {
+
+                                alert('Please login to add space.');
+                                return $state.go('list-space');
+
+                            }
+                            else { return true; }
                         }
                     },
                     component: 'addSpace'

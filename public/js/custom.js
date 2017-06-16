@@ -49,7 +49,7 @@
             $(".navbar").css("box-shadow","0px 0px 6px #222");
             $(".nav-ul-a").css("color","#000");
             $(".text-color").css("border","1px solid #000");
-            $("form span").css("color","#000");
+         //   $("form span").css("color","#000");
             $(".text-color").css("color","#000");
             $(".glyphicon-search").css("color","#000");
             $(".navbar-toggle i").css("color","#000");
@@ -62,7 +62,7 @@
             $(".text-color").css("border","1px solid #fff");
             $(".text-color").css("color","#fff");
             $(".glyphicon-search").css("color","#fff");
-            $("form span").css("color","#fff");
+        //    $("form span").css("color","#fff");
             $(".navbar-toggle i").css("color","#fff");
             $(".navbar-brand a img").css("background-img","url('img/Venuse-HighRes2.png')");
 			 

@@ -7,7 +7,7 @@
 
     VenueService.inject = ['$http', '$q'];
     function VenueService($http, $q) {
-        var api_type = 'search/venues'
+        var api_type = 'venue/user/book'
         var service = {
             get: get
         };
@@ -18,7 +18,7 @@
 
             var url = API_URL + api_type;
 
-            return $http.post(url).
+            return $http.get(url).
                 then(function (response) {
 
                     //console.log(response);
