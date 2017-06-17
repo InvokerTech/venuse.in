@@ -18,8 +18,8 @@
         .module('venuse')
         .controller('AddController', AddController);
 
-    AddController.inject = ['AuthService', 'RegisterService',' $state'];
-    function AddController(AuthService, RegisterService,$state) {
+    AddController.inject = ['AuthService', 'RegisterService', ' $state'];
+    function AddController(AuthService, RegisterService, $state) {
         var vm = this;
 
         //  redirect();
@@ -56,12 +56,7 @@
             vm.space.cancelationPolicy;
             vm.space.holdBeforeCancel = 1;
             vm.space.deposit;
-            vm.space.photos = [
-                "https://s3.ap-south-1.amazonaws.com/venuse/one.jpg",
-                "https://s3.ap-south-1.amazonaws.com/venuse/two.jpg",
-                "https://s3.ap-south-1.amazonaws.com/venuse/three.jpg",
-                "https://s3.ap-south-1.amazonaws.com/venuse/four.jpg"
-            ];
+            vm.space.photos = [];
 
 
             vm.eventTypes = [
@@ -298,13 +293,46 @@
                 }
             });
 
+            var file = document.getElementById("imagefile");
+            for (var i = 0, count = file.files.length; i < count; ++i) {
+                var form = new FormData();
+                form.append('file', file.files[i]);
+
+                var settings = {
+                    "async": false,
+                    "crossDomain": true,
+                    "url": "https://venuse-backend.herokuapp.com/image",
+                    "method": "POST",
+                    "processData": false,
+                    "contentType": false,
+                    "mimeType": "multipart/form-data",
+                    "data": form
+                }
+
+                $.ajax(settings).done(function (response) {
+                    console.log(response);
+                    var json = JSON.parse(response);
+                    vm.space.photos.push(json.url);
+
+                });
+                $.ajax(settings).fail(function (response) {
+                    console.log(response);
+                    alert("Could not upload image");
+                });
+            }
+
+
+
+
             RegisterService.send(vm.space)
                 .then(function (res) {
                     console.log(res);
                     alert('Venue added successfully.');
                     $state.go('venues');
                 })
-                .catch();
+                .catch(function(err){
+                    console.log(err);
+                });
 
 
         }

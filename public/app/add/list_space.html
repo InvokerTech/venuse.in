@@ -879,15 +879,15 @@
 											<b>Drag &amp; drop images to put them in the order you’d like viewers to see.</b>
 										</div>
 										<div class="col-sm-4 col-sm-offset-1 add-photos-bt">
-											<label for="file-upload" class="sp-btn sp-btn-has-icon  sp-btn-transparent sp-semibold sp-capitalize sp-btn-mh-alternate"
-											 style="max-width:100%;font-weight:600;color:#262629;cursor:pointer;">
+
+											<input type="file" name="imagefile[]" id="imagefile" accept="image" ng-model="vm.file" data-file="vm.file" multiple required/>
+											<label for="imagefile" class="sp-btn sp-btn-has-icon  sp-btn-transparent sp-semibold sp-capitalize sp-btn-mh-alternate" style="max-width:100%;font-weight:600;color:#262629;cursor:pointer;">
                             + Add Photos</label>
-											<input id="file-upload" type="file" />
 										</div>
 									</div>
 									<div class="sp-mt-30">
 									</div>
-									<div class="listing-photos-upload">
+									<!--									<div class="listing-photos-upload">
 										<div class="dropzone-container listing-photos-zone dz-clickable" id="space-photos"></div>
 										<div class="listing-photos-upload-bt">
 											<label for="file-upload" class="sp-btn sp-btn-has-icon  sp-btn-transparent sp-semibold sp-capitalize sp-btn-mh-alternate"
@@ -927,7 +927,7 @@
 												</div>
 											</li>
 										</ul>
-									</div>
+									</div>-->
 								</div>
 							</div>
 						</div>
@@ -1992,7 +1992,7 @@
 								<div class="col-sm-6">
 									<div class="sp-field-container sp-field-counter ">
 										<input type="number" class="sp_input" name="reservation_period" ng-model="vm.space.holdBeforeCancel">
-										<span  class="counter-suffix">days</span>
+										<span class="counter-suffix">days</span>
 										<span ng-click="vm.decrease('vm.space.holdBeforeCancel')" class="counter-bt counter-minus">-</span>
 										<span ng-click="vm.increase('vm.space.holdBeforeCancel')" class="counter-bt counter-plus">+</span>
 									</div>
@@ -2098,7 +2098,8 @@
 						<div class="listing-loby-header">
 							<h1>Awesome!<br> Your space is ready for review.</h1>
 							<div>
-								<button ng-click="vm.submit()" type="button" class="sp-btn  sp-btn-yellow sp-btn-disabled sp-semibold sp-capitalize listing-process-next" style="max-width: 100%;margin-bottom:20px;"><span>Submit For Approval</span></button>
+								<button ng-click="vm.submit()" type="button" class="sp-btn  sp-btn-yellow sp-btn-disabled sp-semibold sp-capitalize listing-process-next"
+								 style="max-width: 100%;margin-bottom:20px;"><span>Submit For Approval</span></button>
 							</div>
 							<div>Your listing will be live on Splacer.co once our team approves it.<br>This can take up to 2 working days. </div>
 							<label class="listing-label">
@@ -2176,6 +2177,18 @@
 				$("#btnNext").show();
 			}
 		});
+	});
+
+	$("[type=file]").on("change", function () {
+		// file uplaod status show in label
+		
+		var file = this.files.length;
+		var dflt = $(this).attr("placeholder");
+		if ($(this).val() != "") {
+			$(this).next().text(file + ' Files');
+		} else {
+			$(this).next().text(dflt);
+		}
 	});
 
 </script>
