@@ -1532,275 +1532,181 @@
 							</div>
 							<div class="row form-field">
 								<div class="col-sm-12">
-									<span class="index-box-label">
-  					<span class="index-box-color" style="background-color: rgb(255, 245, 219);"></span>Available
+									<span class="index-box-label col-sm-12 text-center" style="margin-bottom: 15px;"> 
+  					<span  style="background-color: rgb(255, 245, 219);"></span>Available
 									</span>
-									<span class="index-box-label">
-  					<span class="index-box-color" style="background-color: rgb(255, 255, 255);"></span>Unavailable
-									</span>
+									<div class="row" style="padding-bottom:30px;">
+										<div class="col-sm-12 col-md-6">
+											<div class="col-md-4">
+												<p>From</p>
+											</div>
+											<div class="col-md-8">
+												<div class="dropdown1">
+													<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+													 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.available.from.day}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+													<ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
+														<li ng-repeat="d in vm.dayTypes"><a ng-click="vm.setAvialableFrom(d)" href="">{{d}}</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 col-md-6">
+											<div class="col-md-4">
+												<p>To</p>
+											</div>
+											<div class="col-md-8">
+												<div class="dropdown1">
+													<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+													 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.available.to.day}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+													<ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
+														<li ng-repeat="d in vm.dayTypes"><a ng-click="vm.setAvialableTo(d)" href="">{{d}}</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row" style="padding-bottom:30px;">
+										<div class="col-sm-12 col-md-6">
+											<div class="col-md-4">
+												<p>Time</p>
+											</div>
+											<div class="col-md-8">
+												<div class="col-md-5 no-pad">
+													<div class="dropdown1">
+														<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+														 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.available.from.h}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+														<ul class="dropdown-menu simple-li" aria-labelledby="event-type">
+															<li ng-repeat="h in vm.hourTypes track by $index"><a ng-click="vm.setAvialableFromHour(h)" href="">{{h}}</a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-md-5 no-pad">
+													<div class="dropdown1">
+														<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+														 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.available.from.m}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+														<ul class="dropdown-menu simple-li" aria-labelledby="event-type">
+															<li ng-repeat="m in vm.minuteTypes track by $index"><a ng-click="vm.setAvialableFromMinute(m)" href="">{{m}}</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 col-md-6">
+											<div class="col-md-4">
+												<p>To</p>
+											</div>
+											<div class="col-md-8">
+												<div class="col-md-5 no-pad">
+													<div class="dropdown1">
+														<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+														 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.available.to.h}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+														<ul class="dropdown-menu simple-li" aria-labelledby="event-type">
+															<li ng-repeat="h in vm.hourTypes track by $index"><a ng-click="vm.setAvialableToHour(h)" href="">{{h}}</a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-md-5 no-pad">
+													<div class="dropdown1">
+														<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+														 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.available.to.m}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+														<ul class="dropdown-menu simple-li" aria-labelledby="event-type">
+															<li ng-repeat="m in vm.minuteTypes track by $index"><a ng-click="vm.setAvialableToMinute(m)" href="">{{m}}</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="row" style="padding-bottom:30px;">
 								<div class="col-sm-12">
-									<table class="listing-schedule" id="listing-schedule">
-										<thead>
-											<tr>
-												<th></th>
-												<th>Mon</th>
-												<th>Tue</th>
-												<th>Wed</th>
-												<th>Thu</th>
-												<th>Fri</th>
-												<th>Sat</th>
-												<th>Sun</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="hour">1am</td>
-												<td data-time="1" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="1" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="1" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="1" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="1" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="1" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="1" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">2am</td>
-												<td data-time="2" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="2" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="2" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="2" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="2" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="2" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="2" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">3am</td>
-												<td data-time="3" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="3" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="3" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="3" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="3" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="3" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="3" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">4am</td>
-												<td data-time="4" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="4" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="4" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="4" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="4" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="4" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="4" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">5am</td>
-												<td data-time="5" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="5" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="5" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="5" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="5" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="5" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="5" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">6am</td>
-												<td data-time="6" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="6" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="6" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="6" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="6" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="6" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="6" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">7am</td>
-												<td data-time="7" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="7" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="7" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="7" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="7" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="7" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="7" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">8am</td>
-												<td data-time="8" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="8" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="8" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="8" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="8" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="8" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="8" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">9am</td>
-												<td data-time="9" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="9" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="9" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="9" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="9" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="9" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="9" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">10am</td>
-												<td data-time="10" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="10" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="10" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="10" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="10" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="10" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="10" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">11am</td>
-												<td data-time="11" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="11" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="11" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="11" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="11" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="11" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="11" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">Noon</td>
-												<td data-time="12" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="12" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="12" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="12" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="12" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="12" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="12" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">1pm</td>
-												<td data-time="13" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="13" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="13" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="13" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="13" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="13" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="13" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">2pm</td>
-												<td data-time="14" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="14" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="14" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="14" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="14" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="14" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="14" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">3pm</td>
-												<td data-time="15" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="15" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="15" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="15" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="15" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="15" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="15" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">4pm</td>
-												<td data-time="16" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="16" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="16" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="16" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="16" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="16" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="16" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">5pm</td>
-												<td data-time="17" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="17" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="17" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="17" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="17" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="17" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="17" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">6pm</td>
-												<td data-time="18" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="18" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="18" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="18" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="18" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="18" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="18" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">7pm</td>
-												<td data-time="19" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="19" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="19" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="19" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="19" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="19" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="19" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">8pm</td>
-												<td data-time="20" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="20" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="20" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="20" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="20" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="20" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="20" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">9pm</td>
-												<td data-time="21" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="21" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="21" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="21" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="21" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="21" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="21" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">10pm</td>
-												<td data-time="22" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="22" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="22" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="22" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="22" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="22" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="22" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">11pm</td>
-												<td data-time="23" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="23" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="23" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="23" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="23" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="23" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="23" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-											<tr>
-												<td class="hour">12am</td>
-												<td data-time="24" data-day="Mon" data-day-count="1" data-day-display="1"></td>
-												<td data-time="24" data-day="Tue" data-day-count="2" data-day-display="2"></td>
-												<td data-time="24" data-day="Wed" data-day-count="3" data-day-display="3"></td>
-												<td data-time="24" data-day="Thu" data-day-count="4" data-day-display="4"></td>
-												<td data-time="24" data-day="Fri" data-day-count="5" data-day-display="5"></td>
-												<td data-time="24" data-day="Sat" data-day-count="6" data-day-display="6"></td>
-												<td data-time="24" data-day="Sun" data-day-count="0" data-day-display="7"></td>
-											</tr>
-										</tbody>
-									</table>
+									<span class="index-box-label col-sm-12 text-center" style="margin-bottom: 15px;">
+  					<span  style="background-color: rgb(255, 245, 219);"></span>Unavailable
+									</span>
+									<div class="row" style="padding-bottom:30px;">
+										<div class="col-sm-12 col-md-6">
+											<div class="col-md-4">
+												<p>From</p>
+											</div>
+											<div class="col-md-8">
+												<div class="dropdown1">
+													<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+													 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.unAvailable.from.day}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+													<ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
+														<li ng-repeat="d in vm.dayTypes"><a ng-click="vm.setUnAvialableFrom(d)" href="">{{d}}</a></li>
+													</ul>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="col-sm-12 col-md-6">
+											<div class="col-md-4">
+												<p>To</p>
+											</div>
+											<div class="col-md-8">
+												<div class="dropdown1">
+													<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+													 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.unAvailable.to.day}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+													<ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
+														<li ng-repeat="d in vm.dayTypes"><a ng-click="vm.setUnAvialableTo(d)" href="">{{d}}</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row" style="padding-bottom:30px;">
+										<div class="col-sm-12 col-md-6">
+											<div class="col-md-4">
+												<p>Time</p>
+											</div>
+											<div class="col-md-8">
+												<div class="col-md-5 no-pad">
+													<div class="dropdown1">
+														<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+														 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.unAvailable.from.h}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+														<ul class="dropdown-menu simple-li" aria-labelledby="event-type">
+															<li ng-repeat="h in vm.hourTypes track by $index"><a ng-click="vm.setUnAvialableFromHour(h)" href="">{{h}}</a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-md-5 no-pad">
+													<div class="dropdown1">
+														<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+														 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.unAvailable.from.m}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+														<ul class="dropdown-menu simple-li" aria-labelledby="event-type">
+															<li ng-repeat="m in vm.minuteTypes track by $index"><a ng-click="vm.setUnAvialableFromMinute(m)" href="">{{m}}</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 col-md-6">
+											<div class="col-md-4">
+												<p>To</p>
+											</div>
+											<div class="col-md-8">
+												<div class="col-md-5 no-pad">
+													<div class="dropdown1">
+														<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+														 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.unAvailable.to.h}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+														<ul class="dropdown-menu simple-li" aria-labelledby="event-type">
+															<li ng-repeat="h in vm.hourTypes track by $index"><a ng-click="vm.setUnAvialableToHour(h)" href="">{{h}}</a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-md-5 no-pad">
+													<div class="dropdown1">
+														<button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:35px; font-size:18px; color:#444; overflow:hidden;"
+														 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.space.unAvailable.to.m}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+														<ul class="dropdown-menu simple-li" aria-labelledby="event-type">
+															<li ng-repeat="m in vm.minuteTypes track by $index"><a ng-click="vm.setUnAvialableToMinute(m)" href="">{{m}}</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div>
 							</div>
 						</div>
 						<div class="listing-footer ">
@@ -2141,6 +2047,7 @@
 </div>
 
 
+
 <script type="text/javascript">
 	$(document).ready(function ($) {
 		//alert("adsf");
@@ -2181,7 +2088,7 @@
 
 	$("[type=file]").on("change", function () {
 		// file uplaod status show in label
-		
+
 		var file = this.files.length;
 		var dflt = $(this).attr("placeholder");
 		if ($(this).val() != "") {

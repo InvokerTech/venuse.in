@@ -215,24 +215,36 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 { status: false, value: ' No Open House' },
                 { status: false, value: ' No Late Night Parties' },
             ];
+            vm.dayTypes = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            vm.hourTypes = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12',
+                '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'];
+            vm.minuteTypes = ['10', '20', '30', '40', '50'];
             vm.space.available = {
-                to: {
-                    day: 'Friday',
-                    time: '23:00'
-                },
                 from: {
                     day: 'Monday',
-                    time: '08:00'
+                    time: '',
+                    h: '08',
+                    m: '00'
+                },
+                to: {
+                    day: 'Friday',
+                    time: '',
+                    h: '23',
+                    m: '00'
                 }
             };
             vm.space.unAvailable = {
                 from: {
                     day: 'Friday',
-                    time: '23:00'
+                    time: '',
+                    h: '23',
+                    m: '00'
                 },
                 to: {
                     day: 'Monday',
-                    time: '08:00'
+                    time: '',
+                    h: '08',
+                    m: '00'
                 }
             };
 
@@ -245,6 +257,18 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             vm.increase = increase;
             vm.decrease = decrease;
             vm.submit = submit;
+            vm.setAvialableFrom = setAvialableFrom;
+            vm.setAvialableFromHour = setAvialableFromHour;
+            vm.setAvialableFromMinute = setAvialableFromMinute;
+            vm.setAvialableTo = setAvialableTo;
+            vm.setAvialableToHour = setAvialableToHour;
+            vm.setAvialableToMinute = setAvialableToMinute;
+            vm.setUnAvialableFrom = setUnAvialableFrom;
+            vm.setUnAvialableFromHour = setUnAvialableFromHour;
+            vm.setUnAvialableFromMinute = setUnAvialableFromMinute;
+            vm.setUnAvialableTo = setUnAvialableTo;
+            vm.setUnAvialableToHour = setUnAvialableToHour;
+            vm.setUnAvialableToMinute = setUnAvialableToMinute;
 
 
         }
@@ -317,6 +341,14 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             vm.user = AuthService.getUser();
         }
         function submit() {
+            //set Available timings
+            vm.space.available.from.time=vm.space.available.from.h +':' +vm.space.available.from.m;
+            vm.space.available.to.time=vm.space.available.to.h +':' +vm.space.available.to.m;
+            vm.space.unAvailable.from.time=vm.space.unAvailable.from.h +':' +vm.space.unAvailable.from.m;
+            vm.space.unAvailable.to.time=vm.space.unAvailable.to.h +':' +vm.space.unAvailable.to.m;
+          //  console.log( vm.space.available);
+           //  console.log( vm.space.unAvailable);
+
             _.forEach(vm.eventTypes, function (a) {
                 if (a.status === true) {
                     vm.space.eventTypes.push(a.value);
@@ -385,11 +417,60 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     alert('Venue added successfully.');
                     $state.go('venues');
                 })
-                .catch(function(err){
+                .catch(function (err) {
                     console.log(err);
                 });
 
 
+        }
+
+        function setAvialableFrom(s) {
+            vm.space.available.from.day = s;
+            // console.log(vm.space.available);
+        }
+        function setAvialableFromHour(s) {
+            vm.space.available.from.h = s;
+            // console.log(vm.space.available);
+        }
+        function setAvialableFromMinute(s) {
+            vm.space.available.from.m = s;
+            // console.log(vm.space.available);
+        }
+        function setAvialableTo(s) {
+            vm.space.available.to.day = s;
+            // console.log(vm.space.available);
+        }
+        function setAvialableToHour(s) {
+            vm.space.available.to.h = s;
+            // console.log(vm.space.available);
+        }
+        function setAvialableToMinute(s) {
+            vm.space.available.to.m = s;
+            // console.log(vm.space.available);
+        }
+        function setUnAvialableFrom(s) {
+            vm.space.unAvailable.from.day = s;
+            // console.log(vm.space.available);
+        }
+        function setUnAvialableFromHour(s) {
+            vm.space.unAvailable.from.h = s;
+            // console.log(vm.space.available);
+        }
+        function setUnAvialableFromMinute(s) {
+            vm.space.unAvailable.from.m = s;
+            // console.log(vm.space.available);
+        }
+        function setUnAvialableTo(s) {
+            vm.space.unAvailable.to.day = s;
+            // console.log(vm.space.available);
+        }
+        function setUnAvialableToHour(s) {
+            vm.space.unAvailable.to.h = s;
+            // console.log(vm.space.available);
+        }
+        function setUnAvialableToMinute(s) {
+            vm.space.unAvailable.to.m = s;
+            // console.log(vm.space.available);
         }
         vm.test = function (s) {
             alert('test success');
@@ -399,7 +480,6 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 
 
 })();
-
 (function () {
     'use strict';
 
