@@ -89,8 +89,9 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             vm.space.access = [];
             vm.space.typeOfSpace;
             vm.space.address;
-            vm.space.location = ['18.5204', '73.8567'];
-            vm.space.city = 'Pune';
+            vm.space.addressDetail;
+            vm.space.location = [];
+            vm.space.city = '';
             vm.space.user = vm.user;
             vm.space.kindOfSpace = 'House';
             vm.space.rooms = 1;
@@ -257,6 +258,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             vm.increase = increase;
             vm.decrease = decrease;
             vm.submit = submit;
+            vm.setMap = setMap;
             vm.setAvialableFrom = setAvialableFrom;
             vm.setAvialableFromHour = setAvialableFromHour;
             vm.setAvialableFromMinute = setAvialableFromMinute;
@@ -340,14 +342,44 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
         function getUser() {
             vm.user = AuthService.getUser();
         }
+        function setMap() {
+            var places = new google.maps.places.Autocomplete(document.getElementById('listing_address'));
+            google.maps.event.addListener(places, 'place_changed', function () {
+                var boundsByCity = places.getPlace();
+                // console.log(boundsByCity);
+                // console.log(boundsByCity.name);
+                //  vm.filter.place = boundsByCity.name;
+                vm.space.address = boundsByCity.formatted_address;
+                _.forEach(boundsByCity, function (obj) {
+                    for (var i = 0; i < obj.length; i++) {
+                        if (obj[i].types[0] == "locality") {
+                            //   alert(obj.address_components[i].short_name+" "+obj.address_components[i].long_name);
+                            vm.space.city = obj[i].long_name;
+                            // alert(city+ " from function");
+                            return false;
+                        }
+                    }
+                });
+                var lat = boundsByCity.geometry.location.lat();
+                var lng = boundsByCity.geometry.location.lng();
+                if (lat !== null && lng !== null) {
+                    vm.space.location.push(lat);
+                    vm.space.location.push(lng);
+                }
+            });
+
+        }
+
         function submit() {
             //set Available timings
-            vm.space.available.from.time=vm.space.available.from.h +':' +vm.space.available.from.m;
-            vm.space.available.to.time=vm.space.available.to.h +':' +vm.space.available.to.m;
-            vm.space.unAvailable.from.time=vm.space.unAvailable.from.h +':' +vm.space.unAvailable.from.m;
-            vm.space.unAvailable.to.time=vm.space.unAvailable.to.h +':' +vm.space.unAvailable.to.m;
-          //  console.log( vm.space.available);
-           //  console.log( vm.space.unAvailable);
+            vm.space.available.from.time = vm.space.available.from.h + ':' + vm.space.available.from.m;
+            vm.space.available.to.time = vm.space.available.to.h + ':' + vm.space.available.to.m;
+            vm.space.unAvailable.from.time = vm.space.unAvailable.from.h + ':' + vm.space.unAvailable.from.m;
+            vm.space.unAvailable.to.time = vm.space.unAvailable.to.h + ':' + vm.space.unAvailable.to.m;
+
+            //combine google address and manual address
+            vm.space.addressDetail = vm.space.addressDetail + ',';
+            vm.space.address = vm.space.addressDetail.concat(vm.space.address);
 
             _.forEach(vm.eventTypes, function (a) {
                 if (a.status === true) {
@@ -397,7 +429,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 }
 
                 $.ajax(settings).done(function (response) {
-                    console.log(response);
+                    //  console.log(response);
                     var json = JSON.parse(response);
                     vm.space.photos.push(json.url);
 
@@ -413,12 +445,20 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 
             RegisterService.send(vm.space)
                 .then(function (res) {
-                    console.log(res);
-                    alert('Venue added successfully.');
-                    $state.go('venues');
+                    //  console.log(res);
+                    if (res) {
+                        alert('Venue added successfully.');
+                        $state.go('venues');
+                    }
+                    else {
+                        alert('Venue not added.Correct all details.');
+                        $state.reload();
+                    }
                 })
                 .catch(function (err) {
                     console.log(err);
+                    alert('Venue not added.Correct all details.');
+                    $state.reload();
                 });
 
 

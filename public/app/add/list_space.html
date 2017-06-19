@@ -451,8 +451,16 @@
 							<div class="row form-field">
 								<div class="col-sm-10">
 									<span class="sp-field-container undefined">
-		  				<input type="address" class="sp_input" id="listing_address" name="raw_address" placeholder="e.g. 240 Bedford Ave. 2nd Fl. Brooklyn" value="" autocomplete="off"
-						  ng-model="vm.space.address">
+		  				<input type="address" class="sp_input" id="listing_address" 
+						  name="raw_address" placeholder="e.g. 240 Bedford Ave. 2nd Fl. Brooklyn" value="" autocomplete="off"
+						  ng-model="vm.space.address" ng-focus="vm.setMap();">
+		  				</span>
+								</div>
+										<div class="col-sm-10">
+									<span class="sp-field-container undefined">
+		  				<input type="address" class="sp_input" 
+						  name="raw_address" placeholder="Enter Detail address" value="" autocomplete="off"
+						  ng-model="vm.space.addressDetail">
 		  				</span>
 								</div>
 								<div class="col-sm-10">
