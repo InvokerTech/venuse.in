@@ -27,19 +27,19 @@
             { value: 'hourly_rate', name: 'By Price' }];
             vm.sortFilter = vm.sortfilters[0];
             vm.filter = {};
-            vm.filter.event ='';
+            vm.filter.type = '';
             vm.venues = [];
-            vm.filter.query;
-            vm.filter.city;
-            vm.filter.lat, vm.filter.lng;
+            vm.filter.query='';
+            vm.filter.city='';
+            vm.filter.latitude='', vm.filter.longitude='';
             vm.filter.amenities = [];
             vm.filter.rules = [];
             vm.filter.styles = [];
             vm.filter.features = [];
             vm.filter.guests = '';
             vm.filter.size = '';
-            vm.filter.hourRate = '';
-            vm.filter.dayRate = '';
+            vm.filter.hourly = '';
+            vm.filter.daily = '';
 
             vm.guestSlider = {
                 minValue: 5,
@@ -186,24 +186,26 @@
                 var lat = boundsByCity.geometry.location.lat();
                 var lng = boundsByCity.geometry.location.lng();
                 if (lat !== null && lng !== null) {
-                    vm.filter.lat = lat;
-                    vm.filter.lng = lng;
+                    vm.filter.latitude = lat;
+                    vm.filter.longitude = lng;
                 }
             });
 
         }
 
         function getVenues() {
+             vm.loading = true;
             VenueService.get()
                 .then(function (res) {
                     vm.venues = res.venues
+                     vm.loading = false;
                 })
                 .catch();
         }
 
         function eventSelect(e) {
             // alert(e);
-            vm.filter.event = e;
+            vm.filter.type= e;
         }
 
         function submit() {
@@ -234,17 +236,20 @@
 
             vm.filter.guests = vm.guestSlider.minValue + '-' + vm.guestSlider.maxValue;
             vm.filter.size = vm.sizeSlider.minValue + '-' + vm.sizeSlider.maxValue;
-            vm.filter.hourRate = vm.hourSlider.minValue + '-' + vm.hourSlider.maxValue;
-            vm.filter.dayRate = vm.daySlider.minValue + '-' + vm.daySlider.maxValue;
+            vm.filter.hourly = vm.hourSlider.minValue + '-' + vm.hourSlider.maxValue;
+            vm.filter.daily = vm.daySlider.minValue + '-' + vm.daySlider.maxValue;
 
-                 VenueService.search(vm.filter)
+            vm.loading = true;
+            VenueService.search(vm.filter)
                 .then(function (res) {
-                    if(res.length!==0)  
-                    vm.venues = res;
-                    else alert('Vo Venues found.');
-                })
-                .catch(function(){
+                    if (res.length !== 0)
+                        vm.venues = res;
 
+                    else alert('Vo Venues found.');
+                    vm.loading = false;
+                })
+                .catch(function () {
+                    vm.loading = true;
                 });
 
         }

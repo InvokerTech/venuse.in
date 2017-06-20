@@ -40,20 +40,17 @@
 
             var url = API_URL + 'search/venues';
             var params = {
-                'city': o.city,
-                'query':o.query,
-                'latitude':o.lat,
-                'longitude':o.lng,
-                'amenities':o.amenities,
-                'rules':o.rules,
-                'features':o.features,
-                'styles':o.styles,
-                'type':o.event,
-                'guests':o.guests,
-                'size':o.size,
-                'hourly':o.hourRate,
-                'daily':o.dayRate
+
             };
+            var list = Object.keys(o);
+            var index = 0;
+            _.forOwn(o, function (value) {
+                if (value !== '' && value.length !== 0) {
+                    var temp = list[index];
+                    params[temp] = value;
+                }
+                index++;
+            });
             return $http.post(url, params).
                 then(function (response) {
 

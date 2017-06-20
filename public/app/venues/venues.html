@@ -17,11 +17,11 @@
         <div class="col-xs-6 text-center" style="padding-left:0px; padding-right:0px">
           <div class="input-group col-md-12 input-group-lg">
             <div class="dropdown1">
-              <button ng-if="!vm.filter.event" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
+              <button ng-if="!vm.filter.type" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning ? <span style=" font-size:20px;   right: 16px;
     top: 22px; position: absolute;" class="caret"></span></button>
-              <button ng-if="vm.filter.event" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.filter.event}} <span style=" font-size:20px;   right: 16px;
+              <button ng-if="vm.filter.type" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.filter.type}} <span style=" font-size:20px;   right: 16px;
     top: 22px;position: absolute;" class="caret"></span></button>
 
 
@@ -164,7 +164,10 @@
 
       </section>
       <section id="landing-filters">
-        <div class="col-md-12" style="padding-top:14em;">
+        <div ng-if="vm.loading" class="col-md-12 text-center" style="padding-top:14em;">
+        	<img alt="Ajax loader" class="login-ajax-loader"  src="img/ajax-loader.gif">
+        </div>
+        <div ng-if="!vm.loading" class="col-md-12" style="padding-top:14em;">
           <div class="search-results-header">
             <div class="results-count">1 -8 of {{vm.venues.length}} Spaces</div>
             <div class="sp-form">
