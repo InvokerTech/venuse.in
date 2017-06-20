@@ -34,7 +34,6 @@ q:after {
 .form-toggle {
     display: block;
     position: relative;
-    margin-bottom: 49px;
 }
 
 .form-toggle .form-toggle-item.selected {
@@ -278,13 +277,10 @@ HEADER
 
 .search-filters-main .action-button {
     display: block;
-    position: absolute;
     left: 0px;
     bottom: 0px;
     width: 100%;
-    text-align: center;
     height: 36px;
-    margin-bottom: -18px;
 }
 
 .search-results-header {
@@ -761,7 +757,7 @@ a.download-presskit {
     position: relative;
     left: 0px;
     width: 100%;
-    top: 190px;
+    top: 100px;
     height: calc(100vh - 264px);
     text-align: center;
     background-color: #ffffff;
@@ -1349,14 +1345,15 @@ a.download-presskit {
     font-weight: 400;
     color: #232326;
 }
+
 .landing-part .lp-box:hover {
     box-shadow: 0px 0px 16px #d6d6d6;
 }
+
 .landing-part .lp-box {
     background-color: #fff;
     border: solid 1px #d6d6d6;
     height: 331px;
-    
     margin: auto;
     padding: 237px 16px 0px;
     background-repeat: no-repeat;
@@ -1364,16 +1361,19 @@ a.download-presskit {
     display: block;
     text-decoration: none;
 }
+
 .landing-part .lp-box .stars {
     display: block;
     margin-left: 0px;
     height: 22px;
 }
-.landing-part .lp-box .stars .fa-star{
+
+.landing-part .lp-box .stars .fa-star {
     color: #ffce4b;
     font-size: 10px;
     text-shadow: none;
 }
+
 .landing-part .lp-box span {
     font-size: 14px;
     font-weight: 400;
@@ -1406,9 +1406,8 @@ a.download-presskit {
     box-shadow: 0px 0px 16px #d6d6d6;
 }
 
-
-.landing-part .lp-box-custom .image{
-      background-color: #fff;
+.landing-part .lp-box-custom .image {
+    background-color: #fff;
     height: 245px;
     margin: auto;
     background-repeat: no-repeat;
@@ -1422,7 +1421,6 @@ a.download-presskit {
     padding: 10px 20px 5px;
     border: solid 1px #d6d6d6;
 }
-
 
 .landing-part .lp-box-custom h2 {
     font-size: 16px;
@@ -3629,8 +3627,6 @@ a.sp-link-btn {
     padding-bottom: 50px;
 }
 
-
-
 .sp-form section {
     display: block;
     position: relative;
@@ -4123,7 +4119,7 @@ contact
         position: fixed;
         top: 126px;
         left: 0px;
-        height: 125px;
+        height: 150px;
         width: 66%;
         border-right: solid 1px #d6d6d6;
     }
@@ -4899,9 +4895,18 @@ Responsive media queries
 .error {
     color: red;
 }
-.pac-container{
+
+.pac-container {
     z-index: 6000;
 }
-.no-pad{
+
+.no-pad {
     padding: 0px;
+}
+.no-marg{
+margin: 0px;
+}
+
+span.rz-bubble {
+    display: none !important;
 }

@@ -5,7 +5,7 @@
   $(this).parents(".dropdown1").find('.btn1').val($(this).data('value'));
 });    
 // range-slider
-$( function() {
+/*$( function() {
     $( "#slider-range" ).slider({
       range: true,
       min: 0,
@@ -60,7 +60,7 @@ $( function() {
     $( "#amount2" ).val( "" + $( "#slider-range2" ).slider( "values", 0 ) +
       " - " + $( "#slider-range2" ).slider( "values", 1 ) );
   } );
-
+*/
   //add class and remove class
     $('.form-toggle-item').on('click', function(){
     $(this).addClass('selected').siblings().removeClass('selected');
@@ -68,20 +68,20 @@ $( function() {
    $('.pagination li').on('click', function(){
     $(this).addClass('active').siblings().removeClass('active');
 });
-    $(".action-button span").click(function () {
+    $(".action-button .text-left span").click(function () {
             $(this).text(function(i, v){
-               return v === 'Show more filters' ? 'Show less filters' : 'Show more filters'
+               return v === 'Show More Filters' ? 'Show Less Filters' : 'Show More Filters'
             })
         });
   
     
-    $('.search-filters-main span').on('click', function(){
+/*    $('.search-filters-main span').on('click', function(){
     $('#search-filters').toggleClass('filters-open');
 });
    
   $('.search-filters-main span').on('click', function(){
     $('#landing-filters').fadeToggle();
-});
+});*/
 
 (function( $ ) {
 
@@ -104,23 +104,23 @@ $( function() {
     $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
     
   //Initialize carousel 
-  $myCarousel.carousel();
+  //$myCarousel.carousel();
   
   //Animate captions in first slide on page load 
   doAnimations($firstAnimatingElems);
   
   //Pause carousel  
-  $myCarousel.carousel('pause');
+ // $myCarousel.carousel('pause');
   
   
   //Other slides to be animated on carousel slide event 
-  $myCarousel.on('slide.bs.carousel', function (e) {
+/*  $myCarousel.on('slide.bs.carousel', function (e) {
     var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
     doAnimations($animatingElems);
   });  
     $('#carousel-example-generic').carousel({
         interval:3000,
         pause: "false"
-    });
+    });*/
   
 })(jQuery); 

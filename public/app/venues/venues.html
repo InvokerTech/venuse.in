@@ -7,18 +7,22 @@
           <div class="form-group input-group-lg">
             <!--  <input class="form-control" type="search" style="height: 55px;  font-weight:400; background-color:#f2f2f2;" placeholder="Location"
               id="search" list="locations" name="city">-->
-            <input class="form-control" type="search" style="height: 55px;  font-weight:400; background-color:#f2f2f2;" placeholder="Location"
-              input type="text" ng-focus="vm.setMap();" id="txtSearchLocation" name="txtSearchLocation" placeholder="Add Place"
-              autocomplete="off" ng-model="vm.filter.place" />
+            <input class="form-control" style="height: 55px;  font-weight:400; background-color:#f2f2f2;" placeholder="Location" input
+              type="text" ng-focus="vm.setMap();" id="txtSearchLocation" name="txtSearchLocation" autocomplete="off" ng-model="vm.filter.city"
+            />
           </div>
         </div>
         <div class="col-xs-6 text-center" style="padding-left:0px; padding-right:0px">
           <div class="input-group col-md-12 input-group-lg">
             <div class="dropdown1">
-              <button class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
+                <button ng-if="!vm.filter.event"  class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning ? <span style=" font-size:20px;   right: 16px;
+    top: 22px; position: absolute;" class="caret"></span></button>
+              <button ng-if="vm.filter.event" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.filter.event}} <span style=" font-size:20px;   right: 16px;
-    top: 22px;
-    position: absolute;" class="caret"></span></button>
+    top: 22px;position: absolute;" class="caret"></span></button>
+
+            
               <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
                 <li><a date-value="Event" href="" style="font-size: 16px; padding: 10px 9px 10px 20px;" ng-click="vm.eventSelect('Event');">Event</a>
                   <span style="font-size: 14px; color: #6d6e71; display: block; padding:0px 23px">Private events, Business events, Parties, Dinners, Wedding…</span></li>
@@ -37,69 +41,55 @@
       <section>
         <div class="search-filters-main filters-open" id="search-filters">
           <div class="col-md-12">
-            <!--  <div class="half" style="z-index:1000">
+
+            <div class="half" style="z-index:1000">
               <div class="form-toggle options-2" id="toggle0">
                 <div data-toggle="pill" data-target="#home" class="form-toggle-item selected" value="guests">Guests</div>
-                <div data-toggle="pill" data-target="#menu1" class="form-toggle-item" value="size">Size</div>
+                <div data-toggle="pill" data-target="#menu1" class="form-toggle-item" value="size">Size (sqft)</div>
               </div>
               <div class="tab-content">
                 <div id="home" class="tab-pane fade active in">
-                  <input type="text" id="amount" readonly="" style="border:0; color:#9d9d9d; font-weight: bold; position: absolute; margin-top: 9px; left: 30%; z-index: 900;">
-                  <label for="amount" style="color:#9d9d9d">Guests</label>
-                  <div id="slider-range" style="z-index:1000" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                    <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span>
-                    <span
-                      tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span>
-                  </div>
+                  <rzslider rz-slider-model="vm.guestSlider.minValue" rz-slider-high="vm.guestSlider.maxValue" rz-slider-options="vm.guestSlider.options"></rzslider>
+                  <p class="no-marg text-center">{{vm.guestSlider.minValue}}-{{vm.guestSlider.maxValue}} Guests</p>
                 </div>
                 <div id="menu1" class="tab-pane fade">
-                  <input type="text" id="amount2" readonly="" style="border:0; color:#9d9d9d; font-weight: bold; position: absolute; margin-top: 9px; left: 30%; z-index: 900;">
-                  <label for="amount2" style="color:#9d9d9d">sqft</label>
-                  <div id="slider-range2" style="z-index:1000" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                    <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span>
-                    <span
-                      tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span>
-                  </div>
+                  <rzslider rz-slider-model="vm.sizeSlider.minValue" rz-slider-high="vm.sizeSlider.maxValue" rz-slider-options="vm.sizeSlider.options"></rzslider>
+                  <p class="no-marg text-center">{{vm.sizeSlider.minValue}}-{{vm.sizeSlider.maxValue}} sqft</p>
                 </div>
               </div>
             </div>
             <div class="half2" style="z-index:1010">
               <div class="form-toggle options-2" id="toggle0">
-                <div data-toggle="pill" data-target="#menu2" class="form-toggle-item selected" value="guests">Guests</div>
-                <div data-toggle="pill" data-target="#menu3" class="form-toggle-item" value="size">Size</div>
+                <div data-toggle="pill" data-target="#menu2" class="form-toggle-item selected" value="guests">Hourly Rate $</div>
+                <div data-toggle="pill" data-target="#menu3" class="form-toggle-item" value="size">Daily Rate $</div>
               </div>
               <div class="tab-content">
                 <div id="menu2" class="tab-pane fade active in">
-                  <input type="text" id="amount1" readonly="" style="border:0; color:#9d9d9d; font-weight:bold; position: absolute; margin-top: 9px; left: 42%; z-index: 900;">
-                  <div id="slider-range1" style="z-index:1010" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                    <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span>
-                    <span
-                      tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span>
-                  </div>
+                  <rzslider rz-slider-model="vm.hourSlider.minValue" rz-slider-high="vm.hourSlider.maxValue" rz-slider-options="vm.hourSlider.options"></rzslider>
+                  <p class="no-marg text-center">${{vm.hourSlider.minValue}}-${{vm.hourSlider.maxValue}} +</p>
                 </div>
                 <div id="menu3" class="tab-pane fade">
-                  <input type="text" id="amount3" readonly="" style="border:0; color:#9d9d9d; font-weight:bold; position: absolute; margin-top: 9px; left: 42%; z-index: 900;">
-                  <div id="slider-range3" style="z-index:1010" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                    <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span>
-                    <span
-                      tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span>
-                  </div>
+                  <rzslider rz-slider-model="vm.daySlider.minValue" rz-slider-high="vm.daySlider.maxValue" rz-slider-options="vm.daySlider.options"></rzslider>
+                  <p class="no-marg text-center">${{vm.daySlider.minValue}}-${{vm.daySlider.maxValue}} +</p>
                 </div>
               </div>
-            </div>-->
-            <div class="action-button"><button type="button" ng-click="vm.toggleMore();" class="sp-btn  sp-btn-transparent sp-semibold sp-capitalize collapsed"
-                style="max-width: 100%;" aria-expanded="false"><span>{{vm.moreFilter.selected}}</span>
+            </div>
+            <div class="action-button text-left"><button type="button" data-toggle="collapse" data-target="#demo" class="sp-btn  sp-btn-transparent sp-semibold sp-capitalize collapsed"
+                style="max-width: 100%;" aria-expanded="false"><span>Show More Filters</span>
+            </button></div>
+            <div class="action-button text-right"><button type="button" ng-click="vm.submit();" class="sp-btn  sp-btn-transparent sp-semibold sp-capitalize collapsed"
+                style="max-width: 100%;" aria-expanded="false"><span>Search</span>
             </button></div>
           </div>
 
         </div>
-        <div ng-if="vm.moreFilter.status" class="search-more-filters open" >
+        <div class="search-more-filters open collapse" id="demo">
           <!--<a href="" class="clear-bt link">Clear all</a>-->
           <div class="col-md-12">
             <div class="form-group" style="margin-top: -40px;">
               <div class="icon-addon addon-lg">
                 <input type="text" placeholder="Enter keywords, e.g. ''Brick wall'' or ''Skylight''" style="font-size:20px" class="form-control"
-                  id="email">
+                  id="email" ng-model="vm.filter.query">
                 <label for="email" class="glyphicon glyphicon-search" style="font-size:20px" rel="tooltip" title="email"></label>
               </div>
             </div>
@@ -109,92 +99,13 @@
                   <div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div>
                   <h3>Amenities</h3>
                 </div>
-
                 <div class="filters-group-content">
                   <div class="filters-group-items">
-                    <div class="filters-group-item">
+                    <div class="filters-group-item" ng-repeat="a in vm.amenityTypes">
                       <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Air Conditioning" tabindex="false" value="on">
+                          <input type="checkbox" name="{{a.value}}" tabindex="false" value="on" ng-model="a.status">
                           <div class="square" style="background-color: transparent;"></div>
-                          <span>Air Conditioning</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Wifi" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Wifi</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name=" TV" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span> TV</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Kitchen" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Kitchen</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Tableware" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Tableware</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name=" Bathrooms" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span> Bathrooms</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Lounge" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Lounge</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Additional Chairs" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Additional Chairs</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Sound System" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Sound System</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Large Table" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Large Table</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Ample" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Ample</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Street Parking" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Street Parking</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="On-site parking" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>On-site parking</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Buttler" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Buttler</span></label>
+                          <span>{{a.value}}</span></label>
                     </div>
                   </div>
                 </div>
@@ -204,86 +115,13 @@
                   <div class="filters-group-icon" style="background-image: url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto//v1489488020/Production/Assets/search/search-icon-neighborhoods.png);"></div>
                   <h3>Space Rules</h3>
                 </div>
-
                 <div class="filters-group-content">
                   <div class="filters-group-items">
-                    <div class="filters-group-item">
+                    <div class="filters-group-item" ng-repeat="r in vm.ruleTypes">
                       <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No smoking outside" tabindex="false" value="on">
+                          <input type="checkbox" name="{{r.value}}" tabindex="false" value="on" ng-model="r.status">
                           <div class="square" style="background-color: transparent;"></div>
-                          <span>No smoking outside</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No Smooking Indoors" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No Smooking Indoors</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No cooking" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No cooking</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No open flame" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No open flame</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No alcohol (selling)" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No alcohol (selling)</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No Drugs" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No Drugs</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No loud music / dancing" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No loud music / dancing</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No one under 21" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No one under 21</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No teenagers (10-18)" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No teenagers (10-18)</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No children (0-10)" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No children (0-10)</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No Drinking" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No Drinking</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No Eatables allowed" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No Eatables allowed</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="No concerts/parties" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>No concerts/parties</span></label>
+                          <span>{{r.value}}</span></label>
                     </div>
                   </div>
                 </div>
@@ -295,41 +133,11 @@
                 </div>
                 <div class="filters-group-content">
                   <div class="filters-group-items">
-                    <div class="filters-group-item">
+                    <div class="filters-group-item" ng-repeat="s in vm.styleTypes">
                       <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Classic" tabindex="false" value="on">
+                          <input type="checkbox" name="{{s.value}}" tabindex="false" value="on" ng-model="s.status">
                           <div class="square" style="background-color: transparent;"></div>
-                          <span>Classic</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Modern" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Modern</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Whimsical" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Whimsical</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Minimalist" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Minimalist</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name=" Luxurious" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span> Luxurious</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Industrial" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Industrial</span></label>
+                          <span>{{s.value}}</span></label>
                     </div>
                   </div>
                 </div>
@@ -341,191 +149,11 @@
                 </div>
                 <div class="filters-group-content">
                   <div class="filters-group-items">
-                    <div class="filters-group-item">
+                    <div class="filters-group-item" ng-repeat="f in vm.featureTypes">
                       <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Sound Proof" tabindex="false" value="on">
+                          <input type="checkbox" name="{{f.value}}" tabindex="false" value="on" ng-model="f.status">
                           <div class="square" style="background-color: transparent;"></div>
-                          <span>Sound Proof</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Bar" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Bar</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Art" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Art</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Graffiti" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Graffiti</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Props" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span> Props</span></label>
-                    </div>
-                    <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Exposed Pipe" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Exposed Pipe</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Skylight" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Skylight</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="High Ceilings" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>High Ceilings</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Library" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Library</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Bathtub" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Bathtub</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Large Windows" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Large Windows</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Dinning Table" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Dinning Table</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Modern Bathroom" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Modern Bathroom</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Fireplace" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Fireplace</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Concrete" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Concrete</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Wood Floors" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Wood Floors</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Garden" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Garden</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Plants" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Plants</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Cyc" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Cyc</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Furnished" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Furnished</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Empty" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Empty</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Deck/Patio" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Deck/Patio</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Open Kitchen" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Open Kitchen</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name=" Wood Beams" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span> Wood Beams</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Roof" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Roof</span></label>
-                    </div>
-                     <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Columns" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Columns</span></label>
-                    </div>
-                       <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Multi Level" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Multi Level</span></label>
-                    </div>
-                       <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Screening Room" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Screening Room</span></label>
-                    </div>
-                       <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Breakout Rooms" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>Breakout Rooms</span></label>
-                    </div>
-                       <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="Storefront" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span> Storefront</span></label>
-                    </div>
-                       <div class="filters-group-item">
-                      <label class="sp-checkbox invert ">
-                          <input type="checkbox" name="View" tabindex="false" value="on">
-                          <div class="square" style="background-color: transparent;"></div>
-                          <span>View</span></label>
+                          <span>{{f.value}}</span></label>
                     </div>
                   </div>
                 </div>
@@ -534,7 +162,7 @@
 
       </section>
       <section id="landing-filters">
-        <div class="col-md-12" style="padding-top:12em;">
+        <div class="col-md-12" style="padding-top:14em;">
           <div class="search-results-header">
             <div class="results-count">1 -8 of {{vm.venues.length}} Spaces</div>
             <div class="sp-form">
@@ -603,6 +231,4 @@
 
   </section>
 
-  <!-- <script async src="js/jquery-ui.js"></script>
-   <script async src="js/rangeslider.min.js"></script>
-   <script async src="js/script.js"></script>-->
+  <script src="js/script.js"></script>
