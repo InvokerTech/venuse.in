@@ -1109,19 +1109,19 @@ vm.venues=[];
 
             var url = API_URL + 'search/venues';
             var params = {
-                city: o.city,
-                query:o.query,
-                latitude:o.lat,
-                longitude:o.lng,
-                amenities:o.amenities,
-                rules:o.rules,
-                features:o.features,
-                styles:o.styles,
-                type:o.event,
-                guests:o.guests,
-                size:o.size,
-                hourly:o.hourRate,
-                daily:o.dayRate
+                'city': o.city,
+                'query':o.query,
+                'latitude':o.lat,
+                'longitude':o.lng,
+                'amenities':o.amenities,
+                'rules':o.rules,
+                'features':o.features,
+                'styles':o.styles,
+                'type':o.event,
+                'guests':o.guests,
+                'size':o.size,
+                'hourly':o.hourRate,
+                'daily':o.dayRate
             };
             return $http.post(url, params).
                 then(function (response) {
