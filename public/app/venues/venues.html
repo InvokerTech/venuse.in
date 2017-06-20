@@ -15,14 +15,14 @@
         <div class="col-xs-6 text-center" style="padding-left:0px; padding-right:0px">
           <div class="input-group col-md-12 input-group-lg">
             <div class="dropdown1">
-                <button ng-if="!vm.filter.event"  class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
+              <button ng-if="!vm.filter.event" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning ? <span style=" font-size:20px;   right: 16px;
     top: 22px; position: absolute;" class="caret"></span></button>
               <button ng-if="vm.filter.event" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:55px; width: 98%; font-size:16px; background-color:#f2f2f2;  color:#6d6e71"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.filter.event}} <span style=" font-size:20px;   right: 16px;
     top: 22px;position: absolute;" class="caret"></span></button>
 
-            
+
               <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
                 <li><a date-value="Event" href="" style="font-size: 16px; padding: 10px 9px 10px 20px;" ng-click="vm.eventSelect('Event');">Event</a>
                   <span style="font-size: 14px; color: #6d6e71; display: block; padding:0px 23px">Private events, Business events, Parties, Dinners, Wedding…</span></li>
@@ -218,11 +218,8 @@
           </div>-->
         </div>
       </section>
-      <!--  <div id="google-map" class="text-right">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.244526397339!2d77.23441831456739!3d28.562419082445476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce24c76aff925%3A0x455a11bc612344cd!2sAceFinity+Infotech+Pvt+Ltd!5e0!3m2!1sen!2sin!4v1492085339087"
-          width="100%" style="filter: grayscale(100%);" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>-->
-      <div map-lazy-load="https://maps.google.com/maps/api/js">
+     
+      <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkWTzQbQXsFNe5oxMayRi0SDBzn6gosDI">
         <ng-map zoom="6" center="18.5204, 73.8567" id="google-map" class="text-right">
           <marker icon="img/pin.png" position="{{v.location[0]}},{{v.location[1]}}" title="{{v.name}}" ng-repeat="v in vm.venues track by $index">
           </marker>
