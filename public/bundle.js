@@ -3,7 +3,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 (function () {
     'use strict';
     angular.module('venuse',
-        ['ui.router', 'directive.g+signin', 'ngFacebook', 'ngMap', 'rzModule']);
+        ['ui.router', 'directive.g+signin', 'ngFacebook', 'ngMap', 'rzModule','ui.bootstrap.datetimepicker']);
 
     angular
         .module('venuse')
@@ -18,6 +18,10 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 .state('venues', {
                     url: '/venues',
                     component: 'venues'
+                })
+                 .state('venue', {
+                    url: '/venue?id',
+                    component: 'venue'
                 })
                 .state('security_deposits', {
                     url: '/security_deposits',
@@ -49,6 +53,18 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 .state('cancellation_policy', {
                     url: '/cancellation_policy',
                     templateUrl: 'app/templates/cancellation_policy.html'
+                })
+                  .state('about', {
+                    url: '/about',
+                    templateUrl: 'app/templates/about.html'
+                })
+                  .state('privacy', {
+                    url: '/privacy',
+                    templateUrl: 'app/templates/privacy.html'
+                })
+                   .state('press', {
+                    url: '/press',
+                    templateUrl: 'app/templates/press.html'
                 })
 
         });
@@ -1058,6 +1074,189 @@ vm.venues=[];
                     if (response.data) {
                         //    console.log(response.data.ret);         
                         return response.data;
+                    } else
+                        return $q.reject(response);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
+    }
+})();
+(function () {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .factory('BookService', BookService);
+
+    BookService.inject = ['$http', '$q', 'AuthService'];
+    function BookService($http, $q, AuthService) {
+        var api_type = 'book/venue'
+        var service = {
+            send: send
+        };
+
+        return service;
+
+        function send(o) {
+            
+            var user = AuthService.getUser();
+            var url = API_URL + api_type;
+            var params = {
+                venue_id: o.venueId,
+                start_time: o.startDate,
+                end_time: o.endDate,
+                user_id: user._id,
+                event_type: o.eventType
+
+            }
+            return $http.post(url, params).
+                then(function (response) {
+                    if (response.data) {
+                        //  console.log(response);         
+                        return response.data;
+
+                    } else
+                        return $q.reject(response);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
+    }
+})();
+(function () {
+    'use strict';
+
+    var venue = {
+        controller: ControllerController,
+        controllerAs: 'vm',
+        templateUrl: `app/venue/venue.html`,
+    };
+
+    angular
+        .module('venuse')
+        .component('venue', venue);
+
+
+    angular
+        .module('venuse')
+        .controller('ControllerController', ControllerController);
+
+    ControllerController.inject = ['VenueDetailService', '$stateParams', '$scope', '$state', 'BookService','AuthService'];
+    function ControllerController(VenueDetailService, $stateParams, $scope, $state, BookService,AuthService) {
+        var vm = this;
+
+
+        vm.$onInit = function () {
+            getvenue();
+            vm.testPay = '9.99';
+            vm.loading = false;
+            vm.venue = {};
+            vm.startDate;
+            vm.endDate;
+            vm.book = {};
+            vm.book.guests;
+            vm.book.startDate = '';
+            vm.book.endDate = '';
+            vm.book.venueId = '';
+            vm.book.eventType = '';
+
+            //functions
+            vm.startChange = startChange;
+            vm.endChange = endChange;
+            vm.eventSelect = eventSelect;
+            $scope.submit = submit;
+
+        }
+
+        function getvenue() {
+            VenueDetailService.get($stateParams.id)
+                .then(function (res) {
+                    if (res.length !== 0) {
+                        vm.venue = res.venue;
+                        vm.book.venueId = vm.venue._id;
+                    }
+                    else alert('Vo Venue found.');
+                    vm.loading = false;
+                })
+                .catch(function () {
+                    vm.loading = true;
+                });
+        }
+
+
+        function startChange() {
+            vm.book.startDate = vm.startDate.getDay() + '/' +
+                vm.startDate.getMonth() + '/' +
+                vm.startDate.getFullYear() + ' ' +
+                vm.startDate.getHours() + ':' +
+                vm.startDate.getMinutes();
+
+        }
+
+        function endChange() {
+            vm.book.endDate = vm.endDate.getDay() + '/' +
+                vm.endDate.getMonth() + '/' +
+                vm.endDate.getFullYear() + ' ' +
+                vm.endDate.getHours() + ':' +
+                vm.endDate.getMinutes();
+        }
+
+        function eventSelect(e) {
+            vm.book.eventType = e;
+        }
+
+        function submit(data) {
+            if (AuthService.isLogin()) {
+                console.log(AuthService.isLogin());
+                console.log(data);
+                BookService.send(vm.book)
+                    .then(function (res) {
+                        if (res) {
+                            alert('Venue Booked successfully.');
+                            $state.go('home');
+                        }
+                        else alert('Venue Could not be booked. Try Again.');
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    });
+            }
+            else alert('Please login to book venue.');
+        }
+
+    }
+
+})();
+(function () {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .factory('VenueDetailService', VenueDetailService);
+
+    VenueDetailService.inject = ['$http', '$q'];
+    function VenueDetailService($http, $q) {
+        var api_type = 'venue/details?venue_id='
+        var service = {
+            get: get
+        };
+
+        return service;
+
+        function get(id) {
+
+            var url = API_URL + api_type +id;
+    
+            return $http.get(url).
+                then(function (response) {
+                    if (response.data) {
+
+                       //  console.log(response);         
+                        return response.data;
+
                     } else
                         return $q.reject(response);
                 })

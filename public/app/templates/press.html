@@ -1,413 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Venuse</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
-    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
- 
-  </head>
-  <body>
-
-    
-   
-      <div class="bg-color">
-        <header id="main-header" class="main-header">
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header" style="margin-right:0px">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="index.html"><img src="img/Venuse-HighRes.png" height="100" width="120" style="margin-top: -38px"  alt=""></a>
-             
-             
-            </div>
-            <div class="col-md-4">
-              <form action="" style="margin-top:9px; margin-left:35px; z-index: 1000; cursor: pointer; ">
-        <div class="form-group">
-        <label class="glyphicon glyphicon-search" style="font-size:22px; color:#fff; cursor: pointer; " for="top-search"></label>
-        <span class="search-text-color" style="font-size:16px; color:#fff">Search</span>
-        </div>
-        </form>
-</div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="#main-header"><button type="button" class="text-color list-your-space">list your space</button></a></li>
-                <li class=""><a class="nav-ul-a" data-toggle="modal" data-target="#signup-modal" href="#feature">SIGN UP</a></li>
-                <li class=""><a  class="nav-ul-a" data-toggle="modal" data-target="#login-modal" href="#service">LOG IN</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
-               </header>
-
-  <!--Log in Modal -->
-  <div class="modal fade" id="login-modal"  role="dialog">
-    <div class="modal-dialog" id="login-and-sign-up">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          
-          <h3 class="modal-title">Log in</h3>
-        </div>
-        <div class="modal-body">
-         <form>               
-				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
-				<input type="hidden" name="utf8" value="✓">               
-				<a class="fb-btn" href="/users/auth/facebook">LOG IN WITH FACEBOOK</a>               
-				<a class="google-btn" href="/users/auth/google_oauth2">LOG IN WITH GOOGLE</a>              
-		<div style="margin-top:20px"></div>               
-		<div style="margin-top:8px"></div>               
-			<div class="form-group">                   
-				<label class="hidden"> Email </label>                   
-				<input class="form-control" type="email" name="" placeholder="Email">               
-			</div>               
-			<div class="form-group">                   
-				<label class="hidden"> Password </label>                   
-				<input class="form-control" type="password" name="" placeholder="Password">                   
-				              
-			</div>               
-				<div style="margin-top:20px"></div>               
-				<div style="margin-top:25px"></div>               
-			<div class="form-group form-btn">                   
-				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Log in">                   
-				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="https://res.cloudinary.com/splacer/image/upload/v1444126905/Production/Assets/ajax-loader.gif">               
-			</div>               
-			<div class="form-group user-forgot">                   
-				<a href="#" class="form-switch" data-toggle="modal" data-target="#forget-modal" >Forgot password?</a>               
-			</div>               
-		<div class="form-group form-footer">
-		Don't have an account yet? <a href="#" class="form-switch sp-bold" data-to-form="signup">Sign up</a>  
-		</div>  
-	
-		</form> 
-<div class="clearfix"></div>		
-        </div>
-        
-      </div>
-      
-    </div>
-  </div>
-  
-  
-  
-  <!-- SignUp Modal -->
-  <div class="modal fade" id="signup-modal" role="dialog">
-    <div class="modal-dialog" id="login-and-sign-up">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          
-          <h3 class="modal-title">Create Your Account</h3>
-        </div>
-        <div class="modal-body">
-         <form>               
-				<input type="hidden" name="authenticity_token" value="+Z13AuCCpARaGtTalOnh1ygyHhUgIgypgHlySGNNtAk=">               
-				<input type="hidden" name="utf8" value="✓">               
-				<a class="fb-btn" href="/users/auth/facebook">LOG IN WITH FACEBOOK</a>               
-				<a class="google-btn" href="/users/auth/google_oauth2">LOG IN WITH GOOGLE</a>              
-		<div style="margin-top:20px"></div>               
-		<div style="margin-top:30px"></div>  
-			<h6>Sign up with Email</h6>	
-			<div class="form-group">                   
-				<label class="hidden"> Your Name </label>                   
-				<input class="form-control" type="text" name="" placeholder="Your Name">               
-			</div>			
-			<div class="form-group">                   
-				<label class="hidden">Your Email </label>                   
-				<input class="form-control" type="email" name="" placeholder="Your Email">               
-			</div>               
-			<div class="form-group">                   
-				<label class="hidden">Choose a Password </label>                   
-				<input class="form-control" type="password" name="" placeholder="Choose a Password">                   
-				              
-			</div>               
-				<div style="margin-top:20px"></div>               
-				<div style="margin-top:30px"></div>  
-				<div class="form-group user-agree"> 
-				By signing up I agree to Venuse's <a href="">Terms of Service</a>              
-				</div>             
-			<div class="form-group form-btn">                   
-				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Sign up">                   
-				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="https://res.cloudinary.com/splacer/image/upload/v1444126905/Production/Assets/ajax-loader.gif">               
-			</div>               
-			     
-		<div class="form-group form-footer">
-		Already have an account? <a href="#" class="form-switch sp-bold" data-to-form="login-modal">Login in</a>  
-		</div>  
-	
-		</form> 
-<div class="clearfix"></div>		
-        </div>
-        
-      </div>
-      
-    </div>
-  </div>
-  
-
 <div class="static-pages-header-md">
   <div class="static-pages-header-image">
-      <img alt="Header press" class="img-responsive" height="530" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/header_press.png" width="1920">
+    <img alt="Header press" class="img-responsive" height="530" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/header_press.png"
+      width="1920">
   </div>
   <div class="static-pages-nav_bar">
-     <a class="" href="about.html">about</a>
-     <a class="" href="mission.html">mission</a>
-     <a class="" href="team.html">team</a>
-     <a class="active-link" href="press">press</a>
+    <a href=""  ui-sref="about">About</a>
+    <a href=""  >Mission</a>
+    <a href=""  ui-sref="team">Team</a>
+    <a href=""  ui-sref="press" ui-sref-active="active-link">Press</a>
   </div>
 </div>
-
-   <div class="modal fade" id="forget-modal"  role="dialog">
-    <div class="modal-dialog" id="login-and-sign-up">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          
-          <h3 class="modal-title">Reset your pasword</h3>
-        </div>
-        <div class="modal-body">
-		<div style="margin-top:40px"></div>               
-		<div style="margin-top:8px"></div>   
-		<h6 style="font-size:14px; color:#808184; text-align:center;">Enter your email address, and we’ll send you reset password link.</h6>
-         <form>                           
-		<div style="margin-top:20px"></div>               
-		<div style="margin-top:8px"></div>               
-			<div class="form-group">                   
-				<label class="hidden"> Email </label>                   
-				<input class="form-control" type="email" name="" placeholder="Your Email">               
-			</div>               
-			 <div class="form-group form-btn">                   
-				<input id="sign-form-btn" class="btn btn-green" type="submit" value="Send reset link">                   
-				<img alt="Ajax loader" class="login-ajax-loader" style="display: none" src="https://res.cloudinary.com/splacer/image/upload/v1444126905/Production/Assets/ajax-loader.gif">               
-			</div> 
-		<div class="form-group form-footer">
-		<a href="#" class="form-switch sp-bold" data-to-form="signup">Back to Log-in</a>  
-		</div>  
-	
-		</form> 
-<div class="clearfix"></div>		
-        </div>
-        
-      </div>
-
-    </div>
-
-  </div>
-   <div class="sp-margin-top-40px"></div>
-   <div class="sp-margin-top-5px"></div>
-   <div class="main-content">
-      <h1>Press Inquiries</h1>
-        <div class="sp-margin-top-30px"></div>
-          <p style="font-size: 15px; text-align: center !important;
-    color: #6f6f6f;">Our press team loves working with journalists around the world to share compelling, unique stories.<br>If you're a member of the media and would like to talk, please get in touch with the appropriate team<br>or send an email to&nbsp;<a href="mailto:press@splacer.co" target="_blank">press@splacer.co</a></p>
-        </div>
-        <div class="sp-margin-top-50px"></div>
-        <a class="download-presskit" href="https://drive.google.com/file/d/0B_HIi2V3gFOAWldUU01ndFd4bTQ/view?usp=sharing" target="_blank"><img alt="Down arrow" height="20" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/down-arrow.png">Download PressKit</a>
-        <div class="sp-margin-top-50px"></div>
-
-<section>
-  <div class="press-coverage">
     <div class="sp-margin-top-40px"></div>
-      <h2>Press Coverage</h2>
-       <div class="sp-margin-top-70px"></div>
-         <div class="spc">
-          <img alt="Hive" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/hive.png">
-           <div class="sp-margin-top-20px"></div>
-           <p><a href="http://hivesociety.com/2016/02/17/splacer-airbnb-events-news/" target="_blank">PLACER: THE 'AIRBNB OF EVENTS' IS HERE</a></p>
-           <span>17/02/2016</span>
-         </div>
-         <div class="buffer"></div>
-         <div class="spc">
-           <img alt="Newyorktimes" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/newyorktimes.png">
-            <div class="sp-margin-top-20px"></div>
-            <p><a href="http://www.nytimes.com/2016/02/17/t-magazine/fashion/model-mari-guidicelli-new-shoe-brand.html?smid=fb-share" target="_blank">A New Shoe Brand Focuses on the Classics</a></p>
-            <span>17/02/2016</span>
-         </div>
-         <div class="buffer"></div>
-         <div class="spc">
-           <img alt="Business insider" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/business_insider.png"><div class="sp-margin-top-20px">
-         </div>
-         <p><a href="http://www.businessinsider.com/splacer-just-made-meetings-so-much-better-2016-2" target="_blank">The 'Airbnb of events' lets you rent out swanky ap...</a></p>
-         <span>12/02/2016</span>
-        </div>
-        <div class="sp-margin-top-70px"></div>
-          <div class="spc">  
-            <img alt="Techinsider" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/techinsider.png">
-             <div class="sp-margin-top-20px"></div>
-              <p><a href="http://www.techinsider.io/splacer-just-made-meetings-so-much-better-2016-2" target="_blank"> This company is the Airbnb of everything, from va...</a></p>
-               <span>12/02/2016</span>
-             </div>
-              <div class="buffer"></div>
-              <div class="spc">
-                <img alt="Tnooz" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/tnooz.png">
-                 <div class="sp-margin-top-20px"></div>
-                <p><a href="http://www.tnooz.com/article/the-airbnb-of-meetings-and-events/" target="_blank">These startups strive to be the sharing economy st...</a></p>
-                <span>09/02/2016</span>
-              </div>
-              <div class="buffer"></div>
-                <div class="spc">
-                  <img alt="Arch dige" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/arch_dige.png">
-                    <div class="sp-margin-top-20px"></div>
-                    <p><a href="http://www.architecturaldigest.com/story/splacer-airbnb-event-spaces-new-york-city" target="_blank">Splacer, the Airbnb of Event Spaces, Comes to New ...</a></p>
-                     <span>26/01/2016</span>
-                </div>
-                <div class="sp-margin-top-70px"></div>
-                <div class="spc">
-                  <img alt="Entre" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/entre.png">
-                    <div class="sp-margin-top-20px"></div>
-                     <p><a href="http://www.entrepreneur.com/article/253984" target="_blank">This Startup Gets You Into Spaces That Instagram D...</a></p>
-                      <span>15/12/2015</span> 
-                </div>
-                <div class="buffer"></div>
-                <div class="spc">
-                  <img alt="Architect" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/architect.png">
-                   <div class="sp-margin-top-20px"></div>
-                   <p><a href="http://www.architectmagazine.com/technology/architects-launch-airbnb-for-event-spaces_o" target="_blank">Splacer Brings Commercial Space into the Sharing E...</a></p>
-                    <span>17/11/2015</span>
-                </div>
-                 <div class="buffer"></div>
-                <div class="spc">
-                   <img alt="Wierd" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/wierd.png">
-                   <div class="sp-margin-top-20px"></div>
-                   <p><a href="http://www.wired.com/2015/11/new-startup-splacer-is-like-an-airbnb-for-event-spaces/" target="_blank">New startup Splacer is like an airbnb for event sp...</a></p>
-                   <span>06/11/2015</span>
-                </div>
-                <div class="sp-margin-top-70px"></div>
-                <div class="spc">
-                  <img alt="Tnw" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/tnw.png">
-                  <div class="sp-margin-top-20px"></div>
-                   <p><a href="http://thenextweb.com/insider/2015/11/06/splacer-lets-you-find-unique-spaces-for-your-next-event-so-dont-abuse-it/" target="_blank">Splacer lets you find unique spaces for your next ...</a></p>
-                    <span>06/11/2015</span>
-                </div>
-                <div class="buffer"></div>
-                  <div class="spc">
-                    <img alt="Cubed" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/cubed.png">
-                      <div class="sp-margin-top-20px"></div>
-                       <p><a href="http://curbed.com/archives/2015/09/16/splacer-sharing-economy-room-sharing-startup.php" target="_blank">Is There Room in the Sharing Economy for Splacer, ...</a></p>
-                      <span>16/09/2015</span>
-                  </div>
-                  <div class="buffer"></div>
-                  <div class="spc">
-                    <img alt="Tc" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/tc.png">
-                     <div class="sp-margin-top-20px"></div>
-                     <p><a href="http://techcrunch.com/2015/07/01/splacer-with-1-4m-in-new-funding-is-airbnb-for-event-spaces/" target="_blank">Splacer, With $1.4M In New Funding, Is Airbnb For ...</a></p>
-                     <span>01/07/2015</span>
-                  </div>
-                  <div class="sp-margin-top-70px"></div>
-                    <div class="spc">
-                      <img alt="Telavivian" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/telavivian.png">
-                       <div class="sp-margin-top-20px"></div>
-                        <p><a href="http://notesfromtheeditor.telavivian.com/2014/12/27/splace-it/" target="_blank">Splace It!</a></p>
-                        <span>27/12/2014</span>
-                  </div>
-                  <div class="sp-margin-top-70px">
-                    
-                </div>
-              </div>
-  
-</section>
-  <footer class="main-footer">
-    <section>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="footer-links">
-            <div class="row">
-              <div class="footer-links-part col-sm-5">
-                <h3>company</h3>
-                  <ul>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="press.html">Press</a></li>
-                  <li><a class="js-popup-tos" href="/content/terms_of_service">Terms</a></li>
-                  <li><a href="/content/privacy_policy">Privacy</a></li>
-                  <li><a href="/content/cancellation_policy">Cancellation</a></li>
-                  <li><a href="/content/liability_coverage">Space Liability Insurance</a></li>
-                  <li><a href="/site_map">Site map</a></li>
-                  <li><a href="/content/contact">Contact us</a></li>
-                  </ul>
-              </div>
-              <div class="footer-links-part col-sm-4">
-                <h3>discover</h3>
-                  <ul>
-                  <li><a href="http://blog.splacer.co" target="_blank">Blog</a></li>
-                  <li><a href="/content/how_it_works">How it works</a></li>
-                  <li><a href="https://splacer.zendesk.com">Help Center&nbsp;</a></li>
-                  <li><a href="/users/list_your_space">Add a space</a></li>
-                  <li><a href="" target="_blank">Host Referral Program</a></li>
-                  <li><a href="http://toolkits.splacer.co/?uid=568" target="_blank">Splacer360 Guidebook</a></li>
-                  </ul>
-              </div>
-              <div class="footer-links-part col-sm-3">
-                <h3>Cities</h3>
-                  <ul>
-                  <li><a href="" target="_blank">New York</a></li>
-                  <li><a href="" target="_blank">San Francisco</a></li
-                  ><li><a href="" target="_blank">Los Angeles</a></li>
-                  <li><a href="" target="_blank">Miami</a></li>
-                  <li><a href="" target="_blank">Chicago</a></li>
-                  </ul>
-              </div>
-            </div>
-          </div>
-          <div class="msg hidden-xs">
-          <span></span>This product includes GeoLite data created by MaxMind, available from &nbsp;<a href="http://www.maxmind.com" target="blank">http://www.maxmind.com</a>
-          </div>
-        </div>
-        <div class="col-sm-4">
-        <div class="footer-share-links">
-        <a href="" rel="nofollow" target="blank"></a>
-        <a href="" rel="nofollow" target="blank"></a>
-        <a href="" rel="nofollow" target="blank"></a>
-        <a href="" rel="nofollow" target="blank"></a>
-        <a href="" rel="nofollow" target="blank"></a>
-        <a href="" rel="nofollow" target="blank"></a>
-        <a href="" rel="nofollow" target="blank"></a>
-        <a href="" rel="nofollow" target="blank"></a>
-        <div class="copyright">Copyright © 2014-2016 Splacer Inc.<br> All rights reserved.</div>
-        <img alt="Small logo" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/header_footer/small_logo.png">
-        </div>
+    <div class="sp-margin-top-5px"></div>
+    <div class="main-content">
+      <h1>Press Inquiries</h1>
+      <div class="sp-margin-top-30px"></div>
+      <p style="font-size: 15px; text-align: center !important;
+    color: #6f6f6f;">Our press team loves working with journalists around the world to share compelling, unique stories.<br>If you're a
+        member of the media and would like to talk, please get in touch with the appropriate team<br>or send an email to&nbsp;
+        <a
+          href="mailto:press@splacer.co" target="_blank">press@splacer.co</a>
+      </p>
     </div>
-  </div>
-  </section>
-  </footer>
-</section>
+    <div class="sp-margin-top-50px"></div>
+    <a class="download-presskit" href="https://drive.google.com/file/d/0B_HIi2V3gFOAWldUU01ndFd4bTQ/view?usp=sharing" target="_blank"><img alt="Down arrow" height="20" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/down-arrow.png">Download PressKit</a>
+    <div class="sp-margin-top-50px"></div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/jquery.bxslider.min.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="contactform/contactform.js"></script>
-    <script type="text/javascript" >
-   $(".dropdown-menu li a").click(function(){
-  $(this).parents(".dropdown1").find('.btn1').html($(this).text());
-  $(this).parents(".dropdown1").find('.btn1').val($(this).data('value'));
-});    </script>
-<script>
-var video = document.getElementById("video_background");
-video.addEventListener("canplay", function() {
-  setTimeout(function() {
-    video.play();
-  }, 5000);
-});
-</script>
-  </body>
-</html>
+    <section>
+      <div class="press-coverage">
+        <div class="sp-margin-top-40px"></div>
+        <h2>Press Coverage</h2>
+        <div class="sp-margin-top-70px"></div>
+        <div class="spc">
+          <img alt="Hive" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/hive.png">
+          <div class="sp-margin-top-20px"></div>
+          <p><a href="http://hivesociety.com/2016/02/17/splacer-airbnb-events-news/" target="_blank">PLACER: THE 'AIRBNB OF EVENTS' IS HERE</a></p>
+          <span>17/02/2016</span>
+        </div>
+        <div class="buffer"></div>
+        <div class="spc">
+          <img alt="Newyorktimes" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/newyorktimes.png">
+          <div class="sp-margin-top-20px"></div>
+          <p><a href="http://www.nytimes.com/2016/02/17/t-magazine/fashion/model-mari-guidicelli-new-shoe-brand.html?smid=fb-share"
+              target="_blank">A New Shoe Brand Focuses on the Classics</a></p>
+          <span>17/02/2016</span>
+        </div>
+        <div class="buffer"></div>
+        <div class="spc">
+          <img alt="Business insider" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/business_insider.png">
+          <div
+            class="sp-margin-top-20px">
+        </div>
+        <p><a href="http://www.businessinsider.com/splacer-just-made-meetings-so-much-better-2016-2" target="_blank">The 'Airbnb of events' lets you rent out swanky ap...</a></p>
+        <span>12/02/2016</span>
+      </div>
+      <div class="sp-margin-top-70px"></div>
+      <div class="spc">
+        <img alt="Techinsider" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/techinsider.png">
+        <div class="sp-margin-top-20px"></div>
+        <p><a href="http://www.techinsider.io/splacer-just-made-meetings-so-much-better-2016-2" target="_blank"> This company is the Airbnb of everything, from va...</a></p>
+        <span>12/02/2016</span>
+      </div>
+      <div class="buffer"></div>
+      <div class="spc">
+        <img alt="Tnooz" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/tnooz.png">
+        <div class="sp-margin-top-20px"></div>
+        <p><a href="http://www.tnooz.com/article/the-airbnb-of-meetings-and-events/" target="_blank">These startups strive to be the sharing economy st...</a></p>
+        <span>09/02/2016</span>
+      </div>
+      <div class="buffer"></div>
+      <div class="spc">
+        <img alt="Arch dige" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/arch_dige.png">
+        <div class="sp-margin-top-20px"></div>
+        <p><a href="http://www.architecturaldigest.com/story/splacer-airbnb-event-spaces-new-york-city" target="_blank">Splacer, the Airbnb of Event Spaces, Comes to New ...</a></p>
+        <span>26/01/2016</span>
+      </div>
+      <div class="sp-margin-top-70px"></div>
+      <div class="spc">
+        <img alt="Entre" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/entre.png">
+        <div class="sp-margin-top-20px"></div>
+        <p><a href="http://www.entrepreneur.com/article/253984" target="_blank">This Startup Gets You Into Spaces That Instagram D...</a></p>
+        <span>15/12/2015</span>
+      </div>
+      <div class="buffer"></div>
+      <div class="spc">
+        <img alt="Architect" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/architect.png">
+        <div class="sp-margin-top-20px"></div>
+        <p><a href="http://www.architectmagazine.com/technology/architects-launch-airbnb-for-event-spaces_o" target="_blank">Splacer Brings Commercial Space into the Sharing E...</a></p>
+        <span>17/11/2015</span>
+      </div>
+      <div class="buffer"></div>
+      <div class="spc">
+        <img alt="Wierd" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/wierd.png">
+        <div class="sp-margin-top-20px"></div>
+        <p><a href="http://www.wired.com/2015/11/new-startup-splacer-is-like-an-airbnb-for-event-spaces/" target="_blank">New startup Splacer is like an airbnb for event sp...</a></p>
+        <span>06/11/2015</span>
+      </div>
+      <div class="sp-margin-top-70px"></div>
+      <div class="spc">
+        <img alt="Tnw" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/tnw.png">
+        <div class="sp-margin-top-20px"></div>
+        <p><a href="http://thenextweb.com/insider/2015/11/06/splacer-lets-you-find-unique-spaces-for-your-next-event-so-dont-abuse-it/"
+            target="_blank">Splacer lets you find unique spaces for your next ...</a></p>
+        <span>06/11/2015</span>
+      </div>
+      <div class="buffer"></div>
+      <div class="spc">
+        <img alt="Cubed" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/cubed.png">
+        <div class="sp-margin-top-20px"></div>
+        <p><a href="http://curbed.com/archives/2015/09/16/splacer-sharing-economy-room-sharing-startup.php" target="_blank">Is There Room in the Sharing Economy for Splacer, ...</a></p>
+        <span>16/09/2015</span>
+      </div>
+      <div class="buffer"></div>
+      <div class="spc">
+        <img alt="Tc" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/tc.png">
+        <div class="sp-margin-top-20px"></div>
+        <p><a href="http://techcrunch.com/2015/07/01/splacer-with-1-4m-in-new-funding-is-airbnb-for-event-spaces/" target="_blank">Splacer, With $1.4M In New Funding, Is Airbnb For ...</a></p>
+        <span>01/07/2015</span>
+      </div>
+      <div class="sp-margin-top-70px"></div>
+      <div class="spc">
+        <img alt="Telavivian" height="35" src="https://res.cloudinary.com/splacer/image/upload/v1/Production/Assets/static_pages/press_page/logos/telavivian.png">
+        <div class="sp-margin-top-20px"></div>
+        <p><a href="http://notesfromtheeditor.telavivian.com/2014/12/27/splace-it/" target="_blank">Splace It!</a></p>
+        <span>27/12/2014</span>
+      </div>
+      <div class="sp-margin-top-70px">
+
+      </div>
+  </div>
+
+  </section>
+  </section>
+

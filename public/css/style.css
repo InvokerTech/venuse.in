@@ -3152,8 +3152,8 @@ Blog
 }
 
 .more-info section .splace-facility-not-available {
-    color: #a6a6a6;
-    background-image: none;
+  color: #a6a6a6 !important;
+    background-image: none !important;
 }
 
 .more-info section .splace-rule {
