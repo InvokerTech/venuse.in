@@ -69,3 +69,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 
         });
 })();
+
+angular.element(document).ready(function(){
+  $('.loading').remove();
+});

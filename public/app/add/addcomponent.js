@@ -48,7 +48,8 @@
             vm.space.guestsSeated = 1;
             vm.space.contactNumber;
             vm.space.contactNumberExtra;
-            vm.space.description;
+            vm.space.description ='';
+            vm.space.descCount;
             vm.space.title;
             vm.space.hourlyRate;
             vm.space.minHours = 1;
@@ -216,7 +217,7 @@
             vm.setUnAvialableTo = setUnAvialableTo;
             vm.setUnAvialableToHour = setUnAvialableToHour;
             vm.setUnAvialableToMinute = setUnAvialableToMinute;
-
+            vm.countOf = countOf;
 
         }
 
@@ -457,6 +458,14 @@
             vm.space.unAvailable.to.m = s;
             // console.log(vm.space.available);
         }
+        function countOf(text) {
+            var s = text ? text.split(/\s+/) : 0; // it splits the text on space/tab/enter
+            vm.space.descCount = s.length;
+            if (vm.space.descCount > 500) {
+                alert('Only 500 words allowed.');
+            }
+            return s ? 500 - s.length : '';
+        };
         vm.test = function (s) {
             alert('test success');
             console.log(s);

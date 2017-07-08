@@ -589,80 +589,6 @@
 				</div>
 			</div>
 
-			<div class="row" id="Profile-picture">
-				<div class="col-md-7" style="padding-right:0px;">
-					<div class="page-abs-inner list-form">
-						<div class="listing-part">
-							<h3>Complete your details</h3>
-							<div class="row">
-								<div class="col-sm-10">
-									<div class="sp-mt-30"></div>
-									<div class="profile-photo-edit no-image">
-										<div class="row">
-											<div class="col-sm-3">
-												<label for="file-upload" class="">
-  					<div class="dropzone-container profile-img dz-clickable" id="profile-image" style="background-image: url(&quot;//res.cloudinary.com/splacer/image/upload/c_fill,f_auto,w_250,h_250/v1480090998/Production/Assets/login/empty-profile-w.png&quot;);">
-				<input id="file-upload" type="file"/>
-  					</div>
-  					 </label>
-											</div>
-											<div class="col-sm-9">
-												<label for="file-upload" class="sp-btn sp-btn-has-icon  sp-btn-transparent sp-semibold sp-capitalize sp-btn-mh-alternate"
-												 style="max-width:50%;margin-top:28px;font-weight:600;color:#262629;cursor:pointer;">
-                            Upload Profile Photo</label>
-												<input id="file-upload" type="file" />
-												<label style="margin-top:18px;">Please do not use a logo of your business or company as your picture. </label>
-											</div>
-										</div>
-									</div>
-									<div class="sp-mt-30"></div>
-									<div class="row form-field">
-										<div class="col-sm-12">
-											<div class="sp-margin-top-8px"></div>
-											<label class="label">Describe yourself to help event organizers get to know you</label>
-											<span class="sp-field-container ">
-                            <textarea class="sp_input textarea-title1" name="" type="textarea" placeholder="What are your hobbies? What do you do for a living? Do you have a passion for events and hosting? If you’d like your guests to know you’re an accomplished photographer, chef, or graphic designer this is the place to share!" maxlength="500"></textarea>
-  					<span class="textarea-counter">500</span>
-											</span>
-											<div class="field-tip">If this is a commercial space, you can talk about your company, but remember NOT to include the actual name of
-												your business.</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="listing-footer ">
-							<div class="progress-bar-bg">
-								<div class="progress-bar" style="width: 88%;">
-								</div>
-							</div>
-							<div class="listing-footer-buttons">
-								<button type="button" id="btnPrevious" class="sp-btn sp-btn-has-icon sp-btn-transparent sp-semibold sp-capitalize sp-btn-mh-icon listing-process-prev"
-								 style="max-width: 100%;">
-  					<i class="sp-icon fa fa-chevron-left"></i>
-  					<span>Back</span></button>
-								<button type="button" id="btnNext" class="sp-btn  sp-btn-yellow sp-btn-disabled sp-semibold sp-capitalize listing-process-next"
-								 style="max-width: 100%;float:right;"><span>Continue</span></button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-5 hidden-sm hidden-xs list-form" style="background:#f2f2f2;padding-left:0px;padding-right:0px;padding-top:50px;padding-bottom:50px;">
-					<div class="col-md-8">
-						<div class="listing-help">
-							<div class="listing-help-image">
-								<img src="//res.cloudinary.com/splacer/image/upload/c_fill,f_auto/Production/Assets/listings/ListingPartProfilePhoto">
-							</div>
-							<div class="listing-help-text">
-								<p><b>Adding a profile photo that clearly shows your face increases engagement for your listing. </b>It is a great way
-									for space owners and event organizers to learn more about each other.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
 			<div class="row" id="Amenities">
 				<div class="col-md-7" style="padding-right:0px;">
 					<div class="page-abs-inner list-form">
@@ -1370,10 +1296,14 @@
 									</div>
 									<div class="row form-field">
 										<div class="col-sm-12">
-											<span class="sp-field-container ">
+													<span class="sp-field-container ">
   					<textarea class="sp_input textarea-title1" name="" type="textarea" 
-					  placeholder="My space has…  You’ll love my space because…" maxlength="5000" ng-model="vm.space.description"></textarea>
-  					<span class="textarea-counter">5000</span>
+					  placeholder="My space has…  You’ll love my space because…" 
+					  ng-model="vm.space.description" ></textarea>
+  					<span class="textarea-counter"  
+					  ng-bind="vm.countOf(vm.space.description)">
+					  </span>
+					 
 											</span>
 											<div class="field-tip">Please do not include the address of your space in this section or your business name/email address.</div>
 										</div>
@@ -1391,7 +1321,7 @@
 								 style="max-width: 100%;">
   					<i class="sp-icon fa fa-chevron-left"></i>
   					<span>Back</span></button>
-								<button type="button" id="btnNext" class="sp-btn  sp-btn-yellow sp-btn-disabled sp-semibold sp-capitalize listing-process-next"
+								<button ng-if="vm.space.descCount < 500" type="button" id="btnNext" class="sp-btn  sp-btn-yellow sp-btn-disabled sp-semibold sp-capitalize listing-process-next"
 								 style="max-width: 100%;float:right;"><span>Continue</span></button>
 							</div>
 						</div>
@@ -2105,4 +2035,15 @@
 		}
 	});
 
+</script>
+<script type="text/javascript">
+    jQuery.browser = {};
+    (function () {
+        jQuery.browser.msie = false;
+        jQuery.browser.version = 0;
+        if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+            jQuery.browser.msie = true;
+            jQuery.browser.version = RegExp.$1;
+        }
+    })();
 </script>

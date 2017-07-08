@@ -69,6 +69,10 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 
         });
 })();
+
+angular.element(document).ready(function(){
+  $('.loading').remove();
+});
 (function () {
     'use strict';
 
@@ -119,7 +123,8 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             vm.space.guestsSeated = 1;
             vm.space.contactNumber;
             vm.space.contactNumberExtra;
-            vm.space.description;
+            vm.space.description ='';
+            vm.space.descCount;
             vm.space.title;
             vm.space.hourlyRate;
             vm.space.minHours = 1;
@@ -287,7 +292,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             vm.setUnAvialableTo = setUnAvialableTo;
             vm.setUnAvialableToHour = setUnAvialableToHour;
             vm.setUnAvialableToMinute = setUnAvialableToMinute;
-
+            vm.countOf = countOf;
 
         }
 
@@ -528,6 +533,14 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
             vm.space.unAvailable.to.m = s;
             // console.log(vm.space.available);
         }
+        function countOf(text) {
+            var s = text ? text.split(/\s+/) : 0; // it splits the text on space/tab/enter
+            vm.space.descCount = s.length;
+            if (vm.space.descCount > 500) {
+                alert('Only 500 words allowed.');
+            }
+            return s ? 500 - s.length : '';
+        };
         vm.test = function (s) {
             alert('test success');
             console.log(s);
@@ -851,6 +864,31 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
             }());
         });
+(function() {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .directive('counter', [function(){
+  return {
+    restrict: 'A',
+    scope: {
+      counter: '='
+    },
+    require: '?ngModel',
+    link: function(scope, el, attr, model) {
+      if (!model) { return; }
+      model.$viewChangeListeners.push(function(){
+        var count = model.$viewValue.split(/\b/g).filter(function(i){
+          return !/^\s+$/.test(i);
+        }).length;
+        
+        scope.counter = count;
+      });
+    }
+  };
+}]);
+})();
 (function () {
     'use strict';
     angular

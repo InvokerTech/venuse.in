@@ -16,10 +16,14 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body ng-app="venuse" ng-cloak="">
+<body ng-app="venuse">
+<div class="loading" style="position: absolute;top: 50vh;left: 50vw;z-index: 76999;">
+  <img  src="img/ajax-loader.gif"/>
 
+</div>
   <app-header></app-header>
   <div ui-view>
+    
   </div>
   <app-footer></app-footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
