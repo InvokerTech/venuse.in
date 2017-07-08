@@ -13,7 +13,10 @@
          <div class="col-sm-12 ">
              <div class="col-sm-5 " style="padding-right:0px ; padding-left:0px">
                     	<div class="dropdown1">
-													<button class="form-control btn btn1" type="search" id="dropdownMenu2" 
+                        	<button ng-if="vm.city===''" class="form-control btn btn1" type="search" id="dropdownMenu2" 
+                          style="height: 50px;font-size: 16px;color: #6d6e71;"
+													 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Location<span class="caret pull-right" style="margin-top:3px"></span></button>
+													<button ng-if="vm.city!==''" class="form-control btn btn1" type="search" id="dropdownMenu2" 
                           style="height: 50px;font-size: 16px;color: #6d6e71;"
 													 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.city}} <span class="caret pull-right" style="margin-top:3px"></span></button>
 													<ul class="dropdown-menu event-select-menu" style="width: 100%;">
