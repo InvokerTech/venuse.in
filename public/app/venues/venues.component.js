@@ -1,3 +1,4 @@
+
 (function () {
     'use strict';
 
@@ -5,6 +6,10 @@
         controller: VenuesController,
         controllerAs: 'vm',
         templateUrl: `app/venues/venues.html`,
+        bindings: {
+            city: '<',
+            event: '<'
+        }
     };
 
     angular
@@ -16,22 +21,21 @@
         .module('venuse')
         .controller('VenuesController', VenuesController);
 
-    VenuesController.inject = ['VenueService'];
-    function VenuesController(VenueService) {
+    VenuesController.inject = ['VenueService', '$stateParams'];
+    function VenuesController(VenueService, $stateParams) {
         var vm = this;
         vm.$onInit = function () {
-
+            vm.filter = {};
+            vm.filter.type = $stateParams.event;
+            vm.filter.city = $stateParams.city;
             vm.moreFilter = { status: false, text: ['Show More Filters', 'Less Filters'] };
             vm.moreFilter.selected = vm.moreFilter.text[0];
             vm.sortfilters = [{ value: 'popular', name: 'By Popularity' },
             { value: 'hourly_rate', name: 'By Price' }];
             vm.sortFilter = vm.sortfilters[0];
-            vm.filter = {};
-            vm.filter.type = '';
             vm.venues = [];
-            vm.filter.query='';
-            vm.filter.city='';
-            vm.filter.latitude='', vm.filter.longitude='';
+            vm.filter.query = '';
+            vm.filter.latitude = '', vm.filter.longitude = '';
             vm.filter.amenities = [];
             vm.filter.rules = [];
             vm.filter.styles = [];
@@ -194,18 +198,32 @@
         }
 
         function getVenues() {
-             vm.loading = true;
-            VenueService.get()
+            vm.loading = true;
+            var search = {
+            };
+            if (vm.filter.city) {
+                search.city = vm.filter.city;
+            }
+            if (vm.filter.event) {
+                search.event = vm.filter.event;
+            }
+
+            VenueService.search(search)
                 .then(function (res) {
-                    vm.venues = res.venues
-                     vm.loading = false;
+                    if (res.length !== 0)
+                        vm.venues = res;
+
+                    else alert('Vo Venues found.');
+                    vm.loading = false;
                 })
-                .catch();
+                .catch(function () {
+                    vm.loading = true;
+                });
         }
 
         function eventSelect(e) {
             // alert(e);
-            vm.filter.type= e;
+            vm.filter.type = e;
         }
 
         function submit() {

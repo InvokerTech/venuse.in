@@ -12,39 +12,48 @@
          <h2 class="">Discover &amp; Book Unique Spaces for Your Upcoming Activity</h2>
          <div class="col-sm-12 ">
              <div class="col-sm-5 " style="padding-right:0px ; padding-left:0px">
-                 <div class="form-group input-group-lg">
-                    <input class="form-control" type="search" style="height: 50px;" 
-                    value="" list="locations" id="search" placeholder="Location">
-                 <div class="dropdown1">
-              <datalist id="locations">
-                <option value="Pune">
-                  <option value="Banglore">
-                    <option value="Delhi">
-                      <option value="Hyderabad">
-                        <option value="Kolkata">
-                          <option value="Chennai">
-              </datalist>
-            </div>
-                 </div>
+                    	<div class="dropdown1">
+													<button class="form-control btn btn1" type="search" id="dropdownMenu2" 
+                          style="height: 50px;font-size: 16px;color: #6d6e71;"
+													 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.city}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+													<ul class="dropdown-menu event-select-menu" style="width: 100%;">
+														<li style="padding-bottom: 0px !important;">
+                              <a ng-click="vm.setCity('Pune')" href="">Pune</a></li>
+                            <li style="padding-bottom: 0px !important;" >
+                              <a ng-click="vm.setCity('Bangalore')" href="">Bangalore</a></li>
+                              <li style="padding-bottom: 0px !important;" >
+                              <a  href="" style="background-color: #bfbfbf !important;">Delhi</a></li>
+                              <li style="padding-bottom: 0px !important;" >
+                              <a  href="" style="background-color: #bfbfbf !important;"> Hyderabad</a></li>
+                              <li style="padding-bottom: 0px !important;" >
+                              <a  href="" style="background-color: #bfbfbf !important;">Kolkata</a></li>
+                              <li style="padding-bottom: 0px !important;" >
+                              <a  href="" style="background-color: #bfbfbf !important;">Chennai</a></li>
+                               
+													</ul>
+												</div>
              </div>
              <div class="col-sm-6 text-center" style="padding-left:0px; padding-right:0px">
           <div class="input-group input-group-lg">
           <div class="dropdown1">
-            <button class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:50px; font-size:16px; color:#6d6e71" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span style=" font-size:20px;   right: 16px;
+            <button ng-if="vm.event!==''" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:50px; font-size:16px; color:#6d6e71" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.event}}<span style=" font-size:20px;   right: 16px;
+    top: 22px;
+    position: absolute;" class="caret"></span></button>
+    <button ng-if="vm.event===''" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:50px; font-size:16px; color:#6d6e71" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span style=" font-size:20px;   right: 16px;
     top: 22px;
     position: absolute;" class="caret"></span></button>
         <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
-        <li><a href="/#/venues" date-value="Event" >Event</a>
+        <li><a ng-click="vm.setEvent('Event')" href="" date-value="Event" >Event</a>
         <span >Private events, Business events, Parties,<br> Dinners, Wedding…</span></li>
-        <li><a href="/#/venues" date-value="Meeting" >Meeting </a>
+          <li><a ng-click="vm.setEvent('Meeting')" href="" date-value="Event" >Meeting</a>
         <span >Presentation, Offsite, Class/workshop,<br> Conference…</span></li>
-        <li><a href="/#/venues" date-value="Production">Production </a>
+        <li><a ng-click="vm.setEvent('Production')" href="" date-value="Production">Production </a>
         <span>Film/video shoot, Photo shoot, Fashion Show,<br> Product launch…</span></li>
-        <li><a href="/#/venues" date-value="Pop-up" >Pop-up </a>
+        <li><a ng-click="vm.setEvent('Pop-up')" href="" date-value="Pop-up" >Pop-up </a>
         <span>Retail Pop Up, Pop Up Dinner, Art exhibit,<br> Other</span></li></ul>
         </div>
-           <span class="input-group-addon" id="basic-addon2" style="font-size:16px; border: solid 1px #ffd64b;
-    background-color: #ffd64b; color: #262629; text-transform: uppercase;">Search</span>
+           <span ng-click="vm.submit();" class="input-group-addon" id="basic-addon2" style="font-size:16px; border: solid 1px #ffd64b;
+    background-color: #ffd64b; color: #262629; text-transform: uppercase;cursor: pointer;">Search</span>
         </div>
        </div>
       </div>

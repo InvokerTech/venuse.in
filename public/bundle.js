@@ -16,7 +16,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     component: 'home'
                 })
                 .state('venues', {
-                    url: '/venues',
+                    url: '/venues?city&event',
                     component: 'venues'
                 })
                 .state('venue', {
@@ -1048,16 +1048,56 @@ angular
         }
     }
 })();
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     var home = {
+        controller: 'HomeController',
+        controllerAs: 'vm',
         templateUrl: `app/home/home.html`
     };
-        
+
     angular
         .module('venuse')
         .component('home', home);
+
+
+    angular
+        .module('venuse')
+        .controller('HomeController', HomeController);
+
+    HomeController.inject = ['$state'];
+    function HomeController($state) {
+        var vm = this;
+
+
+        vm.$onInit = function () {
+            vm.city = '';
+            vm.event='';
+
+
+            vm.setCity = setCity;
+            vm.setEvent=setEvent;
+            vm.submit=submit;
+        }
+
+        function setCity(c) {
+           vm.city=c;
+        }
+
+        function setEvent(v){
+            vm.event=v;
+        }
+
+        function submit(){
+            if(vm.city || vm.event){
+$state.go('venues',{city:vm.city,event:vm.event});
+            }
+            else alert('Select atleast one param to search venues.');
+        }
+        
+    }
+
 
 })();
 (function() {
@@ -1393,6 +1433,7 @@ vm.venues=[];
 
     }
 })();
+
 (function () {
     'use strict';
 
@@ -1400,6 +1441,10 @@ vm.venues=[];
         controller: VenuesController,
         controllerAs: 'vm',
         templateUrl: `app/venues/venues.html`,
+        bindings: {
+            city: '<',
+            event: '<'
+        }
     };
 
     angular
@@ -1411,22 +1456,21 @@ vm.venues=[];
         .module('venuse')
         .controller('VenuesController', VenuesController);
 
-    VenuesController.inject = ['VenueService'];
-    function VenuesController(VenueService) {
+    VenuesController.inject = ['VenueService', '$stateParams'];
+    function VenuesController(VenueService, $stateParams) {
         var vm = this;
         vm.$onInit = function () {
-
+            vm.filter = {};
+            vm.filter.type = $stateParams.event;
+            vm.filter.city = $stateParams.city;
             vm.moreFilter = { status: false, text: ['Show More Filters', 'Less Filters'] };
             vm.moreFilter.selected = vm.moreFilter.text[0];
             vm.sortfilters = [{ value: 'popular', name: 'By Popularity' },
             { value: 'hourly_rate', name: 'By Price' }];
             vm.sortFilter = vm.sortfilters[0];
-            vm.filter = {};
-            vm.filter.type = '';
             vm.venues = [];
-            vm.filter.query='';
-            vm.filter.city='';
-            vm.filter.latitude='', vm.filter.longitude='';
+            vm.filter.query = '';
+            vm.filter.latitude = '', vm.filter.longitude = '';
             vm.filter.amenities = [];
             vm.filter.rules = [];
             vm.filter.styles = [];
@@ -1589,18 +1633,32 @@ vm.venues=[];
         }
 
         function getVenues() {
-             vm.loading = true;
-            VenueService.get()
+            vm.loading = true;
+            var search = {
+            };
+            if (vm.filter.city) {
+                search.city = vm.filter.city;
+            }
+            if (vm.filter.event) {
+                search.event = vm.filter.event;
+            }
+
+            VenueService.search(search)
                 .then(function (res) {
-                    vm.venues = res.venues
-                     vm.loading = false;
+                    if (res.length !== 0)
+                        vm.venues = res;
+
+                    else alert('Vo Venues found.');
+                    vm.loading = false;
                 })
-                .catch();
+                .catch(function () {
+                    vm.loading = true;
+                });
         }
 
         function eventSelect(e) {
             // alert(e);
-            vm.filter.type= e;
+            vm.filter.type = e;
         }
 
         function submit() {

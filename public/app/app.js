@@ -16,7 +16,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     component: 'home'
                 })
                 .state('venues', {
-                    url: '/venues',
+                    url: '/venues?city&event',
                     component: 'venues'
                 })
                 .state('venue', {
