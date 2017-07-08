@@ -158,12 +158,14 @@
                 { status: false, value: 'Open Kitchen' },
 
             ];
-
+            getVenues();
             vm.sortBy = sortBy;
             vm.setMap = setMap;
             vm.eventSelect = eventSelect;
             vm.submit = submit;
-            getVenues();
+            vm.rollUp = rollUp;
+            vm.rollDown = rollDown;
+
 
 
         }
@@ -270,6 +272,18 @@
                     vm.loading = true;
                 });
 
+        }
+
+        function rollUp(id) {
+            $('#' + id).css('opacity', '0');
+            $('#' + 'roll-' + id).css('opacity', '1');
+            $('#' + 'roll-' + id).css('z-index', '10');
+        }
+
+        function rollDown(id) {
+            $('#' + id).css('opacity', '1');
+            $('#' + 'roll-' + id).css('opacity', '0');
+            $('#' + 'roll-' + id).css('z-index', '-3');
         }
 
     }

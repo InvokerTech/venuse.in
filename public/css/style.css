@@ -924,7 +924,7 @@ a.download-presskit {
 }
 
 .main-footer {
-     bottom: 0px;   
+    bottom: 0px;
     background-color: #262629;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -2222,6 +2222,7 @@ a:visited,
 a:focus {
     color: #434344;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .add-this-links {
@@ -3152,7 +3153,7 @@ Blog
 }
 
 .more-info section .splace-facility-not-available {
-  color: #a6a6a6 !important;
+    color: #a6a6a6 !important;
     background-image: none !important;
 }
 
@@ -4892,8 +4893,13 @@ Responsive media queries
     }
 }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
 }
 
 .error {
@@ -4907,10 +4913,39 @@ Responsive media queries
 .no-pad {
     padding: 0px;
 }
-.no-marg{
-margin: 0px;
+
+.no-marg {
+    margin: 0px;
 }
 
 span.rz-bubble {
     display: none !important;
+}
+
+.info-btn-wrp {
+    z-index: 6000;
+    text-align: center;
+    color: gray;
+    background: white;
+    width: 30px;
+    height: 30px;
+    margin: -30px auto 0px;
+    border-radius: 30px;
+}
+
+.roll-up {
+    position: absolute;
+    top: 0px;
+    z-index: -3;
+    opacity: 0;
+    padding-right: 30px;
+    padding-left: 0px;
+}
+
+.splace-small-gallery-image {
+    height: 109px;
+        margin-right: 5px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
 }

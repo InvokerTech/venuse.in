@@ -181,15 +181,15 @@
             </div>
           </div>
           <div class="col-md-6 landing-part" style="margin-top: 20px" ng-repeat="venue in vm.venues track by $index">
-            <a ui-sref="venue({id : venue._id})" >
-              <div class="lp-box-custom">
-                <div class="image" style="background-image: url('{{venue.photos[0]}}')">
+            <a>
+              <div id='{{venue._id}}' class="lp-box-custom">
+                <div ui-sref="venue({id : venue._id})" class="image" style="background-image: url('{{venue.photos[0]}}')">
                 </div>
-                <!--<div class="info-btn-wrp">
+                <div class="info-btn-wrp" ng-click="vm.rollUp(venue._id);">
                   <div class="view-info-btn"><i class="fa fa-info"></i></div>
-                </div>-->
+                </div>
                 <div class="info">
-                  <h2 class="sp-title">{{venue.name}}</h2>
+                  <h2 ui-sref="venue({id : venue._id})" class="sp-title">{{venue.name}}</h2>
                   <span>{{venue.city}}</span>
                   <div class="stars">
                     <div class="fa fa-star"></div>
@@ -201,6 +201,28 @@
                 </div>
               </div>
             </a>
+            <div id='roll-{{venue._id}}' class="col-md-12 roll-up">
+              <div class="lp-box-custom">
+                <div class="info clearfix">
+                  <h2 class="sp-title">{{venue.name}}
+                    <span ng-click="vm.rollDown(venue._id);" class="fa fa-times" style="float: right;font-size: 2rem;cursor: pointer;"></span>
+                  </h2>
+                  <span>{{venue.address}}</span>
+                  <span>{{venue.city}}</span>
+                  <div class="stars">
+                    <div class="fa fa-star"></div>
+                    <div class="fa fa-star"></div>
+                    <div class="fa fa-star"></div>
+                    <div class="fa fa-star"></div>
+                    <div class="fa fa-star"></div>
+                  </div>
+                  <p style="word-break: break-word;">{{venue.description}}</p>
+                  <div class="splace-small-gallery-image col-md-3 clearfix"
+                  style="background-image:url({{img}});" ng-repeat="img in venue.photos | limitTo:3">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <!--  <div class="col-md-12">
             <div class="search-results-header">
