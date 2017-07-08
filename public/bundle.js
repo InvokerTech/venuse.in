@@ -149,6 +149,7 @@ angular
             vm.space.dayRate;
             vm.space.extraDesc;
             vm.space.cancelationPolicy;
+            vm.space.customPolicy='';
             vm.space.holdBeforeCancel = 1;
             vm.space.deposit;
             vm.space.photos = [];

@@ -456,7 +456,7 @@
 						  ng-model="vm.space.address" ng-focus="vm.setMap();">
 		  				</span>
 								</div>
-										<div class="col-sm-10">
+								<div class="col-sm-10">
 									<span class="sp-field-container undefined">
 		  				<input type="address" class="sp_input" 
 						  name="raw_address" placeholder="Enter Detail address" value="" autocomplete="off"
@@ -817,7 +817,7 @@
 											<input type="file" name="imagefile[]" id="imagefile" accept="image" ng-model="vm.file" data-file="vm.file" multiple required/>
 											<label for="imagefile" class="sp-btn sp-btn-has-icon  sp-btn-transparent sp-semibold sp-capitalize sp-btn-mh-alternate" style="max-width:100%;font-weight:600;color:#262629;cursor:pointer;">
                             + Add Photos</label>
-							<input type="file" name="cover[]" id="coverfile" accept="image" ng-model="vm.coverFile" data-file="vm.coverFile" required/>
+											<input type="file" name="cover[]" id="coverfile" accept="image" ng-model="vm.coverFile" data-file="vm.coverFile" required/>
 											<label for="coverfile" class="sp-btn sp-btn-has-icon  sp-btn-transparent sp-semibold sp-capitalize sp-btn-mh-alternate" style="max-width:100%;font-weight:600;color:#262629;cursor:pointer;">
                             + Add Cover</label>
 										</div>
@@ -1299,14 +1299,14 @@
 									</div>
 									<div class="row form-field">
 										<div class="col-sm-12">
-													<span class="sp-field-container ">
+											<span class="sp-field-container ">
   					<textarea class="sp_input textarea-title1" name="" type="textarea" 
 					  placeholder="My space has…  You’ll love my space because…" 
 					  ng-model="vm.space.description" ></textarea>
   					<span class="textarea-counter"  
 					  ng-bind="vm.countOf(vm.space.description)">
 					  </span>
-					 
+
 											</span>
 											<div class="field-tip">Please do not include the address of your space in this section or your business name/email address.</div>
 										</div>
@@ -1736,7 +1736,7 @@
 									<div class="sp-mt-30"></div>
 									<div class="row form-field">
 										<div class="col-sm-12 mc-text-center">
-											<div class="info-box">Starting From <br><strong>&#8377; 67</strong>/hr (minimum 1 hr)</div>
+											<div class="info-box">Starting From <br><strong>&#8377; {{vm.space.hourlyRate}}</strong>/hr (minimum 1 hr)</div>
 											<div class="sp-mt-10"></div>
 											<label class="field-tip">How your price will appear in your listing</label>
 										</div>
@@ -1845,6 +1845,15 @@
 									</div>
 								</div>
 							</div>
+							<div class="sp-mt-30"></div>
+									<div ng-if="vm.space.cancelationPolicy==='Other'"  class="row form-field">
+										<div class="col-sm-10">Specify your cancellation policy. (optional)<br>
+											<span class="sp-field-container ">
+  					<textarea class="sp_input textarea-title1" name="Custom-policy" type="textarea" ng-model="vm.space.customPolicy"></textarea>
+  					</span>
+											<div class="field-tip"></div>
+										</div>
+									</div>
 						</div>
 						<div class="listing-footer ">
 							<div class="progress-bar-bg">
@@ -1885,8 +1894,8 @@
 							<h3>Security Deposit (optional)</h3>
 							<div class="row form-field">
 								<div class="col-sm-11">Splacer uses a 3rd party payment processor to store the event organizer's credit card information and can collect
-									against damages of up to &#8377; 1000. If you wish to collect a higher security deposit please do so directly from the
-									organizer and specify the amount below.
+									against damages of up to &#8377; 1000. If you wish to collect a higher security deposit please do so directly from
+									the organizer and specify the amount below.
 								</div>
 							</div>
 							<div class="row">
@@ -2040,13 +2049,14 @@
 
 </script>
 <script type="text/javascript">
-    jQuery.browser = {};
-    (function () {
-        jQuery.browser.msie = false;
-        jQuery.browser.version = 0;
-        if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
-            jQuery.browser.msie = true;
-            jQuery.browser.version = RegExp.$1;
-        }
-    })();
+	jQuery.browser = {};
+	(function () {
+		jQuery.browser.msie = false;
+		jQuery.browser.version = 0;
+		if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+			jQuery.browser.msie = true;
+			jQuery.browser.version = RegExp.$1;
+		}
+	})();
+
 </script>
