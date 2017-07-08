@@ -737,7 +737,7 @@ angular.element(document).ready(function(){
         then(function (response) {
 
           //console.log(response);
-          if (response.data.status===true) {
+          if (response.data.status === true) {
             loginstatus = true;
             setLogin(response.data.user);
             //    console.log(response.data); 
@@ -775,7 +775,7 @@ angular.element(document).ready(function(){
           //console.log(response);
           if (response.data) {
             loginstatus = true;
-            setLogin(response.data);
+            setLogin(response.data.user);
             //    console.log(response.data); 
 
 
@@ -826,15 +826,12 @@ angular.element(document).ready(function(){
         then(function (response) {
 
           //console.log(response);
-          if (response.data) {
+          if (response.data.status === true) {
             loginstatus = true;
             setLogin(response.data.user);
             //    console.log(response.data); 
           } else
             return $q.reject(response);
-        })
-        .catch(function (err) {
-          console.log(err);
         });
     }
   }
@@ -844,7 +841,7 @@ angular.element(document).ready(function(){
         .config(function ($facebookProvider) {
             $facebookProvider.setAppId('1675125199182213');
         })
-        .run(function ($rootScope) {
+        .run(function () {
             // Load the facebook SDK asynchronously
             (function () {
                 // If we've already installed the SDK, we're done
@@ -887,7 +884,7 @@ angular.element(document).ready(function(){
         controllerAs: 'vm',
         templateUrl: `app/header/header.html`,
     };
-        
+
     angular
         .module('venuse')
         .component('appHeader', appHeader);
@@ -944,7 +941,10 @@ angular.element(document).ready(function(){
                         vm.login();
 
                     })
-                    .catch();
+                    .catch(function (err) {
+                       alert(err.data.message);
+                       vm.loginLoad = false;
+                    });
             }
             else vm.formError = true;
         }

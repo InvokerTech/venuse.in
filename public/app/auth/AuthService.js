@@ -37,7 +37,7 @@
         then(function (response) {
 
           //console.log(response);
-          if (response.data.status===true) {
+          if (response.data.status === true) {
             loginstatus = true;
             setLogin(response.data.user);
             //    console.log(response.data); 
@@ -75,7 +75,7 @@
           //console.log(response);
           if (response.data) {
             loginstatus = true;
-            setLogin(response.data);
+            setLogin(response.data.user);
             //    console.log(response.data); 
 
 
@@ -126,15 +126,12 @@
         then(function (response) {
 
           //console.log(response);
-          if (response.data) {
+          if (response.data.status === true) {
             loginstatus = true;
             setLogin(response.data.user);
             //    console.log(response.data); 
           } else
             return $q.reject(response);
-        })
-        .catch(function (err) {
-          console.log(err);
         });
     }
   }

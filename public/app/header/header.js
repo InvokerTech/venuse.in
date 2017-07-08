@@ -8,7 +8,7 @@
         controllerAs: 'vm',
         templateUrl: `app/header/header.html`,
     };
-        
+
     angular
         .module('venuse')
         .component('appHeader', appHeader);
@@ -65,7 +65,10 @@
                         vm.login();
 
                     })
-                    .catch();
+                    .catch(function (err) {
+                       alert(err.data.message);
+                       vm.loginLoad = false;
+                    });
             }
             else vm.formError = true;
         }

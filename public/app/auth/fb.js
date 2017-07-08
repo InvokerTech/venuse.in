@@ -3,7 +3,7 @@
         .config(function ($facebookProvider) {
             $facebookProvider.setAppId('1675125199182213');
         })
-        .run(function ($rootScope) {
+        .run(function () {
             // Load the facebook SDK asynchronously
             (function () {
                 // If we've already installed the SDK, we're done
