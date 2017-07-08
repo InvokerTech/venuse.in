@@ -3,7 +3,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 (function () {
     'use strict';
     angular.module('venuse',
-        ['ui.router', 'directive.g+signin', 'ngFacebook', 'ngMap', 'rzModule','ui.bootstrap.datetimepicker']);
+        ['ui.router', 'directive.g+signin', 'ngFacebook', 'ngMap', 'rzModule', 'ui.bootstrap.datetimepicker']);
 
     angular
         .module('venuse')
@@ -19,7 +19,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/venues',
                     component: 'venues'
                 })
-                 .state('venue', {
+                .state('venue', {
                     url: '/venue?id',
                     component: 'venue'
                 })
@@ -54,15 +54,15 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/cancellation_policy',
                     templateUrl: 'app/templates/cancellation_policy.html'
                 })
-                  .state('about', {
+                .state('about', {
                     url: '/about',
                     templateUrl: 'app/templates/about.html'
                 })
-                  .state('privacy', {
+                .state('privacy', {
                     url: '/privacy',
                     templateUrl: 'app/templates/privacy.html'
                 })
-                   .state('press', {
+                .state('press', {
                     url: '/press',
                     templateUrl: 'app/templates/press.html'
                 })
@@ -70,9 +70,26 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
         });
 })();
 
-angular.element(document).ready(function(){
-  $('.loading').remove();
+angular.element(document).ready(function () {
+    $('.loader').remove();
 });
+
+angular
+    .module('venuse')
+    .run(['$rootScope', function ($rootScope) {
+
+        $rootScope.stateIsLoading = false;
+        $rootScope.$on('$stateChangeStart', function () {
+            $rootScope.stateIsLoading = true;
+        });
+        $rootScope.$on('$stateChangeSuccess', function () {
+            $rootScope.stateIsLoading = false;
+        });
+        $rootScope.$on('$stateChangeError', function () {
+            //catch error
+        });
+
+    }]);
 (function () {
     'use strict';
 
@@ -861,6 +878,25 @@ angular.element(document).ready(function(){
                 firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
             }());
         });
+(function () {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .directive('loader', loader);
+
+    loader.inject = [''];
+    function loader() {
+        var directive = {
+            restrict: 'AE',
+            templateUrl: 'app/common/loader.html'
+        };
+        return directive;
+    }
+
+})();
+
+
 (function () {
     'use strict';
     angular

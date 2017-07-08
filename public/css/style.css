@@ -924,7 +924,7 @@ a.download-presskit {
 }
 
 .main-footer {
-    position: relative;
+     bottom: 0px;   
     background-color: #262629;
     padding-top: 30px;
     padding-bottom: 30px;
