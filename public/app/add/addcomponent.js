@@ -25,6 +25,7 @@
         //  redirect();
         vm.$onInit = function () {
             getUser();
+            vm.loading=false;
             vm.space = {};
             vm.space.eventTypes = [];
             vm.space.styleTypes = [];
@@ -317,6 +318,7 @@
         }
 
         function submit() {
+            vm.loading=true;
             //set Available timings
             vm.space.available.from.time = vm.space.available.from.h + ':' + vm.space.available.from.m;
             vm.space.available.to.time = vm.space.available.to.h + ':' + vm.space.available.to.m;
@@ -393,15 +395,18 @@
                 .then(function (res) {
                     //  console.log(res);
                     if (res) {
+                        vm.loading=false;
                         alert('Venue added successfully.');
                         $state.go('venues');
                     }
                     else {
+                         vm.loading=false;
                         alert('Venue not added.Correct all details.');
                         $state.reload();
                     }
                 })
                 .catch(function (err) {
+                     vm.loading=false;
                     console.log(err);
                     alert('Venue not added.Correct all details.');
                     $state.reload();

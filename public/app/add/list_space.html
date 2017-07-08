@@ -1,6 +1,6 @@
 <link async rel="stylesheet" type="text/css" href="css/list-space.css">
 <link async rel="stylesheet" href="css/jquery-ui1.css" />
-
+<loader ng-if="vm.loading"></loader>
 <div class="header-placeholder"></div>
 <section>
 	<div class="container-fluid" id="tabs" style="background:#fcfcfc;">
@@ -1942,7 +1942,7 @@
 						<div class="listing-loby-header">
 							<h1>Awesome!<br> Your space is ready for review.</h1>
 							<div>
-								<button ng-click="vm.submit()" type="button" class="sp-btn  sp-btn-yellow sp-btn-disabled sp-semibold sp-capitalize listing-process-next"
+								<button ng-if="!vm.loading" ng-click="vm.submit()" type="button" class="sp-btn  sp-btn-yellow sp-btn-disabled sp-semibold sp-capitalize listing-process-next"
 								 style="max-width: 100%;margin-bottom:20px;"><span>Submit For Approval</span></button>
 							</div>
 							<div>Your listing will be live on Splacer.co once our team approves it.<br>This can take up to 2 working days. </div>
