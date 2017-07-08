@@ -62,17 +62,17 @@
             </div>
             <div class="half2 col-md-6" style="z-index:1010">
               <div class="form-toggle options-2" id="toggle0">
-                <div data-toggle="pill" data-target="#menu2" class="form-toggle-item selected" value="guests">Hourly Rate $</div>
-                <div data-toggle="pill" data-target="#menu3" class="form-toggle-item" value="size">Daily Rate $</div>
+                <div data-toggle="pill" data-target="#menu2" class="form-toggle-item selected" value="guests">Hourly Rate &#8377;</div>
+                <div data-toggle="pill" data-target="#menu3" class="form-toggle-item" value="size">Daily Rate &#8377;</div>
               </div>
               <div class="tab-content">
                 <div id="menu2" class="tab-pane fade active in">
                   <rzslider rz-slider-model="vm.hourSlider.minValue" rz-slider-high="vm.hourSlider.maxValue" rz-slider-options="vm.hourSlider.options"></rzslider>
-                  <p class="no-marg text-center">${{vm.hourSlider.minValue}}-${{vm.hourSlider.maxValue}} +</p>
+                  <p class="no-marg text-center">&#8377;{{vm.hourSlider.minValue}}-&#8377;{{vm.hourSlider.maxValue}} +</p>
                 </div>
                 <div id="menu3" class="tab-pane fade">
                   <rzslider rz-slider-model="vm.daySlider.minValue" rz-slider-high="vm.daySlider.maxValue" rz-slider-options="vm.daySlider.options"></rzslider>
-                  <p class="no-marg text-center">${{vm.daySlider.minValue}}-${{vm.daySlider.maxValue}} +</p>
+                  <p class="no-marg text-center">&#8377;{{vm.daySlider.minValue}}-&#8377;{{vm.daySlider.maxValue}} +</p>
                 </div>
               </div>
             </div>
