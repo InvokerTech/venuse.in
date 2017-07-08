@@ -24,11 +24,33 @@
 
         <div class=" collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li><a ui-sref="list-space" ><button type="button" class="list-your-space">list your space</button></a></li>
-            <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" ng-click="vm.showRegister();" >SIGN UP</a></li>
+            <li ng-if="!vm.userstatus"><a ui-sref="list-space"><button type="button" class="list-your-space">list your space</button></a></li>
+            <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" ng-click="vm.showRegister();">SIGN UP</a></li>
             <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" ng-click="vm.showLogin();">LOG IN</a></li>
-            <li ng-if="vm.userstatus" class=""><a class="nav-ul-a">{{vm.user.name}}</a></li>
-             <li ng-if="vm.userstatus" class=""><a class="nav-ul-a" ng-click="vm.logOut();">LOG OUT</a></li>
+             <li ng-if="vm.userstatus" class=""><a class="nav-ul-a" >MESSAGES</a></li>
+            <li ng-if="vm.userstatus" class=""><a class="nav-ul-a" >BOOKINGS</a></li>
+            <div ng-if="vm.userstatus" class="dropdown"  style="float: right;">
+              <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="
+    padding: 1px 10px;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-right: 29px;
+    text-transform: uppercase;
+    background: transparent;
+    color: #444 !important;
+    -webkit-transition: color 0.2s ease-out;
+    transition: color 0.2s ease-out;
+" aria-expanded="false">{{vm.user.name}} 
+<span class="sp-icon fa fa-chevron-down  burger pointer" style="font-size:17px;"></span>
+  </button>
+              <ul class="dropdown-menu">
+                <li><a  href="">Profile</a></li>
+                <li><a  href="">Account</a></li>
+                <li><a ui-sref="list-space" href="">LIST YOUR SPACE</a></li>
+                <li><a ng-click="vm.logOut();" href="">Log Out</a></li>
+              </ul>
+            </div>
           </ul>
         </div>
       </div>

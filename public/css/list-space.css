@@ -61,9 +61,9 @@
     box-shadow: none;
 }
 
-.progress-bar {
-    //background-color: #1ab394;
-}
+/*.progress-bar {
+    background-color: #1ab394;
+}*/
 
 .progress-bar {
     float: left;
@@ -500,7 +500,7 @@ header.main-header nav.navbar ul.header-parts li.header-part ul li:hover a {
 [class^="sp-icon-"],
 [class*=" sp-icon-"] {
     font-family: 'spicomoon';
-    speak: none;
+    /*speak: none;*/
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -539,7 +539,7 @@ header.main-header form[role="search"] label {
     float: left;
     font-size: 26px;
     height: 26px;
-    vertical-align: middle;
+    
     margin: 18px 0px 0px;
     color: #fff;
     cursor: pointer;
@@ -548,7 +548,7 @@ header.main-header form[role="search"] label {
 [class^="sp-icon-"],
 [class*=" sp-icon-"] {
     font-family: 'spicomoon' !important;
-    speak: none;
+    
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -596,7 +596,6 @@ header.main-header nav.navbar ul.header-parts li.header-part ul {
     border-left: 1px solid #ededed;
     border-right: 1px solid #ededed;
     border-bottom: 1px solid #ededed;
-    -webkit-padding-start: 0px;
     margin-top: -1px;
 }
 
@@ -629,7 +628,8 @@ header.main-header.regular-header nav.navbar ul.header-parts li.header-part {
 
 header.main-header nav.navbar ul.header-parts li.header-part {
     display: inline-block;
-    position: relative; //height: 100%;
+    position: relative; 
+    /*height: 100%;*/
     margin-top: -3px;
     color: #fff;
 }
@@ -655,7 +655,6 @@ header.main-header nav.navbar ul.header-parts li.header-part {
         border-left: 1px solid #ededed;
         border-right: 1px solid #ededed;
         border-bottom: 1px solid #ededed;
-        -webkit-padding-start: 0px;
         margin-top: -1px;
         background: #fff;
     }
@@ -681,7 +680,7 @@ header.main-header nav.navbar ul.header-parts li.header-part {
     padding: 60px;
 }
 
-.page-abs-inner {
+/*.page-abs-inner {
     //display: block;
     //position: absolute;
     //float: none;
@@ -691,7 +690,7 @@ header.main-header nav.navbar ul.header-parts li.header-part {
     //height: 100%;
     // overflow: hidden;
     //overflow-y: auto;
-}
+}*/
 
 @media(max-width:767px) {
     .page-abs-inner {
@@ -918,7 +917,6 @@ header.main-header nav.navbar ul.header-parts li.header-part {
     background-color: #fff;
     border: solid 1px #979797;
     text-align: center;
-    vertical-align: middle;
     padding: 4px;
 }
 
@@ -1007,7 +1005,6 @@ header.main-header nav.navbar ul.header-parts li.header-part {
     color: #6d6e71;
     cursor: pointer;
     text-align: center;
-    vertical-align: center;
     padding-top: 7px;
 }
 
@@ -1173,7 +1170,6 @@ header.main-header nav.navbar ul.header-parts li.header-part {
     overflow: hidden;
     background-position: center center;
     background-size: cover;
-    background-repeat: none;
 }
 
 .listing-photos-upload .listing-photos-upload-bt {
@@ -1196,7 +1192,8 @@ header.main-header nav.navbar ul.header-parts li.header-part {
 }
 
 .listing-part .sp-btn {
-    height: 40px; //margin-top: 28px;
+    height: 40px; 
+    /*margin-top: 28px;*/
 }
 
 .sp-mt-20 {
@@ -1221,7 +1218,6 @@ header.main-header nav.navbar ul.header-parts li.header-part {
     overflow: hidden;
     background-position: center center;
     background-size: cover;
-    background-repeat: none;
 }
 
 .profile-img {
