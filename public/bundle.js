@@ -152,7 +152,7 @@ angular
             vm.space.holdBeforeCancel = 1;
             vm.space.deposit;
             vm.space.photos = [];
-
+             vm.space.cover='';
 
             vm.eventTypes = [
                 { status: false, value: 'Event' },
@@ -479,7 +479,33 @@ angular
                     alert("Could not upload image");
                 });
             }
+            var cover = document.getElementById("coverfile");
+           
+                var form = new FormData();
+                form.append('file', cover);
 
+                var settings = {
+                    "async": false,
+                    "crossDomain": true,
+                    "url": "https://venuse-backend.herokuapp.com/image",
+                    "method": "POST",
+                    "processData": false,
+                    "contentType": false,
+                    "mimeType": "multipart/form-data",
+                    "data": form
+                }
+
+                $.ajax(settings).done(function (response) {
+                    //  console.log(response);
+                    var json = JSON.parse(response);
+                    vm.space.cover=json.url;
+
+                });
+                $.ajax(settings).fail(function (response) {
+                    console.log(response);
+                    alert("Could not upload cover image");
+                });
+            
 
 
 

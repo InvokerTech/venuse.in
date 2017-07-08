@@ -817,6 +817,9 @@
 											<input type="file" name="imagefile[]" id="imagefile" accept="image" ng-model="vm.file" data-file="vm.file" multiple required/>
 											<label for="imagefile" class="sp-btn sp-btn-has-icon  sp-btn-transparent sp-semibold sp-capitalize sp-btn-mh-alternate" style="max-width:100%;font-weight:600;color:#262629;cursor:pointer;">
                             + Add Photos</label>
+							<input type="file" name="cover[]" id="coverfile" accept="image" ng-model="vm.coverFile" data-file="vm.coverFile" required/>
+											<label for="coverfile" class="sp-btn sp-btn-has-icon  sp-btn-transparent sp-semibold sp-capitalize sp-btn-mh-alternate" style="max-width:100%;font-weight:600;color:#262629;cursor:pointer;">
+                            + Add Cover</label>
 										</div>
 									</div>
 									<div class="sp-mt-30">
@@ -1699,7 +1702,7 @@
 										<div class="col-sm-4">Hourly Rate<br>
 											<span class="sp-field-container  sp-field-currencyundefined">
   					<input type="Number" class="sp_input" name="hourly_rate" value="" ng-model="vm.space.hourlyRate">
-  					<div class="sp-field-prefix">$</div>
+  					<div class="sp-field-prefix">INR</div>
   					</span>
 											<div class="sp-mt-10"></div>
 											<div class="sp-mt-2"></div>
@@ -1717,7 +1720,7 @@
 										<div class="col-sm-4">Full day rate (optional)<br>
 											<span class="sp-field-container  sp-field-currencyundefined">
   					<input type="Number" class="sp_input" name="daily_rate" value="" ng-model="vm.space.dayRate">
-  					<div class="sp-field-prefix">$</div>
+  					<div class="sp-field-prefix">INR</div>
   					</span>
 										</div>
 									</div>
@@ -1733,7 +1736,7 @@
 									<div class="sp-mt-30"></div>
 									<div class="row form-field">
 										<div class="col-sm-12 mc-text-center">
-											<div class="info-box">Starting From <br><strong>$67</strong>/hr (minimum 1 hr)</div>
+											<div class="info-box">Starting From <br><strong>INR 67</strong>/hr (minimum 1 hr)</div>
 											<div class="sp-mt-10"></div>
 											<label class="field-tip">How your price will appear in your listing</label>
 										</div>
@@ -1766,7 +1769,7 @@
 							<div class="listing-help-text">
 								<ul class="bold">
 									<li>To calculate your hourly rate try this:
-										<span> Suppose your daily rate is $1000. Consider 8 hours a full day. Divide $1000/8 hours = $125 an hour.</span>
+										<span> Suppose your daily rate is INR 1000. Consider 8 hours a full day. Divide INR 1000/8 hours = INR 125 an hour.</span>
 									</li>
 									<li>Flexible pricing<br>
 										<span>Your base rate can be negotiable. During the booking process, you'll have the opportunity to send a customized quote to any interested event organizer.</span>
@@ -1882,7 +1885,7 @@
 							<h3>Security Deposit (optional)</h3>
 							<div class="row form-field">
 								<div class="col-sm-11">Splacer uses a 3rd party payment processor to store the event organizer's credit card information and can collect
-									against damages of up to $1000. If you wish to collect a higher security deposit please do so directly from the
+									against damages of up to INR 1000. If you wish to collect a higher security deposit please do so directly from the
 									organizer and specify the amount below.
 								</div>
 							</div>
@@ -1890,7 +1893,7 @@
 								<div class="col-sm-3">
 									<span class="sp-field-container  sp-field-currencyundefined">
   					<input type="number" class="sp_input" name="security_deposit" ng-model="vm.space.deposit">
-  					<div class="sp-field-prefix">$</div></span></div>
+  					<div class="sp-field-prefix">INR</div></span></div>
 							</div>
 							<div class="row">
 								<div class="col-sm-11">
