@@ -33,7 +33,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 })
                 .state('list-space', {
                     url: '/list-space',
-                    templateUrl: 'app/add/list_your_spaces.html'
+                    component:'listSpace'
                 })
                 .state('add', {
                     url: '/add',
@@ -76,13 +76,13 @@ angular.element(document).ready(function () {
 
 angular
     .module('venuse')
-    .run(['$rootScope', function ($rootScope) {
+    .run(['$rootScope','$transitions', function ($rootScope,$transitions) {
 
         $rootScope.stateIsLoading = false;
-        $rootScope.$on('$stateChangeStart', function () {
+       $transitions.onStart({}, function () {
             $rootScope.stateIsLoading = true;
         });
-        $rootScope.$on('$stateChangeSuccess', function () {
+        $transitions.onSuccess({}, function () {
             $rootScope.stateIsLoading = false;
         });
         $rootScope.$on('$stateChangeError', function () {
