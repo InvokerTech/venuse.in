@@ -27,6 +27,10 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/account',
                     component: 'account'
                 })
+                 .state('profile', {
+                    url: '/profile',
+                    component: 'profile'
+                })
                 .state('list-space', {
                     url: '/list-space',
                     component:'listSpace'
@@ -1260,6 +1264,18 @@ vm.venues=[];
                 });
         }
     }
+})();
+(function() {
+'use strict';
+
+    var profile = {
+        templateUrl: `app/profile/profile_details.html`
+    };
+        
+    angular
+        .module('venuse')
+        .component('profile', profile);
+
 })();
 (function () {
     'use strict';

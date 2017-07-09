@@ -27,6 +27,10 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/account',
                     component: 'account'
                 })
+                 .state('profile', {
+                    url: '/profile',
+                    component: 'profile'
+                })
                 .state('list-space', {
                     url: '/list-space',
                     component:'listSpace'
