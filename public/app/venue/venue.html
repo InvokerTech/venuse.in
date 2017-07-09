@@ -301,7 +301,8 @@
             </div>
           </form>
           <div style="margin-top:20px"></div>
-          <input class="contact-host-btn" id="pay-button" type="button" value="Book Venue">
+          <input ng-if="!vm.user" ng-click="vm.loginAlert();" class="contact-host-btn" type="button" value="Book Venue">
+          <input ng-show="vm.user" class="contact-host-btn" id="pay-button" type="button" value="Book Venue">
           <div class="sp-margin-top-7px"></div>
           <input class="book-visit-btn" onclick="openCHF('visit')" type="button" value="Book a visit">
 

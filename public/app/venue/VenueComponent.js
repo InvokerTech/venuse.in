@@ -23,6 +23,7 @@
 
         vm.$onInit = function () {
             getvenue();
+            vm.user=AuthService.isLogin();
             vm.testPay = '9.99';
             vm.loading = false;
             vm.venue = {};
@@ -40,6 +41,7 @@
             vm.endChange = endChange;
             vm.eventSelect = eventSelect;
             $scope.submit = submit;
+            vm.loginAlert=loginAlert;
 
         }
 
@@ -97,6 +99,15 @@
                     });
             }
             else alert('Please login to book venue.');
+        }
+
+        function loginAlert(){
+            vm.user=AuthService.isLogin();
+            if( !vm.user){
+                alert('Please login to book venue.');
+            }
+            
+            
         }
 
     }

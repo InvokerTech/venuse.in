@@ -106,20 +106,6 @@ angular
         });
 
     }]);
-(function() {
-'use strict';
-
-    var account = {
-        templateUrl: `app/account/account_details.html`,
-    };
-        
-    angular
-        .module('venuse')
-        .component('account', account);
-
-        
-
-})();
 (function () {
     'use strict';
 
@@ -750,6 +736,20 @@ angular
 
     }
 })();
+(function() {
+'use strict';
+
+    var account = {
+        templateUrl: `app/account/account_details.html`,
+    };
+        
+    angular
+        .module('venuse')
+        .component('account', account);
+
+        
+
+})();
 /*(function() {
 'use strict';
 
@@ -1377,6 +1377,7 @@ vm.venues=[];
 
         vm.$onInit = function () {
             getvenue();
+            vm.user=AuthService.isLogin();
             vm.testPay = '9.99';
             vm.loading = false;
             vm.venue = {};
@@ -1394,6 +1395,7 @@ vm.venues=[];
             vm.endChange = endChange;
             vm.eventSelect = eventSelect;
             $scope.submit = submit;
+            vm.loginAlert=loginAlert;
 
         }
 
@@ -1451,6 +1453,15 @@ vm.venues=[];
                     });
             }
             else alert('Please login to book venue.');
+        }
+
+        function loginAlert(){
+            vm.user=AuthService.isLogin();
+            if( !vm.user){
+                alert('Please login to book venue.');
+            }
+            
+            
         }
 
     }
