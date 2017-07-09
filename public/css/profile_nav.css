@@ -1,0 +1,296 @@
+.sp-side-header h1 {
+    display: block;
+    font-family: Georgia;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1;
+    color: #000000;
+    text-transform: none;
+    margin-bottom: 60px;
+}
+
+@media(max-width:767px){
+.sp-side-header {
+    display: block;
+    position: fixed;
+    left: 0px;
+    top: 60px;
+    width: 100vw;
+    height: 70px;
+    background-color: #fff;
+    border-bottom: solid 1px #d6d6d6;
+    z-index: 102;
+    padding: 0px 5%;
+}
+.sp-side-header .sp-side-right2 {
+    float: right;
+    margin-top: 16px;
+}
+.sp-side-header h1 {
+    text-align: center;
+}
+[class^='sp-btn'] {
+    min-width: 36px;
+}
+.sp-side-header .sp-side-more {
+    display: block;
+    position: absolute;
+    left: 5%;
+    top: 14px;
+    height: 42px;
+}
+.page.full-centered.proactive {
+    padding-top: 100px;
+}
+
+
+}
+
+header.main-header.regular-header {
+    border-bottom: solid 1px #eaebec;
+    background-color: white;
+}
+header.main-header {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 60px;
+    border-bottom: solid 1px transparent;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+header.main-header nav.navbar {
+    width: 100%;
+    position: relative;
+    z-index: 900;
+    border-radius: 0px;
+    margin: 0px;
+    border: none;
+    min-height: 0px;
+    height: 100%;
+}
+header.main-header.regular-header nav.navbar a, header.main-header.regular-header nav.navbar span.pipe, header.main-header.regular-header nav.navbar .icon-bars {
+    color: #000000 !important;
+}
+header.main-header nav.navbar .user-actions .user-img {
+    border-radius: 50%;
+    margin-right: 10px;
+    height: 28px;
+    width: 28px;
+    vertical-align: top;
+    margin-top: -2px;
+}
+header.main-header nav.navbar .logo {
+    display: inline-block;
+    width: 108px;
+    height: 30px;
+    position: absolute;
+    left: 21px;
+    top: 15px;
+}
+header.main-header nav.navbar .logo span {
+    display: none;
+}
+header.main-header nav.navbar ul.header-parts {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: auto;
+    height: 60px;
+    margin-bottom: 0px;
+}
+header.main-header nav.navbar *:hover, header.main-header nav.navbar *:focus {
+    outline: none;
+}
+
+
+header.main-header nav.navbar ul.header-parts li.header-part .button {
+    background: none;
+    border: none;
+    padding: 17px 20px;
+}
+header.main-header nav.navbar ul.header-parts li.header-part .button, header.main-header nav.navbar ul.header-parts li.header-part div {
+    display: inline-block;
+    position: relative;
+}
+header.main-header.regular-header nav.navbar ul.header-parts li.header-part .button span {
+    color: #262629;
+}
+header.main-header nav.navbar ul.header-parts li.header-part .button span.sp-icon {
+    display: inline-block;
+    position: relative;
+    font-size: 26px;
+    line-height: 1em;
+    margin-right: 0.4em;
+    text-decoration: none;
+}
+header.main-header nav.navbar ul.header-parts li.header-part .button span {
+    color: #fff;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1em;
+}
+header.main-header.regular-header nav.navbar ul.header-parts li.header-part:hover {
+    background-color: #ededed;
+}
+header.main-header nav.navbar ul.header-parts li.header-part ul li:hover a {
+    font-weight: 400;
+    text-decoration: none;
+    background-color: #f4f4f4;
+}
+[class^="sp-icon-"], [class*=" sp-icon-"] {
+    font-family: 'spicomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+header.main-header form[role="search"] {
+    display: block;
+    position: absolute;
+    width: auto;
+    white-space: nowrap;
+    height: 60px;
+    z-index: 999;
+    left: 150px;
+    top: 0px;
+    cursor: pointer;
+}
+.mobile-show {
+    display: none !important;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+header.main-header.regular-header form[role="search"] label {
+    color: #262629;
+}
+header.main-header form[role="search"] label {
+    display: block;
+    float: left;
+    font-size: 26px;
+    height: 26px;
+    vertical-align: middle;
+    margin: 18px 0px 0px;
+    color: #fff;
+    cursor: pointer;
+}
+[class^="sp-icon-"], [class*=" sp-icon-"] {
+    font-family: 'spicomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+header.main-header.regular-header form[role="search"] span {
+    color: #262629;
+}
+header.main-header form[role="search"] span {
+    margin: 21px 6px 0px;
+    display: inline-block;
+    color: #fff;
+}
+header.main-header nav.navbar ul.header-parts li.header-part:last-of-type ul {
+    left: auto;
+    right: 0px;
+}
+header.main-header nav.navbar ul.header-parts li.header-part:hover ul, header.main-header nav.navbar ul.header-parts li.header-part .button:focus+ul, header.main-header nav.navbar ul.header-parts li.header-part div a:focus+ul, header.main-header nav.navbar ul.header-parts li.header-part ul.open {
+    opacity: 1;
+    z-index: auto;
+    pointer-events: all;
+}
+header.main-header nav.navbar ul.header-parts li.header-part ul {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    width: auto;
+    height: auto;
+    min-width: 230px;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    border-left: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    -webkit-padding-start: 0px;
+    margin-top: -1px;
+}
+header.main-header nav.navbar ul.header-parts li.header-part ul li {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    border-top: 1px solid #ededed;
+    width: 100%;
+    margin: 0px;
+    height: 50px;
+}
+header.main-header nav.navbar ul.header-parts li.header-part ul li a {
+    display: block;
+    position: relative;
+    color: #000000;
+    font-size: 16px;
+    text-transform: capitalize;
+    line-height: 1em;
+    height: 100%;
+    margin: 0px;
+    padding: 17px 20px;
+    background-color: white;
+}
+header.main-header.regular-header nav.navbar ul.header-parts li.header-part {
+    color: #262629;
+}
+
+header.main-header nav.navbar ul.header-parts li.header-part {
+    display: inline-block;
+    position: relative;
+    //height: 100%;
+    margin-top:-3px;
+    color: #fff;
+}
+@media(max-width:767px){
+
+.mobile-hide{
+    display: none !important;
+}
+.mobile-show {
+    display: block !important;
+}
+header.main-header nav.navbar ul.header-parts li.header-part ul {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    width: 100%;
+    height: auto;
+    min-width:400px;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    border-left: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    -webkit-padding-start: 0px;
+    margin-top: -1px;
+    background:#fff;
+}
+
+
+
+}

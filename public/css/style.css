@@ -297,11 +297,11 @@ HEADER
 }
 
 .sp-form {
-    display: block;
+  /*  display: block;
     position: absolute;
     right: 6px;
     top: 0px;
-    margin-top: -5px;
+    margin-top: -5px;*/
 }
 
 .sp-form select.no-border {
@@ -3990,8 +3990,8 @@ a.sp-link-btn {
 }
 
 .edit-user-account .sp-form {
-    max-width: 650px;
-    padding-bottom: 50px;
+    /*max-width: 650px;
+    padding-bottom: 50px;*/
 }
 
 .sp-side-header h1 {

@@ -23,13 +23,9 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/venue?id',
                     component: 'venue'
                 })
-                .state('security_deposits', {
-                    url: '/security_deposits',
-                    templateUrl: 'app/templates/securitydeposits.html'
-                })
-                .state('team', {
-                    url: '/team',
-                    templateUrl: 'app/templates/team.html'
+                .state('account', {
+                    url: '/account',
+                    component: 'account'
                 })
                 .state('list-space', {
                     url: '/list-space',
@@ -49,6 +45,14 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                         }
                     },
                     component: 'addSpace'
+                })
+                  .state('security_deposits', {
+                    url: '/security_deposits',
+                    templateUrl: 'app/templates/securitydeposits.html'
+                })
+                .state('team', {
+                    url: '/team',
+                    templateUrl: 'app/templates/team.html'
                 })
                 .state('cancellation_policy', {
                     url: '/cancellation_policy',
@@ -90,6 +94,20 @@ angular
         });
 
     }]);
+(function() {
+'use strict';
+
+    var account = {
+        templateUrl: `app/account/account_details.html`,
+    };
+        
+    angular
+        .module('venuse')
+        .component('account', account);
+
+        
+
+})();
 (function () {
     'use strict';
 
