@@ -31,6 +31,14 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     url: '/profile',
                     component: 'profile'
                 })
+                   .state('messages', {
+                    url: '/messages',
+                    component: 'messages'
+                })
+                   .state('bookings', {
+                    url: '/bookings',
+                    component: 'bookings'
+                })
                 .state('list-space', {
                     url: '/list-space',
                     component:'listSpace'
@@ -971,6 +979,18 @@ angular
                 firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
             }());
         });
+(function() {
+'use strict';
+
+    var bookings = {
+        templateUrl: `app/bookings/booking_details.html`
+    };
+        
+    angular
+        .module('venuse')
+        .component('bookings', bookings);
+
+})();
 (function () {
     'use strict';
 
@@ -1186,6 +1206,18 @@ $state.go('venues',{city:vm.city,event:vm.event});
         
     }
 
+
+})();
+(function() {
+'use strict';
+
+    var messages = {
+        templateUrl: `app/messages/book_messages.html`
+    };
+        
+    angular
+        .module('venuse')
+        .component('messages', messages);
 
 })();
 (function() {

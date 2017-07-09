@@ -27,8 +27,8 @@
             <li ng-if="!vm.userstatus"><a ui-sref="list-space"><button type="button" class="list-your-space">list your space</button></a></li>
             <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" ng-click="vm.showRegister();">SIGN UP</a></li>
             <li ng-if="!vm.userstatus" class=""><a class="nav-ul-a" ng-click="vm.showLogin();">LOG IN</a></li>
-             <li ng-if="vm.userstatus" class=""><a class="nav-ul-a" >MESSAGES</a></li>
-            <li ng-if="vm.userstatus" class=""><a class="nav-ul-a" >BOOKINGS</a></li>
+             <li ng-if="vm.userstatus" class=""><a ui-sref="messages" class="nav-ul-a" >MESSAGES</a></li>
+            <li ng-if="vm.userstatus" class=""><a ui-sref="bookings"  class="nav-ul-a" >BOOKINGS</a></li>
             <div ng-if="vm.userstatus" class="dropdown"  style="float: right;">
               <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="
     padding: 1px 10px;
