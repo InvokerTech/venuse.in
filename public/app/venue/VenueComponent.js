@@ -42,6 +42,8 @@
             vm.eventSelect = eventSelect;
             $scope.submit = submit;
             vm.loginAlert = loginAlert;
+            vm.items1 = [1, 2, 3, 4, 5];
+            vm.items2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
         }
 
@@ -51,7 +53,7 @@
                     if (res.length !== 0) {
                         vm.venue = res.venue;
                         vm.book.venueId = vm.venue._id;
-                        vm.loadCarasoul=true;
+                        vm.loadCarasoul = true;
                         $("#owl-demo").owlCarousel({
                             navigation: true,
                             items: 3,

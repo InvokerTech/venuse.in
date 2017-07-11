@@ -1228,6 +1228,45 @@ angular
 
 (function () {
     'use strict';
+
+    angular
+        .module('venuse')
+        .directive("owlCarousel", function () {
+            return {
+                restrict: 'E',
+                transclude: false,
+                link: function (scope) {
+                    scope.initCarousel = function (element) {
+                        // provide any default options you want
+                        var defaultOptions = {
+                        };
+                        var customOptions = scope.$eval($(element).attr('data-options'));
+                        // combine the two options objects
+                        for (var key in customOptions) {
+                            defaultOptions[key] = customOptions[key];
+                        }
+                        // init carousel
+                        $(element).owlCarousel(defaultOptions);
+                    };
+                }
+            };
+        })
+        .directive('owlCarouselItem', [function () {
+            return {
+                restrict: 'A',
+                transclude: false,
+                link: function (scope, element) {
+                    // wait for the last item in the ng-repeat then call init
+                    if (scope.$last) {
+                        scope.initCarousel(element.parent());
+                    }
+                }
+            };
+        }]);
+
+})();
+(function () {
+    'use strict';
     angular
         .module('venuse')
         .directive('appFooter', function () {
@@ -1436,6 +1475,83 @@ $state.go('venues',{city:vm.city,event:vm.event});
         .component('messages', messages);
 
 })();
+(function() {
+'use strict';
+
+    var venusepopular = {
+        controller: PopularController,              
+        controllerAs: 'vm',
+        templateUrl: `app/popular/popular.html`,
+      
+    };
+        
+    angular
+        .module('venuse')
+        .component('venusepopular', venusepopular);
+
+        angular
+        .module('venuse')
+        .controller('PopularController', PopularController);
+
+    PopularController.inject = ['$http', '$q', 'PopularService'];
+    function PopularController($http, $q, PopularService) {
+        var vm = this;
+
+
+        vm.$onInit = function () {
+vm.venues=[];
+            ////////////////
+            PopularService.get()
+                .then(function (res) {
+                  
+                    vm.venues=res.venues;
+                    //  console.log(vm.venues);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
+    }
+
+})();
+
+
+
+
+(function () {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .factory('PopularService', PopularService);
+
+    PopularService.inject = ['$http', '$q'];
+    function PopularService($http, $q) {
+        var service = {
+            get: get
+        };
+
+        return service;
+
+        function get() {
+
+            var url = API_URL + 'popular/venues';
+
+            return $http.get(url).
+                then(function (response) {
+                    //console.log(response);
+                    if (response.data) {
+                        //    console.log(response.data.ret);         
+                        return response.data;
+                    } else
+                        return $q.reject(response);
+                })
+                .catch(function (err) {
+                   return $q.reject(err);
+                });
+        }
+    }
+})();
 (function () {
     'use strict';
 
@@ -1586,83 +1702,6 @@ $state.go('venues',{city:vm.city,event:vm.event});
         }
     }
 })();
-(function() {
-'use strict';
-
-    var venusepopular = {
-        controller: PopularController,              
-        controllerAs: 'vm',
-        templateUrl: `app/popular/popular.html`,
-      
-    };
-        
-    angular
-        .module('venuse')
-        .component('venusepopular', venusepopular);
-
-        angular
-        .module('venuse')
-        .controller('PopularController', PopularController);
-
-    PopularController.inject = ['$http', '$q', 'PopularService'];
-    function PopularController($http, $q, PopularService) {
-        var vm = this;
-
-
-        vm.$onInit = function () {
-vm.venues=[];
-            ////////////////
-            PopularService.get()
-                .then(function (res) {
-                  
-                    vm.venues=res.venues;
-                    //  console.log(vm.venues);
-                })
-                .catch(function (err) {
-                    console.log(err);
-                });
-        }
-    }
-
-})();
-
-
-
-
-(function () {
-    'use strict';
-
-    angular
-        .module('venuse')
-        .factory('PopularService', PopularService);
-
-    PopularService.inject = ['$http', '$q'];
-    function PopularService($http, $q) {
-        var service = {
-            get: get
-        };
-
-        return service;
-
-        function get() {
-
-            var url = API_URL + 'popular/venues';
-
-            return $http.get(url).
-                then(function (response) {
-                    //console.log(response);
-                    if (response.data) {
-                        //    console.log(response.data.ret);         
-                        return response.data;
-                    } else
-                        return $q.reject(response);
-                })
-                .catch(function (err) {
-                   return $q.reject(err);
-                });
-        }
-    }
-})();
 (function () {
     'use strict';
 
@@ -1750,6 +1789,8 @@ vm.venues=[];
             vm.eventSelect = eventSelect;
             $scope.submit = submit;
             vm.loginAlert = loginAlert;
+            vm.items1 = [1, 2, 3, 4, 5];
+            vm.items2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
         }
 
@@ -1759,7 +1800,7 @@ vm.venues=[];
                     if (res.length !== 0) {
                         vm.venue = res.venue;
                         vm.book.venueId = vm.venue._id;
-                        vm.loadCarasoul=true;
+                        vm.loadCarasoul = true;
                         $("#owl-demo").owlCarousel({
                             navigation: true,
                             items: 3,
