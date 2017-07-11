@@ -21,8 +21,8 @@
         .module('venuse')
         .controller('VenuesController', VenuesController);
 
-    VenuesController.inject = ['VenueService', '$stateParams'];
-    function VenuesController(VenueService, $stateParams) {
+    VenuesController.inject = ['VenueService', '$stateParams', '$transitions'];
+    function VenuesController(VenueService, $stateParams, $transitions) {
         var vm = this;
         vm.$onInit = function () {
             vm.filter = {};
@@ -44,6 +44,7 @@
             vm.filter.size = '';
             vm.filter.hourly = '';
             vm.filter.daily = '';
+
 
             vm.guestSlider = {
                 minValue: 5,
@@ -159,6 +160,7 @@
 
             ];
             getVenues();
+            footerChange();
             vm.sortBy = sortBy;
             vm.setMap = setMap;
             vm.eventSelect = eventSelect;
@@ -222,6 +224,13 @@
                     vm.loading = true;
                 });
         }
+        function footerChange() {
+            $('.main-footer').css('display', 'none'); // to hide footer
+            $transitions.onStart({}, function () {
+                $('.main-footer').css('display', 'block'); // to enable footer on state leave
+            });
+        }
+
 
         function eventSelect(e) {
             // alert(e);
