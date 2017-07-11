@@ -2090,7 +2090,7 @@ vm.venues=[];
         }
         function footerChange() {
             $('.main-footer').css('display', 'none'); // to hide footer
-            $transitions.onStart({}, function () {
+            $transitions.onExit({exiting: "venues"}, function () {
                 $('.main-footer').css('display', 'block'); // to enable footer on state leave
             });
         }
