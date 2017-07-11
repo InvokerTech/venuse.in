@@ -25,18 +25,62 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 })
                 .state('account', {
                     url: '/account',
+                        resolve: {
+                        authError: function (AuthService, $state) {
+                            if (!AuthService.isLogin()) {
+
+                                alert('Please login.');
+                                return $state.go('home');
+
+                            }
+                            else { return true; }
+                        }
+                    },
                     component: 'account'
                 })
                  .state('profile', {
                     url: '/profile',
+                           resolve: {
+                        authError: function (AuthService, $state) {
+                            if (!AuthService.isLogin()) {
+
+                                alert('Please login.');
+                                return $state.go('home');
+
+                            }
+                            else { return true; }
+                        }
+                    },
                     component: 'profile'
                 })
                    .state('messages', {
                     url: '/messages',
+                           resolve: {
+                        authError: function (AuthService, $state) {
+                            if (!AuthService.isLogin()) {
+
+                                alert('Please login.');
+                                return $state.go('home');
+
+                            }
+                            else { return true; }
+                        }
+                    },
                     component: 'messages'
                 })
                    .state('bookings', {
                     url: '/bookings',
+                           resolve: {
+                        authError: function (AuthService, $state) {
+                            if (!AuthService.isLogin()) {
+
+                                alert('Please login.');
+                                return $state.go('home');
+
+                            }
+                            else { return true; }
+                        }
+                    },
                     component: 'bookings'
                 })
                 .state('list-space', {
@@ -106,6 +150,119 @@ angular
         });
 
     }]);
+(function () {
+    'use strict';
+
+    var account = {
+        controller: 'AccountController',
+        controllerAs: 'vm',
+        templateUrl: `app/account/account_details.html`,
+    };
+
+    angular
+        .module('venuse')
+        .component('account', account);
+
+
+    angular
+        .module('venuse')
+        .controller('AccountController', AccountController);
+
+    AccountController.inject = ['ProfileService', 'AuthService', '$state','AccountService'];
+    function AccountController(ProfileService, AuthService, $state,AccountService) {
+        var vm = this;
+
+
+        vm.$onInit = function () {
+            vm.loading = false;
+            vm.account = {};
+            vm.account.sms = false;
+            vm.account.email = false;
+            vm.account.oldPass = '';
+            vm.account.newPass = '';
+            vm.user = AuthService.getUser();
+            vm.account.id = vm.user._id;
+
+
+
+            vm.updateSetting = updateSetting;
+            vm.updatePass=updatePass;
+
+        }
+
+
+        function updateSetting() {
+        
+            vm.loading = true;
+            ProfileService.setting(vm.account)
+                .then(function (res) {
+                    console.log(res);
+                    alert('Setting Updated.');
+                    vm.loading = false;
+                    $state.reload();
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    alert('Setting could not be updated.');
+                    vm.loading = false;
+                });
+        }
+
+        function updatePass(){
+
+             vm.loading = true;
+            AccountService.update(vm.account)
+                .then(function (res) {
+                    console.log(res);
+                    alert('Password Updated.');
+                    vm.loading = false;
+                    $state.reload();
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    alert(err.data.message);
+                    vm.loading = false;
+                });
+
+        }
+    }
+
+})();
+(function () {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .factory('AccountService', AccountService);
+
+    AccountService.inject = ['$http', '$q'];
+    function AccountService($http, $q) {
+         var api_type = 'update/password';
+        var service = {
+            update: update,
+            
+        };
+
+        return service;
+
+
+        function update(o){
+            var url = API_URL + api_type;
+            var params = {
+                user_id:o.id,
+                new_pass:o.newPass,
+                old_pass:o.oldPass,
+            };
+            return $http.post(url, params).
+                then(function (response) {
+                    if (response.data.status===true) {      
+                        return response;
+                    } else
+                        return $q.reject(response);
+                });
+        }
+    }
+})();
 (function () {
     'use strict';
 
@@ -736,20 +893,6 @@ angular
 
     }
 })();
-(function() {
-'use strict';
-
-    var account = {
-        templateUrl: `app/account/account_details.html`,
-    };
-        
-    angular
-        .module('venuse')
-        .component('account', account);
-
-        
-
-})();
 /*(function() {
 'use strict';
 
@@ -1297,17 +1440,152 @@ vm.venues=[];
         }
     }
 })();
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     var profile = {
+        controller: 'ProfileController',
+        controllerAs: 'vm',
         templateUrl: `app/profile/profile_details.html`
     };
-        
+
     angular
         .module('venuse')
         .component('profile', profile);
 
+    angular
+        .module('venuse')
+        .controller('ProfileController', ProfileController);
+
+    ProfileController.inject = ['ProfileService', 'AuthService', '$state'];
+    function ProfileController(ProfileService, AuthService, $state) {
+        var vm = this;
+        vm.$onInit = function () {
+            vm.loading = false;
+            vm.profile = {};
+            vm.profile.id = '';
+            vm.profile.fName = '';
+            vm.profile.lName = '';
+            vm.profile.name = '';
+            vm.profile.email = '';
+            vm.profile.phone = '';
+            vm.profile.photo = '';
+            vm.profile.address = '';
+            vm.profile.aboutMe = '';
+            vm.profile.companyName = '';
+            vm.profile.jobTitle = '';
+            vm.profile.companyPhone = '';
+            vm.user = AuthService.getUser();
+            vm.profile.id = vm.user._id;
+            vm.submit = submit;
+
+        }
+
+        function submit() {
+            vm.loading = true;
+            var photo = document.getElementById("profilePhoto");
+            if (photo.files.length !== 0) {
+                var form = new FormData();
+                form.append('file', photo);
+
+                var settings = {
+                    "async": false,
+                    "crossDomain": true,
+                    "url": "https://venuse-backend.herokuapp.com/image",
+                    "method": "POST",
+                    "processData": false,
+                    "contentType": false,
+                    "mimeType": "multipart/form-data",
+                    "data": form
+                }
+
+                $.ajax(settings).done(function (response) {
+                    //  console.log(response);
+                    var json = JSON.parse(response);
+                    vm.profile.photo = json.url;
+
+                });
+                $.ajax(settings).fail(function (response) {
+                    console.log(response);
+                    alert("Could not upload profile image.");
+                });
+            }
+            vm.profile.name = vm.profile.fName + vm.profile.lName;
+            ProfileService.update(vm.profile)
+                .then(function (res) {
+                    console.log(res);
+                    alert('Profile Updated');
+                    vm.loading = false;
+                    $state.reload();
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    alert('Profile could not be updated');
+                    vm.loading = false;
+                });
+        }
+    }
+
+})();
+(function () {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .factory('ProfileService', ProfileService);
+
+    ProfileService.inject = ['$http', '$q'];
+    function ProfileService($http, $q) {
+         var api_type = 'user/update';
+        var service = {
+            update: update,
+            setting:setting
+        };
+
+        return service;
+
+
+        function update(o) {
+           
+            var url = API_URL + api_type;
+            var params = {
+                id:o.id,
+                name:o.name,
+                number:o.number,
+                email:o.email,
+                photo:o.photo,
+                about_me:o.aboutMe,
+                organisation_name:o.companyName,
+                organisation_number:o.companyPhone,
+                job_title:o.jobTitle,
+
+
+            };
+            return $http.post(url, params).
+                then(function (response) {
+                    if (response.data.status===true) {      
+                        return response;
+                    } else
+                        return $q.reject(response);
+                });
+        }
+
+        function setting(o){
+            var url = API_URL + api_type;
+            var params = {
+                id:o.id,
+                recieve_marketing_mail:o.email,
+                recieve_sms:o.sms,
+            };
+            return $http.post(url, params).
+                then(function (response) {
+                    if (response.data.status===true) {      
+                        return response;
+                    } else
+                        return $q.reject(response);
+                });
+        }
+    }
 })();
 (function () {
     'use strict';

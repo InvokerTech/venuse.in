@@ -1,6 +1,6 @@
 
 <link rel="stylesheet" type="text/css" href="css/profile_nav.css">
-  
+  <loader ng-if="vm.loading"></loader>
 <section style="margin-top: 80px">
  <div class="container">
    <div class="page  edit-user-account">
@@ -8,14 +8,14 @@
       <div class="sp-side-header">
       <h1>Account</h1>
       </div>
-      <form class="sp-form">
+      <div class="sp-form">
         <section>
          <h3>Text Message Settings</h3>
            <div class="row form-field">
             <div class="col-sm-12">
               <label class="sp-checkbox invert ">
-               <input type="checkbox" name="accept_sms" tabindex="false" value="on">
-                <div class="square" style="background-color: transparent; color: rgb(244, 194, 57);"></div><!-- react-text: 398 -->Receive SMS notifications to: <!-- /react-text --><a href="javascript:;" class="link">Add mobile number</a>
+               <input type="checkbox" name="accept_sms" tabindex="false" ng-model="vm.account.sms">
+                <div class="square" style="background-color: transparent; color: rgb(244, 194, 57);"></div><!-- react-text: 398 -->Receive SMS notifications.
               </label>
             </div>
           </div>
@@ -25,13 +25,13 @@
            <div class="row form-field">
              <div class="col-sm-12">
               <label class="sp-checkbox invert ">
-                <input type="checkbox" name="accept_emails" tabindex="false" value="on">
+                <input type="checkbox" name="accept_emails" tabindex="false" ng-model="vm.account.email">
                   <div class="square" style="background-color: transparent; color: rgb(244, 194, 57);"></div><!-- react-text: 407 -->Receive marketing emails<!-- /react-text -->
               </label>
             </div>
           </div>
         </section>
-
+ <button ng-click="vm.updateSetting()" class="sp-btn  sp-btn-transparent sp-semibold sp-capitalize sp-btn-wide" style="max-width: 100%;margin-top: 3em;">Update Setting</button>
         <section>
           <h3>Change Your Password</h3>
              <div class="row form-group inline">
@@ -40,7 +40,7 @@
                 </div>
               <div class="col-sm-6">
                 <span class="sp-field-container undefined">
-                  <input type="password" class="sp_input" name="password" value=""><!-- react-text: 417 --><!-- /react-text -->
+                  <input type="password" class="sp_input" name="password" ng-model="vm.account.oldPass"><!-- react-text: 417 --><!-- /react-text -->
                 </span>
               </div>
             </div>
@@ -50,24 +50,14 @@
                 </div>
               <div class="col-sm-6">
                 <span class="sp-field-container undefined">
-                  <input type="password" class="sp_input" name="password_new" value=""><!-- react-text: 424 --><!-- /react-text -->
-                </span>
-              </div>
-            </div>
-            <div class="row form-group inline">
-              <div class="col-sm-4">
-                <label class="inline">Confirm Password</label>
-              </div>
-              <div class="col-sm-6">
-                <span class="sp-field-container undefined">
-                 <input type="password" class="sp_input" name="password_new2" value=""><!-- react-text: 431 --><!-- /react-text -->
+                  <input type="password" class="sp_input" name="password_new" ng-model="vm.account.newPass"><!-- react-text: 424 --><!-- /react-text -->
                 </span>
               </div>
             </div>
           </section>
           <div class="form-error m-b-lg"></div>
-          <button type="button" class="sp-btn  sp-btn-transparent sp-semibold sp-capitalize sp-btn-wide" style="max-width: 100%;"><!-- react-text: 434 --><!-- /react-text --><span>Update password</span><!-- react-text: 436 --><!-- /react-text --></button>
-      </form>
+          <button ng-click="vm.updatePass();" type="button" class="sp-btn  sp-btn-transparent sp-semibold sp-capitalize sp-btn-wide" style="max-width: 100%;"><!-- react-text: 434 --><!-- /react-text --><span>Update password</span><!-- react-text: 436 --><!-- /react-text --></button>
+      </div>
     </div>
     <div class="col-sm-5"></div>
  </div>

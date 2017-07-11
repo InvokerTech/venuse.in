@@ -25,18 +25,62 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 })
                 .state('account', {
                     url: '/account',
+                        resolve: {
+                        authError: function (AuthService, $state) {
+                            if (!AuthService.isLogin()) {
+
+                                alert('Please login.');
+                                return $state.go('home');
+
+                            }
+                            else { return true; }
+                        }
+                    },
                     component: 'account'
                 })
                  .state('profile', {
                     url: '/profile',
+                           resolve: {
+                        authError: function (AuthService, $state) {
+                            if (!AuthService.isLogin()) {
+
+                                alert('Please login.');
+                                return $state.go('home');
+
+                            }
+                            else { return true; }
+                        }
+                    },
                     component: 'profile'
                 })
                    .state('messages', {
                     url: '/messages',
+                           resolve: {
+                        authError: function (AuthService, $state) {
+                            if (!AuthService.isLogin()) {
+
+                                alert('Please login.');
+                                return $state.go('home');
+
+                            }
+                            else { return true; }
+                        }
+                    },
                     component: 'messages'
                 })
                    .state('bookings', {
                     url: '/bookings',
+                           resolve: {
+                        authError: function (AuthService, $state) {
+                            if (!AuthService.isLogin()) {
+
+                                alert('Please login.');
+                                return $state.go('home');
+
+                            }
+                            else { return true; }
+                        }
+                    },
                     component: 'bookings'
                 })
                 .state('list-space', {
