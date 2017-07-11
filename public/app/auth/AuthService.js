@@ -84,7 +84,7 @@
             return $q.reject(response);
         })
         .catch(function (err) {
-          console.log(err);
+          return $q.reject(err);
         });
 
     }
@@ -112,7 +112,7 @@
             return $q.reject(response);
         })
         .catch(function (err) {
-          console.log(err);
+          return $q.reject(err);
         });
     }
 
@@ -132,6 +132,9 @@
             //    console.log(response.data); 
           } else
             return $q.reject(response);
+        })
+        .catch(function (err) {
+          return $q.reject(err);
         });
     }
   }

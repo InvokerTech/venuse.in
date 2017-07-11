@@ -35,8 +35,8 @@
                     } else
                         return $q.reject(response);
                 })
-                .catch(function (err) {
-                    console.log(err);
+                 .catch(function (err) {
+                   return $q.reject(err);
                 });
         }
     }

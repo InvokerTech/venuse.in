@@ -64,9 +64,8 @@
                         return $q.reject(response);
                 })
                 .catch(function (err) {
-                    console.log(err);
+                   return $q.reject(err);
                 });
-
         }
 
     }

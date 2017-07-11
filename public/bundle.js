@@ -259,6 +259,9 @@ angular
                         return response;
                     } else
                         return $q.reject(response);
+                })
+                .catch(function (err) {
+                   return $q.reject(err);
                 });
         }
     }
@@ -887,7 +890,7 @@ angular
                         return $q.reject(response);
                 })
                 .catch(function (err) {
-                    console.log(err);
+                   return $q.reject(err);
                 });
         }
 
@@ -1045,7 +1048,7 @@ angular
             return $q.reject(response);
         })
         .catch(function (err) {
-          console.log(err);
+          return $q.reject(err);
         });
 
     }
@@ -1073,7 +1076,7 @@ angular
             return $q.reject(response);
         })
         .catch(function (err) {
-          console.log(err);
+          return $q.reject(err);
         });
     }
 
@@ -1093,6 +1096,9 @@ angular
             //    console.log(response.data); 
           } else
             return $q.reject(response);
+        })
+        .catch(function (err) {
+          return $q.reject(err);
         });
     }
   }
@@ -1435,7 +1441,7 @@ vm.venues=[];
                         return $q.reject(response);
                 })
                 .catch(function (err) {
-                    console.log(err);
+                   return $q.reject(err);
                 });
         }
     }
@@ -1583,6 +1589,9 @@ vm.venues=[];
                         return response;
                     } else
                         return $q.reject(response);
+                })
+                 .catch(function (err) {
+                   return $q.reject(err);
                 });
         }
     }
@@ -1624,8 +1633,8 @@ vm.venues=[];
                     } else
                         return $q.reject(response);
                 })
-                .catch(function (err) {
-                    console.log(err);
+                 .catch(function (err) {
+                   return $q.reject(err);
                 });
         }
     }
@@ -1776,7 +1785,7 @@ vm.venues=[];
                         return $q.reject(response);
                 })
                 .catch(function (err) {
-                    console.log(err);
+                   return $q.reject(err);
                 });
         }
     }
@@ -1847,9 +1856,8 @@ vm.venues=[];
                         return $q.reject(response);
                 })
                 .catch(function (err) {
-                    console.log(err);
+                   return $q.reject(err);
                 });
-
         }
 
     }

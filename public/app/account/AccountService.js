@@ -29,6 +29,9 @@
                         return response;
                     } else
                         return $q.reject(response);
+                })
+                .catch(function (err) {
+                   return $q.reject(err);
                 });
         }
     }
