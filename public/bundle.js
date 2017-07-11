@@ -1128,17 +1128,84 @@ angular
                 firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
             }());
         });
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     var bookings = {
+        controller: 'BookingController',
+        controllerAs: 'vm',
         templateUrl: `app/bookings/booking_details.html`
     };
-        
+
     angular
         .module('venuse')
         .component('bookings', bookings);
 
+
+    angular
+        .module('venuse')
+        .controller('BookingController', BookingController);
+
+    BookingController.inject = ['BookingsService', 'AuthService'];
+    function BookingController(BookingsService, AuthService) {
+        var vm = this;
+
+
+        vm.$onInit = function () {
+            vm.loading = false;
+            vm.user = AuthService.getUser();
+            vm.bookings = [];
+
+
+            vm.loading = true;
+            BookingsService.get(vm.user._id)
+                .then(function (res) {
+                    vm.bookings = res.data.bookings;
+                    vm.loading = false;
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    alert('No Bookings Found.');
+                    vm.loading = false;
+                });
+        }
+    }
+
+
+})();
+(function () {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .factory('BookingsService', BookingsService);
+
+    BookingsService.inject = ['$http', '$q'];
+    function BookingsService($http, $q) {
+         var api_type = 'bookings/user?user_id=';
+        var service = {
+            get: get,
+            
+        };
+
+        return service;
+
+
+        function get(id){
+            var url = API_URL + api_type + id;
+          
+            return $http.get(url).
+                then(function (response) {
+                    if (response.data.bookings.length !== 0) {      
+                        return response;
+                    } else
+                        return $q.reject(response);
+                })
+                .catch(function (err) {
+                   return $q.reject(err);
+                });
+        }
+    }
 })();
 (function () {
     'use strict';

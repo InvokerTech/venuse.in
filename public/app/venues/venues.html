@@ -169,8 +169,8 @@
         </div>
         <div ng-if="!vm.loading" class="col-md-12" style="padding-top:14em;">
           <div class="search-results-header">
-            <div class="results-count">1 -8 of {{vm.venues.length}} Spaces</div>
-            <div class="sp-form">
+            <div class="results-count" style="display: inline-block;">1 -8 of {{vm.venues.length}} Spaces</div>
+            <div class="sp-form" style="float: right; display: inline-block;    margin-top: -10px;">
               <span class="sp-field-container  By popularity">
                  <select  class="sp-select sp-select-arrow no-border no-background"
                          ng-change="vm.sortBy(vm.sortFilter)" ng-model="vm.sortFilter"

@@ -1,23 +1,23 @@
-
+<loader ng-if="vm.loading"></loader>
 <section style="margin: 80px 0">
- <div class="container">
-   <div class="page">
-    <div class="row-centered">
-      <div>
-        <div class="sp-side-header has-more"><!-- react-text: 478 --><!-- /react-text -->
-          <h1>Bookings</h1>
+  <div class="container">
+    <div class="page">
+      <div class="row-centered">
+        <div>
+          <div class="sp-side-header has-more">
+            <h1>Bookings</h1>
             <div class="sp-side-more">
               <div class="sp-side-left">
-               <span class="mobile-hide">
+                <span class="mobile-hide">
                  <div class="sp-mt-10"></div>
                  <div class="sp-mt-1"></div>
-                     <!-- react-text: 485 -->0 Bookings<!-- /react-text -->
+                    {{vm.bookings.length}} Bookings 
                </span>
               </div>
               <div class="sp-side-right">
                 <span>
                   <span class="mobile-hide">Show &nbsp;</span>
-                  <span class="sp-field-container  mobile-icon All">
+                <span class="sp-field-container  mobile-icon All">
                     <select class="sp-select sp-select-arrow undefined" name="curState">
                       <option value="All">All</option>
                       <option value="Quote Sent">Quote Sent</option>
@@ -35,12 +35,34 @@
           </div>
           <div class="page-inner">
             <div class="sp-list cards">
-             <div class="sp-list-item no-hover">No Bookings Found.</div>
+              <div ng-if="vm.bookings.length === 0" class="sp-list-item no-hover">No Bookings Found.</div>
+              <table ng-if="vm.bookings.length !== 0" class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Venue Id</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th> Status</th>
+                    <th>Event Type</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="b in vm.bookings track by $index">
+                    <th scope="row">{{$index + 1}}</th>
+                    <td>{{b.venue_id}}</td>
+                    <td>{{b.start_time}}</td>
+                    <td>{{b.end_time}}</td>
+                    <td>{{b.status}}</td>
+                    <td>{{b.event_type}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </section>
- 
