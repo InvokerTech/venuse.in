@@ -505,7 +505,7 @@
       <div class="map">
         <section>
           <ng-map center="[{{vm.venue.location[0]}},{{vm.venue.location[1]}}]">
-            <marker icon="img/pin.png" position="{{vm.venue.location[0]}},{{vm.venue.location[1]}}" title="{{vm.venue.name}}" ng-repeat="v in vm.venues track by $index">
+            <marker icon="img/pin.png" position="{{vm.venue.location[0]}},{{vm.venue.location[1]}}" title="{{vm.venue.name}}">
           </ng-map>
         </section>
       </div>
