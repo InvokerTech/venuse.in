@@ -16,14 +16,14 @@
         .module('venuse')
         .controller('ControllerController', ControllerController);
 
-    ControllerController.inject = ['VenueDetailService', '$stateParams', '$scope', '$state', 'BookService','AuthService'];
-    function ControllerController(VenueDetailService, $stateParams, $scope, $state, BookService,AuthService) {
+    ControllerController.inject = ['VenueDetailService', '$stateParams', '$scope', '$state', 'BookService', 'AuthService'];
+    function ControllerController(VenueDetailService, $stateParams, $scope, $state, BookService, AuthService) {
         var vm = this;
 
 
         vm.$onInit = function () {
             getvenue();
-            vm.user=AuthService.isLogin();
+            vm.user = AuthService.isLogin();
             vm.testPay = '9.99';
             vm.loading = false;
             vm.venue = {};
@@ -41,7 +41,7 @@
             vm.endChange = endChange;
             vm.eventSelect = eventSelect;
             $scope.submit = submit;
-            vm.loginAlert=loginAlert;
+            vm.loginAlert = loginAlert;
 
         }
 
@@ -51,6 +51,16 @@
                     if (res.length !== 0) {
                         vm.venue = res.venue;
                         vm.book.venueId = vm.venue._id;
+                        vm.loadCarasoul=true;
+                        $("#owl-demo").owlCarousel({
+                            navigation: true,
+                            items: 3,
+                            navigationText: [
+                                "<i class='fa fa-angle-left'></i>",
+                                "<i class='fa fa-angle-right'></i>"
+                            ]
+
+                        });
                     }
                     else alert('Vo Venue found.');
                     vm.loading = false;
@@ -95,19 +105,20 @@
                         else alert('Venue Could not be booked. Try Again.');
                     })
                     .catch(function (err) {
+                        alert('Venue Could not be booked. Try Again.');
                         console.log(err);
                     });
             }
             else alert('Please login to book venue.');
         }
 
-        function loginAlert(){
-            vm.user=AuthService.isLogin();
-            if( !vm.user){
+        function loginAlert() {
+            vm.user = AuthService.isLogin();
+            if (!vm.user) {
                 alert('Please login to book venue.');
             }
-            
-            
+
+
         }
 
     }

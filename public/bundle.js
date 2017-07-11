@@ -1436,83 +1436,6 @@ $state.go('venues',{city:vm.city,event:vm.event});
         .component('messages', messages);
 
 })();
-(function() {
-'use strict';
-
-    var venusepopular = {
-        controller: PopularController,              
-        controllerAs: 'vm',
-        templateUrl: `app/popular/popular.html`,
-      
-    };
-        
-    angular
-        .module('venuse')
-        .component('venusepopular', venusepopular);
-
-        angular
-        .module('venuse')
-        .controller('PopularController', PopularController);
-
-    PopularController.inject = ['$http', '$q', 'PopularService'];
-    function PopularController($http, $q, PopularService) {
-        var vm = this;
-
-
-        vm.$onInit = function () {
-vm.venues=[];
-            ////////////////
-            PopularService.get()
-                .then(function (res) {
-                  
-                    vm.venues=res.venues;
-                    //  console.log(vm.venues);
-                })
-                .catch(function (err) {
-                    console.log(err);
-                });
-        }
-    }
-
-})();
-
-
-
-
-(function () {
-    'use strict';
-
-    angular
-        .module('venuse')
-        .factory('PopularService', PopularService);
-
-    PopularService.inject = ['$http', '$q'];
-    function PopularService($http, $q) {
-        var service = {
-            get: get
-        };
-
-        return service;
-
-        function get() {
-
-            var url = API_URL + 'popular/venues';
-
-            return $http.get(url).
-                then(function (response) {
-                    //console.log(response);
-                    if (response.data) {
-                        //    console.log(response.data.ret);         
-                        return response.data;
-                    } else
-                        return $q.reject(response);
-                })
-                .catch(function (err) {
-                   return $q.reject(err);
-                });
-        }
-    }
-})();
 (function () {
     'use strict';
 
@@ -1663,6 +1586,83 @@ vm.venues=[];
         }
     }
 })();
+(function() {
+'use strict';
+
+    var venusepopular = {
+        controller: PopularController,              
+        controllerAs: 'vm',
+        templateUrl: `app/popular/popular.html`,
+      
+    };
+        
+    angular
+        .module('venuse')
+        .component('venusepopular', venusepopular);
+
+        angular
+        .module('venuse')
+        .controller('PopularController', PopularController);
+
+    PopularController.inject = ['$http', '$q', 'PopularService'];
+    function PopularController($http, $q, PopularService) {
+        var vm = this;
+
+
+        vm.$onInit = function () {
+vm.venues=[];
+            ////////////////
+            PopularService.get()
+                .then(function (res) {
+                  
+                    vm.venues=res.venues;
+                    //  console.log(vm.venues);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
+    }
+
+})();
+
+
+
+
+(function () {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .factory('PopularService', PopularService);
+
+    PopularService.inject = ['$http', '$q'];
+    function PopularService($http, $q) {
+        var service = {
+            get: get
+        };
+
+        return service;
+
+        function get() {
+
+            var url = API_URL + 'popular/venues';
+
+            return $http.get(url).
+                then(function (response) {
+                    //console.log(response);
+                    if (response.data) {
+                        //    console.log(response.data.ret);         
+                        return response.data;
+                    } else
+                        return $q.reject(response);
+                })
+                .catch(function (err) {
+                   return $q.reject(err);
+                });
+        }
+    }
+})();
 (function () {
     'use strict';
 
@@ -1724,14 +1724,14 @@ vm.venues=[];
         .module('venuse')
         .controller('ControllerController', ControllerController);
 
-    ControllerController.inject = ['VenueDetailService', '$stateParams', '$scope', '$state', 'BookService','AuthService'];
-    function ControllerController(VenueDetailService, $stateParams, $scope, $state, BookService,AuthService) {
+    ControllerController.inject = ['VenueDetailService', '$stateParams', '$scope', '$state', 'BookService', 'AuthService'];
+    function ControllerController(VenueDetailService, $stateParams, $scope, $state, BookService, AuthService) {
         var vm = this;
 
 
         vm.$onInit = function () {
             getvenue();
-            vm.user=AuthService.isLogin();
+            vm.user = AuthService.isLogin();
             vm.testPay = '9.99';
             vm.loading = false;
             vm.venue = {};
@@ -1749,7 +1749,7 @@ vm.venues=[];
             vm.endChange = endChange;
             vm.eventSelect = eventSelect;
             $scope.submit = submit;
-            vm.loginAlert=loginAlert;
+            vm.loginAlert = loginAlert;
 
         }
 
@@ -1759,6 +1759,16 @@ vm.venues=[];
                     if (res.length !== 0) {
                         vm.venue = res.venue;
                         vm.book.venueId = vm.venue._id;
+                        vm.loadCarasoul=true;
+                        $("#owl-demo").owlCarousel({
+                            navigation: true,
+                            items: 3,
+                            navigationText: [
+                                "<i class='fa fa-angle-left'></i>",
+                                "<i class='fa fa-angle-right'></i>"
+                            ]
+
+                        });
                     }
                     else alert('Vo Venue found.');
                     vm.loading = false;
@@ -1803,19 +1813,20 @@ vm.venues=[];
                         else alert('Venue Could not be booked. Try Again.');
                     })
                     .catch(function (err) {
+                        alert('Venue Could not be booked. Try Again.');
                         console.log(err);
                     });
             }
             else alert('Please login to book venue.');
         }
 
-        function loginAlert(){
-            vm.user=AuthService.isLogin();
-            if( !vm.user){
+        function loginAlert() {
+            vm.user = AuthService.isLogin();
+            if (!vm.user) {
                 alert('Please login to book venue.');
             }
-            
-            
+
+
         }
 
     }

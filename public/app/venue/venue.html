@@ -260,11 +260,11 @@
               </div>
               <div class="col-md-6 right-select" style="padding-left: 5px">
                 <div class="text-left sp-fs-12px" style="color: #606060;">No. of guests</div>
-                
-                        <input type="number" class="btn btn-default btn-select btn-select-light" ng-model="vm.book.guests" />
-                     
-              
-                  
+
+                <input type="number" class="btn btn-default btn-select btn-select-light" ng-model="vm.book.guests" />
+
+
+
               </div>
             </div>
             <div class="row">
@@ -277,8 +277,8 @@
                       </div>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                      <datetimepicker data-ng-model="vm.startDate" 
-                      data-on-set-time="vm.startChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }" />
+                      <datetimepicker data-ng-model="vm.startDate" data-on-set-time="vm.startChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"
+                      />
                     </ul>
                   </div>
                 </div>
@@ -292,8 +292,8 @@
                       </div>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                      <datetimepicker data-ng-model="vm.endDate" 
-                      data-on-set-time="vm.endChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }" />
+                      <datetimepicker data-ng-model="vm.endDate" data-on-set-time="vm.endChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"
+                      />
                     </ul>
                   </div>
                 </div>
@@ -382,13 +382,32 @@
   <section>
     <div class="container">
       <div class="col-sm-8 col-sm-offset">
-        <div id="owl-demo" class="owl-carousel owl-theme">
+       <div id="owl-demo" class="owl-carousel owl-theme">
           <div class="item">
-            <div class="splace-small-gallery-image" style="background-image:url(https://res.cloudinary.com/splacer/image/upload/c_fill,f_auto,h_109,w_197/e_mask,g_center,l_Production:Assets:splacer_logo.png,o_8,w_200/v1472574701/production/Splaces/001985/ulo3uotykeqlj6o32ajx.jpg);">
+            <div class="splace-small-gallery-image" style="background-image:url({{vm.venue.photos[0]}});">
 
             </div>
           </div>
+          <div class="item">
+            <div class="splace-small-gallery-image" style="background-image:url({{vm.venue.photos[1]}});">
+
+            </div>
+          </div>
+          <div class="item">
+            <div class="splace-small-gallery-image" style="background-image:url({{vm.venue.photos[2]}});">
+
+            </div>
+          </div>
+          <div class="item">
+            <div class="splace-small-gallery-image" style="background-image:url({{vm.venue.photos[3]}});">
+
+            </div>
+          </div>
+          
+          
+          
         </div>
+        
       </div>
     </div>
 
@@ -399,9 +418,6 @@
     <section id="splace-tags-section">
       <div ng-repeat=" s in vm.venue.style" class="splace-tag">{{s}}<span></span><span></span></div>
       <div ng-repeat=" f in vm.venue.feature" class="splace-tag">Feature {{f}}<span></span><span></span></div>
-      <div class="splace-tag">High Ceiling<span></span><span></span></div>
-      <div class="splace-tag">Large Windows<span></span><span></span></div>
-
     </section>
 
   </div>
@@ -495,7 +511,7 @@
       </div>
     </section>
     <div style="margin:20px 0"></div>
-  
+
     <div class="cancellation">
       <section>
         <h2>Cancellation &amp; Security Deposit</h2>
@@ -509,7 +525,7 @@
     <div style="margin:20px 0"></div>
   </section>
 </div>
-<script src="js/owl.carousel.js"></script>
+
 <script type="text/javascript">
   $(".dropdown-menu li a").click(function () {
     $(this).parents(".dropdown1").find('.btn1').html($(this).text());
@@ -610,24 +626,10 @@
 <script>
   $(document).ready(function () {
 
-    //Sort random function
-    function random(owlSelector) {
+   //Sort random function
+    
 
-    }
-
-    $("#owl-demo").owlCarousel({
-      navigation: true,
-      items: 3,
-      navigationText: [
-        "<i class='fa fa-angle-left'></i>",
-        "<i class='fa fa-angle-right'></i>"
-      ],
-      beforeInit: function (elem) {
-        //Parameter elem pointing to $("#owl-demo")
-        random(elem);
-      }
-
-    });
+    
 
   });
   $(".splace-nav section a").on('click', function (event) {
@@ -656,5 +658,25 @@
     angular.element(document.getElementById('pay-button')).scope().submit($data);
 
   }
+  $(document).ready(function () {
+
+    $('.owl-carousel1').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    })
+
+  });
 
 </script>
