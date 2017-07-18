@@ -1,18 +1,18 @@
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     var venusepopular = {
-        controller: PopularController,              
+        controller: PopularController,
         controllerAs: 'vm',
         templateUrl: `app/popular/popular.html`,
-      
+
     };
-        
+
     angular
         .module('venuse')
         .component('venusepopular', venusepopular);
 
-        angular
+    angular
         .module('venuse')
         .controller('PopularController', PopularController);
 
@@ -22,12 +22,12 @@
 
 
         vm.$onInit = function () {
-vm.venues=[];
+            vm.venues = [];
             ////////////////
             PopularService.get()
                 .then(function (res) {
-                  
-                    vm.venues=res.venues;
+
+                    vm.venues = res.venues;
                     //  console.log(vm.venues);
                 })
                 .catch(function (err) {

@@ -18,7 +18,7 @@
       <div class="item active">
         <div class="row">
           <div class="col-md-4 landing-part" style="margin-top: 20px" ng-repeat="venue in vm.venues track by $index">
-            <div class="lp-box-custom">
+            <div ui-sref="venue({id:'{{venue._id}}'})" class="lp-box-custom" style="cursor: pointer;">
               <div class="image" style="background-image: url('{{venue.photos[0]}}')">
                 <!--<div class="info-btn-wrp">
                   <div class="view-info-btn"><i class="fa fa-info"></i></div>
@@ -33,6 +33,14 @@
                   <div class="fa fa-star"></div>
                   <div class="fa fa-star"></div>
                   <div class="fa fa-star"></div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                      <span><i class="fa fa-user-o"></i>&nbsp;{{venue.max_guests}}</span>
+                  </div>
+                  <div class="col-sm-6 text-right">
+                    <span><i class="fa fa-inr"></i>&nbsp;{{venue.hourly_rate}}</span>
+                  </div>
                 </div>
               </div>
             </div>

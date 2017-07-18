@@ -1396,30 +1396,74 @@ angular
 
 
         vm.$onInit = function () {
-            vm.city = 'Pune';
-            vm.event='';
+            vm.city = '';
+            vm.event = '';
 
 
             vm.setCity = setCity;
-            vm.setEvent=setEvent;
-            vm.submit=submit;
+            vm.setEvent = setEvent;
+            vm.submit = submit;
+            vm.userLocation = userLocation;
+
+            userLocation();
         }
 
         function setCity(c) {
-           vm.city=c;
+            vm.city = c;
         }
 
-        function setEvent(v){
-            vm.event=v;
+        function setEvent(v) {
+            vm.event = v;
         }
 
-        function submit(){
-            if(vm.city || vm.event){
-$state.go('venues',{city:vm.city,event:vm.event});
+        function submit() {
+            if (vm.city !== '') {
+                $state.go('venues', { city: vm.city, event: vm.event });
             }
-            else alert('Select atleast one param to search venues.');
+            else $state.go('venues', { city: 'Pune', event: vm.event });;
         }
-        
+
+        function userLocation() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    //   alert("location loaded");
+                    var lat = position.coords.latitude;
+                    var lng = position.coords.longitude;
+                    var latlng = new google.maps.LatLng(lat, lng);
+                    var geocoder = new google.maps.Geocoder();
+                    var geopromise = new Promise(function (resolve) {
+                        geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                if (results) {
+                                    resolve(results);
+                                }
+                            }
+                            else {
+                                alert("Something went wrong with geocoding.");
+                            }
+                        });
+
+                    });
+
+                    geopromise.then(function (res) {
+                        _.forEach(res, function (obj) {
+                            for (var i = 0; i < obj.address_components.length; i++) {
+                                if (obj.address_components[i].types[0] == "locality") {
+                                    //   alert(obj.address_components[i].short_name+" "+obj.address_components[i].long_name);
+                                    if (obj.address_components[i].long_name === 'Pune' || obj.address_components[i].long_name === 'Mumbai') {
+                                        vm.city = obj.address_components[i].long_name;
+                                        return false;
+                                    }
+
+                                }
+                            }
+                        });
+                    });
+                });
+            }
+
+        } //eof
+
     }
 
 
@@ -1436,21 +1480,21 @@ $state.go('venues',{city:vm.city,event:vm.event});
         .component('messages', messages);
 
 })();
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     var venusepopular = {
-        controller: PopularController,              
+        controller: PopularController,
         controllerAs: 'vm',
         templateUrl: `app/popular/popular.html`,
-      
+
     };
-        
+
     angular
         .module('venuse')
         .component('venusepopular', venusepopular);
 
-        angular
+    angular
         .module('venuse')
         .controller('PopularController', PopularController);
 
@@ -1460,12 +1504,12 @@ $state.go('venues',{city:vm.city,event:vm.event});
 
 
         vm.$onInit = function () {
-vm.venues=[];
+            vm.venues = [];
             ////////////////
             PopularService.get()
                 .then(function (res) {
-                  
-                    vm.venues=res.venues;
+
+                    vm.venues = res.venues;
                     //  console.log(vm.venues);
                 })
                 .catch(function (err) {
