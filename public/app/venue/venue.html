@@ -292,7 +292,7 @@
           <input ng-if="!vm.user" ng-click="vm.loginAlert();" class="contact-host-btn" type="button" value="Book Venue">
           <input ng-show="vm.user" class="contact-host-btn" id="pay-button" type="button" value="Book Venue">
           <div class="sp-margin-top-7px"></div>
-          <input class="book-visit-btn" onclick="openCHF('visit')" type="button" value="Book a visit">
+          <input class="book-visit-btn" data-toggle="modal" data-target="#contactModal" type="button" value="Send Message To Host">
 
         </div>
         <div class="row sd-2">
@@ -510,7 +510,7 @@
     <div style="margin:20px 0"></div>
   </section>
   </div>
-
+<div ng-include="'app/venue/modal.html'"></div>
   <script type="text/javascript">
     $(".dropdown-menu li a").click(function () {
       $(this).parents(".dropdown1").find('.btn1').html($(this).text());

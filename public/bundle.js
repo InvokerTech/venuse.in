@@ -293,7 +293,7 @@ angular
         //  redirect();
         vm.$onInit = function () {
             getUser();
-            vm.loading=false;
+            vm.loading = false;
             vm.space = {};
             vm.space.eventTypes = [];
             vm.space.styleTypes = [];
@@ -317,7 +317,7 @@ angular
             vm.space.guestsSeated = 1;
             vm.space.contactNumber;
             vm.space.contactNumberExtra;
-            vm.space.description ='';
+            vm.space.description = '';
             vm.space.descCount;
             vm.space.title;
             vm.space.hourlyRate;
@@ -325,11 +325,11 @@ angular
             vm.space.dayRate;
             vm.space.extraDesc;
             vm.space.cancelationPolicy;
-            vm.space.customPolicy='';
+            vm.space.customPolicy = '';
             vm.space.holdBeforeCancel = 1;
             vm.space.deposit;
             vm.space.photos = [];
-             vm.space.cover='';
+            vm.space.cover = '';
 
             vm.eventTypes = [
                 { status: false, value: 'Event' },
@@ -587,7 +587,7 @@ angular
         }
 
         function submit() {
-            vm.loading=true;
+            vm.loading = true;
             //set Available timings
             vm.space.available.from.time = vm.space.available.from.h + ':' + vm.space.available.from.m;
             vm.space.available.to.time = vm.space.available.to.h + ':' + vm.space.available.to.m;
@@ -657,7 +657,7 @@ angular
                 });
             }
             var cover = document.getElementById("coverfile");
-           
+            if (cover.files.length !== 0) {
                 var form = new FormData();
                 form.append('file', cover);
 
@@ -675,14 +675,14 @@ angular
                 $.ajax(settings).done(function (response) {
                     //  console.log(response);
                     var json = JSON.parse(response);
-                    vm.space.cover=json.url;
+                    vm.space.cover = json.url;
 
                 });
                 $.ajax(settings).fail(function (response) {
                     console.log(response);
                     alert("Could not upload cover image");
                 });
-            
+            }
 
 
 
@@ -690,18 +690,18 @@ angular
                 .then(function (res) {
                     //  console.log(res);
                     if (res) {
-                        vm.loading=false;
+                        vm.loading = false;
                         alert('Venue added successfully.');
                         $state.go('venues');
                     }
                     else {
-                         vm.loading=false;
+                        vm.loading = false;
                         alert('Venue not added.Correct all details.');
                         $state.reload();
                     }
                 })
                 .catch(function (err) {
-                     vm.loading=false;
+                    vm.loading = false;
                     console.log(err);
                     alert('Venue not added.Correct all details.');
                     $state.reload();
@@ -1709,6 +1709,49 @@ vm.venues=[];
 (function () {
     'use strict';
 
+    angular
+        .module('venuse')
+        .factory(' MessageService', MessageService);
+
+     MessageService.inject = ['$http', '$q', 'AuthService'];
+    function  MessageService($http, $q, AuthService) {
+        var api_type = 'book/venue'
+        var service = {
+            send: send
+        };
+
+        return service;
+
+        function send(o) {
+            
+            var user = AuthService.getUser();
+            var url = API_URL + api_type;
+            var params = {
+                venue_id: o.venueId,
+                start_time: o.startDate,
+                end_time: o.endDate,
+                user_id: user._id,
+                event_type: o.eventType
+
+            }
+            return $http.post(url, params).
+                then(function (response) {
+                    if (response.data) {
+                        //  console.log(response);         
+                        return response.data;
+
+                    } else
+                        return $q.reject(response);
+                })
+                 .catch(function (err) {
+                   return $q.reject(err);
+                });
+        }
+    }
+})();
+(function () {
+    'use strict';
+
     var venue = {
         controller: ControllerController,
         controllerAs: 'vm',
@@ -1743,15 +1786,18 @@ vm.venues=[];
             vm.book.endDate = '';
             vm.book.venueId = '';
             vm.book.eventType = '';
-
+            vm.book.isFlexible = false;
+            vm.book.isBusiness = false;
+            vm.book.msg = '';
+            vm.book.budget = '';
             //functions
             vm.startChange = startChange;
             vm.endChange = endChange;
             vm.eventSelect = eventSelect;
             $scope.submit = submit;
             vm.loginAlert = loginAlert;
-            vm.items1 = [1, 2, 3, 4, 5];
-            vm.items2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            vm.sendMsg = sendMsg;
+
 
         }
 
@@ -1827,7 +1873,26 @@ vm.venues=[];
             if (!vm.user) {
                 alert('Please login to book venue.');
             }
+        }
 
+        function sendMsg() {
+            if (AuthService.isLogin()) {
+                console.log(AuthService.isLogin());
+                console.log(data);
+                BookService.send(vm.book)
+                    .then(function (res) {
+                        if (res) {
+                            alert('Venue Booked successfully.');
+                            $state.go('home');
+                        }
+                        else alert('Venue Could not be booked. Try Again.');
+                    })
+                    .catch(function (err) {
+                        alert('Venue Could not be booked. Try Again.');
+                        console.log(err);
+                    });
+            }
+            else alert('Please login to send message.');
 
         }
 

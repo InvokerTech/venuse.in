@@ -35,15 +35,18 @@
             vm.book.endDate = '';
             vm.book.venueId = '';
             vm.book.eventType = '';
-
+            vm.book.isFlexible = false;
+            vm.book.isBusiness = false;
+            vm.book.msg = '';
+            vm.book.budget = '';
             //functions
             vm.startChange = startChange;
             vm.endChange = endChange;
             vm.eventSelect = eventSelect;
             $scope.submit = submit;
             vm.loginAlert = loginAlert;
-            vm.items1 = [1, 2, 3, 4, 5];
-            vm.items2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            vm.sendMsg = sendMsg;
+
 
         }
 
@@ -119,7 +122,26 @@
             if (!vm.user) {
                 alert('Please login to book venue.');
             }
+        }
 
+        function sendMsg() {
+            if (AuthService.isLogin()) {
+                console.log(AuthService.isLogin());
+                console.log(data);
+                BookService.send(vm.book)
+                    .then(function (res) {
+                        if (res) {
+                            alert('Venue Booked successfully.');
+                            $state.go('home');
+                        }
+                        else alert('Venue Could not be booked. Try Again.');
+                    })
+                    .catch(function (err) {
+                        alert('Venue Could not be booked. Try Again.');
+                        console.log(err);
+                    });
+            }
+            else alert('Please login to send message.');
 
         }
 

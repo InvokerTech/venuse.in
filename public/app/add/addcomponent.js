@@ -25,7 +25,7 @@
         //  redirect();
         vm.$onInit = function () {
             getUser();
-            vm.loading=false;
+            vm.loading = false;
             vm.space = {};
             vm.space.eventTypes = [];
             vm.space.styleTypes = [];
@@ -49,7 +49,7 @@
             vm.space.guestsSeated = 1;
             vm.space.contactNumber;
             vm.space.contactNumberExtra;
-            vm.space.description ='';
+            vm.space.description = '';
             vm.space.descCount;
             vm.space.title;
             vm.space.hourlyRate;
@@ -57,11 +57,11 @@
             vm.space.dayRate;
             vm.space.extraDesc;
             vm.space.cancelationPolicy;
-            vm.space.customPolicy='';
+            vm.space.customPolicy = '';
             vm.space.holdBeforeCancel = 1;
             vm.space.deposit;
             vm.space.photos = [];
-             vm.space.cover='';
+            vm.space.cover = '';
 
             vm.eventTypes = [
                 { status: false, value: 'Event' },
@@ -319,7 +319,7 @@
         }
 
         function submit() {
-            vm.loading=true;
+            vm.loading = true;
             //set Available timings
             vm.space.available.from.time = vm.space.available.from.h + ':' + vm.space.available.from.m;
             vm.space.available.to.time = vm.space.available.to.h + ':' + vm.space.available.to.m;
@@ -389,7 +389,7 @@
                 });
             }
             var cover = document.getElementById("coverfile");
-           
+            if (cover.files.length !== 0) {
                 var form = new FormData();
                 form.append('file', cover);
 
@@ -407,14 +407,14 @@
                 $.ajax(settings).done(function (response) {
                     //  console.log(response);
                     var json = JSON.parse(response);
-                    vm.space.cover=json.url;
+                    vm.space.cover = json.url;
 
                 });
                 $.ajax(settings).fail(function (response) {
                     console.log(response);
                     alert("Could not upload cover image");
                 });
-            
+            }
 
 
 
@@ -422,18 +422,18 @@
                 .then(function (res) {
                     //  console.log(res);
                     if (res) {
-                        vm.loading=false;
+                        vm.loading = false;
                         alert('Venue added successfully.');
                         $state.go('venues');
                     }
                     else {
-                         vm.loading=false;
+                        vm.loading = false;
                         alert('Venue not added.Correct all details.');
                         $state.reload();
                     }
                 })
                 .catch(function (err) {
-                     vm.loading=false;
+                    vm.loading = false;
                     console.log(err);
                     alert('Venue not added.Correct all details.');
                     $state.reload();

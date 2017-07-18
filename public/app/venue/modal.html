@@ -1,0 +1,122 @@
+<div id="contactModal" class="modal fade" role="dialog" style="z-index: 2323;">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="contact-host-section">
+                <div class="ch-head">
+                    <h2 style="
+    background-color: white;
+    line-height: 80px;
+    padding-left: 30px;font-size: 24px;
+    font-weight: 500;    text-align: center;
+">Contact host</h2></div>
+                <div class="reserve" id="reservation-section" style=" padding: 50px;margin: 0 auto;">
+                    <form id="reservation-form">
+                        <div class="row" style="max-width: 500px;margin: 0 auto;">
+                            <div class="col-md-6 text-left" style="padding-right: 5px">
+                                <div class="text-left sp-fs-12px" style="color: #606060;">Event Type</div>
+                                <a class="btn btn-default btn-select btn-select-light">
+
+                        <span class="btn-select-value">Select Item</span>
+                        <i class='btn-select-arrow fa fa-caret-down'></i>
+                        <ul>
+                            <li ng-click="vm.eventSelect('Event')">Event</li>
+                            <li ng-click="vm.eventSelect('Meeting')">Meeting</li>
+                            <li ng-click="vm.eventSelect('Production')">Production</li>
+                            <li ng-click="vm.eventSelect('Pop-up')">Pop-up</li>
+                        </ul>
+                    </a>
+                            </div>
+                            <div class="col-md-6 right-select" style="padding-left: 5px">
+                                <div class="text-left sp-fs-12px" style="color: #606060;">No. of guests</div>
+                                <input type="number" class="btn btn-default btn-select btn-select-light" ng-model="vm.book.guests" />
+                            </div>
+                        </div>
+                        <div class="row" style="max-width: 500px;margin: 0 auto;">
+                            <div class="col-md-6 text-left" style="padding-right: 5px">
+                                <div class="text-left sp-fs-12px" style="color: #606060;">Start</div>
+                                <div class="input-append date form_datetime">
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown">
+                                            <div class="input-group"><input type="text" class="form-control" data-ng-model="vm.startDate" style="    width: 100%;height: 41px;padding-left: 8px; color: #000;outline: none;font-size: 13px;border-radius: 0%;border: 1px solid #d2d2d2;background-color: white;">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                            </div>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                            <datetimepicker data-ng-model="vm.startDate" data-on-set-time="vm.startChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"
+                                            />
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-right" style="padding-left: 5px">
+                                <div class="text-left sp-fs-12px" style="color: #606060;">End</div>
+                                <div class="input-append date form_datetime" id="reserve-form-datetime-check-out">
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown">
+                                            <div class="input-group"><input type="text" class="form-control" data-ng-model="vm.endDate" style="    width: 100%;height: 41px;padding-left: 8px; color: #000;outline: none;font-size: 13px;border-radius: 0%;border: 1px solid #d2d2d2;background-color: white;">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                            </div>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                            <datetimepicker data-ng-model="vm.endDate" data-on-set-time="vm.endChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"
+                                            />
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div style="margin-top:20px"></div>
+
+                    <div class="row" style="max-width: 500px;margin: 0 auto;">
+                        <div class="col-sm-6">
+                            <label class="sp-checkbox invert ">
+				  						<input type="checkbox" name="Event" tabindex="false" value="on" ng-model=" vm.book.isFlexible" >
+				  						<div class="square" style="background-color: transparent;"></div>
+				  						My dates are flexible 
+				  					</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="sp-checkbox invert ">
+				  						<input type="checkbox" name="Event" tabindex="false" value="on" ng-model="vm.book.isBusiness">
+				  						<div class="square" style="background-color: transparent;"></div>
+				  						Business Event
+				  						
+				  					</label>
+                        </div>
+                    </div>
+                    <div style="margin-top:20px"></div>
+                    <div class="row form-field " style="max-width: 500px;margin: 0 auto;">
+                        <div class="col-sm-12 sp-form">
+                            <span class="sp-field-container ">
+  					<textarea class="sp_input textarea-title1 ng-pristine ng-valid ng-empty ng-touched" name="" type="textarea" placeholder="Tell us more about your event and how you plan to use the space. Do you need A/V? Catering? Are you going to serve or sell alcohol?"
+                       ng-model="vm.book.msg"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                      <div style="margin-top:20px"></div>
+                    <div class="row form-field" style="max-width: 500px;margin: 0 auto;">
+                        <div class="col-sm-4">
+                            <label class="label first"
+                            style="display: block; border-radius: 0px;font-size: 16px; color: #000;
+    font-weight: normal; padding: 0px;text-align: left;margin: 14px 0px 8px;">Total event budget</label>
+                            <span class="sp-field-container sp-form">
+  					<input type="number" class="sp_input" name="max_capacity"  ng-model="vm.book.budget" min="2" required="">
+  					</span>
+                        </div>
+                         <div class="col-sm-4">
+                         </div>
+                         <div class="col-sm-4">
+                             <input ng-click="vm.sendMsg();" type="button" value="Send Message" style="font-size: 14px;margin-top: 2.5em;
+    height: 41px; line-height: 41px;   min-width: 140px;  border: none;  font-weight: 500; background-color: #ffce4b;
+    text-align: center;    padding-left: 20px;    padding-right: 20px;">
+                         </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
