@@ -43,6 +43,7 @@
             vm.startChange = startChange;
             vm.endChange = endChange;
             vm.eventSelect = eventSelect;
+            vm.guestSelect= guestSelect;
             $scope.submit = submit;
             vm.loginAlert = loginAlert;
             vm.sendMsg = sendMsg;
@@ -96,6 +97,10 @@
         function eventSelect(e) {
             vm.book.eventType = e;
         }
+        function guestSelect(g){
+            vm.book.guests=g;
+
+        }
 
         function submit(data) {
             if (AuthService.isLogin()) {
@@ -127,7 +132,7 @@
         function sendMsg() {
             if (AuthService.isLogin()) {
                 console.log(AuthService.isLogin());
-                console.log(data);
+                console.log();
                 BookService.send(vm.book)
                     .then(function (res) {
                         if (res) {

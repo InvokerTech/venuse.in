@@ -21,17 +21,33 @@
 
                         <span class="btn-select-value">Select Item</span>
                         <i class='btn-select-arrow fa fa-caret-down'></i>
-                        <ul>
-                            <li ng-click="vm.eventSelect('Event')">Event</li>
-                            <li ng-click="vm.eventSelect('Meeting')">Meeting</li>
-                            <li ng-click="vm.eventSelect('Production')">Production</li>
-                            <li ng-click="vm.eventSelect('Pop-up')">Pop-up</li>
+                           <ul>
+                            <li ng-click="vm.eventSelect('Corporate Events')">Corporate Events</li>
+                            <li ng-click="vm.eventSelect('Dinners')">Dinners</li>
+                            <li ng-click="vm.eventSelect('Film Shoots')">Film Shoots</li>
+                            <li ng-click="vm.eventSelect('Fitness Class')"> Fitness Class</li>
+                              <li ng-click="vm.eventSelect('Meetings')">Meetings</li>
+                              <li ng-click="vm.eventSelect('Networking Events')">Networking Events</li>
+                              <li ng-click="vm.eventSelect(' Party')"> Party</li>
+                              <li ng-click="vm.eventSelect('Photo Shoot')">Photo Shoot</li>
+                              <li ng-click="vm.eventSelect('Pop-up')">Pop-up</li>
+                              <li ng-click="vm.eventSelect('Workshop')">Workshop</li>
                         </ul>
                     </a>
                             </div>
                             <div class="col-md-6 right-select" style="padding-left: 5px">
                                 <div class="text-left sp-fs-12px" style="color: #606060;">No. of guests</div>
-                                <input type="number" class="btn btn-default btn-select btn-select-light" ng-model="vm.book.guests" />
+                                   <a class="btn btn-default btn-select btn-select-light">
+
+                        <span class="btn-select-value">Select Guests</span>
+                        <i class='btn-select-arrow fa fa-caret-down'></i>
+                        <ul>
+                            <li ng-click="vm.guestSelect('1-25')">1-25 Guests</li>
+                            <li ng-click="vm.guestSelect('26-50')">26-50 Guests</li>
+                            <li ng-click="vm.guestSelect('51-75')">51-75 Guests</li>
+                            <li ng-click="vm.guestSelect('76-151')">76-151 Guests</li>
+                        </ul>
+                    </a>
                             </div>
                         </div>
                         <div class="row" style="max-width: 500px;margin: 0 auto;">

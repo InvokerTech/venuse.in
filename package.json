@@ -27,10 +27,14 @@
   ],
   "license": "",
   "devDependencies": {
+    "babel-preset-env": "^1.6.0",
     "eslint": "^3.19.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "nodemon": "^1.11.0",
     "sass-lint": "^1.10.2"
   }
