@@ -153,122 +153,6 @@ angular
 (function () {
     'use strict';
 
-    var account = {
-        controller: 'AccountController',
-        controllerAs: 'vm',
-        templateUrl: `app/account/account_details.html`,
-    };
-
-    angular
-        .module('venuse')
-        .component('account', account);
-
-
-    angular
-        .module('venuse')
-        .controller('AccountController', AccountController);
-
-    AccountController.inject = ['ProfileService', 'AuthService', '$state','AccountService'];
-    function AccountController(ProfileService, AuthService, $state,AccountService) {
-        var vm = this;
-
-
-        vm.$onInit = function () {
-            vm.loading = false;
-            vm.account = {};
-            vm.account.sms = false;
-            vm.account.email = false;
-            vm.account.oldPass = '';
-            vm.account.newPass = '';
-            vm.user = AuthService.getUser();
-            vm.account.id = vm.user._id;
-
-
-
-            vm.updateSetting = updateSetting;
-            vm.updatePass=updatePass;
-
-        }
-
-
-        function updateSetting() {
-        
-            vm.loading = true;
-            ProfileService.setting(vm.account)
-                .then(function (res) {
-                    console.log(res);
-                    alert('Setting Updated.');
-                    vm.loading = false;
-                    $state.reload();
-                })
-                .catch(function (err) {
-                    console.log(err);
-                    alert('Setting could not be updated.');
-                    vm.loading = false;
-                });
-        }
-
-        function updatePass(){
-
-             vm.loading = true;
-            AccountService.update(vm.account)
-                .then(function (res) {
-                    console.log(res);
-                    alert('Password Updated.');
-                    vm.loading = false;
-                    $state.reload();
-                })
-                .catch(function (err) {
-                    console.log(err);
-                    alert(err.data.message);
-                    vm.loading = false;
-                });
-
-        }
-    }
-
-})();
-(function () {
-    'use strict';
-
-    angular
-        .module('venuse')
-        .factory('AccountService', AccountService);
-
-    AccountService.inject = ['$http', '$q'];
-    function AccountService($http, $q) {
-         var api_type = 'update/password';
-        var service = {
-            update: update,
-            
-        };
-
-        return service;
-
-
-        function update(o){
-            var url = API_URL + api_type;
-            var params = {
-                user_id:o.id,
-                new_pass:o.newPass,
-                old_pass:o.oldPass,
-            };
-            return $http.post(url, params).
-                then(function (response) {
-                    if (response.data.status===true) {      
-                        return response;
-                    } else
-                        return $q.reject(response);
-                })
-                .catch(function (err) {
-                   return $q.reject(err);
-                });
-        }
-    }
-})();
-(function () {
-    'use strict';
-
     var addSpace = {
         controller: AddController,
         controllerAs: 'vm',
@@ -894,6 +778,122 @@ angular
                 });
         }
 
+    }
+})();
+(function () {
+    'use strict';
+
+    var account = {
+        controller: 'AccountController',
+        controllerAs: 'vm',
+        templateUrl: `app/account/account_details.html`,
+    };
+
+    angular
+        .module('venuse')
+        .component('account', account);
+
+
+    angular
+        .module('venuse')
+        .controller('AccountController', AccountController);
+
+    AccountController.inject = ['ProfileService', 'AuthService', '$state','AccountService'];
+    function AccountController(ProfileService, AuthService, $state,AccountService) {
+        var vm = this;
+
+
+        vm.$onInit = function () {
+            vm.loading = false;
+            vm.account = {};
+            vm.account.sms = false;
+            vm.account.email = false;
+            vm.account.oldPass = '';
+            vm.account.newPass = '';
+            vm.user = AuthService.getUser();
+            vm.account.id = vm.user._id;
+
+
+
+            vm.updateSetting = updateSetting;
+            vm.updatePass=updatePass;
+
+        }
+
+
+        function updateSetting() {
+        
+            vm.loading = true;
+            ProfileService.setting(vm.account)
+                .then(function (res) {
+                    console.log(res);
+                    alert('Setting Updated.');
+                    vm.loading = false;
+                    $state.reload();
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    alert('Setting could not be updated.');
+                    vm.loading = false;
+                });
+        }
+
+        function updatePass(){
+
+             vm.loading = true;
+            AccountService.update(vm.account)
+                .then(function (res) {
+                    console.log(res);
+                    alert('Password Updated.');
+                    vm.loading = false;
+                    $state.reload();
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    alert(err.data.message);
+                    vm.loading = false;
+                });
+
+        }
+    }
+
+})();
+(function () {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .factory('AccountService', AccountService);
+
+    AccountService.inject = ['$http', '$q'];
+    function AccountService($http, $q) {
+         var api_type = 'update/password';
+        var service = {
+            update: update,
+            
+        };
+
+        return service;
+
+
+        function update(o){
+            var url = API_URL + api_type;
+            var params = {
+                user_id:o.id,
+                new_pass:o.newPass,
+                old_pass:o.oldPass,
+            };
+            return $http.post(url, params).
+                then(function (response) {
+                    if (response.data.status===true) {      
+                        return response;
+                    } else
+                        return $q.reject(response);
+                })
+                .catch(function (err) {
+                   return $q.reject(err);
+                });
+        }
     }
 })();
 /*(function() {
@@ -1873,20 +1873,33 @@ angular
 
 
         function startChange() {
+            if(vm.startDate < new Date()){
+                alert('Please dont select a past date.');
+                vm.startDate=null;
+            }
+            else{
+
             vm.book.startDate = vm.startDate.getDay() + '/' +
                 vm.startDate.getMonth() + '/' +
                 vm.startDate.getFullYear() + ' ' +
                 vm.startDate.getHours() + ':' +
                 vm.startDate.getMinutes();
+            }
 
         }
 
         function endChange() {
+            if(vm.endDate < vm.startDate){
+            alert('Please select a later end date');
+            vm.endDate=null;
+            }
+        else{
             vm.book.endDate = vm.endDate.getDay() + '/' +
                 vm.endDate.getMonth() + '/' +
                 vm.endDate.getFullYear() + ' ' +
                 vm.endDate.getHours() + ':' +
                 vm.endDate.getMinutes();
+        }
         }
 
         function eventSelect(e) {

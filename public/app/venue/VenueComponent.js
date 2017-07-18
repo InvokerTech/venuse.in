@@ -78,20 +78,33 @@
 
 
         function startChange() {
+            if(vm.startDate < new Date()){
+                alert('Please dont select a past date.');
+                vm.startDate=null;
+            }
+            else{
+
             vm.book.startDate = vm.startDate.getDay() + '/' +
                 vm.startDate.getMonth() + '/' +
                 vm.startDate.getFullYear() + ' ' +
                 vm.startDate.getHours() + ':' +
                 vm.startDate.getMinutes();
+            }
 
         }
 
         function endChange() {
+            if(vm.endDate < vm.startDate){
+            alert('Please select a later end date');
+            vm.endDate=null;
+            }
+        else{
             vm.book.endDate = vm.endDate.getDay() + '/' +
                 vm.endDate.getMonth() + '/' +
                 vm.endDate.getFullYear() + ' ' +
                 vm.endDate.getHours() + ':' +
                 vm.endDate.getMinutes();
+        }
         }
 
         function eventSelect(e) {

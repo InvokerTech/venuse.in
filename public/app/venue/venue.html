@@ -273,7 +273,8 @@
                 <div class="input-append date form_datetime">
                   <div class="dropdown">
                     <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown">
-                      <div class="input-group"><input type="text" class="form-control" data-ng-model="vm.startDate"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                      <div class="input-group"><input type="text" 
+                        class="form-control" data-ng-model="vm.startDate | date : shortDate"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                       </div>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -287,12 +288,12 @@
                 <div class="text-left sp-fs-12px" style="color: #606060;">End</div>
                 <div class="input-append date form_datetime" id="reserve-form-datetime-check-out">
                   <div class="dropdown">
-                    <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown">
-                      <div class="input-group"><input type="text" class="form-control" data-ng-model="vm.endDate"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <a class="dropdown-toggle" id="dropdown3" role="button" data-toggle="dropdown">
+                      <div class="input-group"><input type="text" class="form-control" data-ng-model="vm.endDate | date : shortDate "><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                       </div>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                      <datetimepicker data-ng-model="vm.endDate" data-on-set-time="vm.endChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"
+                      <datetimepicker data-ng-model="vm.endDate" data-on-set-time="vm.endChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown3' }"
                       />
                     </ul>
                   </div>
@@ -313,7 +314,7 @@
               width="70">
           </div>
           <div class="col-xs-8 owner-d">
-            <div class="owner-name">Tom G.&nbsp;</div>
+            <div class="owner-name">{{vm.venue.owner_name}}.&nbsp;</div>
             <div class="sp-margin-top-10px"></div>
             <div class="sp-margin-top-3px"></div>
             <img alt="Trusted owner" class="trusted-owner-img-sm" data-tooltip="Trusted owner" height="14" id="#trusted-owner-tooltip"
@@ -569,7 +570,7 @@
     $(window).scroll(function () {
       var scroll = $(window).scrollTop();
 
-      if (scroll >= 300) {
+      if (scroll >= 300 && scroll <= 1900) {
         $(".right-widget").addClass("position-fixed");
       } else {
         $(".right-widget").removeClass("position-fixed");

@@ -55,13 +55,13 @@
                                 <div class="text-left sp-fs-12px" style="color: #606060;">Start</div>
                                 <div class="input-append date form_datetime">
                                     <div class="dropdown">
-                                        <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown">
-                                            <div class="input-group"><input type="text" class="form-control" data-ng-model="vm.startDate" style="    width: 100%;height: 41px;padding-left: 8px; color: #000;outline: none;font-size: 13px;border-radius: 0%;border: 1px solid #d2d2d2;background-color: white;">
+                                        <a class="dropdown-toggle" id="dropdown5" role="button" data-toggle="dropdown">
+                                            <div class="input-group"><input type="text" class="form-control" data-ng-model="vm.startDate | date : shortDate" style="    width: 100%;height: 41px;padding-left: 8px; color: #000;outline: none;font-size: 13px;border-radius: 0%;border: 1px solid #d2d2d2;background-color: white;">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                             </div>
                                         </a>
                                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                            <datetimepicker data-ng-model="vm.startDate" data-on-set-time="vm.startChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"
+                                            <datetimepicker data-ng-model="vm.startDate" data-on-set-time="vm.startChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown5' }"
                                             />
                                         </ul>
                                     </div>
@@ -71,13 +71,13 @@
                                 <div class="text-left sp-fs-12px" style="color: #606060;">End</div>
                                 <div class="input-append date form_datetime" id="reserve-form-datetime-check-out">
                                     <div class="dropdown">
-                                        <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown">
-                                            <div class="input-group"><input type="text" class="form-control" data-ng-model="vm.endDate" style="    width: 100%;height: 41px;padding-left: 8px; color: #000;outline: none;font-size: 13px;border-radius: 0%;border: 1px solid #d2d2d2;background-color: white;">
+                                        <a class="dropdown-toggle" id="dropdown4" role="button" data-toggle="dropdown">
+                                            <div class="input-group"><input type="text" class="form-control" data-ng-model="vm.endDate | date : shortDate" style="    width: 100%;height: 41px;padding-left: 8px; color: #000;outline: none;font-size: 13px;border-radius: 0%;border: 1px solid #d2d2d2;background-color: white;">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                             </div>
                                         </a>
                                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                            <datetimepicker data-ng-model="vm.endDate" data-on-set-time="vm.endChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"
+                                            <datetimepicker data-ng-model="vm.endDate" data-on-set-time="vm.endChange()" data-datetimepicker-config="{ dropdownSelector: '#dropdown4' }"
                                             />
                                         </ul>
                                     </div>
