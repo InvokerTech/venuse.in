@@ -16,20 +16,21 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body ng-app="venuse">
+<body ng-app="venuse" ng-cloak loadingwait>
 <div class="loader" style="position: absolute;top: 50vh;left: 50vw;z-index: 76999;">
   <img  src="img/ajax-loader.gif"/>
 </div>
-<loader ng-if="stateIsLoading"></loader>
-  <app-header ng-if="!stateIsLoading"></app-header>
-  <div ng-if="!stateIsLoading" ui-view>
+<loader class="ui-loader"></loader>
+  <app-header ></app-header>
+  <div class="indicator" ui-view>
     
   </div>
-  <app-footer ng-if="!stateIsLoading"></app-footer>
+  <app-footer></app-footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
   <script src="bundle.js"></script>
+
   <script src="js/plugins/glogin/google-plus-signin.js"></script>
   <script src="js/plugins/fb/ngFacebook.js"></script>
    <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAkWTzQbQXsFNe5oxMayRi0SDBzn6gosDI"></script>

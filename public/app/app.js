@@ -3,7 +3,8 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
 (function () {
     'use strict';
     angular.module('venuse',
-        ['ui.router', 'directive.g+signin', 'ngFacebook', 'ngMap', 'rzModule', 'ui.bootstrap.datetimepicker']);
+        ['ui.router', 'directive.g+signin', 'ngFacebook', 'ngMap', 'rzModule',
+            'ui.bootstrap.datetimepicker']);
 
     angular
         .module('venuse')
@@ -25,7 +26,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 })
                 .state('account', {
                     url: '/account',
-                        resolve: {
+                    resolve: {
                         authError: function (AuthService, $state) {
                             if (!AuthService.isLogin()) {
 
@@ -38,9 +39,9 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     },
                     component: 'account'
                 })
-                 .state('profile', {
+                .state('profile', {
                     url: '/profile',
-                           resolve: {
+                    resolve: {
                         authError: function (AuthService, $state) {
                             if (!AuthService.isLogin()) {
 
@@ -53,9 +54,9 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     },
                     component: 'profile'
                 })
-                   .state('messages', {
+                .state('messages', {
                     url: '/messages',
-                           resolve: {
+                    resolve: {
                         authError: function (AuthService, $state) {
                             if (!AuthService.isLogin()) {
 
@@ -68,9 +69,9 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     },
                     component: 'messages'
                 })
-                   .state('bookings', {
+                .state('bookings', {
                     url: '/bookings',
-                           resolve: {
+                    resolve: {
                         authError: function (AuthService, $state) {
                             if (!AuthService.isLogin()) {
 
@@ -85,7 +86,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                 })
                 .state('list-space', {
                     url: '/list-space',
-                    component:'listSpace'
+                    component: 'listSpace'
                 })
                 .state('add', {
                     url: '/add',
@@ -102,7 +103,7 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
                     },
                     component: 'addSpace'
                 })
-                  .state('security_deposits', {
+                .state('security_deposits', {
                     url: '/security_deposits',
                     templateUrl: 'app/templates/securitydeposits.html'
                 })
@@ -134,19 +135,45 @@ angular.element(document).ready(function () {
     $('.loader').remove();
 });
 
-angular
-    .module('venuse')
-    .run(['$rootScope','$transitions', function ($rootScope,$transitions) {
 
-        $rootScope.stateIsLoading = false;
-       $transitions.onStart({}, function () {
-            $rootScope.stateIsLoading = true;
-        });
-        $transitions.onSuccess({}, function () {
-            $rootScope.stateIsLoading = false;
-        });
-        $rootScope.$on('$stateChangeError', function () {
-            //catch error
-        });
 
-    }]);
+(function () {
+    'use strict';
+
+    angular
+        .module('venuse')
+        .directive('loadingwait', loadingwait);
+
+    loadingwait.inject = ['$transitions'];
+    function loadingwait($transitions) {
+
+        var directive = {
+            link: link,
+            restrict: 'AE',
+            scope: {
+            }
+        };
+        return directive;
+
+        function link() {
+            var h = angular.element(document).find('app-header');
+            var f = angular.element(document).find('app-footer');
+            var v = angular.element(document).find('.indicator');
+            var l = angular.element(document).find('.ui-loader');
+            $transitions.onStart({}, function () {
+                h.addClass('ng-hide');
+                f.addClass('ng-hide');
+                v.addClass('ng-hide');
+                l.removeClass('ng-hide');
+            });
+            $transitions.onSuccess({}, function () {
+                h.removeClass('ng-hide');
+                f.removeClass('ng-hide');
+                v.removeClass('ng-hide');
+                l.addClass('ng-hide');
+
+            });
+
+        }
+    }
+})();
