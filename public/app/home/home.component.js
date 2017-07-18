@@ -22,7 +22,7 @@
 
 
         vm.$onInit = function () {
-            vm.city = '';
+            vm.city = 'Pune';
             vm.event='';
 
 

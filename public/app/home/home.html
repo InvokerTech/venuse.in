@@ -1,210 +1,229 @@
+<div id="myCarousel" class="carousel slide myCarousel">
+  <!-- Indicators -->
 
-  <div id="myCarousel" class="carousel slide myCarousel">
-    <!-- Indicators -->
-   
-    <!-- Wrapper for slides -->
-    <div id="banner" role="listbox">
-        
-      <div class="item active" id="banner-background">
-          
-       <div class="carousel-caption" data-wow-delay="150ms">
-         <h1 class="">Find Your Space</h1>
-         <h2 class="">Discover &amp; Book Unique Spaces for Your Upcoming Activity</h2>
-         <div class="col-sm-12 ">
-             <div class="col-sm-5 " style="padding-right:0px ; padding-left:0px">
-                    	<div class="dropdown1">
-                        	<button ng-if="vm.city===''" class="form-control btn btn1" type="search" id="dropdownMenu2" 
-                          style="height: 50px;font-size: 16px;color: #6d6e71;"
-													 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Location<span class="caret pull-right" style="margin-top:3px"></span></button>
-													<button ng-if="vm.city!==''" class="form-control btn btn1" type="search" id="dropdownMenu2" 
-                          style="height: 50px;font-size: 16px;color: #6d6e71;"
-													 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.city}} <span class="caret pull-right" style="margin-top:3px"></span></button>
-													<ul class="dropdown-menu event-select-menu" style="width: 100%;">
-														<li style="padding-bottom: 0px !important;">
-                              <a ng-click="vm.setCity('Pune')" href="">Pune</a></li>
-                            <li style="padding-bottom: 0px !important;" >
-                              <a ng-click="vm.setCity('Bangalore')" href="">Bangalore</a></li>
-                              <li style="padding-bottom: 0px !important;" >
-                              <a  href="" style="background-color: #bfbfbf !important;">Delhi</a></li>
-                              <li style="padding-bottom: 0px !important;" >
-                              <a  href="" style="background-color: #bfbfbf !important;"> Hyderabad</a></li>
-                              <li style="padding-bottom: 0px !important;" >
-                              <a  href="" style="background-color: #bfbfbf !important;">Kolkata</a></li>
-                              <li style="padding-bottom: 0px !important;" >
-                              <a  href="" style="background-color: #bfbfbf !important;">Chennai</a></li>
-                               
-													</ul>
-												</div>
-             </div>
-             <div class="col-sm-6 text-center" style="padding-left:0px; padding-right:0px">
-          <div class="input-group input-group-lg">
-          <div class="dropdown1">
-            <button ng-if="vm.event!==''" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:50px; font-size:16px; color:#6d6e71" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.event}}<span style=" font-size:20px;   right: 16px;
+  <!-- Wrapper for slides -->
+  <div id="banner" role="listbox">
+
+    <div class="item active" id="banner-background">
+
+      <div class="carousel-caption" data-wow-delay="150ms">
+        <h1 class="">Find Your Space</h1>
+        <h2 class="">Discover &amp; Book Unique Spaces for Your Upcoming Activity</h2>
+        <div class="col-sm-12 ">
+          <div class="col-sm-5 " style="padding-right:0px ; padding-left:0px">
+            <div class="dropdown1">
+              <button ng-if="vm.city===''" class="form-control btn btn1" type="search" id="dropdownMenu2" style="height: 50px;font-size: 16px;color: #6d6e71; text-align:left;"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Location<span class="caret pull-right" style="margin-top:3px"></span></button>
+              <button ng-if="vm.city!==''" class="form-control btn btn1" type="search" id="dropdownMenu2" style="height: 50px;font-size: 16px;color: #6d6e71; text-align:left;"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.city}} <span class="caret pull-right" style="margin-top:3px"></span></button>
+              <ul class="dropdown-menu event-select-menu" style="width: 100%;">
+                <li style="padding-bottom: 0px !important;">
+                  <a ng-click="vm.setCity('Pune')" href="">Pune</a></li>
+                <li style="padding-bottom: 0px !important;">
+                  <a ng-click="vm.setCity('Mumbai')" href="">Mumbai</a></li>
+                <li style="padding-bottom: 0px !important;">
+                  <a href="" style="background-color: #bfbfbf !important;">Delhi</a></li>
+                <li style="padding-bottom: 0px !important;">
+                  <a href="" style="background-color: #bfbfbf !important;"> Hyderabad</a></li>
+                <li style="padding-bottom: 0px !important;">
+                  <a href="" style="background-color: #bfbfbf !important;">Kolkata</a></li>
+                <li style="padding-bottom: 0px !important;">
+                  <a href="" style="background-color: #bfbfbf !important;">Chennai</a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 text-center" style="padding-left:0px; padding-right:0px">
+            <div class="input-group input-group-lg">
+              <div class="dropdown1">
+                <button ng-if="vm.event!==''" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:50px; font-size:16px; color:#6d6e71"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{vm.event}}<span style=" font-size:20px;   right: 16px;
     top: 22px;
     position: absolute;" class="caret"></span></button>
-    <button ng-if="vm.event===''" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:50px; font-size:16px; color:#6d6e71" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span style=" font-size:20px;   right: 16px;
+                <button ng-if="vm.event===''" class="form-control btn btn1" type="button" id="dropdownMenu1" style="height:50px; font-size:16px; color:#6d6e71"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span style=" font-size:20px;   right: 16px;
     top: 22px;
     position: absolute;" class="caret"></span></button>
-        <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
-        <li><a ng-click="vm.setEvent('Event')" href="" date-value="Event" >Event</a>
-        <span >Private events, Business events, Parties,<br> Dinners, Wedding…</span></li>
-          <li><a ng-click="vm.setEvent('Meeting')" href="" date-value="Event" >Meeting</a>
-        <span >Presentation, Offsite, Class/workshop,<br> Conference…</span></li>
-        <li><a ng-click="vm.setEvent('Production')" href="" date-value="Production">Production </a>
-        <span>Film/video shoot, Photo shoot, Fashion Show,<br> Product launch…</span></li>
-        <li><a ng-click="vm.setEvent('Pop-up')" href="" date-value="Pop-up" >Pop-up </a>
-        <span>Retail Pop Up, Pop Up Dinner, Art exhibit,<br> Other</span></li></ul>
-        </div>
-           <span ng-click="vm.submit();" class="input-group-addon" id="basic-addon2" style="font-size:16px; border: solid 1px #ffd64b;
+                <ul class="dropdown-menu event-select-menu col-sm-9" aria-labelledby="event-type">
+                  <li><a ng-click="vm.setEvent('Corporate Events')" href="" date-value="Corporate Events">Corporate Events</a>
+                  </li>
+                  <li><a ng-click="vm.setEvent('Dinners')" href="" date-value="Dinners">Dinners</a>
+                  </li>
+                  <li><a ng-click="vm.setEvent('Film Shoots')" href="" date-value="Film Shoots">Film Shoots </a>
+                  </li>
+                  <li><a ng-click="vm.setEvent(' Fitness Class')" href="" date-value="Fitness Class">Fitness Class</a>
+                  </li>
+                  <li><a ng-click="vm.setEvent('Meetings')" href="" date-value="Meetings">Meetings</a>
+                  </li>
+                  <li><a ng-click="vm.setEvent('Networking Events')" href="" date-value="Networking Events">Networking Events </a>
+                  </li>
+                  <li><a ng-click="vm.setEvent('Party')" href="" date-value="Party">Party</a>
+                  </li>
+                  <li><a ng-click="vm.setEvent('Photo Shoot')" href="" date-value="Photo Shoot">Photo Shoot</a>
+                  </li>
+                  <li><a ng-click="vm.setEvent('Pop-up')" href="" date-value="Pop-up">Workshop</a>
+                  </li>
+                  <li><a ng-click="vm.setEvent('Workshop')" href="" date-value="Pop-up">Workshop</a>
+                  </li>
+                </ul>
+              </div>
+              <span ng-click="vm.submit();" class="input-group-addon" id="basic-addon2" style="font-size:16px; border: solid 1px #ffd64b;
     background-color: #ffd64b; color: #262629; text-transform: uppercase;cursor: pointer;">Search</span>
-        </div>
-       </div>
-      </div>
-     
-          <div class="hidden-lg hidden-md hidden-sm hidden-xs">
-         <div class="col-xs-12">
-         <div class="form-group input-group-xs">
-         <input class="form-control" type="search" value="" id="search" placeholder="Location">
-         </div>
-         </div>
-              
-         <div class="col-xs-12" style="margin:0px 7px;">
-          <div class="input-group-xs">
-          <div class="dropdown1">
-            <button class="form-control btn btn1"  type="search" id="dropdownMenu1" style="height:25px; font-size:10px; color:#444; overflow:hidden;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span class="caret pull-right" style="margin-top:3px"></span></button>
-        <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
-        <li><a date-value="Event" href="#">Event</a>
-        <small style="padding:5px 15px; margin-bottom:10px">Private events, Business events, Parties, Dinners, Wedding…</small></li>
-        <li><a date-value="Meeting" href="#">Meeting </a>
-        <small>Presentation, Offsite, Class/workshop, Conference…</small></li>
-        <li><a date-value="Production" href="#">Production </a>
-        <small>Film/video shoot, Photo shoot, Fashion Show, Product launch…</small></li>
-        <li><a date-value="Pop-up" href="#">Pop-up </a>
-        <small>Retail Pop Up, Pop Up Dinner, Art exhibit, Other</small></li></ul>
+            </div>
+          </div>
         </div>
 
-        </div>
+        <div class="hidden-lg hidden-md hidden-sm hidden-xs">
+          <div class="col-xs-12">
+            <div class="form-group input-group-xs">
+              <input class="form-control" type="search" value="" id="search" placeholder="Location">
+            </div>
+          </div>
 
-       </div>
- <div class="col-xs-4 col-xs-offset-4 text-center" style="padding:10px 0">
-           <span class="input-group-addon" id="basic-addon2" style="font-size:16px; border: solid 1px #ffd64b;
+          <div class="col-xs-12" style="margin:0px 7px;">
+            <div class="input-group-xs">
+              <div class="dropdown1">
+                <button class="form-control btn btn1" type="search" id="dropdownMenu1" style="height:25px; font-size:10px; color:#444; overflow:hidden;"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">What are you planning <span class="caret pull-right" style="margin-top:3px"></span></button>
+                <ul class="dropdown-menu event-select-menu" aria-labelledby="event-type">
+                  <li><a date-value="Event" href="#">Event</a>
+                    <small style="padding:5px 15px; margin-bottom:10px">Private events, Business events, Parties, Dinners, Wedding…</small></li>
+                  <li><a date-value="Meeting" href="#">Meeting </a>
+                    <small>Presentation, Offsite, Class/workshop, Conference…</small></li>
+                  <li><a date-value="Production" href="#">Production </a>
+                    <small>Film/video shoot, Photo shoot, Fashion Show, Product launch…</small></li>
+                  <li><a date-value="Pop-up" href="#">Pop-up </a>
+                    <small>Retail Pop Up, Pop Up Dinner, Art exhibit, Other</small></li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-xs-4 col-xs-offset-4 text-center" style="padding:10px 0">
+            <span class="input-group-addon" id="basic-addon2" style="font-size:16px; border: solid 1px #ffd64b;
     background-color: #ffd64b; color: #262629; text-transform: uppercase;">Search</span>
-    </div>
+          </div>
+        </div>
       </div>
-      </div>
     </div>
- </div>
-  </div>          
-    
-     
-  <section class="section-padding animated">
-    <div class="container">
+  </div>
+</div>
+
+
+<section class="section-padding animated">
+  <div class="container">
     <div class="text-center">
-    <h2 class="sp-home-head-2">Where are you planning an event?</h2>
-    <h3 class="sp-home-head-3">Let Us Help You Find Something Unexpected</h3>
+      <h2 class="sp-home-head-2">Where are you planning an event?</h2>
+      <h3 class="sp-home-head-3">Let Us Help You Find Something Unexpected</h3>
     </div>
-     <div class="row" style="padding:20px 0">
+    <div class="row" style="padding:20px 0">
       <div class="col-sm-6 text-center" style="margin-top:20px">
         <a ui-sref="venues({city: 'Pune'})"><img src="img/ny-retina_3x.jpg" alt="" class="img-responsive">
         <label class="lable-text">Pune</label></a>
       </div>
       <div class="col-sm-6 text-center" style="margin-top:20px">
-         <a  ui-sref="venues({city: 'Mumbai'})"><img src="img/s-f-retina_3x.jpg" alt="" class="img-responsive">
+        <a ui-sref="venues({city: 'Mumbai'})"><img src="img/s-f-retina_3x.jpg" alt="" class="img-responsive">
         <label class="lable-text">Mumbai</label>  </a>
-     </div>
-  </div> 
-        
-        <style>
-            .grayscale {
-                -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-                filter: grayscale(100%);
-            }
-            .comingsoon {
-                font-size: 14px;
-                color: #f2f2f2;
-                text-align: center;
-            }
-        </style>
-   <div class="row grayscale">
+      </div>
+    </div>
+
+    <style>
+      .grayscale {
+        -webkit-filter: grayscale(100%);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+      }
+
+      .comingsoon {
+        font-size: 14px;
+        color: #f2f2f2;
+        text-align: center;
+      }
+    </style>
+    <div class="row grayscale">
       <div class="col-sm-4 text-center" style="margin-top:20px">
-         <a href=""><img src="img/l-a-retina_3x.jpg" alt="" class="img-responsive">
+        <a href=""><img src="img/l-a-retina_3x.jpg" alt="" class="img-responsive">
         <label class="lable-text">Delhi<br><span class="comingsoon">Coming Soon...</span></label></a>
       </div>
       <div class="col-sm-4 text-center" style="margin-top:20px">
         <img src="img/miami-retina_3x.jpg" alt="" class="img-responsive">
-         <a href=""><label class="lable-text">Bangalore<br><span class="comingsoon">Coming Soon...</span></label></a>
+        <a href=""><label class="lable-text">Bangalore<br><span class="comingsoon">Coming Soon...</span></label></a>
       </div>
       <div class="col-sm-4 text-center" style="margin-top:20px">
-         <a href=""><img src="img/chicago-retina_3x.jpg" alt="" class="img-responsive">
+        <a href=""><img src="img/chicago-retina_3x.jpg" alt="" class="img-responsive">
         <label class="lable-text">Hyderabad<br><span class="comingsoon">Coming Soon...</span></label></a>
       </div>
-       <div class="col-sm-4 col-sm-offset-2 text-center" style="margin-top:20px">
+      <div class="col-sm-4 col-sm-offset-2 text-center" style="margin-top:20px">
         <img src="img/miami-retina_3x.jpg" alt="" class="img-responsive">
-         <a href=""><label class="lable-text">Kolkata<br><span class="comingsoon">Coming Soon...</span></label></a>
+        <a href=""><label class="lable-text">Kolkata<br><span class="comingsoon">Coming Soon...</span></label></a>
       </div>
       <div class="col-sm-4 text-center" style="margin-top:20px">
-         <a href=""><img src="img/chicago-retina_3x.jpg" alt="" class="img-responsive">
+        <a href=""><img src="img/chicago-retina_3x.jpg" alt="" class="img-responsive">
         <label class="lable-text">Chennai<br><span class="comingsoon">Coming Soon...</span></label></a>
       </div>
     </div>
   </div>
-    </section>
-      
+</section>
+
 <section class="section-padding animated" style=" padding:0px 0px 25px;visibility: visible;">
-    <div class="text-center" style="padding:35px 0"><h2 class="sp-home-head-2">Book a space that suits you.</h2><h3 class="sp-home-head-3">Be inspired to meet, create, and innovate.</h3></div>
-   <div class="container">
-     <div class="row">
-       <div class="col-md-4 landing-part" style="margin-top: 20px">
-         <a class="lp-box" href="spaces.html" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
+  <div class="text-center" style="padding:35px 0">
+    <h2 class="sp-home-head-2">Book a space that suits you.</h2>
+    <h3 class="sp-home-head-3">Be inspired to meet, create, and innovate.</h3>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 landing-part" style="margin-top: 20px">
+        <a class="lp-box" href="spaces.html" style="background-image: url('img/heukg2utbdnnqdiceas0.jpg')">
 
-           <h2>Top Production & Photoshoot Locations</h2>
-           <span>Pune</span></a>
-       </div>
-        <div class="col-md-4 landing-part" style="margin-top: 20px">
-         <a class="lp-box" href="spaces.html" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
-         <h2>Beautiful venues for wedding celebrations in Pune</h2>
-         <span>Pune</span></a>
-       </div>
-        <div class="col-md-4 landing-part" style="margin-top: 25px">
-         <a class="lp-box" href="spaces.html" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
-         <h2>Best meeting and offsite spaces in Pune</h2>
-         <span>Pune</span></a>
-       </div>
-        <div class="col-md-4 landing-part" style="margin-top: 25px">
-         <a class="lp-box" href="spaces.html" style="background-image: url('img/onp5xovrgzokzr09eqmg.jpg')">
-         <h2>Affordable event spaces</h2>
-         <span>Pune</span></a>
-       </div>
-              <div class="col-md-4 landing-part" style="margin-top: 25px">
-         <a class="lp-box" href="spaces.html" style="background-image: url('img/6.jpg')">
-         <h2>Best spaces for pop ups</h2>
-         <span>Pune</span></a>
-       </div>
-        <div class="col-md-4 landing-part" style="margin-top: 25px">
-         <a class="lp-box" href="" style="background-image: url('img/iqa4g6o9pv70lxjauad1.jpg')">
-         <h2>Unique birthday party locations in Pune</h2>
-         <span>Pune</span></a>
-       </div>
-     </div>
-   </div>
- </section>
+          <h2>Top Production & Photoshoot Locations</h2>
+          <span>Pune</span></a>
+      </div>
+      <div class="col-md-4 landing-part" style="margin-top: 20px">
+        <a class="lp-box" href="spaces.html" style="background-image: url('img/tbshge9p7fv2ffs4loxf.png')">
+          <h2>Beautiful venues for wedding celebrations in Pune</h2>
+          <span>Pune</span></a>
+      </div>
+      <div class="col-md-4 landing-part" style="margin-top: 25px">
+        <a class="lp-box" href="spaces.html" style="background-image: url('img/x63xdt6nle9czsf4iozq.jpg')">
+          <h2>Best meeting and offsite spaces in Pune</h2>
+          <span>Pune</span></a>
+      </div>
+      <div class="col-md-4 landing-part" style="margin-top: 25px">
+        <a class="lp-box" href="spaces.html" style="background-image: url('img/onp5xovrgzokzr09eqmg.jpg')">
+          <h2>Affordable event spaces</h2>
+          <span>Pune</span></a>
+      </div>
+      <div class="col-md-4 landing-part" style="margin-top: 25px">
+        <a class="lp-box" href="spaces.html" style="background-image: url('img/6.jpg')">
+          <h2>Best spaces for pop ups</h2>
+          <span>Pune</span></a>
+      </div>
+      <div class="col-md-4 landing-part" style="margin-top: 25px">
+        <a class="lp-box" href="" style="background-image: url('img/iqa4g6o9pv70lxjauad1.jpg')">
+          <h2>Unique birthday party locations in Pune</h2>
+          <span>Pune</span></a>
+      </div>
+    </div>
+  </div>
+</section>
 
- 
+
 <venuse-host></venuse-host>
-  
+
 <venusepopular></venusepopular>
 
 
 
 
-     
 
 
 
 
 
 
- <!--
+
+<!--
 <div class="container" id="mutevideo">
 
   <div class="modal fade" id="myModal" role="dialog">
