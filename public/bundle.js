@@ -1782,11 +1782,11 @@ angular.element(document).ready(function () {
 
     angular
         .module('venuse')
-        .factory(' MessageService', MessageService);
+        .factory('MessageService', MessageService);
 
-     MessageService.inject = ['$http', '$q', 'AuthService'];
-    function  MessageService($http, $q, AuthService) {
-        var api_type = 'book/venue'
+    MessageService.inject = ['$http', '$q', 'AuthService'];
+    function MessageService($http, $q, AuthService) {
+        var api_type = 'send/message/host'
         var service = {
             send: send
         };
@@ -1794,28 +1794,35 @@ angular.element(document).ready(function () {
         return service;
 
         function send(o) {
-            
+
             var user = AuthService.getUser();
             var url = API_URL + api_type;
             var params = {
+                customer_id: user._id,
+                host_id: o.hostId,
+                event_type: o.eventType,
+                guests: o.guests,
+                flexible_dates: o.isFlexible,
+                 business_event:o.isBusiness,
+                message: o.msg,
+                budget: o.budget,
                 venue_id: o.venueId,
-                start_time: o.startDate,
-                end_time: o.endDate,
-                user_id: user._id,
-                event_type: o.eventType
-
+                start_date: o.startDate,
+                end_date: o.endDate,
+                customer_name: user.name,
+                customer_pic: user.photo
             }
             return $http.post(url, params).
                 then(function (response) {
-                    if (response.data) {
+                    if (response.data.status) {
                         //  console.log(response);         
                         return response.data;
 
                     } else
                         return $q.reject(response);
                 })
-                 .catch(function (err) {
-                   return $q.reject(err);
+                .catch(function (err) {
+                    return $q.reject(err);
                 });
         }
     }
@@ -1824,7 +1831,7 @@ angular.element(document).ready(function () {
     'use strict';
 
     var venue = {
-        controller: ControllerController,
+        controller: VenueController,
         controllerAs: 'vm',
         templateUrl: `app/venue/venue.html`,
     };
@@ -1836,10 +1843,12 @@ angular.element(document).ready(function () {
 
     angular
         .module('venuse')
-        .controller('ControllerController', ControllerController);
+        .controller('VenueController', VenueController);
 
-    ControllerController.inject = ['VenueDetailService', '$stateParams', '$scope', '$state', 'BookService', 'AuthService'];
-    function ControllerController(VenueDetailService, $stateParams, $scope, $state, BookService, AuthService) {
+    VenueController.inject = ['VenueDetailService', '$stateParams',
+        '$scope', '$state', 'BookService', 'AuthService', 'MessageService'];
+    function VenueController(VenueDetailService, $stateParams, $scope,
+        $state, BookService, AuthService, MessageService) {
         var vm = this;
 
 
@@ -1861,11 +1870,12 @@ angular.element(document).ready(function () {
             vm.book.isBusiness = false;
             vm.book.msg = '';
             vm.book.budget = '';
+            vm.book.hostId = '';
             //functions
             vm.startChange = startChange;
             vm.endChange = endChange;
             vm.eventSelect = eventSelect;
-            vm.guestSelect= guestSelect;
+            vm.guestSelect = guestSelect;
             $scope.submit = submit;
             vm.loginAlert = loginAlert;
             vm.sendMsg = sendMsg;
@@ -1879,6 +1889,7 @@ angular.element(document).ready(function () {
                     if (res.length !== 0) {
                         vm.venue = res.venue;
                         vm.book.venueId = vm.venue._id;
+                        vm.book.hostId = vm.venue.user_id;
                         vm.loadCarasoul = true;
                         $("#owl-demo").owlCarousel({
                             navigation: true,
@@ -1900,40 +1911,40 @@ angular.element(document).ready(function () {
 
 
         function startChange() {
-            if(vm.startDate < new Date()){
+            if (vm.startDate < new Date()) {
                 alert('Please dont select a past date.');
-                vm.startDate=null;
+                vm.startDate = null;
             }
-            else{
+            else {
 
-            vm.book.startDate = vm.startDate.getDay() + '/' +
-                vm.startDate.getMonth() + '/' +
-                vm.startDate.getFullYear() + ' ' +
-                vm.startDate.getHours() + ':' +
-                vm.startDate.getMinutes();
+                vm.book.startDate = vm.startDate.getDay() + '/' +
+                    vm.startDate.getMonth() + '/' +
+                    vm.startDate.getFullYear() + ' ' +
+                    vm.startDate.getHours() + ':' +
+                    vm.startDate.getMinutes();
             }
 
         }
 
         function endChange() {
-            if(vm.endDate < vm.startDate){
-            alert('Please select a later end date');
-            vm.endDate=null;
+            if (vm.endDate < vm.startDate) {
+                alert('Please select a later end date');
+                vm.endDate = null;
             }
-        else{
-            vm.book.endDate = vm.endDate.getDay() + '/' +
-                vm.endDate.getMonth() + '/' +
-                vm.endDate.getFullYear() + ' ' +
-                vm.endDate.getHours() + ':' +
-                vm.endDate.getMinutes();
-        }
+            else {
+                vm.book.endDate = vm.endDate.getDay() + '/' +
+                    vm.endDate.getMonth() + '/' +
+                    vm.endDate.getFullYear() + ' ' +
+                    vm.endDate.getHours() + ':' +
+                    vm.endDate.getMinutes();
+            }
         }
 
         function eventSelect(e) {
             vm.book.eventType = e;
         }
-        function guestSelect(g){
-            vm.book.guests=g;
+        function guestSelect(g) {
+            vm.book.guests = g;
 
         }
 
@@ -1968,16 +1979,16 @@ angular.element(document).ready(function () {
             if (AuthService.isLogin()) {
                 console.log(AuthService.isLogin());
                 console.log();
-                BookService.send(vm.book)
+                MessageService.send(vm.book)
                     .then(function (res) {
-                        if (res) {
-                            alert('Venue Booked successfully.');
-                            $state.go('home');
+                        if (res.status) {
+                            alert('Message sent successfully.');
+                          $('#contactModal').modal('hide'); 
                         }
-                        else alert('Venue Could not be booked. Try Again.');
+                        else alert('Message could not be sent.');
                     })
                     .catch(function (err) {
-                        alert('Venue Could not be booked. Try Again.');
+                        alert('Message could not be sent.');
                         console.log(err);
                     });
             }

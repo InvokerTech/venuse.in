@@ -2,7 +2,7 @@
     'use strict';
 
     var venue = {
-        controller: ControllerController,
+        controller: VenueController,
         controllerAs: 'vm',
         templateUrl: `app/venue/venue.html`,
     };
@@ -14,10 +14,12 @@
 
     angular
         .module('venuse')
-        .controller('ControllerController', ControllerController);
+        .controller('VenueController', VenueController);
 
-    ControllerController.inject = ['VenueDetailService', '$stateParams', '$scope', '$state', 'BookService', 'AuthService'];
-    function ControllerController(VenueDetailService, $stateParams, $scope, $state, BookService, AuthService) {
+    VenueController.inject = ['VenueDetailService', '$stateParams',
+        '$scope', '$state', 'BookService', 'AuthService', 'MessageService'];
+    function VenueController(VenueDetailService, $stateParams, $scope,
+        $state, BookService, AuthService, MessageService) {
         var vm = this;
 
 
@@ -39,11 +41,12 @@
             vm.book.isBusiness = false;
             vm.book.msg = '';
             vm.book.budget = '';
+            vm.book.hostId = '';
             //functions
             vm.startChange = startChange;
             vm.endChange = endChange;
             vm.eventSelect = eventSelect;
-            vm.guestSelect= guestSelect;
+            vm.guestSelect = guestSelect;
             $scope.submit = submit;
             vm.loginAlert = loginAlert;
             vm.sendMsg = sendMsg;
@@ -57,6 +60,7 @@
                     if (res.length !== 0) {
                         vm.venue = res.venue;
                         vm.book.venueId = vm.venue._id;
+                        vm.book.hostId = vm.venue.user_id;
                         vm.loadCarasoul = true;
                         $("#owl-demo").owlCarousel({
                             navigation: true,
@@ -78,40 +82,40 @@
 
 
         function startChange() {
-            if(vm.startDate < new Date()){
+            if (vm.startDate < new Date()) {
                 alert('Please dont select a past date.');
-                vm.startDate=null;
+                vm.startDate = null;
             }
-            else{
+            else {
 
-            vm.book.startDate = vm.startDate.getDay() + '/' +
-                vm.startDate.getMonth() + '/' +
-                vm.startDate.getFullYear() + ' ' +
-                vm.startDate.getHours() + ':' +
-                vm.startDate.getMinutes();
+                vm.book.startDate = vm.startDate.getDay() + '/' +
+                    vm.startDate.getMonth() + '/' +
+                    vm.startDate.getFullYear() + ' ' +
+                    vm.startDate.getHours() + ':' +
+                    vm.startDate.getMinutes();
             }
 
         }
 
         function endChange() {
-            if(vm.endDate < vm.startDate){
-            alert('Please select a later end date');
-            vm.endDate=null;
+            if (vm.endDate < vm.startDate) {
+                alert('Please select a later end date');
+                vm.endDate = null;
             }
-        else{
-            vm.book.endDate = vm.endDate.getDay() + '/' +
-                vm.endDate.getMonth() + '/' +
-                vm.endDate.getFullYear() + ' ' +
-                vm.endDate.getHours() + ':' +
-                vm.endDate.getMinutes();
-        }
+            else {
+                vm.book.endDate = vm.endDate.getDay() + '/' +
+                    vm.endDate.getMonth() + '/' +
+                    vm.endDate.getFullYear() + ' ' +
+                    vm.endDate.getHours() + ':' +
+                    vm.endDate.getMinutes();
+            }
         }
 
         function eventSelect(e) {
             vm.book.eventType = e;
         }
-        function guestSelect(g){
-            vm.book.guests=g;
+        function guestSelect(g) {
+            vm.book.guests = g;
 
         }
 
@@ -146,16 +150,16 @@
             if (AuthService.isLogin()) {
                 console.log(AuthService.isLogin());
                 console.log();
-                BookService.send(vm.book)
+                MessageService.send(vm.book)
                     .then(function (res) {
-                        if (res) {
-                            alert('Venue Booked successfully.');
-                            $state.go('home');
+                        if (res.status) {
+                            alert('Message sent successfully.');
+                          $('#contactModal').modal('hide'); 
                         }
-                        else alert('Venue Could not be booked. Try Again.');
+                        else alert('Message could not be sent.');
                     })
                     .catch(function (err) {
-                        alert('Venue Could not be booked. Try Again.');
+                        alert('Message could not be sent.');
                         console.log(err);
                     });
             }
