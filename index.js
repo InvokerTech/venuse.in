@@ -12,8 +12,8 @@ app.use("/app", express.static(__dirname + '/public/app'));
 app.set('views', __dirname + '/public');
 app.set('view engine', 'html');
 
-app.get('/', function(request, response) {
-  response.sendFile('public/index.html');
+app.get('/*', function(request, res) {
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 
