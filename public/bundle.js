@@ -9,7 +9,9 @@ var API_URL = "https://venuse-backend.herokuapp.com/";     // eslint-disable-lin
     angular
         .module('venuse')
         .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-            $locationProvider.hashPrefix('');
+         //   $locationProvider.hashPrefix('');
+            // use the HTML5 History API
+            $locationProvider.html5Mode(true);
             $urlRouterProvider.otherwise('/home');
             $stateProvider
                 .state('home', {
@@ -163,7 +165,7 @@ angular.element(document).ready(function () {
             $transitions.onStart({}, function () {
                 h.addClass('ng-hide');
                 f.addClass('ng-hide');
-               v.addClass('ng-hide');
+                v.addClass('ng-hide');
                 l.removeClass('ng-hide');
             });
             $transitions.onSuccess({}, function () {
@@ -1530,7 +1532,7 @@ angular.element(document).ready(function () {
                 vm.loading = true;
                 MessageService.get(vm.user._id)
                     .then(function (res) {
-                        vm.messages = res.data.message;
+                        vm.messages = res.message;
                         vm.loading = false;
                     })
                     .catch(function (err) {

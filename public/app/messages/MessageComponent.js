@@ -33,7 +33,7 @@
                 vm.loading = true;
                 MessageService.get(vm.user._id)
                     .then(function (res) {
-                        vm.messages = res.data.message;
+                        vm.messages = res.message;
                         vm.loading = false;
                     })
                     .catch(function (err) {

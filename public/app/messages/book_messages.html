@@ -5,8 +5,7 @@
      <div id="chat-index">
        <div class="chat-index-header" style="height: 106px; margin-top: 37px;">
          <h2 style="font-size: 24px; font-family: Georgia; font-weight: bold; font-style: italic; margin-top: 0px; position: absolute; top: 0px;">Messages</h2>
-         <span ng-if="vm.messages.length!== 0" class="conversations-count">{{vm.messages.lengh}} Messages </span>
-         <span ng-if="vm.messages.length=== 0" class="conversations-count">0 Messages </span>
+         <span class="conversations-count">{{vm.messages.lengh}} Messages </span>
          <span style="right: 240px;">Show</span>
          <select class="sp-select sp-select-arrow" style="width: 233px;">
          <option value="all">all</option><option value="new event">new event</option>
@@ -21,12 +20,18 @@
                   <tr>
                     <th>#</th>
                     <th>Message</th>
+                    <th>Event Type</th>
+                     <th>Budget</th>
+                      <th>Guests</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr ng-repeat="m in vm.messages track by $index">
                     <th scope="row">{{$index + 1}}</th>
-                    <td>{{m}}</td>
+                    <td>{{m.message}}</td>
+                    <td>{{m.event_type}}</td>
+                     <td>{{m.budget}}</td>
+                     <td>{{m.guests}}</td>
                   </tr>
                 </tbody>
               </table>
