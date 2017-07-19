@@ -90,11 +90,9 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-      <div class="item active">
-        <img src="{{vm.venue.photos[0]}}" alt="img1" style="width:100%;">
-      </div>
+     
 
-      <div class="item" ng-repeat=" p in vm.venue.photos">
+      <div ng-class="$index=== 0 ? ' item active' : 'item'"  ng-repeat=" p in vm.venue.photos track by $index">
         <img src="{{p}}" alt="img2" style="width:100%;">
       </div>
 
