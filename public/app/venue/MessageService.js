@@ -9,7 +9,8 @@
     function MessageService($http, $q, AuthService) {
         var api_type = 'send/message/host'
         var service = {
-            send: send
+            send: send,
+            get: get
         };
 
         return service;
@@ -24,7 +25,7 @@
                 event_type: o.eventType,
                 guests: o.guests,
                 flexible_dates: o.isFlexible,
-                 business_event:o.isBusiness,
+                business_event: o.isBusiness,
                 message: o.msg,
                 budget: o.budget,
                 venue_id: o.venueId,
@@ -45,6 +46,25 @@
                 .catch(function (err) {
                     return $q.reject(err);
                 });
+        }
+
+        function get(id) {
+            var url = API_URL + 'sent/host/messages?user_id=' + id;
+            return $http.get(url).
+                then(function (response) {
+
+                    //console.log(response);
+                    if (response.data.message.length !== 0) {
+                        //    console.log(response.data.ret);         
+                        return response.data;
+
+                    } else
+                        return $q.reject(response);
+                })
+                .catch(function (err) {
+                    return $q.reject(err);
+                });
+
         }
     }
 })();

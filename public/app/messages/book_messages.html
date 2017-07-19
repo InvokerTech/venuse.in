@@ -1,11 +1,12 @@
-
+<loader ng-if="vm.loading"></loader>
 <section style="margin-top: 80px">
  <div class="container">
    <div>
      <div id="chat-index">
        <div class="chat-index-header" style="height: 106px; margin-top: 37px;">
          <h2 style="font-size: 24px; font-family: Georgia; font-weight: bold; font-style: italic; margin-top: 0px; position: absolute; top: 0px;">Messages</h2>
-         <span class="conversations-count">0 Messages </span>
+         <span ng-if="vm.messages.length!== 0" class="conversations-count">{{vm.messages.lengh}} Messages </span>
+         <span ng-if="vm.messages.length=== 0" class="conversations-count">0 Messages </span>
          <span style="right: 240px;">Show</span>
          <select class="sp-select sp-select-arrow" style="width: 233px;">
          <option value="all">all</option><option value="new event">new event</option>
@@ -14,7 +15,22 @@
          <option value="booked">booked</option><option value="archived">archived</option>
          </select>
       </div>
-      <div class="conversations-section"></div>
+      <div class="conversations-section">
+             <table class="table" ng-if="vm.messages.length!== 0">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Message</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="m in vm.messages track by $index">
+                    <th scope="row">{{$index + 1}}</th>
+                    <td>{{m}}</td>
+                  </tr>
+                </tbody>
+              </table>
+      </div>
     </div>
   </div>
 </div>

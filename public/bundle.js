@@ -1495,16 +1495,55 @@ angular.element(document).ready(function () {
 
 
 })();
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     var messages = {
+        controller: 'MessageController',
+        controllerAs: 'vm',
         templateUrl: `app/messages/book_messages.html`
     };
-        
+
     angular
         .module('venuse')
         .component('messages', messages);
+
+    (function () {
+        'use strict';
+
+        angular
+            .module('venuse')
+            .controller('MessageController', MessageController);
+
+        MessageController.inject = ['MessageService', 'AuthService'];
+        function MessageController(MessageService, AuthService) {
+            var vm = this;
+
+
+            vm.$onInit = function () {
+
+                vm.loading = false;
+                vm.user = AuthService.getUser();
+                vm.messages = [];
+
+
+                vm.loading = true;
+                MessageService.get(vm.user._id)
+                    .then(function (res) {
+                        vm.messages = res.data.message;
+                        vm.loading = false;
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                        alert('No messages Found.');
+                        vm.loading = false;
+                    });
+
+
+
+            }
+        }
+    })();
 
 })();
 (function () {
@@ -1788,7 +1827,8 @@ angular.element(document).ready(function () {
     function MessageService($http, $q, AuthService) {
         var api_type = 'send/message/host'
         var service = {
-            send: send
+            send: send,
+            get: get
         };
 
         return service;
@@ -1803,7 +1843,7 @@ angular.element(document).ready(function () {
                 event_type: o.eventType,
                 guests: o.guests,
                 flexible_dates: o.isFlexible,
-                 business_event:o.isBusiness,
+                business_event: o.isBusiness,
                 message: o.msg,
                 budget: o.budget,
                 venue_id: o.venueId,
@@ -1824,6 +1864,25 @@ angular.element(document).ready(function () {
                 .catch(function (err) {
                     return $q.reject(err);
                 });
+        }
+
+        function get(id) {
+            var url = API_URL + 'sent/host/messages?user_id=' + id;
+            return $http.get(url).
+                then(function (response) {
+
+                    //console.log(response);
+                    if (response.data.message.length !== 0) {
+                        //    console.log(response.data.ret);         
+                        return response.data;
+
+                    } else
+                        return $q.reject(response);
+                })
+                .catch(function (err) {
+                    return $q.reject(err);
+                });
+
         }
     }
 })();
