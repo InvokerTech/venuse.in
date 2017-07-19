@@ -2008,7 +2008,9 @@ angular.element(document).ready(function () {
         }
 
         function submit(data) {
+
             if (AuthService.isLogin()) {
+                vm.loading = true;
                 console.log(AuthService.isLogin());
                 console.log(data);
                 BookService.send(vm.book)
@@ -2017,11 +2019,15 @@ angular.element(document).ready(function () {
                             alert('Venue Booked successfully.');
                             $state.go('home');
                         }
-                        else alert('Venue Could not be booked. Try Again.');
+                        else {
+                            alert('Venue Could not be booked. Try Again.');
+                            vm.loading = false;
+                        }
                     })
                     .catch(function (err) {
                         alert('Venue Could not be booked. Try Again.');
                         console.log(err);
+                        vm.loading = false;
                     });
             }
             else alert('Please login to book venue.');
@@ -2035,20 +2041,27 @@ angular.element(document).ready(function () {
         }
 
         function sendMsg() {
+
             if (AuthService.isLogin()) {
+                vm.loading = true;
                 console.log(AuthService.isLogin());
                 console.log();
                 MessageService.send(vm.book)
                     .then(function (res) {
                         if (res.status) {
                             alert('Message sent successfully.');
-                          $('#contactModal').modal('hide'); 
+                            $('#contactModal').modal('hide');
+                            vm.loading = false;
                         }
-                        else alert('Message could not be sent.');
+                        else {
+                            alert('Message could not be sent.');
+                            vm.loading = false;
+                        }
                     })
                     .catch(function (err) {
                         alert('Message could not be sent.');
                         console.log(err);
+                        vm.loading=false;
                     });
             }
             else alert('Please login to send message.');

@@ -80,9 +80,7 @@
     box-shadow: none !important;
   }
 </style>
-<div ng-if="vm.loading" class="col-md-12 text-center" style="padding-top:14em;">
-  <img alt="Ajax loader" class="login-ajax-loader" src="img/ajax-loader.gif">
-</div>
+<loader ng-if="vm.loading"></loader>
 <div ng-if="!vm.loading">
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
