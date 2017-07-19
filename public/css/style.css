@@ -757,7 +757,7 @@ a.download-presskit {
     position: relative;
     left: 0px;
     width: 100%;
-    top: 185px;
+    margin-top: 215px;
     height: calc(100vh - 264px);
     text-align: center;
     background-color: #ffffff;
