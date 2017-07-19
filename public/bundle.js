@@ -163,7 +163,7 @@ angular.element(document).ready(function () {
             $transitions.onStart({}, function () {
                 h.addClass('ng-hide');
                 f.addClass('ng-hide');
-                v.addClass('ng-hide');
+               v.addClass('ng-hide');
                 l.removeClass('ng-hide');
             });
             $transitions.onSuccess({}, function () {
