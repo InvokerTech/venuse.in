@@ -205,12 +205,13 @@ angular.element(document).ready(function () {
         vm.$onInit = function () {
             vm.loading = false;
             vm.account = {};
-            vm.account.sms = false;
-            vm.account.email = false;
-            vm.account.oldPass = '';
-            vm.account.newPass = '';
             vm.user = AuthService.getUser();
             vm.account.id = vm.user._id;
+            vm.account.sms = vm.user.recieve_sms;
+            vm.account.email = vm.user.recieve_marketing_mail;
+            vm.account.oldPass = '';
+            vm.account.newPass = '';
+           
 
 
 
@@ -1648,20 +1649,19 @@ angular.element(document).ready(function () {
         vm.$onInit = function () {
             vm.loading = false;
             vm.profile = {};
-            vm.profile.id = '';
+            vm.user = AuthService.getUser();
+            vm.profile.id = vm.user._id;
             vm.profile.fName = '';
             vm.profile.lName = '';
             vm.profile.name = '';
-            vm.profile.email = '';
-            vm.profile.phone = '';
+            vm.profile.email = vm.user.email;
+            vm.profile.phone = vm.user.number;
             vm.profile.photo = '';
             vm.profile.address = '';
-            vm.profile.aboutMe = '';
-            vm.profile.companyName = '';
-            vm.profile.jobTitle = '';
-            vm.profile.companyPhone = '';
-            vm.user = AuthService.getUser();
-            vm.profile.id = vm.user._id;
+            vm.profile.aboutMe =vm.user.about_me;
+            vm.profile.companyName = vm.user.organisation_name;
+            vm.profile.jobTitle = vm.user.job_title;
+            vm.profile.companyPhone = vm.user.organisation_number;
             vm.submit = submit;
 
         }

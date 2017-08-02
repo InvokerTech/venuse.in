@@ -24,12 +24,13 @@
         vm.$onInit = function () {
             vm.loading = false;
             vm.account = {};
-            vm.account.sms = false;
-            vm.account.email = false;
-            vm.account.oldPass = '';
-            vm.account.newPass = '';
             vm.user = AuthService.getUser();
             vm.account.id = vm.user._id;
+            vm.account.sms = vm.user.recieve_sms;
+            vm.account.email = vm.user.recieve_marketing_mail;
+            vm.account.oldPass = '';
+            vm.account.newPass = '';
+           
 
 
 
